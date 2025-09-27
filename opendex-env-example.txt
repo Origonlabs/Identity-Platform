@@ -1,0 +1,247 @@
+# Configuración de entorno para Opendex Corporation
+# Opendex Identity Employee - Sistema de Gestión de Identidad de Empleados
+
+# ===========================================
+# CONFIGURACIÓN DE OPENDEX IDENTITY EMPLOYEE
+# ===========================================
+
+# ID del proyecto corporativo de Opendex
+NEXT_PUBLIC_STACK_PROJECT_ID=opendex-corporate
+
+# Claves de API de Opendex Identity Employee
+NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY=opendex_publishable_key_here
+STACK_SECRET_SERVER_KEY=opendex_secret_key_here
+
+# URL de la API de Opendex Identity Employee
+NEXT_PUBLIC_STACK_API_URL=https://api.opendex.com
+
+# ===========================================
+# CONFIGURACIÓN DE BASE DE DATOS
+# ===========================================
+
+# PostgreSQL - Base de datos corporativa
+STACK_DATABASE_CONNECTION_STRING=postgresql://opendex_user:opendex_password@localhost:5432/opendex_corporate
+STACK_DIRECT_DATABASE_CONNECTION_STRING=postgresql://opendex_user:opendex_password@localhost:5432/opendex_corporate
+
+# ===========================================
+# CONFIGURACIÓN DE PROVEEDORES OAUTH
+# ===========================================
+
+# Google Workspace Corporativo
+GOOGLE_CLIENT_ID=your_google_client_id_here
+GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+
+# Microsoft 365 Corporativo
+MICROSOFT_CLIENT_ID=your_microsoft_client_id_here
+MICROSOFT_CLIENT_SECRET=your_microsoft_client_secret_here
+
+# GitHub Enterprise (si aplica)
+GITHUB_CLIENT_ID=your_github_client_id_here
+GITHUB_CLIENT_SECRET=your_github_client_secret_here
+
+# LinkedIn Corporativo
+LINKEDIN_CLIENT_ID=your_linkedin_client_id_here
+LINKEDIN_CLIENT_SECRET=your_linkedin_client_secret_here
+
+# ===========================================
+# CONFIGURACIÓN DE EMAIL CORPORATIVO
+# ===========================================
+
+# SMTP Corporativo
+STACK_EMAIL_SMTP_HOST=smtp.opendex.com
+STACK_EMAIL_SMTP_PORT=587
+STACK_EMAIL_SMTP_USER=noreply@opendex.com
+STACK_EMAIL_SMTP_PASSWORD=your_smtp_password_here
+STACK_EMAIL_SMTP_SECURE=false
+
+# Configuración de emails
+STACK_EMAIL_FROM=noreply@opendex.com
+STACK_EMAIL_REPLY_TO=support@opendex.com
+
+# ===========================================
+# CONFIGURACIÓN DE SEGURIDAD
+# ===========================================
+
+# JWT Secrets
+STACK_JWT_SECRET=your_jwt_secret_here
+STACK_JWT_REFRESH_SECRET=your_jwt_refresh_secret_here
+
+# Encriptación
+STACK_ENCRYPTION_KEY=your_encryption_key_here
+
+# CORS
+STACK_CORS_ORIGINS=https://opendex.com,https://dashboard.opendex.com,https://app.opendex.com
+
+# ===========================================
+# CONFIGURACIÓN DE WEBHOOKS
+# ===========================================
+
+# Svix - Webhooks corporativos
+SVIX_API_KEY=your_svix_api_key_here
+SVIX_WEBHOOK_SECRET=your_svix_webhook_secret_here
+
+# ===========================================
+# CONFIGURACIÓN DE ALMACENAMIENTO
+# ===========================================
+
+# AWS S3 - Almacenamiento de archivos corporativos
+AWS_ACCESS_KEY_ID=your_aws_access_key_here
+AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key_here
+AWS_REGION=us-east-1
+AWS_S3_BUCKET=opendex-corporate-files
+
+# ===========================================
+# CONFIGURACIÓN DE MONITOREO
+# ===========================================
+
+# Sentry - Monitoreo de errores
+SENTRY_DSN=your_sentry_dsn_here
+SENTRY_ORG=opendex
+SENTRY_PROJECT=opendex-corporate
+
+# ===========================================
+# CONFIGURACIÓN DE ANALYTICS
+# ===========================================
+
+# PostHog - Analytics corporativos
+NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key_here
+NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
+
+# ===========================================
+# CONFIGURACIÓN DE PAGOS (si aplica)
+# ===========================================
+
+# Stripe - Pagos corporativos
+STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key_here
+STRIPE_SECRET_KEY=your_stripe_secret_key_here
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret_here
+
+# ===========================================
+# CONFIGURACIÓN DE INTEGRACIONES
+# ===========================================
+
+# Slack - Notificaciones corporativas
+SLACK_BOT_TOKEN=your_slack_bot_token_here
+SLACK_WEBHOOK_URL=your_slack_webhook_url_here
+
+# Microsoft Teams - Notificaciones
+TEAMS_WEBHOOK_URL=your_teams_webhook_url_here
+
+# ===========================================
+# CONFIGURACIÓN DE DESARROLLO
+# ===========================================
+
+# Entorno
+NODE_ENV=development
+
+# URLs de desarrollo
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_DASHBOARD_URL=http://localhost:8101
+NEXT_PUBLIC_API_URL=http://localhost:8102
+
+# ===========================================
+# CONFIGURACIÓN DE PRODUCCIÓN
+# ===========================================
+
+# URLs de producción (descomentar para producción)
+# NEXT_PUBLIC_APP_URL=https://app.opendex.com
+# NEXT_PUBLIC_DASHBOARD_URL=https://dashboard.opendex.com
+# NEXT_PUBLIC_API_URL=https://api.opendex.com
+
+# ===========================================
+# CONFIGURACIÓN DE BACKUP
+# ===========================================
+
+# Backup automático
+BACKUP_ENABLED=true
+BACKUP_SCHEDULE=0 2 * * *  # Diario a las 2 AM
+BACKUP_RETENTION_DAYS=30
+
+# ===========================================
+# CONFIGURACIÓN DE LOGS
+# ===========================================
+
+# Nivel de logs
+LOG_LEVEL=info
+LOG_FORMAT=json
+
+# ===========================================
+# CONFIGURACIÓN DE CACHE
+# ===========================================
+
+# Redis - Cache corporativo
+REDIS_URL=redis://localhost:6379
+REDIS_PASSWORD=your_redis_password_here
+
+# ===========================================
+# CONFIGURACIÓN DE LDAP/AD (si aplica)
+# ===========================================
+
+# Active Directory
+LDAP_URL=ldap://ad.opendex.com:389
+LDAP_BIND_DN=CN=opendex,OU=Service Accounts,DC=opendex,DC=com
+LDAP_BIND_PASSWORD=your_ldap_password_here
+LDAP_BASE_DN=DC=opendex,DC=com
+LDAP_USER_SEARCH_BASE=OU=Users,DC=opendex,DC=com
+
+# ===========================================
+# CONFIGURACIÓN DE SAML (si aplica)
+# ===========================================
+
+# SAML SSO
+SAML_ENTITY_ID=https://opendex.com/saml
+SAML_SSO_URL=https://saml.opendex.com/sso
+SAML_CERTIFICATE=your_saml_certificate_here
+SAML_PRIVATE_KEY=your_saml_private_key_here
+
+# ===========================================
+# CONFIGURACIÓN DE NOTIFICACIONES
+# ===========================================
+
+# Email de administrador
+ADMIN_EMAIL=admin@opendex.com
+ADMIN_NAME=Administrador Opendex
+
+# Notificaciones de seguridad
+SECURITY_ALERTS_EMAIL=security@opendex.com
+SECURITY_ALERTS_ENABLED=true
+
+# ===========================================
+# CONFIGURACIÓN DE COMPLIANCE
+# ===========================================
+
+# GDPR/Privacidad
+GDPR_ENABLED=true
+DATA_RETENTION_DAYS=2555  # 7 años
+AUDIT_LOG_ENABLED=true
+
+# ===========================================
+# CONFIGURACIÓN DE RENDIMIENTO
+# ===========================================
+
+# Rate limiting
+RATE_LIMIT_ENABLED=true
+RATE_LIMIT_REQUESTS_PER_MINUTE=100
+RATE_LIMIT_BURST=200
+
+# ===========================================
+# CONFIGURACIÓN DE MANTENIMIENTO
+# ===========================================
+
+# Mantenimiento programado
+MAINTENANCE_MODE=false
+MAINTENANCE_MESSAGE=Sistema en mantenimiento programado. Volveremos pronto.
+
+# ===========================================
+# CONFIGURACIÓN DE BACKUP Y RECUPERACIÓN
+# ===========================================
+
+# Backup de base de datos
+DB_BACKUP_ENABLED=true
+DB_BACKUP_SCHEDULE=0 1 * * *  # Diario a la 1 AM
+DB_BACKUP_RETENTION_DAYS=30
+
+# Backup de archivos
+FILES_BACKUP_ENABLED=true
+FILES_BACKUP_SCHEDULE=0 3 * * *  # Diario a las 3 AM
+FILES_BACKUP_RETENTION_DAYS=90
