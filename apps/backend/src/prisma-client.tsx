@@ -132,14 +132,14 @@ export async function getPrismaSchemaForSourceOfTruth(sourceOfTruth: CompleteCon
 
 class TransactionErrorThatShouldBeRetried extends Error {
   constructor(cause: unknown) {
-    super("This is an internal error used by Stack Auth to rollback Prisma transactions. It should not be visible to you, so please report this.", { cause });
+    super("This is an internal error used by Atlas Identity Platform to rollback Prisma transactions. It should not be visible to you, so please report this.", { cause });
     this.name = 'TransactionErrorThatShouldBeRetried';
   }
 }
 
 class TransactionErrorThatShouldNotBeRetried extends Error {
   constructor(cause: unknown) {
-    super("This is an internal error used by Stack Auth to rollback Prisma transactions. It should not be visible to you, so please report this.", { cause });
+    super("This is an internal error used by Atlas Identity Platform to rollback Prisma transactions. It should not be visible to you, so please report this.", { cause });
     this.name = 'TransactionErrorThatShouldNotBeRetried';
   }
 }

@@ -16,7 +16,7 @@
       }
     }
   },
-  "homepage": "https://stack-auth.com",
+  "homepage": "https://opendex.com",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "clean": "rimraf dist && rimraf node_modules",
@@ -29,7 +29,7 @@
     "css:watch": "concurrently -n \"tw,sc\" -k \"pnpm run css-tw:watch\" \"pnpm run css-sc:watch\"",
     "css-tw:watch": "tailwindcss -i ./src/global.css -o ./src/generated/tailwind.css --watch",
     "css-tw": "tailwindcss -i ./src/global.css -o ./src/generated/tailwind.css",
-    "css-sc": "tsx ./scripts/process-css.ts ./src/generated/tailwind.css ./src/generated/global-css.ts",
+    "css-sc": "node --import tsx ./scripts/process-css.ts ./src/generated/tailwind.css ./src/generated/global-css.ts",
     "css-sc:watch": "chokidar --silent './src/generated/tailwind.css' -c 'pnpm run css-sc' --throttle 2000"
   },
   "files": [

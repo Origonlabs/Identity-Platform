@@ -264,13 +264,16 @@ async function main() {
   console.log();
   console.log();
 }
-main().catch((...args) => {
-  console.error();
-  console.error();
-  console.error(`\x1b[41mERROR\x1b[0m! Could not verify data integrity. See the error message for more details.`);
-  console.error(...args);
-  process.exit(1);
-});
+main().then(
+  () => {},
+  (error) => {
+    console.error();
+    console.error();
+    console.error(`\x1b[41mERROR\x1b[0m! Could not verify data integrity. See the error message for more details.`);
+    console.error(error);
+    process.exit(1);
+  },
+);
 
 async function expectStatusCode(expectedStatusCode: number, endpoint: string, request: RequestInit) {
   const apiUrl = new URL(getEnvVariable("NEXT_PUBLIC_STACK_API_URL"));

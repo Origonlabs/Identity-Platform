@@ -112,7 +112,7 @@ describe("with valid credentials", () => {
           {
             "emails": [
               {
-                "subject": "Test Email from Stack Auth",
+                "subject": "Test Email from Atlas Identity Platform",
                 "to": ["test-email-recipient@stackframe.co"],
               },
             ],
@@ -126,7 +126,7 @@ describe("with valid credentials", () => {
       const messages = await backendContext.value.mailbox.fetchMessages();
       const digestEmail = messages.find(msg => msg.subject === "Failed emails digest");
       expect(digestEmail).toBeDefined();
-      expect(digestEmail!.from).toBe("Stack Auth <noreply@example.com>");
+      expect(digestEmail!.from).toBe("Atlas Identity Platform <noreply@example.com>");
     }
   });
 

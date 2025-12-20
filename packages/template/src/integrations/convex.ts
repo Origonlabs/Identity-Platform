@@ -8,8 +8,8 @@ export function getConvexProvidersConfig(options: {
   return [
     {
       type: "customJwt",
-      issuer: urlString`https://api.stack-auth.com/api/v1/projects/${projectId}`,
-      jwks: urlString`https://api.stack-auth.com/api/v1/projects/${projectId}/.well-known/jwks.json?include_anonymous=true`,
+      issuer: urlString`https://api.opendex.com/api/v1/projects/${projectId}`,
+      jwks: urlString`https://api.opendex.com/api/v1/projects/${projectId}/.well-known/jwks.json?include_anonymous=true`,
       algorithm: "ES256",
     },
   ];

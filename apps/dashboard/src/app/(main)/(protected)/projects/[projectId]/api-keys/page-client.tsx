@@ -23,10 +23,10 @@ export default function PageClient() {
 
   return (
     <PageLayout
-      title="Stack Auth Keys"
+      title="Atlas Identity Platform Keys"
       actions={
         <Button onClick={() => setIsNewApiKeyDialogOpen(true)}>
-          Create Stack Auth Keys
+          Create Atlas Identity Platform Keys
         </Button>
       }
     >
@@ -77,7 +77,7 @@ function CreateDialog(props: {
   return <SmartFormDialog
     open={props.open}
     onOpenChange={props.onOpenChange}
-    title="Create Stack Auth Keys"
+    title="Create Atlas Identity Platform Keys"
     formSchema={formSchema}
     okButton={{ label: "Create" }}
     onSubmit={async (values) => {
@@ -107,7 +107,7 @@ function ShowKeyDialog(props: {
   return (
     <ActionDialog
       open={!!props.apiKey}
-      title="Stack Auth Keys"
+      title="Atlas Identity Platform Keys"
       okButton={{ label: "Close" }}
       onClose={props.onClose}
       preventClose
@@ -115,7 +115,7 @@ function ShowKeyDialog(props: {
     >
       <div className="flex flex-col gap-4">
         <Typography>
-          Here are your Stack Auth keys.{" "}
+          Here are your Atlas Identity Platform keys.{" "}
           <span className="font-bold">
             Copy them to a safe place. You will not be able to view them again.
           </span>

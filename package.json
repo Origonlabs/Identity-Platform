@@ -5,7 +5,7 @@
   "repository": "",
   "scripts": {
     "pre-no-codegen": "npx -y only-allow pnpm",
-    "pre-preinstall": "npx -y only-allow pnpm && node -e \"if(process.env.STACK_SKIP_TEMPLATE_GENERATION !== 'true') require('child_process').execSync('npx --package=tsx tsx ./scripts/generate-sdks.ts', {stdio: 'inherit'})\"",
+    "pre-preinstall": "npx -y only-allow pnpm && node -e \"if(process.env.STACK_SKIP_TEMPLATE_GENERATION !== 'true') require('child_process').execSync('node --import tsx ./scripts/generate-sdks.ts', {stdio: 'inherit'})\"",
     "pre": "pnpm pre-preinstall",
     "preinstall": "pnpm pre-preinstall",
     "typecheck": "pnpm pre && turbo typecheck --",
@@ -61,7 +61,7 @@
     "verify-data-integrity": "pnpm pre && pnpm -C apps/backend run verify-data-integrity",
     "generate-openapi-fumadocs": "turbo run generate-openapi-fumadocs",
     "generate-keys": "pnpm pre && turbo run generate-keys",
-    "generate-sdks": "npx --package=tsx tsx ./scripts/generate-sdks.ts",
+    "generate-sdks": "node --import tsx ./scripts/generate-sdks.ts",
     "generate-sdks:watch": "chokidar --silent -c 'pnpm run generate-sdks' './packages/template' --ignore './packages/template/package.json' --ignore '**/node_modules/**' --ignore '**/dist/**' --ignore '**/.turbo/**' --throttle 2000",
     "generate-docs": "pnpm run build:packages-only && turbo run generate-openapi-fumadocs && pnpm run --filter=@stackframe/stack-docs generate-docs && pnpm run --filter=@stackframe/stack-docs generate-openapi-docs",
     "generate-docs:watch": "chokidar --silent -c 'pnpm run generate-docs' './docs/templates' --throttle 2000",
@@ -98,7 +98,8 @@
   "pnpm": {
     "overrides": {
       "@types/react": "^18.2.0",
-      "@types/react-dom": "^18.2.0"
+      "@types/react-dom": "^18.2.0",
+      "vitest": ">=1.6.1"
     },
     "patchedDependencies": {
       "openid-client@5.6.4": "patches/openid-client@5.6.4.patch"

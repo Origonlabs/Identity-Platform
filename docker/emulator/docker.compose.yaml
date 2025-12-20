@@ -9,7 +9,7 @@
 
 services:
 
-  # ================= Stack Auth Server =================
+  # ================= Atlas Identity Platform Server =================
 
   server:
     build:

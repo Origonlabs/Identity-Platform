@@ -9,7 +9,7 @@
     "predev": "convex dev --until-success && convex dashboard",
     "start": "next start",
     "build": "next build",
-    "lint": "next lint",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf .next && rimraf node_modules"
   },

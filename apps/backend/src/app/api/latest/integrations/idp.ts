@@ -164,7 +164,7 @@ function createPrismaAdapter(idpId: string) {
 
 export async function createOidcProvider(options: { id: string, baseUrl: string, clientInteractionUrl: string }) {
   const privateJwks = await getPrivateJwks({
-    audience: `https://idp-jwk-audience.stack-auth.com/${encodeURIComponent(options.id)}`,
+    audience: new URL(`/idp-jwk-audience/${encodeURIComponent(options.id)}`, options.baseUrl).toString(),
   });
   const privateJwkSet = {
     keys: privateJwks,
@@ -259,7 +259,7 @@ export async function createOidcProvider(options: { id: string, baseUrl: string,
           ctx.body = `
             <html>
               <head>
-                <title>Redirecting... — Stack Auth</title>
+                <title>Redirecting... — Atlas Identity Platform</title>
                 <style id="gradient-style">
                   body {
                     color: white;
@@ -392,4 +392,3 @@ export async function createOidcProvider(options: { id: string, baseUrl: string,
 
   return oidc;
 }
-

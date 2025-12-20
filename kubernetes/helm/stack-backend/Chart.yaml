@@ -1,0 +1,34 @@
+apiVersion: v2
+name: stack-backend
+description: Stack Auth Backend - Enterprise Identity Platform
+type: application
+version: 2.8.39
+appVersion: "2.8.39"
+
+keywords:
+  - authentication
+  - identity
+  - oauth
+  - stack-auth
+
+maintainers:
+  - name: Stack Auth Team
+    url: https://stack-auth.com
+
+home: https://stack-auth.com
+sources:
+  - https://github.com/stack-auth/stack
+
+dependencies:
+  - name: postgresql
+    version: 12.x.x
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+  - name: redis
+    version: 18.x.x
+    repository: https://charts.bitnami.com/bitnami
+    condition: redis.enabled
+
+annotations:
+  category: Authentication
+  licenses: MIT

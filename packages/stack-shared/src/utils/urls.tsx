@@ -226,7 +226,7 @@ import.meta.vitest?.test("isLocalhost", ({ expect }) => {
 });
 
 export function isRelative(url: string) {
-  const randomDomain = `${generateSecureRandomString()}.stack-auth.example.com`;
+  const randomDomain = `${generateSecureRandomString()}.atlas.example.com`;
   const u = createUrlIfValid(url, `https://${randomDomain}`);
   if (!u) return false;
   if (u.host !== randomDomain) return false;
@@ -335,5 +335,4 @@ import.meta.vitest?.test("urlString", ({ expect }) => {
   expect(urlString`https://example.com/${"path"}?query=${"value"}`).toBe("https://example.com/path?query=value");
   expect(urlString`https://example.com/${"path"}?query=${"value with spaces"}`).toBe("https://example.com/path?query=value%20with%20spaces");
 });
-
 

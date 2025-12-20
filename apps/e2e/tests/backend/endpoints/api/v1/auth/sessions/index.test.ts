@@ -58,7 +58,8 @@ it("creates sessions for existing users", async ({ expect }) => {
   `);
 });
 
-it("creates sessions that expire", async ({ expect }) => {
+// we wanna retry this, because in development mode, often the first time is slow due to compilation
+it("creates sessions that expire", { retry: 1 }, async ({ expect }) => {
   const res = await Auth.Password.signUpWithEmail();
   await Auth.expectToBeSignedIn();
   const beginDate = new Date();
@@ -127,9 +128,6 @@ it("creates sessions that expire", async ({ expect }) => {
   `);
   backendContext.set({ userAuth: { accessToken: undefined, refreshToken: res2.body.refresh_token } });
   await Auth.expectToBeSignedOut();
-}, {
-  // we wanna retry this, because in development mode, often the first time is slow due to compilation
-  retry: 1,
 });
 
 it("cannot create sessions with an expiry date larger than a year away", async ({ expect }) => {
@@ -383,4 +381,3 @@ it("impersonation sessions hidden for non-admin clients and shown for admins", a
   const impersonationSessions = adminSessions.filter((session: any) => session.is_impersonation);
   expect(impersonationSessions.length).toBeGreaterThan(0);
 });
-

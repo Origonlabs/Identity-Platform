@@ -3,7 +3,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 import { useSidebar } from '../layouts/sidebar-context';
 
-// Stack Auth required headers
+// Atlas Identity Platform required headers
 const STACK_AUTH_HEADERS = {
   'Content-Type': 'application/json',
   'X-Stack-Access-Type': '', // client or server

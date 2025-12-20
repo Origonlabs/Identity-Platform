@@ -1,4 +1,4 @@
-// see https://github.com/stack-auth/info/blob/main/eng-handbook/random-thoughts/config-json-format.md
+// see internal docs for config-json-format.md
 
 import { StackAssertionError, throwErr } from "../utils/errors";
 import { deleteKey, filterUndefined, get, hasAndNotUndefined, set } from "../utils/objects";

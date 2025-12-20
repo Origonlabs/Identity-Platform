@@ -6,8 +6,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stack Auth Middleware Demo",
-  description: "A demo of Stack's middleware capabilities.",
+  title: "Atlas Identity Platform Middleware Demo",
+  description: "A demo of Atlas Identity Platform's middleware capabilities.",
 };
 
 export default function RootLayout({

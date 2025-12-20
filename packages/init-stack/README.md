@@ -1,6 +1,6 @@
-# Stack Auth Initialization Tool
+# Atlas Identity Platform Initialization Tool
 
-This package provides a command-line tool to initialize Stack Auth in your project.
+This package provides a command-line tool to initialize Atlas Identity Platform in your project.
 
 ## Usage
 
@@ -29,16 +29,16 @@ npx init-stack [project-path] [options]
 
 ## Examples
 
-Initialize Stack Auth in a Next.js project without opening the browser:
+Initialize Atlas Identity Platform in a Next.js project without opening the browser:
 
 ```bash
 npx init-stack --next --no-browser
 ```
 
-Initialize Stack Auth in a JavaScript project with npm:
+Initialize Atlas Identity Platform in a JavaScript project with npm:
 
 ```bash
 npx init-stack --js --npm
 ```
 
-For more information, please visit [Stack Auth Documentation](https://docs.stack-auth.com/getting-started/setup).
+For more information, please visit https://docs.opendex.com.

@@ -240,11 +240,11 @@ function renderNode(node: MessageNode, index: number): React.ReactNode {
     case 'link': {
       // Fix incorrect domain links
       let fixedUrl = node.url || '';
-      if (fixedUrl.includes('stackauth.com/docs/')) {
-        fixedUrl = fixedUrl.replace('stackauth.com/docs/', 'docs.stack-auth.com/docs/');
+      if (fixedUrl.includes('docs.opendex.com/docs/')) {
+        fixedUrl = fixedUrl.replace('docs.opendex.com/docs/', 'docs.opendex.com/docs/');
       }
-      if (fixedUrl.includes('//stackauth.com/docs/')) {
-        fixedUrl = fixedUrl.replace('//stackauth.com/docs/', '//docs.stack-auth.com/docs/');
+      if (fixedUrl.includes('//docs.opendex.com/docs/')) {
+        fixedUrl = fixedUrl.replace('//docs.opendex.com/docs/', '//docs.opendex.com/docs/');
       }
 
       return (

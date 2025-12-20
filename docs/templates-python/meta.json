@@ -1,6 +1,6 @@
 {
   "title": "Python Documentation",
-  "description": "Stack Auth for Python applications using the REST API",
+  "description": "Atlas Identity Platform for Python applications using the REST API",
   "pages": [
     "overview",
     "faq",

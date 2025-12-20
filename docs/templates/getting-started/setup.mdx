@@ -10,7 +10,7 @@ Welcome to the Next.js SDK setup guide. If you're looking for guides for other f
 
 ## Setup
 
-Before getting started, make sure you have a [Next.js project](https://nextjs.org/docs/getting-started/installation) using the app router, as Stack Auth does not support the pages router.
+Before getting started, make sure you have a [Next.js project](https://nextjs.org/docs/getting-started/installation) using the app router, as Atlas Identity Platform does not support the pages router.
 
 We recommend using our **setup wizard** for a seamless installation experience. The wizard automatically detects your project structure and walks you through the setup process. If you encounter any issues with the wizard, you can follow our manual installation steps instead.
 
@@ -34,7 +34,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       <Step>
       ### Update API keys
       </Step>
-      Then, create an account on [the Stack Auth dashboard](https://app.stack-auth.com/projects), create a new project with an API key, and copy its environment variables into the `.env.local` file of your Next.js project:
+      Then, create an account on [the Atlas Identity Platform dashboard](https://dashboard.opendex.com/projects), create a new project with an API key, and copy its environment variables into the `.env.local` file of your Next.js project:
 
       ```sh title=".env.local"
       NEXT_PUBLIC_STACK_PROJECT_ID=<your-project-id>
@@ -60,7 +60,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       Note: The setup wizard also supports existing, complicated projects. Cases where manual installation is necessary are rare.
     </Info>
 
-    If you are struggling with the setup wizard, please reach out to us on our [Discord](https://discord.stack-auth.com) first, where we'll be happy to help you.
+    If you are struggling with the setup wizard, please reach out to us on our [Discord](mailto:support@opendex.com) first, where we'll be happy to help you.
     <Steps>
       <Step>
       ### Install npm package
@@ -74,7 +74,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       <Step>
       ### Create API keys
       </Step>
-      If you haven't already, [register a new account on Stack](https://app.stack-auth.com/handler/sign-up). Create a project in the dashboard, create a new API key from the left sidebar, and copy the project ID, publishable client key, and secret server key into a new file called `.env.local` in the root of your Next.js project:
+      If you haven't already, [register a new account on Stack](https://dashboard.opendex.com/handler/sign-up). Create a project in the dashboard, create a new API key from the left sidebar, and copy the project ID, publishable client key, and secret server key into a new file called `.env.local` in the root of your Next.js project:
 
       ```sh title=".env.local"
       NEXT_PUBLIC_STACK_PROJECT_ID=<your-project-id>
@@ -209,7 +209,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       <Step>
       ### Update API keys
       </Step>
-      Then, create an account on [the Stack Auth dashboard](https://app.stack-auth.com/projects), create a new project with an API key, and copy its values into the `stack/client.ts` file created by the wizard.
+      Then, create an account on [the Atlas Identity Platform dashboard](https://dashboard.opendex.com/projects), create a new project with an API key, and copy its values into the `stack/client.ts` file created by the wizard.
 
       <Step>
       ### Wrap your app
@@ -273,7 +273,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       <Step>
       ### Create API keys
       </Step>
-      If you haven't already, [register a new account on Stack](https://app.stack-auth.com/projects), create a project in the dashboard, create a new API key from the left sidebar, and copy the project ID and publishable client key. Store them based on your project setup (environment variables or directly in the client file during development).
+      If you haven't already, [register a new account on Stack](https://dashboard.opendex.com/projects), create a project in the dashboard, create a new API key from the left sidebar, and copy the project ID and publishable client key. Store them based on your project setup (environment variables or directly in the client file during development).
 
       <Step>
       ### Create `stack/client.ts` file
@@ -375,7 +375,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       <Step>
       ### Update API keys
       </Step>
-      Then, create an account on [the Stack Auth dashboard](https://app.stack-auth.com/projects), create a new project with an API key, and copy its values into the `stack/server.ts` or `stack/client.ts` file.
+      Then, create an account on [the Atlas Identity Platform dashboard](https://dashboard.opendex.com/projects), create a new project with an API key, and copy its values into the `stack/server.ts` or `stack/client.ts` file.
 
       <Tabs defaultValue="server">
         <TabsList>
@@ -426,7 +426,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       <Step>
       ### Update API keys
       </Step>
-      Then, create an account on [the Stack Auth dashboard](https://app.stack-auth.com/projects), create a new project with an API key, and copy its values into the `stack/server.ts` or `stack/client.ts` file.
+      Then, create an account on [the Atlas Identity Platform dashboard](https://dashboard.opendex.com/projects), create a new project with an API key, and copy its values into the `stack/server.ts` or `stack/client.ts` file.
 
       <Step>
       ### Initialize the app
@@ -525,14 +525,14 @@ Check out the [Users](./users.mdx) to learn how to retrieve and update user info
 Welcome to the Python setup guide. If you're looking for guides for other frameworks, check out the [Next.js SDK Setup](/next/getting-started/setup), [React SDK Setup](/react/getting-started/setup), or the [JavaScript SDK Setup](/js/getting-started/setup).
 </Info>
 
-Our recommended way to use Stack Auth with Python is with the [REST API](../rest-api/overview.mdx). It provides a fully documented way to interact with Stack Auth from any Python framework, including Flask, FastAPI, and Django.
+Our recommended way to use Atlas Identity Platform with Python is with the [REST API](../rest-api/overview.mdx). It provides a fully documented way to interact with Atlas Identity Platform from any Python framework, including Flask, FastAPI, and Django.
 
-For the purpose of this guide, we will use the `requests` library to make HTTP requests to the Stack Auth API. If you haven't already, you can install it in your environment with `pip install requests`.
+For the purpose of this guide, we will use the `requests` library to make HTTP requests to the Atlas Identity Platform API. If you haven't already, you can install it in your environment with `pip install requests`.
 
 <Steps>
   ### Create API keys
 
-  First, create an account on [the Stack Auth dashboard](https://app.stack-auth.com/projects), and copy your project ID, publishable client key, and secret server key into a safe place (eg. environment variables).
+  First, create an account on [the Atlas Identity Platform dashboard](https://dashboard.opendex.com/projects), and copy your project ID, publishable client key, and secret server key into a safe place (eg. environment variables).
 
   From there, you can access them in your Python code. You can then read them like this:
 
@@ -546,7 +546,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
 
   ### Make a request
 
-  Next, create a helper function to make requests to the Stack Auth API:
+  Next, create a helper function to make requests to the Atlas Identity Platform API:
 
   ```python
   import requests
@@ -554,7 +554,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
   def stack_auth_request(method, endpoint, **kwargs):
     res = requests.request(
       method,
-      f'https://api.stack-auth.com/{endpoint}',
+      f'https://api.opendex.com/{endpoint}',
       headers={
         'x-stack-access-type': 'server',  # or 'client' if you're only accessing the client API
         'x-stack-project-id': stack_project_id,
@@ -565,7 +565,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
       **kwargs,
     )
     if res.status_code >= 400:
-      raise Exception(f"Stack Auth API request failed with {res.status_code}: {res.text}")
+      raise Exception(f"Atlas Identity Platform API request failed with {res.status_code}: {res.text}")
     return res.json()
 
   print(stack_auth_request('GET', '/api/v1/projects/current'))
@@ -574,7 +574,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
 
   If you're building a backend server, most likely you'll want to use the currently signed in user's access token. Most normally, you would send this with all your requests to the backend in an HTTP header.
 
-  In Stack Auth's JavaScript SDK, you can retrieve the access token [from the `stackClientApp` object](/sdk/types/user#currentusergetauthjson). Then, you can use said access token to make requests to Stack Auth:
+  In Atlas Identity Platform's JavaScript SDK, you can retrieve the access token [from the `stackClientApp` object](/sdk/types/user#currentusergetauthjson). Then, you can use said access token to make requests to Atlas Identity Platform:
 
   ```python
   access_token = # access token retrieved from the JavaScript SDK

@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     const signIn = async () => {
       if (getPublicEnvVar("NEXT_PUBLIC_STACK_EMULATOR_ENABLED") === "true" && !user) {
         await app.signInWithCredential({
-          email: "local-emulator@stack-auth.com",
+          email: "local-emulator@opendex.com",
           password: "LocalEmulatorPassword",
         });
       }

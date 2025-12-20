@@ -180,13 +180,13 @@ export default function PageClient({ storeId }: PageClientProps) {
             Your data vault store has been created.
           </p>
           <p>
-            A store securely saves key-value pairs with Stack Auth. Plaintext keys and values are never written to a database; instead, they&apos;re encrypted and decrypted on-the-fly using envelope encryption with a rotating master key.
+            A store securely saves key-value pairs with Atlas Identity Platform. Plaintext keys and values are never written to a database; instead, they&apos;re encrypted and decrypted on-the-fly using envelope encryption with a rotating master key.
           </p>
           <p>
-            To use the store, you&apos;ll need a random, unguessable secret. It can be any format, but for strong security it should be at least 32 characters long and provide 256 bits of entropy. <b>Even Stack Auth</b> can&apos;t access your data if you lose it, so keep it safe.
+            To use the store, you&apos;ll need a random, unguessable secret. It can be any format, but for strong security it should be at least 32 characters long and provide 256 bits of entropy. <b>Even Atlas Identity Platform</b> can&apos;t access your data if you lose it, so keep it safe.
           </p>
           <p>
-            Stack Auth only stores hashes of your keys, so you can&apos;t list all keys in a store. Each value is encrypted with its key, the provided secret, and an additional encryption secret that is kept safe by Stack Auth.
+            Atlas Identity Platform only stores hashes of your keys, so you can&apos;t list all keys in a store. Each value is encrypted with its key, the provided secret, and an additional encryption secret that is kept safe by Atlas Identity Platform.
           </p>
         </div>
 

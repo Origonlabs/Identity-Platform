@@ -84,13 +84,13 @@ export class StackClientInterface {
       }
     });
     const prodDashboard = await tryRequest(async () => {
-      const res = await fetch("https://app.stack-auth.com/health");
+      const res = await fetch("https://dashboard.opendex.com/health");
       if (!res.ok) {
         throw new Error(`${res.status} ${res.statusText}: ${await res.text()}`);
       }
     });
     const prodBackend = await tryRequest(async () => {
-      const res = await fetch("https://api.stack-auth.com/health");
+      const res = await fetch("https://api.opendex.com/health");
       if (!res.ok) {
         throw new Error(`${res.status} ${res.statusText}: ${await res.text()}`);
       }
@@ -107,7 +107,7 @@ export class StackClientInterface {
 
   protected async _createNetworkError(cause: Error, session?: InternalSession | null, requestType?: "client" | "server" | "admin") {
     return new Error(deindent`
-      Stack Auth is unable to connect to the server. Please check your internet connection and try again.
+      Atlas Identity Platform is unable to connect to the server. Please check your internet connection and try again.
 
       If the problem persists, please contact support and provide a screenshot of your entire browser console.
 
@@ -1798,4 +1798,3 @@ export class StackClientInterface {
     return url;
   }
 }
-

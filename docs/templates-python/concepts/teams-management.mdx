@@ -1,13 +1,13 @@
 ---
 title: "Teams Management"
-description: "Learn how to implement team functionality in your Python application using Stack Auth's REST API"
+description: "Learn how to implement team functionality in your Python application using Atlas Identity Platform's REST API"
 ---
 
-After setting up your [Stack Auth helper function](../getting-started/setup.mdx), you can implement comprehensive team functionality in your Python application.
+After setting up your [Atlas Identity Platform helper function](../getting-started/setup.mdx), you can implement comprehensive team functionality in your Python application.
 
 ## Team Management
 
-Stack Auth provides full team management capabilities including:
+Atlas Identity Platform provides full team management capabilities including:
 - **Team Creation & Management** - Create and update teams with metadata
 - **Team Memberships** - Add and remove users from teams  
 - **Team Invitations** - Send email invitations to join teams
@@ -448,7 +448,7 @@ stack_secret_server_key = os.getenv("STACK_SECRET_SERVER_KEY")
 def stack_auth_request(method, endpoint, **kwargs):
     res = requests.request(
         method,
-        f'https://api.stack-auth.com/{endpoint}',
+        f'https://api.opendex.com/{endpoint}',
         headers={
             'x-stack-access-type': 'server',  # or 'client' if you're only accessing the client API
             'x-stack-project-id': stack_project_id,
@@ -459,7 +459,7 @@ def stack_auth_request(method, endpoint, **kwargs):
         **kwargs,
     )
     if res.status_code >= 400:
-        raise Exception(f"Stack Auth API request failed with {res.status_code}: {res.text}")
+        raise Exception(f"Atlas Identity Platform API request failed with {res.status_code}: {res.text}")
     return res.json()
 
 class TeamManager:
@@ -587,7 +587,7 @@ def safe_send_invitation(access_token, team_id, email, callback_url):
 
 ## Common Team Permission IDs
 
-Stack Auth includes several built-in team permissions:
+Atlas Identity Platform includes several built-in team permissions:
 
 - **`$update_team`** - Edit team information and metadata
 - **`$delete_team`** - Delete the entire team

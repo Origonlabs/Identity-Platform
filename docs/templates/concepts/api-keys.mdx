@@ -5,7 +5,7 @@ description: Create and manage API keys for users and teams
 
 API keys provide a secure way for your users to authenticate with your application's backend. 
 They enable programmatic access to your API services, allowing developers to associate requests with specific users or teams.
-Stack Auth provides prebuilt UI components for the users and teams to manage their own API keys.
+Atlas Identity Platform provides prebuilt UI components for the users and teams to manage their own API keys.
 
 ## Overview
 
@@ -15,7 +15,7 @@ API keys allow your users to access your backend services programmatically.
 sequenceDiagram
     participant User as User/Client
     participant Server as Your Application Server
-    participant Stack as Stack Auth Service
+    participant Stack as Atlas Identity Platform Service
     
     User->>+Server: API request with API key
     Server->>+Stack: Validate API key
@@ -24,7 +24,7 @@ sequenceDiagram
     Server-->>-User: Response with data
 `} />
 
-Stack Auth provides two types of API keys:
+Atlas Identity Platform provides two types of API keys:
 
 ### User API keys
 
@@ -93,9 +93,9 @@ Team API keys are associated with teams and can be used to provide access to tea
   </TabsContent>
 </Tabs>
 
-## Setting Up API Keys in Stack Auth
+## Setting Up API Keys in Atlas Identity Platform
 
-To use API keys in your application, you need to enable them in your project settings. Navigate to the Stack Auth dashboard, select your project, and enable User API Keys and/or Team API Keys in the project settings.
+To use API keys in your application, you need to enable them in your project settings. Navigate to the Atlas Identity Platform dashboard, select your project, and enable User API Keys and/or Team API Keys in the project settings.
 
 ## Working with API Keys
 

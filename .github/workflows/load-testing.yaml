@@ -1,0 +1,132 @@
+name: Load Testing
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to test'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+      duration:
+        description: 'Test duration (short/medium/long)'
+        required: true
+        type: choice
+        default: 'short'
+        options:
+          - short
+          - medium
+          - long
+  schedule:
+    # Run load tests weekly on Sundays at 2 AM UTC
+    - cron: '0 2 * * 0'
+
+jobs:
+  load-test:
+    name: K6 Load Testing
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup K6
+        run: |
+          sudo gpg -k
+          sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt-get update
+          sudo apt-get install k6
+
+      - name: Set environment variables
+        run: |
+          if [ "${{ github.event.inputs.environment }}" = "production" ]; then
+            echo "BASE_URL=${{ secrets.PROD_API_URL }}" >> $GITHUB_ENV
+            echo "PROJECT_ID=${{ secrets.PROD_PROJECT_ID }}" >> $GITHUB_ENV
+          else
+            echo "BASE_URL=${{ secrets.STAGING_API_URL }}" >> $GITHUB_ENV
+            echo "PROJECT_ID=${{ secrets.STAGING_PROJECT_ID }}" >> $GITHUB_ENV
+          fi
+
+      - name: Run authentication flow load test
+        run: |
+          k6 run \
+            --out json=results/auth-flow-results.json \
+            --summary-export=results/auth-flow-summary.json \
+            tests/load-testing/k6/auth-flow.js
+
+      - name: Check performance thresholds
+        run: |
+          # Parse results and check if thresholds passed
+          if grep -q '"passed":false' results/auth-flow-summary.json; then
+            echo "❌ Performance thresholds not met!"
+            cat results/auth-flow-summary.json
+            exit 1
+          else
+            echo "✅ All performance thresholds passed!"
+          fi
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-results-${{ github.event.inputs.environment }}-${{ github.run_number }}
+          path: results/
+          retention-days: 30
+
+      - name: Post results to Slack
+        if: failure()
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          payload: |
+            {
+              "text": "⚠️ Load test failed on ${{ github.event.inputs.environment }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Load Test Failed* 🔴\n*Environment:* ${{ github.event.inputs.environment }}\n*Duration:* ${{ github.event.inputs.duration }}\n*Run:* <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
+                  }
+                }
+              ]
+            }
+
+      - name: Create performance report
+        if: always()
+        run: |
+          mkdir -p reports
+          cat > reports/performance-report.md << 'EOF'
+          # Load Testing Report
+
+          **Environment:** ${{ github.event.inputs.environment }}
+          **Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          **Duration:** ${{ github.event.inputs.duration }}
+
+          ## Summary
+
+          $(cat results/auth-flow-summary.json | jq -r '.metrics | to_entries[] | "- **\(.key)**: \(.value.values)"')
+
+          ## Thresholds
+
+          $(cat results/auth-flow-summary.json | jq -r '.thresholds | to_entries[] | "- **\(.key)**: \(if .value.ok then "✅ PASSED" else "❌ FAILED" end)"')
+
+          EOF
+
+      - name: Comment on PR (if applicable)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('reports/performance-report.md', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: report
+            });

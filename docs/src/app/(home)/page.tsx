@@ -20,7 +20,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="mb-3 text-4xl md:text-5xl font-bold tracking-tight">
-            Stack Auth
+            Atlas Identity Platform
             <span className="block text-2xl md:text-3xl font-normal text-fd-muted-foreground mt-1">
               Documentation
             </span>

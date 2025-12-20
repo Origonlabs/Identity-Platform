@@ -91,7 +91,7 @@ export default function ApiLayout({ children }: { children: React.ReactNode }) {
     <SidebarProvider>
       <APIPageWrapper>
         <div className="flex min-h-screen bg-fd-background">
-          {/* Full-width header with Stack Auth branding */}
+          {/* Full-width header with Atlas Identity Platform branding */}
           <DocsHeaderWrapper
             showSearch={false}
             className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-fd-border flex items-center justify-between px-4 md:px-6 bg-fd-background"

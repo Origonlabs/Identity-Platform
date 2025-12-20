@@ -28,7 +28,7 @@ it("should return metrics data", async ({ expect }) => {
   await ensureAnonymousUsersAreStillExcluded(response);
 });
 
-it("should return metrics data with users", async ({ expect }) => {
+it("should return metrics data with users", { timeout: 120_000 }, async ({ expect }) => {
   await Project.createAndSwitch({
     config: {
       magic_link_enabled: true,
@@ -69,8 +69,6 @@ it("should return metrics data with users", async ({ expect }) => {
   expect(response).toMatchSnapshot();
 
   await ensureAnonymousUsersAreStillExcluded(response);
-}, {
-  timeout: 120_000,
 });
 
 it("should not work for non-admins", async ({ expect }) => {

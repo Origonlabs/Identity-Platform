@@ -1,6 +1,6 @@
-# Contributing to Stack Auth
+# Contributing to Atlas Identity Platform
 
-Welcome to Stack Auth!
+Welcome to Atlas Identity Platform (Opendex, Inc)!
 
 Due to the nature of authentication, this may not be the easiest project to contribute to, so if you are looking for projects to help gain programming experience, we may not be a great match. If you're looking for projects for beginners, check out [Awesome First PR Opportunities](https://github.com/MunGell/awesome-for-beginners).
 
@@ -18,18 +18,17 @@ Due to the nature of authentication, this may not be the easiest project to cont
 
 ## How to contribute
 
-If you think Stack Auth is a good fit for you, follow these steps:
+If you think Atlas Identity Platform is a good fit for you, follow these steps:
 
-1. Join [our Discord](https://discord.stack-auth.com)
-2. [Use Stack Auth](https://docs.stack-auth.com/). The best way to understand the project is to use it. Build an application on top of Stack Auth, and post it on GitHub or write a blog post about how you built it. This also lets us assess your skills and understand where you could best help the project.
-3. Give us feedback on Discord or GitHub; let us know where you got stuck, and which things you wish were easier. (We appreciate contributions most when they solve problems the authors encountered themselves in real usage.)
-4. Contribute to the [documentation](https://docs.stack-auth.com) and create examples & guides. This way, you can share your knowledge and expertise with everyone else who's just getting started.
-5. Only then, start [contributing to the codebase](README.md#-development--contribution). Coordinate with us on Discord beforehand to ensure we are not working on the same thing already, and to make sure a task is not more difficult than it seems.
+1. Use Atlas Identity Platform. The best way to understand the project is to use it and build an application on top of it.
+2. Give us feedback on GitHub; let us know where you got stuck, and which things you wish were easier. (We appreciate contributions most when they solve problems the authors encountered themselves in real usage.)
+3. Contribute to the documentation in `docs/` and create examples & guides. This way, you can share your knowledge and expertise with everyone else who's just getting started.
+4. Only then, start [contributing to the codebase](README.md#-development--contribution).
 
 
 ## Security & bug bounties
 
-For any security-related concerns & bug bounties, please email us at [security@stack-auth.com](mailto:security@stack-auth.com).
+For any security-related concerns & bug bounties, please email us at [security@opendex.com](mailto:security@opendex.com).
 
 
 ## Before creating a pull request

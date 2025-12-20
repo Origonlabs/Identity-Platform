@@ -1,9 +1,9 @@
 ---
 title: Supabase
-description: Integrate Stack Auth with Supabase RLS
+description: Integrate Atlas Identity Platform with Supabase RLS
 ---
 
-This guide shows how to integrate Stack Auth with Supabase row level security (RLS).
+This guide shows how to integrate Atlas Identity Platform with Supabase row level security (RLS).
 
 <Info>
   This guide only focuses on the RLS/JWT integration and does not sync user data between Supabase and Stack. You should use [webhooks](/concepts/webhooks) to achieve data sync.
@@ -11,7 +11,7 @@ This guide shows how to integrate Stack Auth with Supabase row level security (R
 
 ## Setup
 
-Let's create a sample table and some RLS policies to demonstrate how to integrate Stack Auth with Supabase RLS. You can apply the same logic to your own tables and policies.
+Let's create a sample table and some RLS policies to demonstrate how to integrate Atlas Identity Platform with Supabase RLS. You can apply the same logic to your own tables and policies.
 <Steps>
 ### Setup Supabase
 First, let's create a Supabase project, then go to the [SQL Editor](https://supabase.com/dashboard/project/_/sql/new) and create a new table with some sample data and RLS policies.
@@ -48,7 +48,7 @@ USING (id = 3 AND auth.uid() = user_id);
 
 ### Setup a new Next.js project
 
-Now let's create a new Next.js project and install Stack Auth and Supabase client. (more details on [Next.js setup](https://nextjs.org/docs/getting-started/installation), [Stack Auth setup](../getting-started/setup.mdx), and [Supabase setup](https://supabase.com/docs/guides/getting-started/quickstarts/nextjs))
+Now let's create a new Next.js project and install Atlas Identity Platform and Supabase client. (more details on [Next.js setup](https://nextjs.org/docs/getting-started/installation), [Atlas Identity Platform setup](../getting-started/setup.mdx), and [Supabase setup](https://supabase.com/docs/guides/getting-started/quickstarts/nextjs))
 
 ```bash title="Terminal"
 npx create-next-app@latest -e with-supabase stack-supabase
@@ -68,7 +68,7 @@ Copy environment variables from the Stack dashboard to the `.env.local` file.
 
 ### Set up Supbase client
 
-Now let's create a server action that mints a supabase JWT with the Stack Auth user ID if the user is authenticated.
+Now let's create a server action that mints a supabase JWT with the Atlas Identity Platform user ID if the user is authenticated.
 
 ```tsx title="/utils/actions.ts"
 'use server';
@@ -161,4 +161,4 @@ Now you should be able to compare the data you can view with an anonymous user, 
 
 </Steps>
 
-You can find the full example [here on GitHub](https://github.com/stack-auth/stack-auth/tree/main/examples/supabase).
+You can find the full example [here on GitHub](https://github.com/opendex/atlas-identity-platform/tree/main/examples/supabase).

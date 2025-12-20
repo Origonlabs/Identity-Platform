@@ -184,7 +184,7 @@ export const POST = createSmartRouteHandler({
       </div>
     `;
 
-    const emailConfig = await getSharedEmailConfig("Stack Auth");
+    const emailConfig = await getSharedEmailConfig("Atlas Identity Platform");
 
     // Send email notifications
     for (const email of affectedEmails) {

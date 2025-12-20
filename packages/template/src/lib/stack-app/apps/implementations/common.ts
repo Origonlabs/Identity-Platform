@@ -65,19 +65,39 @@ export function getUrls(partial: Partial<HandlerUrls>): HandlerUrls {
 }
 
 export function getDefaultProjectId() {
-  return process.env.NEXT_PUBLIC_STACK_PROJECT_ID || process.env.STACK_PROJECT_ID || throwErr(new Error("Welcome to Stack Auth! It seems that you haven't provided a project ID. Please create a project on the Stack dashboard at https://app.stack-auth.com and put it in the NEXT_PUBLIC_STACK_PROJECT_ID environment variable."));
+  return (
+    process.env.NEXT_PUBLIC_ATLAS_PROJECT_ID ||
+    process.env.ATLAS_PROJECT_ID ||
+    process.env.NEXT_PUBLIC_STACK_PROJECT_ID ||
+    process.env.STACK_PROJECT_ID ||
+    throwErr(new Error("Welcome to Atlas Identity Platform! It seems that you haven't provided a project ID. Please create a project on the dashboard at https://dashboard.opendex.com and put it in the NEXT_PUBLIC_ATLAS_PROJECT_ID (or legacy NEXT_PUBLIC_STACK_PROJECT_ID) environment variable."))
+  );
 }
 
 export function getDefaultPublishableClientKey() {
-  return process.env.NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY || process.env.STACK_PUBLISHABLE_CLIENT_KEY || throwErr(new Error("Welcome to Stack Auth! It seems that you haven't provided a publishable client key. Please create an API key for your project on the Stack dashboard at https://app.stack-auth.com and copy your publishable client key into the NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY environment variable."));
+  return (
+    process.env.NEXT_PUBLIC_ATLAS_PUBLISHABLE_CLIENT_KEY ||
+    process.env.ATLAS_PUBLISHABLE_CLIENT_KEY ||
+    process.env.NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY ||
+    process.env.STACK_PUBLISHABLE_CLIENT_KEY ||
+    throwErr(new Error("Welcome to Atlas Identity Platform! It seems that you haven't provided a publishable client key. Please create an API key for your project on the dashboard at https://dashboard.opendex.com and copy your publishable client key into the NEXT_PUBLIC_ATLAS_PUBLISHABLE_CLIENT_KEY (or legacy NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY) environment variable."))
+  );
 }
 
 export function getDefaultSecretServerKey() {
-  return process.env.STACK_SECRET_SERVER_KEY || throwErr(new Error("No secret server key provided. Please copy your key from the Stack dashboard and put it in the STACK_SECRET_SERVER_KEY environment variable."));
+  return (
+    process.env.ATLAS_SECRET_SERVER_KEY ||
+    process.env.STACK_SECRET_SERVER_KEY ||
+    throwErr(new Error("No secret server key provided. Please copy your key from the dashboard and put it in the ATLAS_SECRET_SERVER_KEY (or legacy STACK_SECRET_SERVER_KEY) environment variable."))
+  );
 }
 
 export function getDefaultSuperSecretAdminKey() {
-  return process.env.STACK_SUPER_SECRET_ADMIN_KEY || throwErr(new Error("No super secret admin key provided. Please copy your key from the Stack dashboard and put it in the STACK_SUPER_SECRET_ADMIN_KEY environment variable."));
+  return (
+    process.env.ATLAS_SUPER_SECRET_ADMIN_KEY ||
+    process.env.STACK_SUPER_SECRET_ADMIN_KEY ||
+    throwErr(new Error("No super secret admin key provided. Please copy your key from the dashboard and put it in the ATLAS_SUPER_SECRET_ADMIN_KEY (or legacy STACK_SUPER_SECRET_ADMIN_KEY) environment variable."))
+  );
 }
 
 export function getDefaultExtraRequestHeaders() {
@@ -90,9 +110,9 @@ export function getDefaultExtraRequestHeaders() {
  * The URL can be specified in several ways, in order of precedence:
  * 1. Directly through userSpecifiedBaseUrl parameter as string or browser/server object
  * 2. Through environment variables:
- *    - Browser: NEXT_PUBLIC_BROWSER_STACK_API_URL
- *    - Server: NEXT_PUBLIC_SERVER_STACK_API_URL
- *    - Fallback: NEXT_PUBLIC_STACK_API_URL or NEXT_PUBLIC_STACK_URL
+ *    - Browser: NEXT_PUBLIC_BROWSER_STACK_API_URL (legacy)
+ *    - Server: NEXT_PUBLIC_SERVER_STACK_API_URL (legacy)
+ *    - Fallback: NEXT_PUBLIC_ATLAS_API_URL / ATLAS_API_URL (preferred), then NEXT_PUBLIC_STACK_API_URL / NEXT_PUBLIC_STACK_URL (legacy)
  * 3. Default base URL if none of the above are specified
  *
  * The function also ensures the URL doesn't end with a trailing slash
@@ -121,12 +141,12 @@ export function getBaseUrl(userSpecifiedBaseUrl: string | { browser: string, ser
     } else {
       url = process.env.NEXT_PUBLIC_SERVER_STACK_API_URL || process.env.NEXT_PUBLIC_STACK_API_URL_SERVER || process.env.STACK_API_URL_SERVER;
     }
-    url = url || process.env.NEXT_PUBLIC_STACK_API_URL || process.env.STACK_API_URL || process.env.NEXT_PUBLIC_STACK_URL || defaultBaseUrl;
+    url = url || process.env.NEXT_PUBLIC_ATLAS_API_URL || process.env.ATLAS_API_URL || process.env.NEXT_PUBLIC_STACK_API_URL || process.env.STACK_API_URL || process.env.NEXT_PUBLIC_STACK_URL || defaultBaseUrl;
   }
 
   return url.endsWith('/') ? url.slice(0, -1) : url;
 }
-const defaultBaseUrl = "https://api.stack-auth.com";
+const defaultBaseUrl = "https://api.opendex.com";
 
 export type TokenObject = {
   accessToken: string | null,

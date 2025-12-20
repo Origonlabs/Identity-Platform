@@ -1,6 +1,6 @@
 {
-  "title": "Stack Auth",
-  "description": "Stack Auth Documentation",
+  "title": "Atlas Identity Platform",
+  "description": "Atlas Identity Platform Documentation",
   "root": true,
   "pages": [
     "overview",

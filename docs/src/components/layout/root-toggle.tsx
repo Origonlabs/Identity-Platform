@@ -32,10 +32,10 @@ const platformColors: Record<string, string> = {
   'React': 'rgb(16, 185, 129)', // Green
   'JavaScript': 'rgb(245, 158, 11)', // Yellow
   'Python': 'rgb(168, 85, 247)', // Purple
-  'Stack Auth Next.js': 'rgb(59, 130, 246)',
-  'Stack Auth React': 'rgb(16, 185, 129)',
-  'Stack Auth JavaScript': 'rgb(245, 158, 11)',
-  'Stack Auth Python': 'rgb(168, 85, 247)',
+  'Atlas Identity Platform Next.js': 'rgb(59, 130, 246)',
+  'Atlas Identity Platform React': 'rgb(16, 185, 129)',
+  'Atlas Identity Platform JavaScript': 'rgb(245, 158, 11)',
+  'Atlas Identity Platform Python': 'rgb(168, 85, 247)',
 };
 
 function getPlatformColor(title: ReactNode): string {

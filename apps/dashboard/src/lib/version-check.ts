@@ -22,8 +22,8 @@ export type VersionCheckOptions = {
  */
 export function shouldShowNonSevereVersionCheck(): boolean {
   // IMPORTANT: THIS ENVIRONMENT VARIABLE IS UNDOCUMENTED AND NOT MEANT FOR PRODUCTION USAGE
-  // AND YOU SHOULD ALWAYS KEEP STACK AUTH UP TO DATE. WE CAN'T APPLY SECURITY UPDATES IF
-  // YOU DON'T UPDATE STACK AUTH REGULARLY.
+  // AND YOU SHOULD ALWAYS KEEP ATLAS IDENTITY PLATFORM UP TO DATE. WE CAN'T APPLY SECURITY UPDATES IF
+  // YOU DON'T UPDATE REGULARLY.
   return getPublicEnvVar('NEXT_PUBLIC_VERSION_ALERTER_SEVERE_ONLY') !== "true";
 }
 
@@ -38,7 +38,7 @@ export function shouldDisplayVersionResult(
 }
 
 /**
- * Common utility function for checking version against Stack Auth API
+ * Common utility function for checking version against Atlas Identity Platform API
  * Used by both VersionAlerter and StackCompanion components
  */
 export function checkVersion(
@@ -52,7 +52,7 @@ export function checkVersion(
   } = options;
 
   // Skip check for managed hosting
-  if (typeof window !== "undefined" && window.location.origin === "https://app.stack-auth.com") {
+  if (typeof window !== "undefined" && window.location.origin === "https://dashboard.opendex.com") {
     return () => {}; // Return cleanup function
   }
 
@@ -63,7 +63,7 @@ export function checkVersion(
       await wait(delay);
       if (cancelled) return;
 
-      const res = await fetch(`https://api.stack-auth.com/api/v1/check-version`, {
+      const res = await fetch(`https://api.opendex.com/api/v1/check-version`, {
         method: "POST",
         body: JSON.stringify({ clientVersion: packageJson.version }),
         headers: {

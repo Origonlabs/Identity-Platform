@@ -2,7 +2,7 @@ import { it } from "../helpers";
 import { createApp } from "./js-helpers";
 
 
-it("should be able to create and update user api keys", async ({ expect }) => {
+it("should be able to create and update user api keys", { timeout: 40_000 }, async ({ expect }) => {
   const { clientApp } = await createApp({
     config: {
       allowTeamApiKeys: true,
@@ -100,8 +100,6 @@ it("should be able to create and update user api keys", async ({ expect }) => {
     ]
   `);
 
-}, {
-  timeout: 40_000,
 });
 
 it("should be able to get user by api key from server app", async ({ expect }) => {
@@ -262,7 +260,7 @@ it("should be able to revoke an API key from the server", async ({ expect }) => 
   expect(userAfterRevoke).toBeNull();
 });
 
-it("should be able to create a team, add an API key, and get the team from the API key", async ({ expect }) => {
+it("should be able to create a team, add an API key, and get the team from the API key", { timeout: 40_000 }, async ({ expect }) => {
   const { clientApp, serverApp } = await createApp({
     config: {
       allowTeamApiKeys: true,
@@ -318,8 +316,6 @@ it("should be able to create a team, add an API key, and get the team from the A
   // Verify the team details match
   expect(teamByApiKey.id).toBe(team.id);
   expect(teamByApiKey.displayName).toBe("Test Team");
-}, {
-  timeout: 40_000,
 });
 
 it("should not be able to get a user with a team API key", async ({ expect }) => {
@@ -482,4 +478,3 @@ it("should not allow team members without manage API key permission to manage te
   // Try to list team API keys - should fail
   await expect(team_from_member.listApiKeys()).rejects.toThrow();
 });
-

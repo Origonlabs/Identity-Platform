@@ -1,7 +1,7 @@
 import IntegrationConfirmPage from "../../oauth-confirm-page";
 
 export const metadata = {
-  title: "Stack Auth OAuth",
+  title: "Atlas Identity Platform OAuth",
 };
 
 export default async function Page(props: { searchParams: Promise<{ interaction_uid: string }> }) {

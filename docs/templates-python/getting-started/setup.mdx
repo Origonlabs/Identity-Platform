@@ -6,15 +6,15 @@ title: Setup
 Welcome to the Python setup guide. If you're looking for guides for other frameworks, check out the [Next.js SDK Setup](/next/getting-started/setup), [React SDK Setup](/react/getting-started/setup), or the [JavaScript SDK Setup](/js/getting-started/setup).
 </Info>
 
-Our recommended way to use Stack Auth with Python is with the [REST API](../rest-api/overview.mdx). It provides a fully documented way to interact with Stack Auth from any Python framework, including Flask, FastAPI, and Django.
+Our recommended way to use Atlas Identity Platform with Python is with the [REST API](../rest-api/overview.mdx). It provides a fully documented way to interact with Atlas Identity Platform from any Python framework, including Flask, FastAPI, and Django.
 
-For the purpose of this guide, we will use the `requests` library to make HTTP requests to the Stack Auth API. If you haven't already, you can install it in your environment with `pip install requests`.
+For the purpose of this guide, we will use the `requests` library to make HTTP requests to the Atlas Identity Platform API. If you haven't already, you can install it in your environment with `pip install requests`.
 
 <Steps>
   <Step>
     ### Create API keys
 
-    First, create an account on [the Stack Auth dashboard](https://app.stack-auth.com/projects), and copy your project ID, publishable client key, and secret server key into a safe place (eg. environment variables).
+    First, create an account on [the Atlas Identity Platform dashboard](https://dashboard.opendex.com/projects), and copy your project ID, publishable client key, and secret server key into a safe place (eg. environment variables).
 
     From there, you can access them in your Python code. You can then read them like this:
 
@@ -30,7 +30,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
   <Step>
     ### Make a request
 
-    Next, create a helper function to make requests to the Stack Auth API:
+    Next, create a helper function to make requests to the Atlas Identity Platform API:
 
     ```python
     import requests
@@ -38,7 +38,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
     def stack_auth_request(method, endpoint, **kwargs):
       res = requests.request(
         method,
-        f'https://api.stack-auth.com/{endpoint}',
+        f'https://api.opendex.com/{endpoint}',
         headers={
           'x-stack-access-type': 'server',  # or 'client' if you're only accessing the client API
           'x-stack-project-id': stack_project_id,
@@ -49,7 +49,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
         **kwargs,
       )
       if res.status_code >= 400:
-        raise Exception(f"Stack Auth API request failed with {res.status_code}: {res.text}")
+        raise Exception(f"Atlas Identity Platform API request failed with {res.status_code}: {res.text}")
       return res.json()
 
     print(stack_auth_request('GET', '/api/v1/projects/current'))
@@ -61,7 +61,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
 
     If you're building a backend server, most likely you'll want to use the currently signed in user's access token. Most normally, you would send this with all your requests to the backend in an HTTP header.
 
-    In Stack Auth's JavaScript SDK, you can retrieve the access token [from the `stackClientApp` object](/sdk/types/user#currentusergetauthjson). Then, you can use said access token to make requests to Stack Auth:
+    In Atlas Identity Platform's JavaScript SDK, you can retrieve the access token [from the `stackClientApp` object](/sdk/types/user#currentusergetauthjson). Then, you can use said access token to make requests to Atlas Identity Platform:
 
     ```python
     access_token = # access token retrieved from the JavaScript SDK
@@ -81,7 +81,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
         return request.headers.get('x-stack-access-token')
     ```
 
-    **Use the access token with Stack Auth:**
+    **Use the access token with Atlas Identity Platform:**
 
     ```python
     def get_current_user_from_token(access_token):
@@ -116,7 +116,7 @@ For the purpose of this guide, we will use the `requests` library to make HTTP r
 
 ## Next steps
 
-Now that you have Stack Auth set up in your Python application, you can:
+Now that you have Atlas Identity Platform set up in your Python application, you can:
 
 1. **[User Authentication](../concepts/user-authentication.mdx)** - Learn how to sign up and sign in users
 2. **[Teams Management](../concepts/teams-management.mdx)** - Implement team functionality

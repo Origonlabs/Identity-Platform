@@ -235,7 +235,7 @@ export default function McpBrowserPage() {
         </div>
 
         <p className="text-muted-foreground">
-          Browse Stack Auth documentation through the Model Context Protocol server.
+          Browse Atlas Identity Platform documentation through the Model Context Protocol server.
           Found <span className="font-medium text-foreground">{docs.length}</span> documentation pages.
         </p>
       </div>

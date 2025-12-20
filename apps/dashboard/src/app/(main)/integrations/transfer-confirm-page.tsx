@@ -91,21 +91,21 @@ export default function IntegrationProjectTransferConfirmPageClient(props: { typ
         </h1>
         {state === 'success' && <>
           <Typography className="text-sm">
-            {props.type === "neon" ? "Neon" : "A third party"} would like to transfer a Stack Auth project and link it to your own account. This will let you access the project from Stack Auth&apos;s dashboard.
+            {props.type === "neon" ? "Neon" : "A third party"} would like to transfer an Atlas Identity Platform project and link it to your own account. This will let you access the project from the Atlas Identity Platform dashboard.
           </Typography>
           {user ? (
             <>
               <Typography className="mb-3 text-sm">
-                Which Stack Auth account would you like to transfer the project to? (You&apos;ll still be able to access your project from {props.type === "neon" ? "Neon" : "the third party"}&apos;s dashboard.)
+                Which Atlas Identity Platform account would you like to transfer the project to? (You&apos;ll still be able to access your project from {props.type === "neon" ? "Neon" : "the third party"}&apos;s dashboard.)
               </Typography>
               <Input type="text" disabled prefixItem={<Logo noLink width={15} height={15} />} value={`Signed in as ${user.primaryEmail || user.displayName || "Unnamed user"}`} />
-              <Button variant="secondary" onClick={async () => await user.signOut({ redirectUrl: signUpUrl })}>
+              <Button variant="secondary" onClick={async () => { await user.signOut({ redirectUrl: signUpUrl }); }}>
                 Switch account
               </Button>
             </>
           ) : (
             <Typography className="text-sm">
-              To continue, please sign in or create a Stack Auth account.
+              To continue, please sign in or create an Atlas Identity Platform account.
             </Typography>
           )}
         </>}

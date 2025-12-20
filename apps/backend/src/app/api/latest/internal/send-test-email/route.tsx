@@ -50,8 +50,8 @@ export const POST = createSmartRouteHandler({
         secure: isSecureEmailPort(body.email_config.port),
       },
       to: body.recipient_email,
-      subject: "Test Email from Stack Auth",
-      text: "This is a test email from Stack Auth. If you successfully received this email, your email server configuration is working correctly.",
+      subject: "Test Email from Atlas Identity Platform",
+      text: "This is a test email from Atlas Identity Platform. If you successfully received this email, your email server configuration is working correctly.",
     }), 10000);
 
 

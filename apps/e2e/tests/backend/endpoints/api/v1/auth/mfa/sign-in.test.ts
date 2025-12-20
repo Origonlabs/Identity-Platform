@@ -2,7 +2,8 @@ import { generateTOTP } from "@oslojs/otp";
 import { it } from "../../../../../../helpers";
 import { Auth, backendContext, niceBackendFetch } from "../../../../../backend-helpers";
 
-it("should sign in users with MFA enabled", async ({ expect }) => {
+// the TOTP code may expire right as we try to use it; retry the test once for this rare case
+it("should sign in users with MFA enabled", { retry: 1 }, async ({ expect }) => {
   const passwordRes = await Auth.Password.signUpWithEmail();
   const { totpSecret } = await Auth.Mfa.setupTotpMfa();
   await Auth.signOut();
@@ -57,10 +58,6 @@ it("should sign in users with MFA enabled", async ({ expect }) => {
     },
   });
   await Auth.expectToBeSignedIn();
-}, {
-  // the TOTP code may expire right as we try to use it
-  // for this rare case, retry the test once
-  retry: 1,
 });
 
 it("should reject invalid attempt codes", async ({ expect }) => {

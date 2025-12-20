@@ -26,18 +26,18 @@ import { CSPostHogProvider, UserIdentity } from './providers';
 export const metadata: Metadata = {
   metadataBase: new URL(getPublicEnvVar('NEXT_PUBLIC_STACK_API_URL') || ''),
   title: {
-    default: 'Stack Auth Dashboard',
-    template: '%s | Stack Auth',
+    default: 'Atlas Identity Platform Dashboard',
+    template: '%s | Atlas Identity Platform',
   },
-  description: 'Stack Auth is the open-source Auth0 alternative, and the fastest way to add authentication to your web app.',
+  description: 'Atlas Identity Platform is the open-source Auth0 alternative, and the fastest way to add authentication to your web app.',
   openGraph: {
-    title: 'Stack Auth Dashboard',
-    description: 'Stack Auth is the open-source Auth0 alternative, and the fastest way to add authentication to your web app.',
+    title: 'Atlas Identity Platform Dashboard',
+    description: 'Atlas Identity Platform is the open-source Auth0 alternative, and the fastest way to add authentication to your web app.',
     images: [`${getPublicEnvVar('NEXT_PUBLIC_STACK_API_URL')}/open-graph-image.png`]
   },
   twitter: {
-    title: 'Stack Auth Dashboard',
-    description: 'Stack Auth is the open-source Auth0 alternative, and the fastest way to add authentication to your web app.',
+    title: 'Atlas Identity Platform Dashboard',
+    description: 'Atlas Identity Platform is the open-source Auth0 alternative, and the fastest way to add authentication to your web app.',
     images: [`${getPublicEnvVar('NEXT_PUBLIC_STACK_API_URL')}/open-graph-image.png`]
   },
 };

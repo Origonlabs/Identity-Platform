@@ -53,7 +53,7 @@ async function main() {
 
     // Update server URL for Fumadocs
     openApiSchemaObject.servers = [{
-      url: 'https://api.stack-auth.com/api/v1',
+      url: 'https://api.opendex.com/api/v1',
       description: 'Stack REST API',
     }];
 
@@ -79,7 +79,10 @@ async function main() {
   console.log("Successfully updated Fumadocs OpenAPI schemas with proper audience filtering");
 }
 
-main().catch((...args) => {
-  console.error(`ERROR! Could not update Fumadocs OpenAPI schema`, ...args);
-  process.exit(1);
-});
+main().then(
+  () => {},
+  (error) => {
+    console.error(`ERROR! Could not update Fumadocs OpenAPI schema`, error);
+    process.exit(1);
+  },
+);

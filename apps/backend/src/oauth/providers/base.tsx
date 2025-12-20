@@ -161,7 +161,7 @@ export abstract class OAuthBaseProvider {
         throw new KnownErrors.OAuthProviderAccessDenied();
       }
       if (error?.error === 'invalid_client') {
-        throw new StatusError(400, `Invalid client credentials for this OAuth provider. Please ensure the configuration in the Stack Auth dashboard is correct.`);
+        throw new StatusError(400, `Invalid client credentials for this OAuth provider. Please ensure the configuration in the Atlas Identity Platform dashboard is correct.`);
       }
       if (error?.error === 'unauthorized_scope_error') {
         const scopeMatch = error?.error_description?.match(/Scope &quot;([^&]+)&quot; is not authorized for your application/);

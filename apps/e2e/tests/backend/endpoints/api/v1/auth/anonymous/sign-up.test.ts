@@ -1,3 +1,4 @@
+import * as jose from "jose";
 import { it } from "../../../../../../helpers";
 import { Auth, Project, niceBackendFetch } from "../../../../../backend-helpers";
 
@@ -59,6 +60,26 @@ it("allows anonymous users to sign up on newly created projects", async ({ expec
       "headers": Headers { <some fields may have been hidden> },
     }
   `);
+});
+
+it("assigns a tenant (selected_team_id) on sign-up when create_team_on_sign_up is enabled", async ({ expect }) => {
+  await Project.createAndSwitch({ config: { create_team_on_sign_up: true } });
+  const res = await niceBackendFetch("/api/v1/auth/anonymous/sign-up", {
+    accessType: "client",
+    method: "POST",
+  });
+
+  const payload = jose.decodeJwt(res.body.access_token);
+  expect(payload.selected_team_id).toEqual(expect.any(String));
+
+  const me = await niceBackendFetch("/api/v1/users/me", {
+    accessType: "client",
+    headers: {
+      "x-stack-access-token": res.body.access_token,
+      "x-stack-allow-anonymous-user": "true",
+    },
+  });
+  expect(me.body.selected_team_id).toEqual(payload.selected_team_id);
 });
 
 it("can still sign up anonymously even if sign ups are disabled", async ({ expect }) => {

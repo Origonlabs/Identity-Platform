@@ -384,13 +384,13 @@ export function Markdown({ src }: { src: string }) {
           </Accordion>
         </ParamField>
         <ParamField path="baseUrl" type="string">
-          The base URL for Stack Auth&apos;s API. Only override this if you are self-hosting Stack Auth. Defaults to `https://api.stack-auth.com`, unless overridden by the `NEXT_PUBLIC_STACK_API_URL` environment variable.
+          The base URL for Atlas Identity Platform&apos;s API. Only override this if you are self-hosting Atlas Identity Platform. Defaults to `https://api.opendex.com`, unless overridden by the `NEXT_PUBLIC_STACK_API_URL` environment variable.
         </ParamField>
         <ParamField path="projectId" type="string">
-          The ID of the project that the app is associated with, as found on Stack Auth&apos;s dashboard. Defaults to the value of the `NEXT_PUBLIC_STACK_PROJECT_ID` environment variable.
+          The ID of the project that the app is associated with, as found on Atlas Identity Platform&apos;s dashboard. Defaults to the value of the `NEXT_PUBLIC_STACK_PROJECT_ID` environment variable.
         </ParamField>
         <ParamField path="publishableClientKey" type="string">
-          The publishable client key of the app, as found on Stack Auth&apos;s dashboard. Defaults to the value of the `NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY` environment variable.
+          The publishable client key of the app, as found on Atlas Identity Platform&apos;s dashboard. Defaults to the value of the `NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY` environment variable.
         </ParamField>
       </>
     ),

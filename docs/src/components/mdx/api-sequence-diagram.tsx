@@ -120,7 +120,7 @@ const initialNodes: Node[] = [
     type: 'actor',
     position: { x: 600, y: 50 },
     data: {
-      label: 'Stack Auth Service',
+      label: 'Atlas Identity Platform Service',
       sections: [
         { highlighted: false, id: 'auth-1' },
         { highlighted: true, id: 'auth-2' },

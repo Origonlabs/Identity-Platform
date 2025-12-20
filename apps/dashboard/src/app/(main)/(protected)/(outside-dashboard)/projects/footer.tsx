@@ -1,6 +1,6 @@
 import { Link } from "@/components/link";
 import { Separator, Typography } from "@stackframe/stack-ui";
-import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer () {
   return (
@@ -11,9 +11,9 @@ export default function Footer () {
         <div className="flex flex-col gap-4 md:flex-1">
           <ul className="flex gap-4 flex-grow">
             {[
-              { href: "https://discord.stack-auth.com/", icon: FaDiscord },
-              { href: "https://www.linkedin.com/company/stackframe-inc", icon: FaLinkedin },
-              { href: "https://github.com/stack-auth/stack-auth", icon: FaGithub },
+              { href: "mailto:support@opendex.com", icon: FaEnvelope },
+              { href: "https://www.linkedin.com/company/opendex-inc", icon: FaLinkedin },
+              { href: "https://github.com/opendex/atlas-identity-platform", icon: FaGithub },
             ].map(({ href, icon: Icon }) => (
               <li key={href}>
                 <Link href={href}>
@@ -26,7 +26,7 @@ export default function Footer () {
 
         <div className="flex gap-4 md:flex-1 md:justify-end flex-wrap">
           {[
-            { href: "https://stack-auth.com", label: "Home" },
+            { href: "https://opendex.com", label: "Home" },
             { href: "https://www.iubenda.com/privacy-policy/19290387", label: "Privacy policy" },
             { href: "https://www.iubenda.com/privacy-policy/19290387/cookie-policy", label: "Cookie policy" },
             { href: "https://www.iubenda.com/terms-and-conditions/19290387", label: "Terms & conditions" },

@@ -1,7 +1,7 @@
 import { apiSource, source } from '../../../lib/source';
 
 export const GET = async () => {
-  const rootUrl = "https://docs.stack-auth.com";
+  const rootUrl = "https://docs.opendex.com";
 
   // Get pages from both sources
   const docsPages = source.getPages();

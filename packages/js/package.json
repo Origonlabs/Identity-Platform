@@ -16,7 +16,7 @@
       }
     }
   },
-  "homepage": "https://stack-auth.com",
+  "homepage": "https://opendex.com",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "clean": "rimraf dist && rimraf node_modules",

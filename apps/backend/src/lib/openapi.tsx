@@ -19,7 +19,7 @@ export function parseOpenAPI(options: {
       version: '1.0.0',
     },
     servers: [{
-      url: 'https://api.stack-auth.com/api/v1',
+      url: 'https://api.opendex.com/api/v1',
       description: 'Stack REST API',
     }],
     paths: Object.fromEntries(
@@ -354,7 +354,7 @@ export function parseOverload(options: {
     parameters: [...queryParameters, ...pathParameters, ...headerParameters],
     requestBody,
     tags: endpointDocumentation.tags ?? ["Others"],
-    'x-full-url': `https://api.stack-auth.com/api/v1${options.path}`,
+    'x-full-url': `https://api.opendex.com/api/v1${options.path}`,
   } as const;
 
   if (!isSchemaStringDescription(options.responseTypeDesc)) {

@@ -187,7 +187,7 @@ function createApiKeyHandlers<Type extends "user" | "team">(type: Type) {
           throw new StackAssertionError("userPrefix must contain only alphanumeric characters and underscores. This is so we can register the API key with security scanners. This should've been checked in the creation schema");
         }
         */
-        const isCloudVersion = new URL(url).hostname === "api.stack-auth.com";  // we only want to enable secret scanning on the cloud version
+        const isCloudVersion = new URL(url).hostname === "api.opendex.com";  // we only want to enable secret scanning on the cloud version
         const isPublic = body.is_public ?? false;
         const apiKeyId = generateUuid();
 

@@ -1,6 +1,6 @@
 ---
 title: API Reference
-description: Complete REST API documentation for Stack Auth
+description: Complete REST API documentation for Atlas Identity Platform
 full: true
 ---
 
@@ -11,7 +11,7 @@ Stack offers a REST API for backends & frontends of any programming language or 
 The following authentication headers are common to every endpoint:
 
 ```http
-curl https://api.stack-auth.com/api/v1/ \
+curl https://api.opendex.com/api/v1/ \
      -H "X-Stack-Access-Type: <either 'client' or 'server'>" \
      -H "X-Stack-Project-Id: <your project UUID>" \
      -H "X-Stack-Publishable-Client-Key: pck_<your publishable client key>" \
@@ -74,7 +74,7 @@ To see how to use these headers in various programming languages, see the [examp
   </Accordion>
 
   <Accordion title="How do I handle API errors?">
-    Stack Auth API returns standard HTTP status codes. Common error responses include:
+    Atlas Identity Platform API returns standard HTTP status codes. Common error responses include:
     
     - `400 Bad Request` - Invalid request parameters
     - `401 Unauthorized` - Invalid or missing authentication
@@ -87,12 +87,12 @@ To see how to use these headers in various programming languages, see the [examp
   </Accordion>
 
   <Accordion title="Are there rate limits?">
-    Yes, Stack Auth implements rate limiting to ensure fair usage and system stability. Rate limits vary by endpoint and access type. When you exceed the rate limit, you'll receive a `429 Too Many Requests` response with headers indicating when you can retry.
+    Yes, Atlas Identity Platform implements rate limiting to ensure fair usage and system stability. Rate limits vary by endpoint and access type. When you exceed the rate limit, you'll receive a `429 Too Many Requests` response with headers indicating when you can retry.
   </Accordion>
 </AccordionGroup>
 
 ## Need Help?
 
 - Check out our [Getting Started Guide](/docs/next/getting-started/setup) for initial setup
-- Visit our [Concepts](/docs/next/concepts) section to understand Stack Auth fundamentals  
-- Join our [Discord community](https://discord.stack-auth.com/) for support and discussions
+- Visit our [Concepts](/docs/next/concepts) section to understand Atlas Identity Platform fundamentals  
+- Join our [Discord community](mailto:support@opendex.com/) for support and discussions

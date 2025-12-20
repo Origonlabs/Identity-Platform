@@ -21,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if ! curl -s --connect-timeout 1 http://localhost:8102 >/dev/null 2>&1; then echo -e '\\n\\n\\033[1;31mCannot reach backend on port 8102! Please run `pnpm run dev` before querying Claude Code\\033[0m\\n\\n' >&2; exit 2; fi"
+            "command": "if ! curl -fsS --connect-timeout 1 http://localhost:8102 >/dev/null 2>&1; then printf '\\n\\n\\033[1;31mCannot reach backend on port 8102. Run pnpm dev (or pnpm dev:basic) if you need it.\\033[0m\\n\\n' >&2; fi"
           }
         ]
       }

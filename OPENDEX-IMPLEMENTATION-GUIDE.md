@@ -48,8 +48,8 @@ Esta guía proporciona instrucciones completas para implementar **Opendex Identi
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/stack-auth/stack-auth.git
-cd stack-auth
+git clone https://github.com/opendex/atlas-identity-platform.git
+cd atlas-identity-platform
 
 # Instalar dependencias
 pnpm install
@@ -73,7 +73,7 @@ nano .env.local
 
 **Variables críticas a configurar:**
 ```env
-# Stack Auth
+# Atlas Identity Platform
 NEXT_PUBLIC_STACK_PROJECT_ID=opendex-corporate
 NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY=tu_clave_publica
 STACK_SECRET_SERVER_KEY=tu_clave_secreta
@@ -512,9 +512,9 @@ du -sh /var/lib/postgresql/
 ## **📞 Soporte y Contacto**
 
 ### **Recursos de Soporte**
-- **Documentación oficial**: https://docs.stack-auth.com
-- **GitHub Issues**: https://github.com/stack-auth/stack-auth/issues
-- **Discord**: https://discord.stack-auth.com
+- **Documentación oficial**: https://docs.opendex.com
+- **GitHub Issues**: https://github.com/opendex/atlas-identity-platform/issues
+- **Soporte**: mailto:support@opendex.com
 
 ### **Contacto Corporativo**
 - **Email**: support@opendex.com

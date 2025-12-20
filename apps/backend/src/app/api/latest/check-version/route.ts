@@ -47,13 +47,13 @@ export const POST = createSmartRouteHandler({
       return err(true, `YOUR VERSION OF STACK AUTH IS SEVERELY OUTDATED. YOU SHOULD UPDATE IT AS SOON AS POSSIBLE. WE CAN'T APPLY SECURITY UPDATES IF YOU DON'T UPDATE STACK AUTH REGULARLY. (your version is v${clientVersion}; the current version is v${serverVersion}).`);
     }
     if (semver.lt(clientVersion, serverVersion)) {
-      return err(false, `You are running an outdated version of Stack Auth (v${clientVersion}; the current version is v${serverVersion}). Please update to the latest version as soon as possible to ensure that you get the latest feature and security updates.`);
+      return err(false, `You are running an outdated version of Atlas Identity Platform (v${clientVersion}; the current version is v${serverVersion}). Please update to the latest version as soon as possible to ensure that you get the latest feature and security updates.`);
     }
     if (semver.gt(clientVersion, serverVersion)) {
-      return err(false, `You are running a version of Stack Auth that is newer than the newest known version (v${clientVersion} > v${serverVersion}). This is weird. Are you running on a development branch?`);
+      return err(false, `You are running a version of Atlas Identity Platform that is newer than the newest known version (v${clientVersion} > v${serverVersion}). This is weird. Are you running on a development branch?`);
     }
     if (clientVersion !== serverVersion) {
-      return err(true, `You are running a version of Stack Auth that is not the same as the newest known version (v${clientVersion} !== v${serverVersion}). Please update to the latest version as soon as possible to ensure that you get the latest feature and security updates.`);
+      return err(true, `You are running a version of Atlas Identity Platform that is not the same as the newest known version (v${clientVersion} !== v${serverVersion}). Please update to the latest version as soon as possible to ensure that you get the latest feature and security updates.`);
     }
 
     return {

@@ -1300,7 +1300,7 @@ export function DocsLayoutSidebar({
               <div className="space-y-2">
                 <DocsSidebarCollapseTrigger />
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-fd-muted-foreground">Stack Auth Docs</span>
+                  <span className="text-xs text-fd-muted-foreground">Atlas Identity Platform Docs</span>
                   <ThemeToggle mode="light-dark" />
                 </div>
               </div>

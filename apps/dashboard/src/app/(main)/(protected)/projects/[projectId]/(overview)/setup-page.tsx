@@ -47,7 +47,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
   const nextJsSteps = [
     {
       step: 2,
-      title: "Install Stack Auth",
+      title: "Install Atlas Identity Platform",
       content: <>
         <Typography>
           In a new or existing Next.js project, run:
@@ -89,7 +89,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
   const reactSteps = [
     {
       step: 2,
-      title: "Install Stack Auth",
+      title: "Install Atlas Identity Platform",
       content: <>
         <Typography>
           In a new or existing React project, run:
@@ -200,10 +200,10 @@ export default function SetupPage(props: { toMetrics: () => void }) {
   const javascriptSteps = [
     {
       step: 2,
-      title: "Install Stack Auth",
+      title: "Install Atlas Identity Platform",
       content: <>
         <Typography>
-          Install Stack Auth using npm:
+          Install Atlas Identity Platform using npm:
         </Typography>
         <CodeBlock
           language="bash"
@@ -338,7 +338,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
       title: "Install requests",
       content: <>
         <Typography>
-          Install the requests library to make HTTP requests to the Stack Auth API:
+          Install the requests library to make HTTP requests to the Atlas Identity Platform API:
         </Typography>
         <CodeBlock
           language="bash"
@@ -363,7 +363,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
       title: "Create helper function",
       content: <>
         <Typography>
-          Create a helper function to make requests to the Stack Auth API:
+          Create a helper function to make requests to the Atlas Identity Platform API:
         </Typography>
         <CodeBlock
           language="python"
@@ -373,7 +373,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
             def stack_auth_request(method, endpoint, **kwargs):
               res = requests.request(
                 method,
-                f'https://api.stack-auth.com/{endpoint}',
+                f'https://api.opendex.com/{endpoint}',
                 headers={
                   'x-stack-access-type': 'server',
                   # You should store these in environment variables
@@ -385,7 +385,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
                 **kwargs,
               )
               if res.status_code >= 400:
-                raise Exception(f"Stack Auth API request failed with {res.status_code}: {res.text}")
+                raise Exception(f"Atlas Identity Platform API request failed with {res.status_code}: {res.text}")
               return res.json()
           `}
           title="stack_auth.py"
@@ -398,7 +398,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
       title: "Make requests",
       content: <>
         <Typography>
-          You can now make requests to the Stack Auth API:
+          You can now make requests to the Atlas Identity Platform API:
         </Typography>
         <CodeBlock
           language="python"
@@ -437,7 +437,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
               Waiting for your first user...
             </div>
             <Typography type="h2">
-              Setup Stack Auth in your codebase
+              Setup Atlas Identity Platform in your codebase
             </Typography>
           </div>
 
@@ -446,7 +446,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
               variant='outline'
               size='sm'
               onClick={() => {
-                window.open('https://docs.stack-auth.com/', '_blank');
+                window.open('https://docs.opendex.com/', '_blank');
               }}
             >
               <Book className="w-4 h-4 mr-2" />

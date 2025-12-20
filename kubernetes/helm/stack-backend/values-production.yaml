@@ -1,0 +1,155 @@
+# Production configuration for Stack Auth Backend
+# Override values.yaml with production-ready settings
+
+replicaCount: 5
+
+image:
+  repository: stackauth/stack-backend
+  pullPolicy: Always
+  tag: "2.8.39"
+
+env:
+  NODE_ENV: production
+  PORT: "8102"
+  LOG_LEVEL: info
+  ENABLE_TELEMETRY: "true"
+  ENABLE_METRICS: "true"
+  TRUST_PROXY: "true"
+  MAX_CONCURRENT_REQUESTS: "1000"
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/limit-rps: "50"
+    nginx.ingress.kubernetes.io/limit-connections: "10"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "8k"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://yourdomain.com"
+  hosts:
+    - host: api.stack-auth.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: stack-backend-tls-prod
+      hosts:
+        - api.stack-auth.com
+
+resources:
+  limits:
+    cpu: 4000m
+    memory: 8Gi
+  requests:
+    cpu: 1000m
+    memory: 2Gi
+
+autoscaling:
+  enabled: true
+  minReplicas: 5
+  maxReplicas: 50
+  targetCPUUtilizationPercentage: 60
+  targetMemoryUtilizationPercentage: 70
+
+postgresql:
+  enabled: true
+  auth:
+    username: stackauth_prod
+    database: stackauth_production
+    existingSecret: postgresql-secret
+  primary:
+    persistence:
+      enabled: true
+      size: 200Gi
+      storageClass: "gp3"
+    resources:
+      limits:
+        cpu: 4000m
+        memory: 8Gi
+      requests:
+        cpu: 2000m
+        memory: 4Gi
+    extraEnvVars:
+      - name: POSTGRESQL_MAX_CONNECTIONS
+        value: "500"
+      - name: POSTGRESQL_SHARED_BUFFERS
+        value: "2GB"
+      - name: POSTGRESQL_EFFECTIVE_CACHE_SIZE
+        value: "6GB"
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+      interval: 30s
+
+redis:
+  enabled: true
+  architecture: standalone
+  auth:
+    enabled: true
+    existingSecret: redis-secret
+  master:
+    persistence:
+      enabled: true
+      size: 50Gi
+      storageClass: "gp3"
+    resources:
+      limits:
+        cpu: 2000m
+        memory: 4Gi
+      requests:
+        cpu: 500m
+        memory: 2Gi
+    extraEnvVars:
+      - name: REDIS_MAXMEMORY
+        value: "3gb"
+      - name: REDIS_MAXMEMORY_POLICY
+        value: "allkeys-lru"
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+
+networkPolicy:
+  enabled: true
+
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 3
+
+serviceMonitor:
+  enabled: true
+  interval: 15s
+  scrapeTimeout: 10s
+
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+    - labelSelector:
+        matchExpressions:
+        - key: app.kubernetes.io/name
+          operator: In
+          values:
+          - stack-backend
+      topologyKey: topology.kubernetes.io/zone
+  nodeAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 100
+      preference:
+        matchExpressions:
+        - key: node.kubernetes.io/instance-type
+          operator: In
+          values:
+          - c5.2xlarge
+          - c6i.2xlarge
+
+backup:
+  enabled: true
+  schedule: "0 2 * * *"
+  retention: 90
+  storageClass: "gp3"

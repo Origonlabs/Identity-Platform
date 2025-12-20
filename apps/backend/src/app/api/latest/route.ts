@@ -34,14 +34,14 @@ export const GET = createSmartRouteHandler({
   response: yupObject({
     statusCode: yupNumber().oneOf([200]).defined(),
     bodyType: yupString().oneOf(["text"]).defined(),
-    body: yupString().defined().meta({ openapiField: { exampleValue: "Welcome to the Stack API endpoint! Please refer to the documentation at https://docs.stack-auth.com/\n\nAuthentication: None" } }),
+    body: yupString().defined().meta({ openapiField: { exampleValue: "Welcome to the Atlas Identity Platform API endpoint! Please refer to the documentation at https://docs.opendex.com/\n\nAuthentication: None" } }),
   }),
   handler: async (req) => {
     return {
       statusCode: 200,
       bodyType: "text",
       body: deindent`
-        Welcome to the Stack API endpoint! Please refer to the documentation at https://docs.stack-auth.com.
+        Welcome to the Atlas Identity Platform API endpoint! Please refer to the documentation at https://docs.opendex.com.
 
         Authentication: ${!req.auth ? "None" : typedCapitalize(req.auth.type) + "\n" + deindent`
         ${"  "}Project: ${req.auth.project.id}

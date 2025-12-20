@@ -46,13 +46,13 @@ Most commonly you get an instance of `StackClientApp` by calling [`useStackApp()
 
 Creates a new `StackClientApp` instance.
 
-Because each app creates a new connection to Stack Auth's backend, you should re-use existing instances wherever possible.
+Because each app creates a new connection to Atlas Identity Platform's backend, you should re-use existing instances wherever possible.
 
 {/* IF_PLATFORM: react-like */}
 <Info type="info">
 This object is not usually constructed directly. More commonly, you would construct a [`StackServerApp`](#stackserverapp) instead, pass it into a [`<StackProvider />`](../../components/stack-provider.mdx), and then use `useStackApp()` hook to obtain a `StackClientApp`.
 
-The [setup wizard](../../getting-started/setup.mdx) does these steps for you, so you don't need to worry about it unless you are manually setting up Stack Auth.
+The [setup wizard](../../getting-started/setup.mdx) does these steps for you, so you don't need to worry about it unless you are manually setting up Atlas Identity Platform.
 
 If you're building a client-only app and don't have a [`SECRET_SERVER_KEY`](../../rest-api/overview#should-i-use-client-or-server-access-type), you can construct a `StackClientApp` directly.
 </Info>
@@ -99,7 +99,7 @@ declare new(options: {
 ```typescript
 const stackClientApp = new StackClientApp({
   tokenStore: "nextjs-cookie",
-  baseUrl: "https://api.stack-auth.com",
+  baseUrl: "https://api.opendex.com",
   projectId: "123",
   publishableClientKey: "123",
   urls: {
@@ -238,7 +238,7 @@ function MyProtectedComponent() {
   // they can just comment out the `useUser` call in their
   // browser's developer console.
   //
-  // For server-side protection, see the Stack Auth documentation.
+  // For server-side protection, see the Atlas Identity Platform documentation.
 
   useUser({ or: "redirect" });
   return <div>You can only see this if you are authenticated</div>;
@@ -550,7 +550,7 @@ exposing [`SECRET_SERVER_KEY`](../../rest-api/overview.mdx) on the client.
     <Accordion title="Show Parameters">
       <Markdown src="../../snippets/stack-app-constructor-options-before-ssk.mdx" />
       <ParamField path="secretServerKey" type="string">
-        The secret server key of the app, as found on Stack Auth's dashboard. Defaults to the value of the `SECRET_SERVER_KEY` environment variable.
+        The secret server key of the app, as found on Atlas Identity Platform's dashboard. Defaults to the value of the `SECRET_SERVER_KEY` environment variable.
       </ParamField>
       <Markdown src="../../snippets/stack-app-constructor-options-after-ssk.mdx" />
     </Accordion>

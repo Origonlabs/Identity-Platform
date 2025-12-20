@@ -1,13 +1,13 @@
 ---
 title: "User Authentication"
-description: "Learn how to implement user authentication in your Python application using Stack Auth's REST API"
+description: "Learn how to implement user authentication in your Python application using Atlas Identity Platform's REST API"
 ---
 
-After creating a [helper function](../getting-started/setup.mdx) to make requests to the Stack Auth API, you can start using the API to authenticate users.
+After creating a [helper function](../getting-started/setup.mdx) to make requests to the Atlas Identity Platform API, you can start using the API to authenticate users.
 
 ## User Authentication
 
-Stack Auth supports multiple authentication methods:
+Atlas Identity Platform supports multiple authentication methods:
 - **Password Authentication** - Email and password
 - **OTP Authentication** - Magic links and one-time passwords via email
 - **OAuth Authentication** - Social logins (GitHub, Google, etc.)
@@ -223,7 +223,7 @@ stack_secret_server_key = os.getenv("STACK_SECRET_SERVER_KEY")
 def stack_auth_request(method, endpoint, **kwargs):
     res = requests.request(
         method,
-        f'https://api.stack-auth.com/{endpoint}',
+        f'https://api.opendex.com/{endpoint}',
         headers={
             'x-stack-access-type': 'server',  # or 'client' if you're only accessing the client API
             'x-stack-project-id': stack_project_id,
@@ -234,7 +234,7 @@ def stack_auth_request(method, endpoint, **kwargs):
         **kwargs,
     )
     if res.status_code >= 400:
-        raise Exception(f"Stack Auth API request failed with {res.status_code}: {res.text}")
+        raise Exception(f"Atlas Identity Platform API request failed with {res.status_code}: {res.text}")
     return res.json()
 
 class StackAuthClient:
@@ -364,7 +364,6 @@ def safe_sign_in(email, password):
 
 
 For more advanced authentication features, check out the [REST API documentation](../rest-api/overview.mdx).
-
 
 
 

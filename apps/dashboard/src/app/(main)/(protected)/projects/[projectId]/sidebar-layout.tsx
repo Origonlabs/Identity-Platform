@@ -317,7 +317,7 @@ const navigationItems: (Label | Item | Hidden)[] = [
     type: 'hidden',
   },
   {
-    name: "Stack Auth Keys",
+    name: "Atlas Identity Platform Keys",
     href: "/api-keys",
     regex: /^\/projects\/[^\/]+\/api-keys$/,
     icon: KeyRound,
@@ -447,7 +447,7 @@ function SidebarContent({ projectId, onNavigate }: { projectId: string, onNaviga
               icon: Book,
               regex: /^$/,
             }}
-            href={"https://docs.stack-auth.com/"}
+            href={"https://docs.opendex.com/"}
           />
         </div>
       </div>

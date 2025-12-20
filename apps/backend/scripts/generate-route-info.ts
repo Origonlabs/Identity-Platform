@@ -9,7 +9,10 @@ async function main() {
   fs.writeFileSync("src/generated/api-versions.json", JSON.stringify(apiVersions, null, 2));
   console.log("Successfully updated route info");
 }
-main().catch((...args) => {
-  console.error(`ERROR! Could not update route info`, ...args);
-  process.exit(1);
-});
+main().then(
+  () => {},
+  (error) => {
+    console.error(`ERROR! Could not update route info`, error);
+    process.exit(1);
+  },
+);

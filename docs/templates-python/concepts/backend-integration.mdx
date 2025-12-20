@@ -1,9 +1,9 @@
 ---
 title: "Backend Integration"
-description: "Learn how to integrate Stack Auth's backend into your Python application"
+description: "Learn how to integrate Atlas Identity Platform's backend into your Python application"
 ---
 
-To authenticate your Python server endpoints, you need to send the user's access token in the headers of the request to your server, and then make a request to Stack Auth's server API to verify the user identity.
+To authenticate your Python server endpoints, you need to send the user's access token in the headers of the request to your server, and then make a request to Atlas Identity Platform's server API to verify the user identity.
 
 ## Sending requests to your server endpoints
 
@@ -24,10 +24,10 @@ const response = await fetch('/api/users/me', {
 
 ## Authenticating users on Python server endpoints
 
-Stack Auth provides two methods for authenticating users on your Python server endpoints:
+Atlas Identity Platform provides two methods for authenticating users on your Python server endpoints:
 
 1. **JWT Verification**: A fast, lightweight approach that validates the user's token locally without making external requests. Ideal for high-performance applications.
-2. **REST API Verification**: Makes a request to Stack Auth's servers to validate the token and retrieve comprehensive user information. Best when you need complete, up-to-date user data.
+2. **REST API Verification**: Makes a request to Atlas Identity Platform's servers to validate the token and retrieve comprehensive user information. Best when you need complete, up-to-date user data.
 
 ### Using JWT
 
@@ -45,7 +45,7 @@ from jwt import PyJWKClient
 from jwt.exceptions import InvalidTokenError
 
 # You can cache this and refresh it with a low frequency
-jwks_client = PyJWKClient("https://api.stack-auth.com/api/v1/projects/<your-project-id>/.well-known/jwks.json")
+jwks_client = PyJWKClient("https://api.opendex.com/api/v1/projects/<your-project-id>/.well-known/jwks.json")
 
 def verify_jwt_token(access_token):
     """
@@ -230,7 +230,7 @@ if access_token:
 
 ## Environment Configuration
 
-As shown in the [setup guide](../getting-started/setup), make sure you have your Stack Auth credentials configured:
+As shown in the [setup guide](../getting-started/setup), make sure you have your Atlas Identity Platform credentials configured:
 
 ```python
 import os
@@ -306,7 +306,7 @@ if not stack_project_id:
 def stack_auth_request(method, endpoint, **kwargs):
     res = requests.request(
         method,
-        f'https://api.stack-auth.com/{endpoint}',
+        f'https://api.opendex.com/{endpoint}',
         headers={
             'x-stack-access-type': 'server',
             'x-stack-project-id': stack_project_id,
@@ -318,11 +318,11 @@ def stack_auth_request(method, endpoint, **kwargs):
         **kwargs,
     )
     if res.status_code >= 400:
-        raise Exception(f"Stack Auth API request failed with {res.status_code}: {res.text}")
+        raise Exception(f"Atlas Identity Platform API request failed with {res.status_code}: {res.text}")
     return res.json()
 
 # JWT verification setup
-jwks_client = PyJWKClient(f"https://api.stack-auth.com/api/v1/projects/{stack_project_id}/.well-known/jwks.json")
+jwks_client = PyJWKClient(f"https://api.opendex.com/api/v1/projects/{stack_project_id}/.well-known/jwks.json")
 
 def verify_jwt_token(access_token):
     """Fast JWT verification - returns basic user info"""

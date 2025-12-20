@@ -233,7 +233,7 @@ it("should fail to transfer project if the user is not signed in", async ({ expe
         "error": deindent\`
           You must specify an access level for this Stack project. Make sure project API keys are provided (eg. x-stack-publishable-client-key) and you set the x-stack-access-type header to 'client', 'server', or 'admin'.
           
-          For more information, see the docs on REST API authentication: https://docs.stack-auth.com/rest-api/overview#authentication
+          For more information, see the docs on REST API authentication: https://docs.opendex.com/rest-api/overview#authentication
         \`,
       },
       "headers": Headers {

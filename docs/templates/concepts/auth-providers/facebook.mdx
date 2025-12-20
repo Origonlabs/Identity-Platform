@@ -2,7 +2,7 @@
 title: "Facebook"
 ---
 
-This guide explains how to set up Facebook as an authentication provider with Stack Auth. Facebook OAuth allows users to sign in to your application using their Facebook account.
+This guide explains how to set up Facebook as an authentication provider with Atlas Identity Platform. Facebook OAuth allows users to sign in to your application using their Facebook account.
 
 
 ## Integration Steps
@@ -20,18 +20,18 @@ This guide explains how to set up Facebook as an authentication provider with St
     7. In the **Finalize** step, select **Go to dashboard**. You'll be redirected to the app's Dashboard page.
     8. In the left sidenav, select **Use cases**.
     9. Next to **Authenticate and request data from users with Facebook Login**, select **Customize**.
-    10. On the Permissions tab, next to **email**, select **Add** to allow Stack Auth to read your user's primary email address.
+    10. On the Permissions tab, next to **email**, select **Add** to allow Atlas Identity Platform to read your user's primary email address.
     11. In the left sidenav, under **Facebook Login**, select **Settings**.
-    12. In the **Client OAuth settings** section, in the **Valid OAuth Redirect URIs** field, add `https://api.stack-auth.com/api/v1/auth/oauth/callback/facebook`
+    12. In the **Client OAuth settings** section, in the **Valid OAuth Redirect URIs** field, add `https://api.opendex.com/api/v1/auth/oauth/callback/facebook`
     13. Select **Save changes**.
     14. In the left sidenav, select **App settings** (hover over the settings icon), and then select **Basic**.
     15. Note your **App ID** and **App Secret** for the next steps.
   </Step>
   
   <Step>
-    ### Enable Facebook OAuth in Stack Auth
+    ### Enable Facebook OAuth in Atlas Identity Platform
     
-    1. On the Stack Auth dashboard, select **Auth Methods** in the left sidebar.
+    1. On the Atlas Identity Platform dashboard, select **Auth Methods** in the left sidebar.
     2. Click **Add SSO Providers** and select **Facebook** as the provider.
     3. Set the **App ID** and **App Secret** you obtained from the Facebook Developers Portal earlier.
   </Step>
@@ -40,4 +40,4 @@ This guide explains how to set up Facebook as an authentication provider with St
 ### Need More Help?
 
 - Check the [Facebook Login Documentation](https://developers.facebook.com/docs/facebook-login/)
-- Join our [Discord](https://discord.stack-auth.com)
+- Join our [Discord](mailto:support@opendex.com)

@@ -364,15 +364,15 @@ export function StackCompanion({ className, onExpandedChange }: StackCompanionPr
                 {activeItem === 'docs' && (
                   <div className="space-y-3">
                     <button
-                      onClick={() => window.open('https://docs.stack-auth.com', '_blank')}
+                      onClick={() => window.open('https://docs.opendex.com', '_blank')}
                       className="w-full bg-muted/30 hover:bg-muted/50 rounded-lg p-4 text-center transition-colors cursor-pointer group"
                     >
                       <BookOpen className="h-6 w-6 mx-auto mb-2 text-blue-600 group-hover:text-blue-700" />
                       <p className="text-xs text-foreground group-hover:text-blue-600 font-medium">
-                        Access Stack Auth Documentation
+                        Access Atlas Identity Platform Documentation
                       </p>
                       <p className="text-[10px] text-muted-foreground mt-1">
-                        Click to open docs.stack-auth.com
+                        Click to open docs.opendex.com
                       </p>
                     </button>
 

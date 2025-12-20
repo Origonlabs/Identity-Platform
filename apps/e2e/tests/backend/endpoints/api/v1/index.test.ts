@@ -14,7 +14,7 @@ describe("without project ID", () => {
       NiceResponse {
         "status": 200,
         "body": deindent\`
-          Welcome to the Stack API endpoint! Please refer to the documentation at https://docs.stack-auth.com.
+          Welcome to the Atlas Identity Platform API endpoint! Please refer to the documentation at https://docs.opendex.com.
           
           Authentication: None
         \`,
@@ -62,7 +62,7 @@ describe("without project ID", () => {
           "error": deindent\`
             The x-stack-access-type header was 'client', but the x-stack-project-id header was not provided.
             
-            For more information, see the docs on REST API authentication: https://docs.stack-auth.com/rest-api/overview#authentication
+            For more information, see the docs on REST API authentication: https://docs.opendex.com/rest-api/overview#authentication
           \`,
         },
         "headers": Headers {
@@ -189,7 +189,7 @@ describe("with internal project ID", async () => {
         NiceResponse {
           "status": 200,
           "body": deindent\`
-            Welcome to the Stack API endpoint! Please refer to the documentation at https://docs.stack-auth.com.
+            Welcome to the Atlas Identity Platform API endpoint! Please refer to the documentation at https://docs.opendex.com.
             
             Authentication: Client
               Project: internal
@@ -208,7 +208,7 @@ describe("with internal project ID", async () => {
         NiceResponse {
           "status": 200,
           "body": deindent\`
-            Welcome to the Stack API endpoint! Please refer to the documentation at https://docs.stack-auth.com.
+            Welcome to the Atlas Identity Platform API endpoint! Please refer to the documentation at https://docs.opendex.com.
             
             Authentication: Server
               Project: internal
@@ -227,7 +227,7 @@ describe("with internal project ID", async () => {
         NiceResponse {
           "status": 200,
           "body": deindent\`
-            Welcome to the Stack API endpoint! Please refer to the documentation at https://docs.stack-auth.com.
+            Welcome to the Atlas Identity Platform API endpoint! Please refer to the documentation at https://docs.opendex.com.
             
             Authentication: Admin
               Project: internal

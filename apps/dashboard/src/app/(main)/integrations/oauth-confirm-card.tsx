@@ -64,7 +64,7 @@ export default function ConfirmCard(props: {
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
         <Typography>
-          You are about to connect your {props.type === "neon" ? "Neon" : "third party"} project with Stack Auth.
+          You are about to connect your {props.type === "neon" ? "Neon" : "third party"} project with Atlas Identity Platform.
         </Typography>
         <Typography className="mb-3">
           Which projects would you like to connect?
@@ -111,14 +111,14 @@ export default function ConfirmCard(props: {
                   </SelectItem>
                 ))}
                 <SelectItem value="create-new">
-                  Create new Stack project...
+                  Create new Atlas project...
                 </SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
         </div>
         <Typography className="text-sm text-muted-foreground mt-3">
-          This will create an API key that gives {props.type === "neon" ? "Neon" : "the third party"} full read and write access to all resources and data in the selected Stack project, including users, roles, and permissions. You can always revoke access in the API Keys section of the Stack Auth dashboard.
+          This will create an API key that gives {props.type === "neon" ? "Neon" : "the third party"} full read and write access to all resources and data in the selected project, including users, roles, and permissions. You can always revoke access in the API Keys section of the Atlas Identity Platform dashboard.
         </Typography>
 
       </CardContent>

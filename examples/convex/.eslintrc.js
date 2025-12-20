@@ -3,7 +3,7 @@ module.exports = {
     "../../configs/eslint/defaults.js",
     "../../configs/eslint/next.js",
   ],
-  "ignorePatterns": ['/*', '!/src'],
+  "ignorePatterns": ['/*', '!/src', '!/app'],
   rules: {
     "import/order": [
       1,

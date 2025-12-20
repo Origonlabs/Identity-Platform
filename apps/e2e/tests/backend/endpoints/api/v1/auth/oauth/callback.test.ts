@@ -190,7 +190,7 @@ it("should fail if an untrusted redirect URL is provided", async ({ expect }) =>
       "status": 400,
       "body": {
         "code": "REDIRECT_URL_NOT_WHITELISTED",
-        "error": "Redirect URL not whitelisted. Did you forget to add this domain to the trusted domains list on the Stack Auth dashboard?",
+        "error": "Redirect URL not whitelisted. Did you forget to add this domain to the trusted domains list on the Atlas Identity Platform dashboard?",
       },
       "headers": Headers {
         "set-cookie": <deleting cookie 'stack-oauth-inner-<stripped cookie name key>' at path '/'>,
@@ -230,7 +230,7 @@ it("should fail if an untrusted redirect URL is provided that is similar to a tr
       "status": 400,
       "body": {
         "code": "REDIRECT_URL_NOT_WHITELISTED",
-        "error": "Redirect URL not whitelisted. Did you forget to add this domain to the trusted domains list on the Stack Auth dashboard?",
+        "error": "Redirect URL not whitelisted. Did you forget to add this domain to the trusted domains list on the Atlas Identity Platform dashboard?",
       },
       "headers": Headers {
         "set-cookie": <deleting cookie 'stack-oauth-inner-<stripped cookie name key>' at path '/'>,

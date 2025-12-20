@@ -44,7 +44,7 @@ function EditDialog(props: {
         <InputField control={form.control} label="Display Name" name="displayName" />
       </>
     )}
-    onSubmit={async (values) => await props.team.update(values)}
+    onSubmit={async (values) => { await props.team.update(values); }}
     cancelButton
   />;
 }

@@ -948,7 +948,7 @@ export function ApiSidebarContent({ pages = [] }: { pages?: PageData[] }) {
             <div className="space-y-2">
               <ApiSidebarCollapseTrigger />
               <div className="flex items-center justify-between">
-                <span className="text-xs text-fd-muted-foreground">Stack Auth API</span>
+                <span className="text-xs text-fd-muted-foreground">Atlas Identity Platform API</span>
                 <ThemeToggle mode="light-dark" />
               </div>
             </div>

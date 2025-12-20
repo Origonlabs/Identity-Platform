@@ -78,7 +78,7 @@ it("should send email notification to user when revoking an API key through cred
     expect(messages).toMatchInlineSnapshot(`
       [
         MailboxMessage {
-          "from": "Stack Auth <noreply@example.com>",
+          "from": "Atlas Identity Platform <noreply@example.com>",
           "subject": "API Key Revoked: Test API Key to Revoke <HTML Test &>",
           "to": ["<unindexed-mailbox--<stripped UUID>@stack-generated.example.com>"],
           <some fields may have been hidden>,
@@ -111,7 +111,7 @@ it("should send email notification to user when revoking an API key through cred
   }
 });
 
-it("should send email notification to team members when revoking a team API key through credential scanning", async ({ expect }: { expect: any }) => {
+it("should send email notification to team members when revoking a team API key through credential scanning", { timeout: 120_000 }, async ({ expect }: { expect: any }) => {
   await Project.createAndSwitch({ config: { magic_link_enabled: true, allow_team_api_keys: true, allow_user_api_keys: true } });
 
   // this test may run longer than the admin access token is valid for, so let's create API keys
@@ -218,7 +218,7 @@ it("should send email notification to team members when revoking a team API key 
                 Please create a new API key if needed.
               \`,
             },
-            "from": "Stack Auth <noreply@example.com>",
+            "from": "Atlas Identity Platform <noreply@example.com>",
             "subject": "API Key Revoked: Test Team API Key to Revoke",
             "to": ["<unindexed-mailbox--<stripped UUID>@stack-generated.example.com>"],
             <some fields may have been hidden>,
@@ -243,7 +243,7 @@ it("should send email notification to team members when revoking a team API key 
                 Please create a new API key if needed.
               \`,
             },
-            "from": "Stack Auth <noreply@example.com>",
+            "from": "Atlas Identity Platform <noreply@example.com>",
             "subject": "API Key Revoked: Test Team API Key to Revoke",
             "to": ["<unindexed-mailbox--<stripped UUID>@stack-generated.example.com>"],
             <some fields may have been hidden>,
@@ -253,7 +253,7 @@ it("should send email notification to team members when revoking a team API key 
 
       expect(user3_revocation_email).toMatchInlineSnapshot(`[]`);
     }
-}, { timeout: 120_000 });
+});
 
 it("should handle already revoked API keys gracefully", async ({ expect }: { expect: any }) => {
   await Project.createAndSwitch({ config: { magic_link_enabled: true, allow_team_api_keys: true, allow_user_api_keys: true } });

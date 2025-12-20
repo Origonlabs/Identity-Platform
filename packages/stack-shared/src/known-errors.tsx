@@ -268,7 +268,7 @@ const AccessTypeWithoutProjectId = createKnownErrorConstructor(
     deindent`
       The x-stack-access-type header was '${accessType}', but the x-stack-project-id header was not provided.
       
-      For more information, see the docs on REST API authentication: https://docs.stack-auth.com/rest-api/overview#authentication
+      For more information, see the docs on REST API authentication: https://docs.opendex.com/rest-api/overview#authentication
     `,
     {
       request_type: accessType,
@@ -285,7 +285,7 @@ const AccessTypeRequired = createKnownErrorConstructor(
     deindent`
       You must specify an access level for this Stack project. Make sure project API keys are provided (eg. x-stack-publishable-client-key) and you set the x-stack-access-type header to 'client', 'server', or 'admin'.
       
-      For more information, see the docs on REST API authentication: https://docs.stack-auth.com/rest-api/overview#authentication
+      For more information, see the docs on REST API authentication: https://docs.opendex.com/rest-api/overview#authentication
     `,
   ] as const,
   () => [] as const,
@@ -783,7 +783,7 @@ const RedirectUrlNotWhitelisted = createKnownErrorConstructor(
   "REDIRECT_URL_NOT_WHITELISTED",
   () => [
     400,
-    "Redirect URL not whitelisted. Did you forget to add this domain to the trusted domains list on the Stack Auth dashboard?",
+    "Redirect URL not whitelisted. Did you forget to add this domain to the trusted domains list on the Atlas Identity Platform dashboard?",
   ] as const,
   () => [] as const,
 );

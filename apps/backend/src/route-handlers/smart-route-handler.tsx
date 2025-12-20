@@ -136,10 +136,15 @@ export function handleApiRequest(handler: (req: NextRequest, options: any, reque
             if (!disableExtendedLogging) console.debug(`For the error above with request ID ${requestId}, the full error is:`, errorToNiceString(statusError));
           }
 
+          const statusErrorBody = statusError.getBody();
+          const binaryBody = statusErrorBody instanceof Uint8Array
+            ? Uint8Array.from(statusErrorBody).buffer.slice(0)
+            : statusErrorBody;
+
           const res = await createResponse(req, requestId, {
             statusCode: statusError.statusCode,
             bodyType: "binary",
-            body: statusError.getBody(),
+            body: binaryBody,
             headers: {
               ...statusError.getHeaders(),
             },

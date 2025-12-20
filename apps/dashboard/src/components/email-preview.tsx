@@ -61,6 +61,8 @@ function EmailPreviewContent({
   return (
     <iframe
       srcDoc={previewHtml}
+      sandbox="allow-popups"
+      referrerPolicy="no-referrer"
       className="w-full h-full border-0"
       title="Email Preview"
     />

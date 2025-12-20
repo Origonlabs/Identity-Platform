@@ -4,14 +4,14 @@ import { grantDefaultProjectPermissions } from "@/lib/permissions";
 import { ensureTeamMembershipExists, ensureUserExists } from "@/lib/request-checks";
 import { Tenancy, getSoleTenancyFromProjectBranch, getTenancy } from "@/lib/tenancies";
 import { PrismaTransaction } from "@/lib/types";
-import { sendTeamMembershipDeletedWebhook, sendUserCreatedWebhook, sendUserDeletedWebhook, sendUserUpdatedWebhook } from "@/lib/webhooks";
+import { sendTeamCreatedWebhook, sendTeamMembershipDeletedWebhook, sendUserCreatedWebhook, sendUserDeletedWebhook, sendUserUpdatedWebhook } from "@/lib/webhooks";
 import { triggerWorkflows } from "@/lib/workflows";
 import { RawQuery, getPrismaClientForSourceOfTruth, getPrismaClientForTenancy, getPrismaSchemaForSourceOfTruth, getPrismaSchemaForTenancy, globalPrismaClient, rawQuery, retryTransaction, sqlQuoteIdent } from "@/prisma-client";
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
 import { uploadAndGetUrl } from "@/s3";
 import { log } from "@/utils/telemetry";
 import { runAsynchronouslyAndWaitUntil } from "@/utils/vercel";
-import { BooleanTrue, Prisma, PrismaClient } from "@prisma/client";
+import { BooleanTrue, Prisma } from "@prisma/client";
 import { KnownErrors } from "@stackframe/stack-shared";
 import { currentUserCrud } from "@stackframe/stack-shared/dist/interface/crud/current-user";
 import { UsersCrud, usersCrud } from "@stackframe/stack-shared/dist/interface/crud/users";
@@ -23,7 +23,8 @@ import { hashPassword, isPasswordHashValid } from "@stackframe/stack-shared/dist
 import { has } from "@stackframe/stack-shared/dist/utils/objects";
 import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
 import { isUuid } from "@stackframe/stack-shared/dist/utils/uuids";
-import { teamPrismaToCrud, teamsCrudHandlers } from "../teams/crud";
+import { addUserToTeam } from "../team-memberships/crud";
+import { teamPrismaToCrud } from "../teams/crud";
 
 export const userFullInclude = {
   projectUserOAuthAccounts: true,
@@ -58,30 +59,46 @@ const getPersonalTeamDisplayName = (userDisplayName: string | null, userPrimaryE
 
 const personalTeamDefaultDisplayName = "Personal Team";
 
-async function createPersonalTeamIfEnabled(prisma: PrismaClient, tenancy: Tenancy, user: UsersCrud["Admin"]["Read"]) {
-  if (tenancy.config.teams.createPersonalTeamOnSignUp) {
-    const team = await teamsCrudHandlers.adminCreate({
-      data: {
-        display_name: getPersonalTeamDisplayName(user.display_name, user.primary_email),
-        creator_user_id: 'me',
-      },
-      tenancy: tenancy,
-      user,
-    });
-
-    await prisma.teamMember.update({
-      where: {
-        tenancyId_projectUserId_teamId: {
-          tenancyId: tenancy.id,
-          projectUserId: user.id,
-          teamId: team.id,
-        },
-      },
-      data: {
-        isSelected: BooleanTrue.TRUE,
-      },
-    });
+async function createPersonalTeamIfEnabledInTx(tx: PrismaTransaction, options: {
+  tenancy: Tenancy,
+  userId: string,
+  userDisplayName: string | null,
+  userPrimaryEmail: string | null,
+}) {
+  if (!options.tenancy.config.teams.createPersonalTeamOnSignUp) {
+    return null;
   }
+
+  const team = await tx.team.create({
+    data: {
+      displayName: getPersonalTeamDisplayName(options.userDisplayName, options.userPrimaryEmail),
+      mirroredProjectId: options.tenancy.project.id,
+      mirroredBranchId: options.tenancy.branchId,
+      tenancyId: options.tenancy.id,
+    },
+  });
+
+  await addUserToTeam(tx, {
+    tenancy: options.tenancy,
+    teamId: team.teamId,
+    userId: options.userId,
+    type: 'creator',
+  });
+
+  await tx.teamMember.update({
+    where: {
+      tenancyId_projectUserId_teamId: {
+        tenancyId: options.tenancy.id,
+        projectUserId: options.userId,
+        teamId: team.teamId,
+      },
+    },
+    data: {
+      isSelected: BooleanTrue.TRUE,
+    },
+  });
+
+  return team;
 }
 
 export const userPrismaToCrud = (
@@ -514,7 +531,7 @@ export const usersCrudHandlers = createLazyProxy(() => createCrudHandlers(usersC
 
     const passwordHash = await getPasswordHashFromData(data);
     const prisma = await getPrismaClientForTenancy(auth.tenancy);
-    const result = await retryTransaction(prisma, async (tx) => {
+    const { userResult, createdPersonalTeam } = await retryTransaction(prisma, async (tx) => {
       await checkAuthData(tx, {
         tenancyId: auth.tenancy.id,
         primaryEmail: primaryEmail,
@@ -630,6 +647,13 @@ export const usersCrudHandlers = createLazyProxy(() => createCrudHandlers(usersC
         userId: newUser.projectUserId
       });
 
+      const personalTeam = await createPersonalTeamIfEnabledInTx(tx, {
+        tenancy: auth.tenancy,
+        userId: newUser.projectUserId,
+        userDisplayName: data.display_name === undefined ? (newUser.displayName ?? null) : (data.display_name || null),
+        userPrimaryEmail: primaryEmail ?? null,
+      });
+
       const user = await tx.projectUser.findUnique({
         where: {
           tenancyId_projectUserId: {
@@ -644,25 +668,33 @@ export const usersCrudHandlers = createLazyProxy(() => createCrudHandlers(usersC
         throw new StackAssertionError("User was created but not found", newUser);
       }
 
-      return userPrismaToCrud(user, await getUserLastActiveAtMillis(auth.project.id, auth.branchId, user.projectUserId) ?? user.createdAt.getTime());
+      return {
+        userResult: userPrismaToCrud(user, await getUserLastActiveAtMillis(auth.project.id, auth.branchId, user.projectUserId) ?? user.createdAt.getTime()),
+        createdPersonalTeam: personalTeam ? teamPrismaToCrud(personalTeam) : null,
+      };
     });
 
-    await createPersonalTeamIfEnabled(prisma, auth.tenancy, result);
+    if (createdPersonalTeam) {
+      runAsynchronouslyAndWaitUntil(sendTeamCreatedWebhook({
+        projectId: auth.project.id,
+        data: createdPersonalTeam,
+      }));
+    }
 
     // if the user is not an anonymous user, trigger onSignUp workflows
-    if (!result.is_anonymous) {
+    if (!userResult.is_anonymous) {
       await triggerWorkflows(auth.tenancy, {
         type: "sign-up",
-        userId: result.id,
+        userId: userResult.id,
       });
     }
 
     runAsynchronouslyAndWaitUntil(sendUserCreatedWebhook({
       projectId: auth.project.id,
-      data: result,
+      data: userResult,
     }));
 
-    return result;
+    return userResult;
   },
   onUpdate: async ({ auth, data, params }) => {
     const primaryEmail = data.primary_email ? normalizeEmail(data.primary_email) : data.primary_email;

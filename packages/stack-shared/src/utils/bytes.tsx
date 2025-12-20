@@ -118,7 +118,7 @@ export function encodeBase64(input: Uint8Array): string {
 export function decodeBase64(input: string): Uint8Array {
   return new Uint8Array(atob(input).split("").map((char) => char.charCodeAt(0)));
 }
-import.meta.vitest?.test("encodeBase64/decodeBase64", ({ expect }) => {
+import.meta.vitest?.test("encodeBase64/decodeBase64", { timeout: 30000 }, ({ expect }) => {
   const testCases = [
     { input: new Uint8Array([72, 101, 108, 108, 111]), expected: "SGVsbG8=" },
     { input: new Uint8Array([0, 1, 2, 3, 4]), expected: "AAECAwQ=" },
@@ -165,8 +165,6 @@ import.meta.vitest?.test("encodeBase64/decodeBase64", ({ expect }) => {
 
   // Test invalid input for decodeBase64
   expect(() => decodeBase64("invalid!")).toThrow();
-}, {
-  timeout: 30000,
 });
 
 export function encodeBase64Url(input: Uint8Array): string {

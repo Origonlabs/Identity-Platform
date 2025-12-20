@@ -36,7 +36,7 @@ async function extractOpenApiDetails(content: string, page: { data: { title: str
 
           if (methodSpec) {
             // Add human-readable summary first
-            const fullUrl = methodSpec['x-full-url'] || `https://api.stack-auth.com/api/v1${opPath}`;
+            const fullUrl = methodSpec['x-full-url'] || `https://api.opendex.com/api/v1${opPath}`;
 
             apiDetails += `\n## ${method.toUpperCase()} ${opPath}\n`;
             apiDetails += `**Full URL:** ${fullUrl}\n`;
@@ -121,7 +121,7 @@ const handler = createMcpHandler(
   async (server) => {
     server.tool(
       "list_available_docs",
-      "Use this tool to learn about what Stack Auth is, available documentation, and see if you can use it for what you're working on. It returns a list of all available Stack Auth Documentation pages.",
+      "Use this tool to learn about what Atlas Identity Platform is, available documentation, and see if you can use it for what you're working on. It returns a list of all available Atlas Identity Platform documentation pages.",
       {},
       async ({}) => {
         nodeClient?.capture({
@@ -136,7 +136,7 @@ const handler = createMcpHandler(
     );
     server.tool(
       "get_docs_by_id",
-      "Use this tool to retrieve a specific Stack Auth Documentation page by its ID. It gives you the full content of the page so you can know exactly how to use specific Stack Auth APIs. Whenever using Stack Auth, you should always check the documentation first to have the most up-to-date information. When you write code using Stack Auth documentation you should reference the content you used in your comments.",
+      "Use this tool to retrieve a specific Atlas Identity Platform documentation page by its ID. It gives you the full content of the page so you can know exactly how to use specific Atlas Identity Platform APIs. Whenever using Atlas Identity Platform, you should always check the documentation first to have the most up-to-date information. When you write code using Atlas Identity Platform documentation you should reference the content you used in your comments.",
       { id: z.string() },
       async ({ id }) => {
         nodeClient?.capture({
@@ -238,7 +238,7 @@ const handler = createMcpHandler(
     );
     server.tool(
       "get_stack_auth_setup_instructions",
-      "Use this tool when the user wants to set up authentication in a new project. It provides step-by-step instructions for installing and configuring Stack Auth authentication.",
+      "Use this tool when the user wants to set up authentication in a new project. It provides step-by-step instructions for installing and configuring Atlas Identity Platform authentication.",
       {},
       async ({}) => {
         nodeClient?.capture({
@@ -278,11 +278,11 @@ const handler = createMcpHandler(
       tools: {
         listAvailableDocs: {
           description:
-            "Use this tool to learn about what Stack Auth is, available documentation, and see if you can use it for what you're working on. It returns a list of all available Stack Auth Documentation pages.",
+            "Use this tool to learn about what Atlas Identity Platform is, available documentation, and see if you can use it for what you're working on. It returns a list of all available Atlas Identity Platform documentation pages.",
         },
         getDocById: {
           description:
-            "Use this tool to retrieve a specific Stack Auth Documentation page by its ID. It gives you the full content of the page so you can know exactly how to use specific Stack Auth APIs. Whenever using Stack Auth, you should always check the documentation first to have the most up-to-date information. When you write code using Stack Auth documentation you should reference the content you used in your comments.",
+            "Use this tool to retrieve a specific Atlas Identity Platform documentation page by its ID. It gives you the full content of the page so you can know exactly how to use specific Atlas Identity Platform APIs. Whenever using Atlas Identity Platform, you should always check the documentation first to have the most up-to-date information. When you write code using Atlas Identity Platform documentation you should reference the content you used in your comments.",
           parameters: {
             type: "object",
             properties: {
@@ -296,7 +296,7 @@ const handler = createMcpHandler(
         },
         getStackAuthSetupInstructions: {
           description:
-            "Use this tool when the user wants to set up Stack Auth in a new project. It provides step-by-step instructions for installing and configuring Stack Auth authentication, including environment setup, file scaffolding, and verification steps.",
+            "Use this tool when the user wants to set up Atlas Identity Platform in a new project. It provides step-by-step instructions for installing and configuring Atlas Identity Platform authentication, including environment setup, file scaffolding, and verification steps.",
           parameters: {
             type: "object",
             properties: {},

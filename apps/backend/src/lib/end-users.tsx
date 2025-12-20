@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 
 // An end user is a person sitting behind a computer screen.
 //
-// For example, if my-stack-app.com is using Stack Auth, and person A is on my-stack-app.com and sends a server action
+// For example, if my-stack-app.com is using Atlas Identity Platform, and person A is on my-stack-app.com and sends a server action
 // to server B of my-stack-app.com, then the end user is person A, not server B.
 //
 // An end user is not the same as a ProjectUser. For example, if person A is not logged into
@@ -22,7 +22,7 @@ import { headers } from "next/headers";
  * (potentially of a VPN/proxy) or `undefined`.
  *
  * Note that the "end user" refers to the user sitting behind a computer screen; for example, if my-stack-app.com is
- * using Stack Auth, and person A is on my-stack-app.com and sends a server action to server B of my-stack-app.com,
+ * using Atlas Identity Platform, and person A is on my-stack-app.com and sends a server action to server B of my-stack-app.com,
  * then the end user IP address is the address of the computer of person A, not server B.
  *
  * If we can determine that the request is coming from a browser, we try to read the IP address from the proxy headers.

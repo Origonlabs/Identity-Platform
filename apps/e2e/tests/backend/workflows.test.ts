@@ -48,7 +48,7 @@ async function waitForServerMetadataNotNull(userId: string, key: string) {
   throw new Error(`Server metadata for user ${userId} with key ${key} not found after ${waitRetries} tries`);
 }
 
-test("onSignUp workflow sends email for client sign-up", async ({ expect }) => {
+test("onSignUp workflow sends email for client sign-up", { timeout: 60_000 }, async ({ expect }) => {
   await Project.createAndSwitch();
   await InternalApiKey.createAndSetProjectKeys();
   const mailbox = await bumpEmailAddress({ unindexed: true });
@@ -101,11 +101,9 @@ test("onSignUp workflow sends email for client sign-up", async ({ expect }) => {
       },
     ]
   `);
-}, {
-  timeout: 60_000,
 });
 
-test("onSignUp workflow can schedule callbacks", async ({ expect }) => {
+test("onSignUp workflow can schedule callbacks", { timeout: 60_000 }, async ({ expect }) => {
   await Project.createAndSwitch();
   await InternalApiKey.createAndSetProjectKeys();
   const mailbox = await bumpEmailAddress({ unindexed: true });
@@ -157,11 +155,9 @@ test("onSignUp workflow can schedule callbacks", async ({ expect }) => {
       },
     ]
   `);
-}, {
-  timeout: 60_000,
 });
 
-test("onSignUp workflow sends email for server-created user", async ({ expect }) => {
+test("onSignUp workflow sends email for server-created user", { timeout: 60_000 }, async ({ expect }) => {
   await Project.createAndSwitch();
   await InternalApiKey.createAndSetProjectKeys();
 
@@ -200,11 +196,9 @@ test("onSignUp workflow sends email for server-created user", async ({ expect })
       },
     ]
   `);
-}, {
-  timeout: 60_000,
 });
 
-test("disabled workflows do not trigger", async ({ expect }) => {
+test("disabled workflows do not trigger", { timeout: 90_000 }, async ({ expect }) => {
   await Project.createAndSwitch();
   await InternalApiKey.createAndSetProjectKeys();
   const mailbox = await bumpEmailAddress({ unindexed: true });
@@ -236,11 +230,9 @@ test("disabled workflows do not trigger", async ({ expect }) => {
       },
     ]
   `);
-}, {
-  timeout: 90_000,
 });
 
-test("compile/runtime errors in one workflow don't block others", async ({ expect }) => {
+test("compile/runtime errors in one workflow don't block others", { timeout: 60_000 }, async ({ expect }) => {
   await Project.createAndSwitch();
   await InternalApiKey.createAndSetProjectKeys();
   const mailbox = await bumpEmailAddress({ unindexed: true });
@@ -286,11 +278,9 @@ test("compile/runtime errors in one workflow don't block others", async ({ expec
       },
     ]
   `);
-}, {
-  timeout: 60_000,
 });
 
-test("anonymous sign-up does not trigger; upgrade triggers workflow", async ({ expect }) => {
+test("anonymous sign-up does not trigger; upgrade triggers workflow", { timeout: 90_000 }, async ({ expect }) => {
   await Project.createAndSwitch();
   await InternalApiKey.createAndSetProjectKeys();
   const markerKey = `wfMarker-${crypto.randomUUID()}`;
@@ -324,11 +314,9 @@ test("anonymous sign-up does not trigger; upgrade triggers workflow", async ({ e
   const me2 = await niceBackendFetch("/api/v1/users/me", { accessType: "server" });
   expect(me2.body.is_anonymous).toBe(false);
   expect(me2.body.server_metadata?.[markerKey]).toBe(me2.body.primary_email);
-}, {
-  timeout: 90_000,
 });
 
-test("workflow source changes take effect for subsequent sign-ups", async ({ expect }) => {
+test("workflow source changes take effect for subsequent sign-ups", { timeout: 90_000 }, async ({ expect }) => {
   await Project.createAndSwitch();
   await InternalApiKey.createAndSetProjectKeys();
   const markerKey = `versionMarker-${crypto.randomUUID()}`;
@@ -368,6 +356,4 @@ test("workflow source changes take effect for subsequent sign-ups", async ({ exp
   await waitForServerMetadataNotNull("me", markerKey);
   const me2 = await niceBackendFetch("/api/v1/users/me", { accessType: "server" });
   expect(me2.body.server_metadata?.[markerKey]).toBe("v2");
-}, {
-  timeout: 90_000,
 });

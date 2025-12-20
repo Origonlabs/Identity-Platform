@@ -1,7 +1,7 @@
 import { it, localRedirectUrl } from "../helpers";
 import { createApp } from "./js-helpers";
 
-it("adds provider_scope from oauthScopesOnSignIn for authenticate flow", async ({ expect }) => {
+it("adds provider_scope from oauthScopesOnSignIn for authenticate flow", { timeout: 40_000 }, async ({ expect }) => {
   const { clientApp } = await createApp(
     {
       config: {
@@ -62,6 +62,5 @@ it("adds provider_scope from oauthScopesOnSignIn for authenticate flow", async (
   const redirectUrl = new URL(response.headers.get("location")!);
   const scope = decodeURIComponent(redirectUrl.searchParams.get("scope")!);
   expect(scope).toBe("user:email repo");
-}, { timeout: 40_000 });
-
+});
 

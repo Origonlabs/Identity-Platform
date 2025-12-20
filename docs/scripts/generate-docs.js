@@ -188,7 +188,7 @@ function generateMetaFiles() {
       // If this is the root meta.json, customize it for the platform
       if (metaFile === 'meta.json') {
         metaData.title = platformDisplayName;
-        metaData.description = `Stack Auth for ${platformDisplayName} applications`;
+        metaData.description = `Atlas Identity Platform for ${platformDisplayName} applications`;
         metaData.root = true;
 
         // Filter pages based on platform configuration

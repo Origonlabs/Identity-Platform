@@ -2,25 +2,25 @@
 title: Self-host
 ---
 
-Stack Auth is fully open-source and can be self-hosted on your own infrastructure. This guide will introduce each component of the project and how to set them up.
+Atlas Identity Platform is fully open-source and can be self-hosted on your own infrastructure. This guide will introduce each component of the project and how to set them up.
 
 <Info>
 If you are unsure whether you should self-host, here are some things to consider:
 
-- **Complexity**: Stack Auth is a complex project with many interdependent services. Self-hosting requires managing these services and ensuring they work together seamlessly.
-- **Updates**: Stack Auth is a rapidly evolving project with frequent feature and fix releases. Self-hosting requires you to manage updates and apply them timely.
+- **Complexity**: Atlas Identity Platform is a complex project with many interdependent services. Self-hosting requires managing these services and ensuring they work together seamlessly.
+- **Updates**: Atlas Identity Platform is a rapidly evolving project with frequent feature and fix releases. Self-hosting requires you to manage updates and apply them timely.
 - **Reliability**: Self-hosting requires you to ensure the reliability of your infrastructure. Downtimes and outages can be costly to handle.
 - **Security**: Self-hosting requires ensuring the security of your infrastructure. A compromised service can affect your users.
 
-For most users, we recommend using [Stack Auth's cloud hosted solution](https://app.stack-auth.com). However, if you understand the above challenges and are comfortable managing them, follow the instructions below to self-host!
+For most users, we recommend using [Atlas Identity Platform's cloud hosted solution](https://dashboard.opendex.com). However, if you understand the above challenges and are comfortable managing them, follow the instructions below to self-host!
 </Info>
 
 ## Services
 
-On a high level, Stack Auth is composed of the following services:
-- **API backend**: The core of Stack Auth, providing the REST API that the dashboard and your app connect to. This is what [api.stack-auth.com](https://api.stack-auth.com) provides.
-- **Dashboard**: The interface for managing users, teams, auth methods, etc. This is available at [app.stack-auth.com](https://app.stack-auth.com).
-- **Client SDK**: An SDK used to connect your app to the Stack Auth API backend, wrapping API calls and providing easy-to-use interfaces. More details [here](../getting-started/setup.mdx).
+On a high level, Atlas Identity Platform is composed of the following services:
+- **API backend**: The core of Atlas Identity Platform, providing the REST API that the dashboard and your app connect to. This is what [api.opendex.com](https://api.opendex.com) provides.
+- **Dashboard**: The interface for managing users, teams, auth methods, etc. This is available at [dashboard.opendex.com](https://dashboard.opendex.com).
+- **Client SDK**: An SDK used to connect your app to the Atlas Identity Platform API backend, wrapping API calls and providing easy-to-use interfaces. More details [here](../getting-started/setup.mdx).
 - **Postgres database**: Used to store all user data. We use [Prisma](https://prisma.io) as the ORM and manage the database schema migrations.
 - **Svix**: Used to send webhooks. Svix is open-source and can be self-hosted, but also offers a cloud hosted solution. More on Svix [here](https://svix.com)
 - **Email server**: We use [Inbucket](https://inbucket.org) as a local email server for development and a separate SMTP server for production. Any email service supporting SMTP will work.
@@ -28,14 +28,14 @@ On a high level, Stack Auth is composed of the following services:
 
 ## Run with Docker
 
-Stack Auth provides a [pre-configured Docker](https://hub.docker.com/r/stackauth/server) image that bundles the dashboard and API backend into a single container. To complete the setup, you'll need to provide your own PostgreSQL database, and optionally configure an email server and Svix instance for webhooks.
+Atlas Identity Platform provides a [pre-configured Docker](https://hub.docker.com/r/stackauth/server) image that bundles the dashboard and API backend into a single container. To complete the setup, you'll need to provide your own PostgreSQL database, and optionally configure an email server and Svix instance for webhooks.
 
 1. Use a cloud hosted Postgres or start a example Postgres database. Don't use this setting in production:
   ```sh
   docker run -d --name db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password -e POSTGRES_DB=stackframe -p 5432:5432 postgres:latest
   ```
 
-2. Get the [example environment file](https://github.com/stack-auth/stack-auth/tree/main/docker/server/.env.example) and modify it to your needs (for security, you MUST edit at least the `STACK_SERVER_SECRET` value). You must also supply a `STACK_FREESTYLE_API_KEY` in order to send emails with Stack Auth (can be generated on [freestyle](https://freestyle.sh)). See the [full template here](https://github.com/stack-auth/stack-auth/blob/dev/docker/server/.env).
+2. Get the [example environment file](https://github.com/opendex/atlas-identity-platform/tree/main/docker/server/.env.example) and modify it to your needs (for security, you MUST edit at least the `STACK_SERVER_SECRET` value). You must also supply a `STACK_FREESTYLE_API_KEY` in order to send emails with Atlas Identity Platform (can be generated on [freestyle](https://freestyle.sh)). See the [full template here](https://github.com/opendex/atlas-identity-platform/blob/dev/docker/server/.env).
 
 3. Run the Docker container:
   ```sh
@@ -51,7 +51,7 @@ Stack Auth provides a [pre-configured Docker](https://hub.docker.com/r/stackauth
 
 Now you can open the dashboard at [http://localhost:8101](http://localhost:8101) and the API backend on port 8102.
 
-Now, login with your admin account on the dashboard and follow the [normal setup process](../getting-started/setup.mdx). Add `NEXT_PUBLIC_STACK_API_URL=https://your-backend-url.com` to your app's environment variables so that it connects to your API backend instead of the default Stack Auth API backend (https://api.stack-auth.com).
+Now, login with your admin account on the dashboard and follow the [normal setup process](../getting-started/setup.mdx). Add `NEXT_PUBLIC_STACK_API_URL=https://your-backend-url.com` to your app's environment variables so that it connects to your API backend instead of the default Atlas Identity Platform API backend (https://api.opendex.com).
 
 ## Local development
 
@@ -60,7 +60,7 @@ Now, login with your admin account on the dashboard and follow the [normal setup
 Clone the repository and check out the directory:
 
 ```sh
-git clone git@github.com:stack-auth/stack.git
+git clone git@github.com:opendex/atlas-identity-platform.git
 cd stack
 ```
 
@@ -109,7 +109,7 @@ Deploy these services with your preferred platform. Copy the URLs/API keys—you
 Clone the repository and check out the root directory:
 
 ```sh
-git clone git@github.com:stack-auth/stack.git
+git clone git@github.com:opendex/atlas-identity-platform.git
 cd stack
 ```
 
@@ -128,7 +128,7 @@ pnpm start:backend
 Clone the repository (if you are running it on a separate server, or skip this step if you are using the same server as the API backend) and check out the dashboard directory:
 
 ```sh
-git clone git@github.com:stack-auth/stack.git
+git clone git@github.com:opendex/atlas-identity-platform.git
 cd stack
 ```
 
@@ -156,4 +156,4 @@ To manage your dashboard configs with this account, manually go into the databas
 
 Go back to the dashboard, refresh the page, and you should see the "Stack Dashboard" project. We recommend disabling new user sign-ups to your internal project to avoid unauthorized account and project creations.
 
-Now, create a new project for your app and follow the [normal setup process](../getting-started/setup.mdx). Add `NEXT_PUBLIC_STACK_API_URL=https://your-backend-url.com` to your app's environment variables so that it connects to your API backend instead of the default Stack Auth API backend (https://api.stack-auth.com).
+Now, create a new project for your app and follow the [normal setup process](../getting-started/setup.mdx). Add `NEXT_PUBLIC_STACK_API_URL=https://your-backend-url.com` to your app's environment variables so that it connects to your API backend instead of the default Atlas Identity Platform API backend (https://api.opendex.com).

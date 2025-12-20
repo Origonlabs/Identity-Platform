@@ -837,7 +837,7 @@ You can call `useUser()` or `stackServerApp.getUser()` to get the `CurrentUser` 
           <ParamField path="isPublic" type="boolean">
             Whether the API key is public. Defaults to false.
             
-            - **Secret API Keys** (default) begin with `sk_` and are monitored by Stack Auth's secret scanner, which can revoke them if detected in public code repositories.
+            - **Secret API Keys** (default) begin with `sk_` and are monitored by Atlas Identity Platform's secret scanner, which can revoke them if detected in public code repositories.
             - **Public API Keys** begin with `pk_` and are designed for client-side code where exposure is not a concern.
           </ParamField>
         </Accordion>
@@ -1440,7 +1440,7 @@ The `ServerUser` object contains most `CurrentUser` properties and methods with 
           <ParamField path="isPublic" type="boolean">
             Whether the API key is public. Defaults to false.
             
-            - **Secret API Keys** (default) begin with `sk_` and are monitored by Stack Auth's secret scanner, which can revoke them if detected in public code repositories.
+            - **Secret API Keys** (default) begin with `sk_` and are monitored by Atlas Identity Platform's secret scanner, which can revoke them if detected in public code repositories.
             - **Public API Keys** begin with `pk_` and are designed for client-side code where exposure is not a concern.
           </ParamField>
         </Accordion>

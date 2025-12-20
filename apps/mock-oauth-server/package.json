@@ -4,8 +4,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "tsx src/index.ts",
-    "dev": "tsx watch --clear-screen=false src/index.ts",
+    "start": "node --import tsx src/index.ts",
+    "dev": "node --import tsx --watch src/index.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "clean": "rimraf dist && rimraf node_modules"

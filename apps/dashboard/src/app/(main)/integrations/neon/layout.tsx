@@ -1,6 +1,6 @@
 
 export const metadata = {
-  title: "Neon x Stack Auth",
+  title: "Neon x Atlas Identity Platform",
 };
 
 export default async function Page(props: { children: React.ReactNode }) {

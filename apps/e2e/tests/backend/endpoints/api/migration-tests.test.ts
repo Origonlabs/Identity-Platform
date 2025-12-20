@@ -18,9 +18,9 @@ describe("SmartRouteHandler", () => {
         NiceResponse {
           "status": 404,
           "body": deindent\`
-            404 — this page does not exist in Stack Auth's API.
+            404 — this page does not exist in Atlas Identity Platform's API.
             
-            Please see the API documentation at https://docs.stack-auth.com, or visit the Stack Auth dashboard at https://app.stack-auth.com.
+            Please see the API documentation at https://docs.opendex.com, or visit the dashboard at https://dashboard.opendex.com.
             
             URL: http://localhost:8102/api/v1/migration-tests/smart-route-handler
           \`,
@@ -333,4 +333,3 @@ describe("SmartRouteHandler", () => {
     });
   });
 });
-

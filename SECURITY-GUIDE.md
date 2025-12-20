@@ -1329,7 +1329,7 @@ EOF
 
 ### 📖 Documentación Técnica
 
-- **Stack Auth Security**: https://docs.stack-auth.com/security
+- **Atlas Identity Platform Security**: https://docs.opendex.com/security
 - **PostgreSQL Security**: https://www.postgresql.org/docs/current/security.html
 - **Nginx Security**: https://nginx.org/en/docs/http/ngx_http_ssl_module.html
 - **AWS Security**: https://aws.amazon.com/security/

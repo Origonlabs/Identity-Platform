@@ -8,8 +8,8 @@ import EnableFetchDelay from "./enable-fetch-delay";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stack Auth Partial Prerendering Demo",
-  description: "A demo of Stack's partial prerendering capabilities.",
+  title: "Atlas Identity Platform Partial Prerendering Demo",
+  description: "A demo of Atlas Identity Platform's partial prerendering capabilities.",
 };
 
 export default function RootLayout({

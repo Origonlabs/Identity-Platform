@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useSidebar } from '../layouts/sidebar-context';
 import { MessageFormatter } from './message-formatter';
 
-// Stack Auth Icon Component (just the icon, not full logo)
+// Atlas Identity Platform Icon Component (just the icon, not full logo)
 function StackIcon({ size = 20, className }: { size?: number, className?: string }) {
   return (
     <svg
@@ -52,7 +52,7 @@ const ToolCallDisplay = ({
         </span>
         {docId && (
           <a
-            href={`https://docs.stack-auth.com${encodeURI(
+            href={`https://docs.opendex.com${encodeURI(
               (String(docId).startsWith('/') ? String(docId) : `/${String(docId)}`)
             )}`}
             target="_blank"
@@ -248,7 +248,7 @@ export function AIChatDrawer() {
       // Gather only essential context
       const context = {
         message: message,
-        username: 'Stack Auth Docs User',
+        username: 'Atlas Identity Platform Docs User',
         metadata: {
           sessionId: sessionId,
           messageNumber: newMessageCount,
@@ -295,7 +295,7 @@ export function AIChatDrawer() {
     {
       title: "Getting Started",
       description: "Setup and installation",
-      prompt: "How do I get started with Stack Auth?"
+      prompt: "How do I get started with Atlas Identity Platform?"
     },
     {
       title: "Next.js Integration",
@@ -305,7 +305,7 @@ export function AIChatDrawer() {
     {
       title: "Authentication Methods",
       description: "Available options",
-      prompt: "What authentication methods does Stack Auth support?"
+      prompt: "What authentication methods does Atlas Identity Platform support?"
     }
   ];
 
@@ -332,7 +332,7 @@ export function AIChatDrawer() {
         <div className="flex items-center gap-2">
           <StackIcon size={18} className="text-fd-primary" />
           <div>
-            <h3 className="font-medium text-fd-foreground text-sm">Stack Auth AI</h3>
+            <h3 className="font-medium text-fd-foreground text-sm">Atlas Identity Platform AI</h3>
             <p className="text-xs text-fd-muted-foreground">Documentation assistant</p>
           </div>
         </div>
@@ -365,7 +365,7 @@ export function AIChatDrawer() {
         <p className="text-xs text-fd-muted-foreground">
           <span className="text-yellow-600 dark:text-yellow-400 font-medium">Experimental:</span> AI responses may not always be accurate—please verify important details.<br />
           <br />
-          For the most accurate information, please <a href="https://discord.stack-auth.com" className="text-fd-primary hover:underline">join our Discord</a> or <a href="mailto:team@stack-auth.com" className="text-fd-primary hover:underline">email us</a>.
+          For the most accurate information, please <a href="mailto:support@opendex.com" className="text-fd-primary hover:underline">join our Discord</a> or <a href="mailto:support@opendex.com" className="text-fd-primary hover:underline">email us</a>.
         </p>
       </div>
 
@@ -376,7 +376,7 @@ export function AIChatDrawer() {
             <StackIcon size={24} className="text-fd-muted-foreground mx-auto mb-3" />
             <h3 className="font-medium text-fd-foreground mb-2 text-sm">How can I help?</h3>
             <p className="text-fd-muted-foreground text-xs mb-4">
-              Ask me about Stack Auth while you browse the docs.
+              Ask me about Atlas Identity Platform while you browse the docs.
             </p>
             <div className="space-y-1.5">
               {starterPrompts.map((starter, index) => (
@@ -490,7 +490,7 @@ export function AIChatDrawer() {
                     target: { value },
                   } as React.ChangeEvent<HTMLInputElement>);
                 }}
-                data-placeholder="Ask about Stack Auth..."
+                data-placeholder="Ask about Atlas Identity Platform..."
               />
             </div>
             <button

@@ -73,7 +73,7 @@ function resolveOnQuestionMode(opt: string): OnQuestionMode {
 const program = new Command();
 program
   .name(packageJson.name)
-  .description("Stack Auth Initialization Tool")
+  .description("Atlas Identity Platform Initialization Tool")
   .version(packageJson.version)
   .argument("[project-path]", "Path to your project")
   .usage(`[project-path] [options]`)
@@ -93,7 +93,7 @@ program
   .option("--no-browser", "Don't open browser for environment variable setup")
   .option("--on-question <mode>", "How to handle interactive questions: ask | guess | error | default", "default")
   .addHelpText('after', `
-For more information, please visit https://docs.stack-auth.com/getting-started/setup`);
+For more information, please visit https://docs.opendex.com`);
 
 program.parse();
 
@@ -159,7 +159,7 @@ const commandsExecuted: string[] = [];
 const packagesToInstall: string[] = [];
 const writeFileHandlers: Array<() => Promise<void>> = [];
 const nextSteps: string[] = [
-  `Create an account and Stack Auth API key for your project on https://app.stack-auth.com`,
+  `Create an account and API keys for your project on https://dashboard.opendex.com`,
 ];
 
 
@@ -275,7 +275,7 @@ async function main(): Promise<void> {
     }
     nextSteps.push(
       `Copy the environment variables from the new API key into your own environment and reference them in ${appFiles.join(" and ")}`,
-      `Follow the instructions on how to use Stack Auth's vanilla SDK at http://docs.stack-auth.com/others/js-client`,
+      `Follow the instructions on how to use the JavaScript SDK at https://docs.opendex.com`,
     );
   }
 
@@ -359,16 +359,16 @@ ${colorize.green`Successfully installed Stack! 🚀🚀🚀`}
 ${colorize.bold`Next steps:`}
 
 1. ${noBrowser ?
-      `Create a project at https://app.stack-auth.com and get your API keys` :
+      `Create a project at https://dashboard.opendex.com and get your API keys` :
       `Complete the setup in your browser to get your API keys`}
 2. Add the API keys to your .env.local file
 3. Import the Stack components in your app
 4. Add authentication to your app
 
-For more information, please visit https://docs.stack-auth.com/getting-started/setup
+For more information, please visit https://docs.opendex.com
   `.trim());
   if (!noBrowser) {
-    await open(`https://app.stack-auth.com/wizard-congrats?stack-init-id=${encodeURIComponent(distinctId)}`);
+    await open(`https://dashboard.opendex.com/wizard-congrats?stack-init-id=${encodeURIComponent(distinctId)}`);
   }
   await ph_client.shutdown();
 }
@@ -397,7 +397,7 @@ main().catch(async (err) => {
   console.log(colorize.red`===============================================`);
   console.error();
   console.error(
-    "If you need assistance, please try installing Stack manually as described in https://docs.stack-auth.com/getting-started/setup or join our Discord where we're happy to help: https://discord.stack-auth.com"
+    "If you need assistance, please try installing Atlas manually as described in https://docs.opendex.com or contact support@opendex.com"
   );
   if (!(err instanceof UserError)) {
     console.error("");
@@ -578,16 +578,16 @@ const Steps = {
     ];
     if (potentialEnvLocations.every((p) => !fs.existsSync(p))) {
       const envContent = noBrowser
-        ? "# Stack Auth keys\n" +
+        ? "# Atlas Identity Platform keys\n" +
         "# To get these variables:\n" +
-        "# 1. Go to https://app.stack-auth.com\n" +
+        "# 1. Go to https://dashboard.opendex.com\n" +
         "# 2. Create a new project\n" +
         "# 3. Copy the keys below\n" +
         `NEXT_PUBLIC_STACK_PROJECT_ID="${projectIdFromArgs ?? ""}"\n` +
         `NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY="${publishableClientKeyFromArgs ?? ""}"\n` +
         "STACK_SECRET_SERVER_KEY=\n"
-        : "# Stack Auth keys\n" +
-        "# Get these variables by creating a project on https://app.stack-auth.com.\n" +
+        : "# Atlas Identity Platform keys\n" +
+        "# Get these variables by creating a project on https://dashboard.opendex.com.\n" +
         `NEXT_PUBLIC_STACK_PROJECT_ID="${projectIdFromArgs ?? ""}"\n` +
         `NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY="${publishableClientKeyFromArgs ?? ""}"\n` +
         "STACK_SECRET_SERVER_KEY=\n";
@@ -670,7 +670,7 @@ const Steps = {
       ? `process.env.STACK_PUBLISHABLE_CLIENT_KEY ${publishableClientKeyFromArgs ? `|| ${JSON.stringify(publishableClientKeyFromArgs)}` : ""}`
       : `'${publishableClientKeyFromArgs ?? 'INSERT_YOUR_PUBLISHABLE_CLIENT_KEY_HERE'}'`;
     const jsOptions = type === "js" ? [
-      `\n\n${indentation}// get your Stack Auth API keys from https://app.stack-auth.com${clientOrServer === "client" ? ` and store them in a safe place (eg. environment variables)` : ""}`,
+      `\n\n${indentation}// get your API keys from https://dashboard.opendex.com${clientOrServer === "client" ? ` and store them in a safe place (eg. environment variables)` : ""}`,
       `${projectIdFromArgs ? `${indentation}projectId: ${JSON.stringify(projectIdFromArgs)},` : ""}`,
       `${indentation}publishableClientKey: ${publishableClientKeyWrite},`,
       `${clientOrServer === "server" ? `${indentation}secretServerKey: process.env.STACK_SECRET_SERVER_KEY,` : ""}`,
@@ -797,7 +797,7 @@ ${indentation}tokenStore: ${tokenStore},${jsOptions}${nextClientOptions}
       {
         type: "confirm",
         name: "ready",
-        message: `Found a ${typeString} project at ${projectPath} — ready to install Stack Auth?`,
+        message: `Found a ${typeString} project at ${projectPath} — ready to install Atlas Identity Platform?`,
         default: true,
       },
     ])).ready;
@@ -819,7 +819,7 @@ ${indentation}tokenStore: ${tokenStore},${jsOptions}${nextClientOptions}
     return (await inquirer.prompt([{
       type: "list",
       name: "type",
-      message: "Do you want to use Stack Auth on the server, or on the client?",
+      message: "Do you want to use Atlas Identity Platform on the server, or on the client?",
       choices: [
         { name: "Client (eg. Vite, HTML)", value: ["client"] },
         { name: "Server (eg. Node.js)", value: ["server"] },

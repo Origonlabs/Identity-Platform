@@ -2,11 +2,11 @@
 
 The language in this file is very technical, if you're struggling, put it into ChatGPT and see if it can help you (with the usual hallucination disclaimer).
  
-## Generic format vs. Stack Auth
+## Generic format vs. Atlas Identity Platform
 
-The config format is generally usable and not specific to Stack Auth.
+The config format is generally usable and not specific to Atlas Identity Platform.
 
-All the logic required for generic usage of the config format are in `format/`. The other files in this folder are specific to Stack Auth's usage of it.
+All the logic required for generic usage of the config format are in `format/`. The other files in this folder are specific to Atlas Identity Platform's usage of it.
 
 ## Terminology
 
@@ -14,8 +14,8 @@ All the logic required for generic usage of the config format are in `format/`. 
 - Config: Any config, as described in stack-info
 - Normalized config: A config without `null` fields and dot notation
 
-**Stack Auth**: There are four levels, project, branch, environment, organization.
-- Base config: The defaults that come with Stack Auth
+**Atlas Identity Platform**: There are four levels, project, branch, environment, organization.
+- Base config: The defaults that come with Atlas Identity Platform
 - `$Level` config override: Overrides that are applied to the base config (in the following order: project -> branch -> environment -> organization)
 - `$Level` incomplete config: The base config after some overrides have been applied
 - `$Level` rendered config: An incomplete config with those fields removed that can be overridden by a future override, deeply merged into the defaults and sanitized (using `apply{$Level}DefaultsAndSanitize`), and then normalized

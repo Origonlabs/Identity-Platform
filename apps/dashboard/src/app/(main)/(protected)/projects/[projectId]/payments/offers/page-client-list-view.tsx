@@ -575,7 +575,7 @@ function WelcomeScreen({ onCreateOffer }: { onCreateOffer: () => void }) {
         )}
         title="Welcome to Payments!"
         description={[
-          <>Stack Auth Payments is built on two primitives: offers and items.</>,
+          <>Atlas Identity Platform Payments is built on two primitives: offers and items.</>,
           <>Offers are what customers buy — the columns of your pricing table. Each offer has one or more prices and may or may not include items.</>,
           <>Items are what customers receive — the rows of your pricing table. A user can hold multiple of the same item. Items are powerful; they can unlock feature access, raise limits, or meter consumption for usage-based billing.</>,
           <>Create your first offer to get started!</>,

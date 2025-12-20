@@ -6,7 +6,7 @@ import { api } from "../../convex/_generated/api";
 export default function Home({
   preloaded,
 }: {
-  preloaded: Preloaded<typeof api.myFunctions.listNumbers>;
+  preloaded: Preloaded<typeof api.myFunctions.listNumbers>,
 }) {
   const data = usePreloadedQuery(preloaded);
   const addNumber = useMutation(api.myFunctions.addNumber);
@@ -21,7 +21,12 @@ export default function Home({
       <button
         className="bg-foreground text-background px-4 py-2 rounded-md mx-auto"
         onClick={() => {
-          void addNumber({ value: Math.floor(Math.random() * 10) });
+          addNumber({ value: Math.floor(Math.random() * 10) }).then(
+            () => {},
+            (error) => {
+              console.error("Error adding number:", error);
+            }
+          );
         }}
       >
         Add a random number

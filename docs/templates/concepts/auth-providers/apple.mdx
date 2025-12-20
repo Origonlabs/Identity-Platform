@@ -2,7 +2,7 @@
 title: "Apple"
 ---
 
-This guide explains how to set up Apple as an authentication provider with Stack Auth. Sign in with Apple allows users to sign in to your application using their Apple ID.
+This guide explains how to set up Apple as an authentication provider with Atlas Identity Platform. Sign in with Apple allows users to sign in to your application using their Apple ID.
 
 <Info>
 You will need to create an Apple Developer account, and generate an Apple Services ID, Apple Private Key, Apple Team ID, and Apple Key ID.
@@ -28,8 +28,8 @@ You will need to create an Apple Developer account, and generate an Apple Servic
   12. From the list, select your new Service ID.
   13. Enable **Sign in with Apple** by checking the box.
   14. Click **Configure** next to Sign in with Apple.
-  15. Register your domains (add api.stack-auth.com).
-  16. Add the return URL: `https://api.stack-auth.com/api/v1/auth/oauth/callback/apple`
+  15. Register your domains (add api.opendex.com).
+  16. Add the return URL: `https://api.opendex.com/api/v1/auth/oauth/callback/apple`
   17. Click **Done**, then **Continue**, and then **Save**.
   </Step>
   <Step>
@@ -58,9 +58,9 @@ You will need to create an Apple Developer account, and generate an Apple Servic
   4. Copy the generated secret immediately - you'll need it for the next step.
   </Step>
   <Step>
-  ### Enable Apple OAuth in Stack Auth
+  ### Enable Apple OAuth in Atlas Identity Platform
   
-  1. On the Stack Auth dashboard, select **Auth Methods** in the left sidebar.
+  1. On the Atlas Identity Platform dashboard, select **Auth Methods** in the left sidebar.
   2. Click **Add SSO Providers** and select **Apple** as the provider.
   3. Set the **Client ID** (your Service ID identifier), **Client Secret** (the generated secret from Supabase), and **Team ID** (your Apple Developer Team ID).
   </Step>
@@ -69,4 +69,4 @@ You will need to create an Apple Developer account, and generate an Apple Servic
 ### Need More Help?
 
 - Check the [Sign in with Apple Documentation](https://developer.apple.com/sign-in-with-apple/get-started/)
-- Join our [Discord](https://discord.stack-auth.com)
+- Join our [Discord](mailto:support@opendex.com)

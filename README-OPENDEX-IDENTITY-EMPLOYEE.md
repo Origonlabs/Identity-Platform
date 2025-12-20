@@ -96,7 +96,7 @@
 
 ## 🎯 Resumen Ejecutivo
 
-**Opendex Identity Employee** es una solución empresarial de gestión de identidad y acceso (IAM) desarrollada específicamente para **Opendex Corporation**. Basada en la plataforma open-source Stack Auth, proporciona autenticación segura, autorización granular y gestión centralizada de empleados.
+**Opendex Identity Employee** es una solución empresarial de gestión de identidad y acceso (IAM) desarrollada específicamente para **Opendex Corporation**. Basada en la plataforma open-source Atlas Identity Platform, proporciona autenticación segura, autorización granular y gestión centralizada de empleados.
 
 ### 🏆 Beneficios Clave
 
@@ -158,7 +158,7 @@ graph TB
     end
     
     subgraph "Business Logic"
-        H[Stack Auth Core]
+        H[Atlas Identity Platform Core]
         I[Opendex Custom Logic]
         J[Permission Engine]
         K[Audit System]
@@ -1028,7 +1028,7 @@ Este proyecto está licenciado bajo la Licencia MIT. Ver el archivo [LICENSE](LI
 
 ## 🙏 Agradecimientos
 
-- **Stack Auth Team**: Por la plataforma base open-source
+- **Atlas Identity Platform Team**: Por la plataforma base open-source
 - **Opendex Corporation**: Por el apoyo y recursos
 - **Comunidad**: Por las contribuciones y feedback
 

@@ -1,0 +1,340 @@
+name: Security Scanning
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+  schedule:
+    # Run security scans daily at 3 AM UTC
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: write
+
+jobs:
+  secret-scanning:
+    name: Secret Scanning
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  sast-semgrep:
+    name: SAST - Semgrep
+    runs-on: ubuntu-latest
+    container:
+      image: returntocorp/semgrep
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep
+        run: |
+          semgrep scan --config=auto \
+            --sarif --output=semgrep-results.sarif \
+            --json --output=semgrep-results.json \
+            --verbose
+
+      - name: Upload SARIF to GitHub
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep-results.sarif
+          category: semgrep
+
+      - name: Upload Semgrep results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: semgrep-results
+          path: semgrep-results.json
+
+  sast-codeql:
+    name: SAST - CodeQL
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript', 'typescript']
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-extended,security-and-quality
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
+
+  dependency-scanning:
+    name: Dependency Scanning
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --all-projects --severity-threshold=high --sarif-file-output=snyk-results.sarif
+
+      - name: Upload Snyk results to GitHub
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: snyk-results.sarif
+          category: snyk
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9.1.2
+
+      - name: Run npm audit
+        run: |
+          pnpm audit --audit-level=moderate --json > npm-audit-results.json || true
+
+      - name: Upload npm audit results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-audit-results
+          path: npm-audit-results.json
+
+  container-scanning:
+    name: Container Security Scanning
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t stack-backend:${{ github.sha }} -f docker/server/Dockerfile .
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: stack-backend:${{ github.sha }}
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Upload Trivy results to GitHub Security
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-results.sarif
+          category: trivy
+
+      - name: Run Trivy with JSON output
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: stack-backend:${{ github.sha }}
+          format: 'json'
+          output: 'trivy-results.json'
+
+      - name: Upload Trivy JSON results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-results
+          path: trivy-results.json
+
+  dast-zap:
+    name: DAST - OWASP ZAP
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9.1.2
+
+      - name: Start application
+        run: |
+          pnpm install
+          pnpm run start-deps:no-delay
+          pnpm run build:backend
+          nohup pnpm run start:backend &
+          sleep 30
+          curl http://localhost:8102/health || exit 1
+
+      - name: Run OWASP ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.12.0
+        with:
+          target: 'http://localhost:8102'
+          rules_file_name: '.zap/rules.tsv'
+          cmd_options: '-a -j -l WARN'
+
+      - name: Upload ZAP results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-results
+          path: report_html.html
+
+  license-scanning:
+    name: License Compliance Scanning
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9.1.2
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run license checker
+        run: |
+          npx license-checker --json --out license-report.json --production
+          npx license-checker --summary
+
+      - name: Check for banned licenses
+        run: |
+          npx license-checker \
+            --production \
+            --onlyAllow 'MIT;Apache-2.0;BSD-2-Clause;BSD-3-Clause;ISC;0BSD;CC0-1.0;Unlicense;WTFPL' \
+            --failOn 'GPL;AGPL;LGPL;SSPL;CC-BY-SA'
+
+      - name: Upload license report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: license-report
+          path: license-report.json
+
+  security-report:
+    name: Generate Security Report
+    runs-on: ubuntu-latest
+    needs: [secret-scanning, sast-semgrep, sast-codeql, dependency-scanning, container-scanning, license-scanning]
+    if: always()
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Generate consolidated security report
+        run: |
+          mkdir -p reports
+          cat > reports/security-report.md << 'EOF'
+          # 🔒 Security Scan Report
+
+          **Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          **Commit:** ${{ github.sha }}
+          **Branch:** ${{ github.ref_name }}
+
+          ## Summary
+
+          | Scan Type | Status |
+          |-----------|--------|
+          | Secret Scanning | ${{ needs.secret-scanning.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |
+          | SAST - Semgrep | ${{ needs.sast-semgrep.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |
+          | SAST - CodeQL | ${{ needs.sast-codeql.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |
+          | Dependency Scan | ${{ needs.dependency-scanning.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |
+          | Container Scan | ${{ needs.container-scanning.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |
+          | License Scan | ${{ needs.license-scanning.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |
+
+          ## Findings
+
+          ### Critical Issues
+          - Review detailed reports in workflow artifacts
+
+          ### Recommendations
+          1. Fix all CRITICAL and HIGH severity vulnerabilities
+          2. Update dependencies to latest secure versions
+          3. Review and address code quality issues
+          4. Ensure no secrets are committed to repository
+
+          ---
+          *Generated by Stack Auth Security Pipeline*
+          EOF
+
+      - name: Upload consolidated report
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-report
+          path: reports/security-report.md
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('reports/security-report.md', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: report
+            });
+
+      - name: Notify on failure
+        if: failure()
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          payload: |
+            {
+              "text": "🚨 Security scan detected issues",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Security Scan Failed* 🔴\n*Repository:* ${{ github.repository }}\n*Branch:* ${{ github.ref_name }}\n*Run:* <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
+                  }
+                }
+              ]
+            }

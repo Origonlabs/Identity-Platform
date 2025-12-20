@@ -5,7 +5,7 @@ import { Contact, ShieldCheck, Bell, Monitor, Key, Settings, CirclePlus } from '
 import React, { Suspense } from "react";
 import { useStackApp, useUser } from '..';
 import { MaybeFullPage } from "../components/elements/maybe-full-page";
-import { SidebarLayout } from '../components/elements/sidebar-layout';
+import { SidebarLayout, SidebarItem } from '../components/elements/sidebar-layout';
 import { TeamIcon } from '../components/team-icon';
 import { useTranslation } from "../lib/translations";
 import { ActiveSessionsPage } from "./account-settings/active-sessions/active-sessions-page";
@@ -94,7 +94,7 @@ export function AccountSettings(props: {
     <MaybeFullPage fullPage={!!props.fullPage}>
       <div className="self-stretch flex-grow w-full">
         <SidebarLayout
-          items={([
+          items={([] as SidebarItem[]).concat(
             {
               title: t('My Profile'),
               type: 'item',
@@ -131,13 +131,13 @@ export function AccountSettings(props: {
             },
             ...(project.config.allowUserApiKeys ? [{
               title: t('API Keys'),
-              type: 'item',
+              type: 'item' as const,
               id: 'api-keys',
               icon: <Icon name="Key" />,
               content: <Suspense fallback={<ApiKeysPageSkeleton/>}>
                 <ApiKeysPage mockApiKeys={props.mockApiKeys} mockMode={!!props.mockUser} />
               </Suspense>,
-            }] as const : []),
+            }] : []),
             {
               title: t('Settings'),
               type: 'item',
@@ -162,29 +162,29 @@ export function AccountSettings(props: {
             } as const)) || []),
             ...(teams.length > 0 || project.config.clientTeamCreationEnabled) ? [{
               title: t('Teams'),
-              type: 'divider',
-            }] as const : [],
+              type: 'divider' as const,
+            }] : [],
             ...teams.map(team => ({
               title: <div className='flex gap-2 items-center w-full'>
                 <TeamIcon team={team}/>
                 <Typography className="max-w-[320px] md:w-[90%] truncate">{team.displayName}</Typography>
               </div>,
-              type: 'item',
+              type: 'item' as const,
               id: `team-${team.id}`,
               content: <Suspense fallback={<TeamPageSkeleton/>}>
                 <TeamPage team={team}/>
               </Suspense>,
-            } as const)),
+            })),
             ...project.config.clientTeamCreationEnabled ? [{
               title: t('Create a team'),
               icon: <Icon name="CirclePlus"/>,
-              type: 'item',
+              type: 'item' as const,
               id: 'team-creation',
               content: <Suspense fallback={<TeamCreationSkeleton/>}>
                 <TeamCreationPage mockMode={!!props.mockUser} />
               </Suspense>,
-            }] as const : [],
-          ] as const).filter((p) => p.type === 'divider' || (p as any).content )}
+            }] : [],
+          )}
           title={t("Account Settings")}
         />
       </div>

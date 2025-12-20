@@ -1,7 +1,7 @@
 import { it } from "../helpers";
 import { createApp } from "./js-helpers";
 
-it("returns default item quantity for a team", async ({ expect }) => {
+it("returns default item quantity for a team", { timeout: 40_000 }, async ({ expect }) => {
   const { clientApp, adminApp } = await createApp({
     config: {
       clientTeamCreationEnabled: true,
@@ -39,11 +39,9 @@ it("returns default item quantity for a team", async ({ expect }) => {
   expect(item.displayName).toBe("Test Item");
   expect(item.quantity).toBe(0);
   expect(item.nonNegativeQuantity).toBe(0);
-}, {
-  timeout: 40_000,
 });
 
-it("root-level getItem works for user and team", async ({ expect }) => {
+it("root-level getItem works for user and team", { timeout: 60_000 }, async ({ expect }) => {
   const { clientApp, serverApp, adminApp } = await createApp({
     config: { clientTeamCreationEnabled: true },
   });
@@ -75,9 +73,9 @@ it("root-level getItem works for user and team", async ({ expect }) => {
   });
   const userItem = await serverApp.getItem({ itemId: userItemId, userId: user.id });
   expect(userItem.quantity).toBe(0);
-}, { timeout: 60_000 });
+});
 
-it("customCustomerId is supported via root-level getItem and admin quantity change", async ({ expect }) => {
+it("customCustomerId is supported via root-level getItem and admin quantity change", { timeout: 60_000 }, async ({ expect }) => {
   const { clientApp, adminApp } = await createApp({
     config: {},
   });
@@ -95,9 +93,9 @@ it("customCustomerId is supported via root-level getItem and admin quantity chan
   await adminApp.createItemQuantityChange({ customCustomerId, itemId, quantity: 5 });
   const after = await clientApp.getItem({ itemId, customCustomerId });
   expect(after.quantity).toBe(5);
-}, { timeout: 60_000 });
+});
 
-it("admin can increase team item quantity and client sees updated value", async ({ expect }) => {
+it("admin can increase team item quantity and client sees updated value", { timeout: 40_000 }, async ({ expect }) => {
   const { clientApp, adminApp } = await createApp({
     config: {
       clientTeamCreationEnabled: true,
@@ -136,9 +134,9 @@ it("admin can increase team item quantity and client sees updated value", async 
   const after = await team.getItem(itemId);
   expect(after.quantity).toBe(3);
   expect(after.nonNegativeQuantity).toBe(3);
-}, { timeout: 40_000 });
+});
 
-it("cannot decrease team item quantity below zero", async ({ expect }) => {
+it("cannot decrease team item quantity below zero", { timeout: 40_000 }, async ({ expect }) => {
   const { clientApp, adminApp } = await createApp({
     config: {
       clientTeamCreationEnabled: true,
@@ -176,7 +174,7 @@ it("cannot decrease team item quantity below zero", async ({ expect }) => {
 
   const still = await team.getItem(itemId);
   expect(still.quantity).toBe(0);
-}, { timeout: 40_000 });
+});
 
 
 it("can create item quantity change from server app", { timeout: 40_000 }, async ({ expect }) => {

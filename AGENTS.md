@@ -31,7 +31,7 @@ You should ALWAYS add new E2E tests when you change the API or SDK interface. Ge
 
 ## Architecture Overview
 
-Stack Auth is a monorepo using Turbo for build orchestration. The main components are:
+Atlas Identity Platform is a monorepo using Turbo for build orchestration. The main components are:
 
 ### Apps (`/apps`)
 - **backend** (`/apps/backend`): Next.js API backend running on port 8102

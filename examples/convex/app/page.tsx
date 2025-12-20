@@ -1,9 +1,9 @@
 "use client";
 
-import { useMutation, useQuery } from "convex/react";
-import { api } from "../convex/_generated/api";
 import Link from "next/link";
+import { useMutation, useQuery } from "convex/react";
 import { UserButton, useUser } from "@stackframe/stack";
+import { api } from "../convex/_generated/api";
 
 export default function Home() {
   const user = useUser();
@@ -48,7 +48,12 @@ function Content() {
         <button
           className="bg-foreground text-background text-sm px-4 py-2 rounded-md"
           onClick={() => {
-            void addNumber({ value: Math.floor(Math.random() * 10) });
+            addNumber({ value: Math.floor(Math.random() * 10) }).then(
+              () => {},
+              (error) => {
+                console.error("Error adding number:", error);
+              }
+            );
           }}
         >
           Add a random number
@@ -56,9 +61,9 @@ function Content() {
       </p>
       <p>
         Numbers:{" "}
-        {numbers?.length === 0
+        {numbers.length === 0
           ? "Click the button!"
-          : numbers?.join(", ") ?? "..."}
+          : numbers.join(", ")}
       </p>
       <p>
         Edit{" "}
@@ -121,9 +126,9 @@ function ResourceCard({
   description,
   href,
 }: {
-  title: string;
-  description: string;
-  href: string;
+  title: string,
+  description: string,
+  href: string,
 }) {
   return (
     <div className="flex flex-col gap-2 bg-slate-200 dark:bg-slate-800 p-4 rounded-md h-28 overflow-auto">

@@ -428,7 +428,7 @@ async function seed() {
         user_id: newEmulatorUser.projectUserId,
         data: {
           password: 'LocalEmulatorPassword',
-          primary_email: 'local-emulator@stack-auth.com',
+          primary_email: 'local-emulator@opendex.com',
           primary_email_auth_enabled: true,
         },
       });
