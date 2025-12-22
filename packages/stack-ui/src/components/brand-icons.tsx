@@ -1,4 +1,4 @@
-import { StackAssertionError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
+import { StackAssertionError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
 
 export function Google({ iconSize }: { iconSize: number }) {
   return (

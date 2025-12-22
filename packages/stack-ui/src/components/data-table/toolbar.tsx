@@ -1,11 +1,11 @@
 "use client";
 
-import { Cross2Icon } from "@radix-ui/react-icons";
-import { deepPlainEquals } from "@stackframe/stack-shared/dist/utils/objects";
-import { Button } from "@stackframe/stack-ui";
+import { Cross2Icon } from "../ui/icons";
+import { deepPlainEquals } from "@opendex/stack-shared/dist/utils/objects";
+import { Button } from "@opendex/stack-ui";
 import { Cell, ColumnFiltersState, SortingState, Table } from "@tanstack/react-table";
 import { download, generateCsv, mkConfig } from 'export-to-csv';
-import { DownloadIcon } from "lucide-react";
+import { DownloadIcon } from "../ui/icons";
 import { DataTableViewOptions } from "./view-options";
 
 type DataTableToolbarProps<TData> = {

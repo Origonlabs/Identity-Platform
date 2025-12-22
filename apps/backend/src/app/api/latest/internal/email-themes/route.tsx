@@ -1,9 +1,9 @@
 import { overrideEnvironmentConfigOverride } from "@/lib/config";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { LightEmailTheme } from "@stackframe/stack-shared/dist/helpers/emails";
-import { adaptSchema, yupArray, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { filterUndefined, typedEntries } from "@stackframe/stack-shared/dist/utils/objects";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
+import { LightEmailTheme } from "@opendex/stack-shared/dist/helpers/emails";
+import { adaptSchema, yupArray, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { filterUndefined, typedEntries } from "@opendex/stack-shared/dist/utils/objects";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 
 
 export const POST = createSmartRouteHandler({

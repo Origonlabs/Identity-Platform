@@ -39,7 +39,7 @@ To check whether a user has a specific permission, use the `getPermission` metho
   <TabsContent value="client">
     ```tsx title="Check user permission on the client"
     "use client";
-    import { useUser } from "@stackframe/stack";
+    import { useUser } from "@opendex/stack";
 
     export function CheckUserPermission() {
       const user = useUser({ or: 'redirect' });
@@ -87,7 +87,7 @@ To get a list of all permissions a user has, use the `listPermissions` method or
   <TabsContent value="client">
     ```tsx title="List user permissions on the client"
     "use client";
-    import { useUser } from "@stackframe/stack";
+    import { useUser } from "@opendex/stack";
 
     export function DisplayUserPermissions() {
       const user = useUser({ or: 'redirect' });
@@ -163,7 +163,7 @@ To check whether a user has a specific project permission, use the `getPermissio
   <TabsContent value="client">
     ```tsx title="Check user permission on the client"
     "use client";
-    import { useUser } from "@stackframe/stack";
+    import { useUser } from "@opendex/stack";
 
     export function CheckGlobalPermission() {
       const user = useUser({ or: 'redirect' });
@@ -207,7 +207,7 @@ To get a list of all global permissions a user has, use the `listPermissions` me
   <TabsContent value="client">
     ```tsx title="List global permissions on the client"
     "use client";
-    import { useUser } from "@stackframe/stack";
+    import { useUser } from "@opendex/stack";
 
     export function DisplayGlobalPermissions() {
       const user = useUser({ or: 'redirect' });

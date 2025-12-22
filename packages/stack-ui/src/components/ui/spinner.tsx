@@ -1,5 +1,5 @@
-import { ReloadIcon } from "@radix-ui/react-icons";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
+import { ReloadIcon } from "./icons";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
 import React from "react";
 import { cn } from "../../lib/utils";
 

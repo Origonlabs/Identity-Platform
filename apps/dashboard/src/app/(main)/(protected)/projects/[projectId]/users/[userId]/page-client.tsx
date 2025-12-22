@@ -7,12 +7,12 @@ import { SettingCard } from "@/components/settings";
 import { DeleteUserDialog, ImpersonateUserDialog } from "@/components/user-dialogs";
 import { useThemeWatcher } from '@/lib/theme';
 import MonacoEditor from '@monaco-editor/react';
-import { ServerContactChannel, ServerOAuthProvider, ServerUser } from "@stackframe/stack";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { fromNow } from "@stackframe/stack-shared/dist/utils/dates";
-import { StackAssertionError } from '@stackframe/stack-shared/dist/utils/errors';
-import { isJsonSerializable } from "@stackframe/stack-shared/dist/utils/json";
-import { deindent } from "@stackframe/stack-shared/dist/utils/strings";
+import { ServerContactChannel, ServerOAuthProvider, ServerUser } from "@opendex/stack";
+import { KnownErrors } from "@opendex/stack-shared";
+import { fromNow } from "@opendex/stack-shared/dist/utils/dates";
+import { StackAssertionError } from '@opendex/stack-shared/dist/utils/errors';
+import { isJsonSerializable } from "@opendex/stack-shared/dist/utils/json";
+import { deindent } from "@opendex/stack-shared/dist/utils/strings";
 import {
   Accordion,
   AccordionContent,
@@ -39,7 +39,7 @@ import {
   Typography,
   cn,
   useToast
-} from "@stackframe/stack-ui";
+} from "@opendex/stack-ui";
 import { AtSign, Calendar, Check, Hash, Mail, MoreHorizontal, Shield, SquareAsterisk, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import * as yup from "yup";

@@ -5,10 +5,10 @@ import { createVerificationCodeHandler } from "@/route-handlers/verification-cod
 import { VerificationCodeType } from "@prisma/client";
 import { verifyAuthenticationResponse } from "@simplewebauthn/server";
 import { decodeClientDataJSON } from "@simplewebauthn/server/helpers";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { signInResponseSchema, yupMixed, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
-import { AuthenticationResponseJSON } from "@stackframe/stack-shared/dist/utils/passkey";
+import { KnownErrors } from "@opendex/stack-shared";
+import { signInResponseSchema, yupMixed, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
+import { AuthenticationResponseJSON } from "@opendex/stack-shared/dist/utils/passkey";
 import { createMfaRequiredError } from "../../mfa/sign-in/verification-code-handler";
 
 export const passkeySignInVerificationCodeHandler = createVerificationCodeHandler({

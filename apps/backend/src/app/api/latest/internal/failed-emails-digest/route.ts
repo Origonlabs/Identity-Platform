@@ -1,10 +1,10 @@
 import { getSharedEmailConfig, sendEmail } from "@/lib/emails";
 import { DEFAULT_BRANCH_ID, getSoleTenancyFromProjectBranch } from "@/lib/tenancies";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { yupArray, yupBoolean, yupNumber, yupObject, yupString, yupTuple } from "@stackframe/stack-shared/dist/schema-fields";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { StatusError, captureError } from "@stackframe/stack-shared/dist/utils/errors";
-import { escapeHtml } from "@stackframe/stack-shared/dist/utils/html";
+import { yupArray, yupBoolean, yupNumber, yupObject, yupString, yupTuple } from "@opendex/stack-shared/dist/schema-fields";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { StatusError, captureError } from "@opendex/stack-shared/dist/utils/errors";
+import { escapeHtml } from "@opendex/stack-shared/dist/utils/html";
 import { getFailedEmailsByTenancy } from "./crud";
 
 export const POST = createSmartRouteHandler({

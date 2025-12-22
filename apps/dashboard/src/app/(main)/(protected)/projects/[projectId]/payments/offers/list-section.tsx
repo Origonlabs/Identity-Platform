@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Button, Input, SimpleTooltip } from "@stackframe/stack-ui";
+import { Button, Input, SimpleTooltip } from "@opendex/stack-ui";
 import { Plus, Search } from "lucide-react";
 import React, { ReactNode, useState } from "react";
 

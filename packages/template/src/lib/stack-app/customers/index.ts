@@ -1,4 +1,4 @@
-import { inlineOfferSchema } from "@stackframe/stack-shared/dist/schema-fields";
+import { inlineOfferSchema } from "@opendex/stack-shared/dist/schema-fields";
 import * as yup from "yup";
 import { AsyncStoreProperty } from "../common";
 

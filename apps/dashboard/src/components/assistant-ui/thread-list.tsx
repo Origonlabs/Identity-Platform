@@ -5,7 +5,7 @@ import {
 } from "@assistant-ui/react";
 import { ArchiveIcon, PlusIcon } from "lucide-react";
 
-import { Button } from "@stackframe/stack-ui";
+import { Button } from "@opendex/stack-ui";
 import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
 
 export const ThreadList: FC = () => {

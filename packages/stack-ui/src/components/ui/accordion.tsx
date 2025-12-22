@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { ChevronDownIcon } from "./icons";
 
 import { cn } from "../../lib/utils";
 

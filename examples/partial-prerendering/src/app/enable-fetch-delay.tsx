@@ -1,6 +1,6 @@
 "use client";
 
-import { useStackApp } from "@stackframe/stack";
+import { useStackApp } from "@opendex/stack";
 
 export default function EnableFetchDelay() {
   const app = useStackApp();

@@ -1,5 +1,5 @@
 import { stackServerApp } from "@/stack";
-import { UserButton } from "@stackframe/stack";
+import { UserButton } from "@opendex/stack";
 import Link from "next/link";
 import { Suspense } from "react";
 

@@ -1,10 +1,10 @@
-import { AdminUserProjectsCrud } from "@stackframe/stack-shared/dist/interface/crud/projects";
-import { encodeBase64 } from "@stackframe/stack-shared/dist/utils/bytes";
-import { generateSecureRandomString } from "@stackframe/stack-shared/dist/utils/crypto";
-import { StackAssertionError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { filterUndefined } from "@stackframe/stack-shared/dist/utils/objects";
-import { wait } from "@stackframe/stack-shared/dist/utils/promises";
-import { nicify } from "@stackframe/stack-shared/dist/utils/strings";
+import { AdminUserProjectsCrud } from "@opendex/stack-shared/dist/interface/crud/projects";
+import { encodeBase64 } from "@opendex/stack-shared/dist/utils/bytes";
+import { generateSecureRandomString } from "@opendex/stack-shared/dist/utils/crypto";
+import { StackAssertionError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { filterUndefined } from "@opendex/stack-shared/dist/utils/objects";
+import { wait } from "@opendex/stack-shared/dist/utils/promises";
+import { nicify } from "@opendex/stack-shared/dist/utils/strings";
 import * as jose from "jose";
 import { randomUUID } from "node:crypto";
 import { expect } from "vitest";

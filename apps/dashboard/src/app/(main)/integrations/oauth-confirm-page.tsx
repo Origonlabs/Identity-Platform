@@ -1,6 +1,6 @@
 import { stackServerApp } from "@/stack";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
 import { redirect } from "next/navigation";
 import ConfirmCard from "./oauth-confirm-card";
 

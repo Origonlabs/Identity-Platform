@@ -1,5 +1,5 @@
 import { globalPrismaClient } from "@/prisma-client";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {

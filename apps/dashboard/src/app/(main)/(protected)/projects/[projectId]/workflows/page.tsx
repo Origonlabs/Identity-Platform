@@ -1,8 +1,8 @@
 "use client";
 
-import { deindent } from "@stackframe/stack-shared/dist/utils/strings";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
-import { Button, Card, CardContent, Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, Input, Label, Textarea, toast } from "@stackframe/stack-ui";
+import { deindent } from "@opendex/stack-shared/dist/utils/strings";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
+import { Button, Card, CardContent, Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, Input, Label, Textarea, toast } from "@opendex/stack-ui";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import { IllustratedInfo } from "../../../../../../components/illustrated-info";

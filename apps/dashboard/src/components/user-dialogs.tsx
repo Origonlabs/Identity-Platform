@@ -1,5 +1,5 @@
-import { ServerUser } from '@stackframe/stack';
-import { ActionDialog, CopyField, Typography } from "@stackframe/stack-ui";
+import { ServerUser } from '@opendex/stack';
+import { ActionDialog, CopyField, Typography } from "@opendex/stack-ui";
 import { useRouter } from './router';
 
 

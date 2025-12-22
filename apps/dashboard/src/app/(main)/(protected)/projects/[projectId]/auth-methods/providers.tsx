@@ -2,10 +2,10 @@
 import { FormDialog } from "@/components/form-dialog";
 import { InputField, SwitchField } from "@/components/form-fields";
 import { getPublicEnvVar } from '@/lib/env';
-import { AdminProject } from "@stackframe/stack";
-import { yupBoolean, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { sharedProviders } from "@stackframe/stack-shared/dist/utils/oauth";
-import { ActionDialog, Badge, BrandIcons, InlineCode, Label, SimpleTooltip, Typography } from "@stackframe/stack-ui";
+import { AdminProject } from "@opendex/stack";
+import { yupBoolean, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { sharedProviders } from "@opendex/stack-shared/dist/utils/oauth";
+import { ActionDialog, Badge, BrandIcons, InlineCode, Label, SimpleTooltip, Typography } from "@opendex/stack-ui";
 import clsx from "clsx";
 import { useState } from "react";
 import * as yup from "yup";

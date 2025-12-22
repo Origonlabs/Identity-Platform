@@ -1,12 +1,12 @@
 import { Freestyle } from '@/lib/freestyle';
-import { emptyEmailTheme } from '@stackframe/stack-shared/dist/helpers/emails';
-import { StackAssertionError } from '@stackframe/stack-shared/dist/utils/errors';
-import { bundleJavaScript } from '@stackframe/stack-shared/dist/utils/esbuild';
-import { get, has } from '@stackframe/stack-shared/dist/utils/objects';
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
-import { deindent } from "@stackframe/stack-shared/dist/utils/strings";
+import { emptyEmailTheme } from '@opendex/stack-shared/dist/helpers/emails';
+import { StackAssertionError } from '@opendex/stack-shared/dist/utils/errors';
+import { bundleJavaScript } from '@opendex/stack-shared/dist/utils/esbuild';
+import { get, has } from '@opendex/stack-shared/dist/utils/objects';
+import { Result } from "@opendex/stack-shared/dist/utils/results";
+import { deindent } from "@opendex/stack-shared/dist/utils/strings";
 import { Tenancy } from './tenancies';
-import { getEnvVariable } from '@stackframe/stack-shared/dist/utils/env';
+import { getEnvVariable } from '@opendex/stack-shared/dist/utils/env';
 
 export function getActiveEmailTheme(tenancy: Tenancy) {
   const themeList = tenancy.config.emails.themes;
@@ -105,7 +105,7 @@ export async function renderEmailWithTemplate(
     `,
   }, {
     keepAsImports: ['arktype', 'react', 'react/jsx-runtime', '@react-email/components'],
-    externalPackages: { '@stackframe/emails': stackframeEmailsPackage },
+    externalPackages: { '@opendex/emails': stackframeEmailsPackage },
     format: 'esm',
     sourcemap: false,
   });
@@ -185,7 +185,7 @@ export async function renderEmailsWithTemplateBatched(
     `,
   }, {
     keepAsImports: ['arktype', 'react', 'react/jsx-runtime', '@react-email/components'],
-    externalPackages: { '@stackframe/emails': stackframeEmailsPackage },
+    externalPackages: { '@opendex/emails': stackframeEmailsPackage },
     format: 'esm',
     sourcemap: false,
   });

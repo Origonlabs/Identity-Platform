@@ -1,4 +1,4 @@
-# @stackframe/dev-launchpad
+# @opendex/dev-launchpad
 
 ## 2.8.39
 

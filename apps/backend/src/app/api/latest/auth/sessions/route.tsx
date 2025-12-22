@@ -1,7 +1,7 @@
 import { createAuthTokens } from "@/lib/tokens";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { adaptSchema, serverOrHigherAuthTypeSchema, userIdOrMeSchema, yupBoolean, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
+import { KnownErrors } from "@opendex/stack-shared";
+import { adaptSchema, serverOrHigherAuthTypeSchema, userIdOrMeSchema, yupBoolean, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
 import { usersCrudHandlers } from "../../users/crud";
 import { sessionsCrudHandlers } from "./crud";
 

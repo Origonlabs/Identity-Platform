@@ -1,5 +1,5 @@
 {
-  "name": "@stackframe/dev-launchpad",
+  "name": "@opendex/dev-launchpad",
   "version": "2.8.39",
   "private": true,
   "scripts": {

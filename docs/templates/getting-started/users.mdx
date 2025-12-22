@@ -11,7 +11,7 @@ The `useUser()` hook returns the current user in a Client Component. By default,
 
 ```tsx title="my-client-component.tsx"
 "use client";
-import { useUser } from "@stackframe/stack"
+import { useUser } from "@opendex/stack"
 
 export function MyClientComponent() {
   const user = useUser();
@@ -65,7 +65,7 @@ Middleware can be used whenever it is easy to tell whether a page should be prot
   <TabsContent value="client">
     ```tsx title="my-protected-client-component.tsx"
     "use client";
-    import { useUser } from "@stackframe/stack";
+    import { useUser } from "@opendex/stack";
 
     export default function MyProtectedClientComponent() {
       useUser({ or: 'redirect' });
@@ -128,7 +128,7 @@ You can update attributes on a user object with the `user.update()` function.
 
 ```tsx title="my-client-component.tsx"
 'use client';
-import { useUser } from "@stackframe/stack";
+import { useUser } from "@opendex/stack";
 
 export default function MyClientComponent() {
   const user = useUser();
@@ -153,7 +153,7 @@ You can sign out the user by redirecting them to `/handler/sign-out` or simply b
   <TabsContent value="signout">
     ```tsx title="sign-out-button.tsx"
     "use client";
-    import { useUser } from "@stackframe/stack";
+    import { useUser } from "@opendex/stack";
 
     export default function SignOutButton() {
       const user = useUser();
@@ -187,7 +187,7 @@ Stack automatically creates a user profile on sign-up. Let's build a page that d
   <TabsContent value="client">
     ```tsx title="app/profile/page.tsx"
     'use client';
-    import { useUser, useStackApp, UserButton } from "@stackframe/stack";
+    import { useUser, useStackApp, UserButton } from "@opendex/stack";
 
     export default function PageClient() {
       const user = useUser();
@@ -217,7 +217,7 @@ Stack automatically creates a user profile on sign-up. Let's build a page that d
   <TabsContent value="server">
     ```tsx title="app/profile/page.tsx"
     import { stackServerApp } from "@/stack/server";
-    import { UserButton } from "@stackframe/stack";
+    import { UserButton } from "@opendex/stack";
 
     export default async function Page() {
       const user = await stackServerApp.getUser();

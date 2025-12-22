@@ -1,5 +1,5 @@
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
-import { wait } from "@stackframe/stack-shared/dist/utils/promises";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
+import { wait } from "@opendex/stack-shared/dist/utils/promises";
 import { it } from "../../../../../../helpers";
 import { Auth, backendContext, createMailbox, niceBackendFetch } from "../../../../../backend-helpers";
 

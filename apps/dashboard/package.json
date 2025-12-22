@@ -1,5 +1,5 @@
 {
-  "name": "@stackframe/stack-dashboard",
+  "name": "@opendex/stack-dashboard",
   "version": "2.8.39",
   "private": true,
   "scripts": {
@@ -28,9 +28,9 @@
     "@radix-ui/react-tooltip": "^1.1.3",
     "@react-hook/resize-observer": "^2.0.2",
     "@sentry/nextjs": "^10.11.0",
-    "@stackframe/stack": "workspace:*",
-    "@stackframe/stack-shared": "workspace:*",
-    "@stackframe/stack-ui": "workspace:*",
+    "@opendex/stack": "workspace:*",
+    "@opendex/stack-shared": "workspace:*",
+    "@opendex/stack-ui": "workspace:*",
     "@stripe/connect-js": "^3.3.27",
     "@stripe/react-connect-js": "^3.3.24",
     "@stripe/react-stripe-js": "^3.8.1",
@@ -46,7 +46,7 @@
     "jose": "^5.2.2",
     "lodash": "^4.17.21",
     "lucide-react": "^0.508.0",
-    "next": "16.0.10",
+    "next": "16.1.0",
     "next-themes": "^0.2.1",
     "posthog-js": "^1.235.0",
     "react": "19.0.0",

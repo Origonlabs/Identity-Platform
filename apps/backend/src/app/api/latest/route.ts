@@ -1,6 +1,6 @@
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { adaptSchema, projectIdSchema, yupNumber, yupObject, yupString, yupTuple } from "@stackframe/stack-shared/dist/schema-fields";
-import { deindent, typedCapitalize } from "@stackframe/stack-shared/dist/utils/strings";
+import { adaptSchema, projectIdSchema, yupNumber, yupObject, yupString, yupTuple } from "@opendex/stack-shared/dist/schema-fields";
+import { deindent, typedCapitalize } from "@opendex/stack-shared/dist/utils/strings";
 
 export const GET = createSmartRouteHandler({
   metadata: {

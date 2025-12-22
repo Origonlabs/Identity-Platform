@@ -54,7 +54,7 @@ const nextConfig = {
   // https://nextjs.org/docs/pages/api-reference/next-config-js/output
   output: process.env.NEXT_CONFIG_OUTPUT,
 
-  // we're open-source, so we can provide source maps
+  // Provide source maps to improve debugging and observability.
   productionBrowserSourceMaps: true,
   poweredByHeader: false,
 

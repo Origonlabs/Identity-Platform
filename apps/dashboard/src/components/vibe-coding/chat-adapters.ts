@@ -3,8 +3,8 @@ import {
   type ExportedMessageRepository,
   type ThreadHistoryAdapter,
 } from "@assistant-ui/react";
-import { StackAdminApp } from "@stackframe/stack";
-import { ChatContent } from "@stackframe/stack-shared/dist/interface/admin-interface";
+import { StackAdminApp } from "@opendex/stack";
+import { ChatContent } from "@opendex/stack-shared/dist/interface/admin-interface";
 
 export type ToolCallContent = Extract<ChatContent[number], { type: "tool-call" }>;
 

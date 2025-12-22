@@ -1,4 +1,4 @@
-import { StackHandler } from "@stackframe/stack";
+import { StackHandler } from "@opendex/stack";
 import { stackServerApp } from "../../../stack/server";
 
 export default function Handler(props: unknown) {

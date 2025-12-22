@@ -2,12 +2,12 @@ import { getPrismaClientForTenancy, getPrismaSchemaForTenancy, globalPrismaClien
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
 import { SmartRequestAuth } from "@/route-handlers/smart-request";
 import { Prisma } from "@prisma/client";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { sessionsCrud } from "@stackframe/stack-shared/dist/interface/crud/sessions";
-import { userIdOrMeSchema, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { StatusError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { GeoInfo } from "@stackframe/stack-shared/dist/utils/geo";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
+import { KnownErrors } from "@opendex/stack-shared";
+import { sessionsCrud } from "@opendex/stack-shared/dist/interface/crud/sessions";
+import { userIdOrMeSchema, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { StatusError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { GeoInfo } from "@opendex/stack-shared/dist/utils/geo";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
 
 export const sessionsCrudHandlers = createLazyProxy(() => createCrudHandlers(sessionsCrud, {
   paramsSchema: yupObject({

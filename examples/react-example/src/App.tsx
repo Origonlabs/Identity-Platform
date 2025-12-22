@@ -1,4 +1,4 @@
-import { StackHandler, StackProvider, StackTheme } from "@stackframe/react";
+import { StackHandler, StackProvider, StackTheme } from "@opendex/react";
 import { Suspense } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { stackClientApp } from "./stack";

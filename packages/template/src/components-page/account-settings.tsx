@@ -1,6 +1,6 @@
 'use client';
 
-import { Skeleton, Typography } from '@stackframe/stack-ui';
+import { Skeleton, Typography } from '@opendex/stack-ui';
 import { Contact, ShieldCheck, Bell, Monitor, Key, Settings, CirclePlus } from 'lucide-react';
 import React, { Suspense } from "react";
 import { useStackApp, useUser } from '..';

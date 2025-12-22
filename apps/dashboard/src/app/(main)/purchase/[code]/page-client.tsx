@@ -3,12 +3,12 @@
 import { CheckoutForm } from "@/components/payments/checkout";
 import { StripeElementsProvider } from "@/components/payments/stripe-elements-provider";
 import { getPublicEnvVar } from "@/lib/env";
-import { StackAdminApp, useUser } from "@stackframe/stack";
-import { inlineOfferSchema } from "@stackframe/stack-shared/dist/schema-fields";
-import { throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { typedEntries } from "@stackframe/stack-shared/dist/utils/objects";
-import { runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
-import { Alert, AlertDescription, AlertTitle, Button, Card, CardContent, Input, Skeleton, Typography } from "@stackframe/stack-ui";
+import { StackAdminApp, useUser } from "@opendex/stack";
+import { inlineOfferSchema } from "@opendex/stack-shared/dist/schema-fields";
+import { throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { typedEntries } from "@opendex/stack-shared/dist/utils/objects";
+import { runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
+import { Alert, AlertDescription, AlertTitle, Button, Card, CardContent, Input, Skeleton, Typography } from "@opendex/stack-ui";
 import { ArrowRight, Minus, Plus } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import * as yup from "yup";

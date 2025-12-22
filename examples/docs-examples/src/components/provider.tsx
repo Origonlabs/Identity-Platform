@@ -1,5 +1,5 @@
 'use client';
-import { StackTheme } from "@stackframe/stack";
+import { StackTheme } from "@opendex/stack";
 
 export default function Provider({ children }) {
   return (

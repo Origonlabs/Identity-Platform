@@ -2,11 +2,11 @@ import { listNotificationCategories } from "@/lib/notification-categories";
 import { ensureUserExists } from "@/lib/request-checks";
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { notificationPreferenceCrud, NotificationPreferenceCrud } from "@stackframe/stack-shared/dist/interface/crud/notification-preferences";
-import { userIdOrMeSchema, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { StatusError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
+import { KnownErrors } from "@opendex/stack-shared";
+import { notificationPreferenceCrud, NotificationPreferenceCrud } from "@opendex/stack-shared/dist/interface/crud/notification-preferences";
+import { userIdOrMeSchema, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { StatusError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
 
 export const notificationPreferencesCrudHandlers = createLazyProxy(() => createCrudHandlers(notificationPreferenceCrud, {
   paramsSchema: yupObject({

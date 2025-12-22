@@ -2,10 +2,10 @@ import { getSubscriptions, isActiveSubscription } from "@/lib/payments";
 import { getTenancy } from "@/lib/tenancies";
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { inlineOfferSchema, yupArray, yupBoolean, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { SUPPORTED_CURRENCIES } from "@stackframe/stack-shared/dist/utils/currency-constants";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
-import { filterUndefined, getOrUndefined, typedEntries, typedFromEntries } from "@stackframe/stack-shared/dist/utils/objects";
+import { inlineOfferSchema, yupArray, yupBoolean, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { SUPPORTED_CURRENCIES } from "@opendex/stack-shared/dist/utils/currency-constants";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
+import { filterUndefined, getOrUndefined, typedEntries, typedFromEntries } from "@opendex/stack-shared/dist/utils/objects";
 import * as yup from "yup";
 import { purchaseUrlVerificationCodeHandler } from "../verification-code-handler";
 

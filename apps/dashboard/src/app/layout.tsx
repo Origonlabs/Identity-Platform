@@ -5,9 +5,9 @@ import { StyleLink } from '@/components/style-link';
 import { ThemeProvider } from '@/components/theme-provider';
 import { getPublicEnvVar } from '@/lib/env';
 import { stackServerApp } from '@/stack';
-import { StackProvider, StackTheme } from '@stackframe/stack';
-import { getEnvVariable, getNodeEnvironment } from '@stackframe/stack-shared/dist/utils/env';
-import { Toaster, cn } from '@stackframe/stack-ui';
+import { StackProvider, StackTheme } from '@opendex/stack';
+import { getEnvVariable, getNodeEnvironment } from '@opendex/stack-shared/dist/utils/env';
+import { Toaster, cn } from '@opendex/stack-ui';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistMono } from "geist/font/mono";
@@ -16,7 +16,7 @@ import type { Metadata } from 'next';
 import { Inter as FontSans } from "next/font/google";
 import React from 'react';
 import { VersionAlerter } from '../components/version-alerter';
-import '../polyfills';
+import '../polyfills.node';
 import { BackgroundShine } from './background-shine';
 import { ClientPolyfill } from './client-polyfill';
 import './globals.css';
@@ -29,15 +29,15 @@ export const metadata: Metadata = {
     default: 'Atlas Identity Platform Dashboard',
     template: '%s | Atlas Identity Platform',
   },
-  description: 'Atlas Identity Platform is the open-source Auth0 alternative, and the fastest way to add authentication to your web app.',
+  description: 'Atlas Identity Platform is the Auth0 alternative from Opendex, Inc., and the fastest way to add authentication to your web app.',
   openGraph: {
     title: 'Atlas Identity Platform Dashboard',
-    description: 'Atlas Identity Platform is the open-source Auth0 alternative, and the fastest way to add authentication to your web app.',
+    description: 'Atlas Identity Platform is the Auth0 alternative from Opendex, Inc., and the fastest way to add authentication to your web app.',
     images: [`${getPublicEnvVar('NEXT_PUBLIC_STACK_API_URL')}/open-graph-image.png`]
   },
   twitter: {
     title: 'Atlas Identity Platform Dashboard',
-    description: 'Atlas Identity Platform is the open-source Auth0 alternative, and the fastest way to add authentication to your web app.',
+    description: 'Atlas Identity Platform is the Auth0 alternative from Opendex, Inc., and the fastest way to add authentication to your web app.',
     images: [`${getPublicEnvVar('NEXT_PUBLIC_STACK_API_URL')}/open-graph-image.png`]
   },
 };

@@ -1,4 +1,4 @@
-import { SelectedTeamSwitcher } from '@stackframe/stack';
+import { SelectedTeamSwitcher } from '@opendex/stack';
 
 export default function Page() {
   return (

@@ -1,7 +1,7 @@
 import { Tenancy } from "@/lib/tenancies";
 import { getPrismaClientForTenancy } from "@/prisma-client";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
 import { signInVerificationCodeHandler } from "../app/api/latest/auth/otp/sign-in/verification-code-handler";
 
 // For now, we only have two hardcoded notification categories. TODO: query from database instead and create UI to manage them in dashboard

@@ -2,15 +2,15 @@ import { getPrismaClientForTenancy, globalPrismaClient, retryTransaction } from 
 import { traceSpan } from "@/utils/telemetry";
 import { allPromisesAndWaitUntilEach, runAsynchronouslyAndWaitUntil } from "@/utils/vercel";
 import { CompiledWorkflow, Prisma } from "@prisma/client";
-import { isStringArray } from "@stackframe/stack-shared/dist/utils/arrays";
-import { encodeBase64 } from "@stackframe/stack-shared/dist/utils/bytes";
-import { generateSecureRandomString, hash } from "@stackframe/stack-shared/dist/utils/crypto";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { StackAssertionError, captureError, errorToNiceString, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { bundleJavaScript, initializeEsbuild } from "@stackframe/stack-shared/dist/utils/esbuild";
-import { runAsynchronously, timeout, wait } from "@stackframe/stack-shared/dist/utils/promises";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
+import { isStringArray } from "@opendex/stack-shared/dist/utils/arrays";
+import { encodeBase64 } from "@opendex/stack-shared/dist/utils/bytes";
+import { generateSecureRandomString, hash } from "@opendex/stack-shared/dist/utils/crypto";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { StackAssertionError, captureError, errorToNiceString, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { bundleJavaScript, initializeEsbuild } from "@opendex/stack-shared/dist/utils/esbuild";
+import { runAsynchronously, timeout, wait } from "@opendex/stack-shared/dist/utils/promises";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 import { Freestyle } from "./freestyle";
 import { Tenancy } from "./tenancies";
 import { upstash } from "./upstash";
@@ -54,7 +54,7 @@ export async function compileWorkflowSource(source: string): Promise<Result<stri
   const bundleResult = await bundleJavaScript({
     "/source.tsx": source,
     "/entry.js": `
-      import { StackServerApp } from 'https://esm.sh/@stackframe/js@2.8.36?target=es2021&standalone';
+      import { StackServerApp } from 'https://esm.sh/@opendex/js@2.8.36?target=es2021&standalone';
 
       globalThis.navigator.onLine = true;
 

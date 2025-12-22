@@ -16,7 +16,7 @@ it("should not allow updating email templates when using shared email config", a
     },
     body: {
       tsx_source: `
-        import { Subject, NotificationCategory } from '@stackframe/emails';
+        import { Subject, NotificationCategory } from '@opendex/emails';
         export const variablesSchema = (v) => v;
         export function EmailTemplate() {
           return <>
@@ -67,7 +67,7 @@ it("should allow adding and updating email templates with custom email config", 
     accessType: "admin",
     body: {
       tsx_source: `
-        import { Subject, NotificationCategory } from '@stackframe/emails';
+        import { Subject, NotificationCategory } from '@opendex/emails';
         export const variablesSchema = (v) => v;
         export function EmailTemplate() {
           return <>

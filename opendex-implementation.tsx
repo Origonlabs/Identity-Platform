@@ -3,7 +3,7 @@
  * Integra todos los componentes corporativos personalizados
  */
 
-import { StackApp, StackProvider } from '@stackframe/stack';
+import { StackApp, StackProvider } from '@opendex/stack';
 import React from 'react';
 import {
     OpendexAuthPage,

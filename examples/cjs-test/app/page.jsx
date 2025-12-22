@@ -1,5 +1,5 @@
 const { default: Image } = require("next/image");
-const Stack = require('@stackframe/stack');
+const Stack = require('@opendex/stack');
 
 function Home() {
   return (

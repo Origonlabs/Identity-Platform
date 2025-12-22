@@ -1,4 +1,4 @@
-# @stackframe/init-stack
+# @opendex/init-stack
 
 ## 2.8.39
 
@@ -6,7 +6,7 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.39
+  - @opendex/stack-shared@2.8.39
 
 ## 2.8.38
 
@@ -14,14 +14,14 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.38
+  - @opendex/stack-shared@2.8.38
 
 ## 2.8.37
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.37
+  - @opendex/stack-shared@2.8.37
 
 ## 2.8.36
 
@@ -29,21 +29,21 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.36
+  - @opendex/stack-shared@2.8.36
 
 ## 2.8.35
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.35
+  - @opendex/stack-shared@2.8.35
 
 ## 2.8.34
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.34
+  - @opendex/stack-shared@2.8.34
 
 ## 2.8.33
 
@@ -51,14 +51,14 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.33
+  - @opendex/stack-shared@2.8.33
 
 ## 2.8.32
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.32
+  - @opendex/stack-shared@2.8.32
 
 ## 2.8.31
 
@@ -66,7 +66,7 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.31
+  - @opendex/stack-shared@2.8.31
 
 ## 2.8.30
 
@@ -74,178 +74,178 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.30
+  - @opendex/stack-shared@2.8.30
 
 ## 2.8.29
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.29
+  - @opendex/stack-shared@2.8.29
 
 ## 2.8.28
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.28
+  - @opendex/stack-shared@2.8.28
 
 ## 2.8.27
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.27
+  - @opendex/stack-shared@2.8.27
 
 ## 2.8.26
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.26
+  - @opendex/stack-shared@2.8.26
 
 ## 2.8.25
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.25
+  - @opendex/stack-shared@2.8.25
 
 ## 2.8.24
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.24
+  - @opendex/stack-shared@2.8.24
 
 ## 2.8.23
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.23
+  - @opendex/stack-shared@2.8.23
 
 ## 2.8.22
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.22
+  - @opendex/stack-shared@2.8.22
 
 ## 2.8.21
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.21
+  - @opendex/stack-shared@2.8.21
 
 ## 2.8.20
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.20
+  - @opendex/stack-shared@2.8.20
 
 ## 2.8.19
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.19
+  - @opendex/stack-shared@2.8.19
 
 ## 2.8.18
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.18
+  - @opendex/stack-shared@2.8.18
 
 ## 2.8.17
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.8.17
+- @opendex/stack-shared@2.8.17
 
 ## 2.8.16
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.16
+  - @opendex/stack-shared@2.8.16
 
 ## 2.8.15
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.8.15
+- @opendex/stack-shared@2.8.15
 
 ## 2.8.14
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.14
+  - @opendex/stack-shared@2.8.14
 
 ## 2.8.13
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.13
+  - @opendex/stack-shared@2.8.13
 
 ## 2.8.12
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.12
+  - @opendex/stack-shared@2.8.12
 
 ## 2.8.11
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.11
+  - @opendex/stack-shared@2.8.11
 
 ## 2.8.10
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.10
+  - @opendex/stack-shared@2.8.10
 
 ## 2.8.9
 
 ### Patch Changes
 
 - Various changes
-  - @stackframe/stack-shared@2.8.9
+  - @opendex/stack-shared@2.8.9
 
 ## 2.8.8
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.8.8
+- @opendex/stack-shared@2.8.8
 
 ## 2.8.7
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.8.7
+- @opendex/stack-shared@2.8.7
 
 ## 2.8.6
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.6
+  - @opendex/stack-shared@2.8.6
 
 ## 2.8.5
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.5
+  - @opendex/stack-shared@2.8.5
 
 ## 2.8.4
 
@@ -253,55 +253,55 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.4
+  - @opendex/stack-shared@2.8.4
 
 ## 2.8.3
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.3
+  - @opendex/stack-shared@2.8.3
 
 ## 2.8.2
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.2
+  - @opendex/stack-shared@2.8.2
 
 ## 2.8.1
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.8.1
+- @opendex/stack-shared@2.8.1
 
 ## 2.8.0
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.0
+  - @opendex/stack-shared@2.8.0
 
 ## 2.7.30
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.30
+  - @opendex/stack-shared@2.7.30
 
 ## 2.7.29
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.29
+  - @opendex/stack-shared@2.7.29
 
 ## 2.7.28
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.28
+  - @opendex/stack-shared@2.7.28
 
 ## 2.7.27
 
@@ -309,27 +309,27 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.27
+  - @opendex/stack-shared@2.7.27
 
 ## 2.7.26
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.26
+  - @opendex/stack-shared@2.7.26
 
 ## 2.7.25
 
 ### Patch Changes
 
 - Various changes
-  - @stackframe/stack-shared@2.7.25
+  - @opendex/stack-shared@2.7.25
 
 ## 2.7.24
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.7.24
+- @opendex/stack-shared@2.7.24
 
 ## 2.7.23
 
@@ -337,35 +337,35 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.23
+  - @opendex/stack-shared@2.7.23
 
 ## 2.7.22
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.22
+  - @opendex/stack-shared@2.7.22
 
 ## 2.7.21
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.21
+  - @opendex/stack-shared@2.7.21
 
 ## 2.7.20
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.20
+  - @opendex/stack-shared@2.7.20
 
 ## 2.7.19
 
 ### Patch Changes
 
 - Various changes
-  - @stackframe/stack-shared@2.7.19
+  - @opendex/stack-shared@2.7.19
 
 ## 2.7.18
 
@@ -373,7 +373,7 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.18
+  - @opendex/stack-shared@2.7.18
 
 ## 2.7.17
 
@@ -381,35 +381,35 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.17
+  - @opendex/stack-shared@2.7.17
 
 ## 2.7.16
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.16
+  - @opendex/stack-shared@2.7.16
 
 ## 2.7.15
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.15
+  - @opendex/stack-shared@2.7.15
 
 ## 2.7.14
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.14
+  - @opendex/stack-shared@2.7.14
 
 ## 2.7.13
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.13
+  - @opendex/stack-shared@2.7.13
 
 ## 2.7.12
 
@@ -417,14 +417,14 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.12
+  - @opendex/stack-shared@2.7.12
 
 ## 2.7.11
 
 ### Patch Changes
 
 - Various changes
-  - @stackframe/stack-shared@2.7.11
+  - @opendex/stack-shared@2.7.11
 
 ## 2.7.10
 
@@ -432,14 +432,14 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.10
+  - @opendex/stack-shared@2.7.10
 
 ## 2.7.9
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.9
+  - @opendex/stack-shared@2.7.9
 
 ## 2.7.8
 

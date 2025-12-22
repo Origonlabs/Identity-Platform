@@ -1,12 +1,12 @@
 {
   "//": "IF_PLATFORM template",
-  "name": "@stackframe/template",
+  "name": "@opendex/template",
   "//": "ELSE_IF_PLATFORM js",
-  "name": "@stackframe/js",
+  "name": "@opendex/js",
   "//": "ELSE_IF_PLATFORM next",
-  "name": "@stackframe/stack",
+  "name": "@opendex/stack",
   "//": "ELSE_IF_PLATFORM react",
-  "name": "@stackframe/react",
+  "name": "@opendex/react",
   "//": "END_PLATFORM",
   
   "//": "NEXT_LINE_PLATFORM template",
@@ -27,6 +27,7 @@
     }
   },
   "homepage": "https://opendex.com",
+  "license": "UNLICENSED",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "clean": "rimraf dist && rimraf node_modules",
@@ -70,10 +71,10 @@
     "@hookform/resolvers": "^3.3.4",
     "@simplewebauthn/browser": "^11.0.0",
     "//": "NEXT_LINE_PLATFORM next",
-    "@stackframe/stack-sc": "workspace:*",
-    "@stackframe/stack-shared": "workspace:*",
+    "@opendex/stack-sc": "workspace:*",
+    "@opendex/stack-shared": "workspace:*",
     "//": "NEXT_LINE_PLATFORM react-like",
-    "@stackframe/stack-ui": "workspace:*",
+    "@opendex/stack-ui": "workspace:*",
     "@tanstack/react-table": "^8.20.5",
     "//": "NEXT_LINE_PLATFORM react-like",
     "browser-image-compression": "^2.0.2",

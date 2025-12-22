@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@stackframe/stack-ui';
+import { Button } from '@opendex/stack-ui';
 import { KeyRound } from 'lucide-react';
 import { useId } from 'react';
 import { useStackApp } from '..';

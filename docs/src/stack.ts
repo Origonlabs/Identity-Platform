@@ -1,4 +1,4 @@
-import { StackServerApp } from '@stackframe/stack';
+import { StackServerApp } from '@opendex/stack';
 import "server-only";
 
 function envAtlasOrStack(name: string) {

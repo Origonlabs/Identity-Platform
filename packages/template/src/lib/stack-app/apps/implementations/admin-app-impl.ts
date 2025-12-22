@@ -1,13 +1,13 @@
-import { StackAdminInterface } from "@stackframe/stack-shared";
-import { getProductionModeErrors } from "@stackframe/stack-shared/dist/helpers/production-mode";
-import { InternalApiKeyCreateCrudResponse } from "@stackframe/stack-shared/dist/interface/admin-interface";
-import { EmailTemplateCrud } from "@stackframe/stack-shared/dist/interface/crud/email-templates";
-import { InternalApiKeysCrud } from "@stackframe/stack-shared/dist/interface/crud/internal-api-keys";
-import { ProjectsCrud } from "@stackframe/stack-shared/dist/interface/crud/projects";
-import type { AdminTransaction } from "@stackframe/stack-shared/dist/interface/crud/transactions";
-import { StackAssertionError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { pick } from "@stackframe/stack-shared/dist/utils/objects";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
+import { StackAdminInterface } from "@opendex/stack-shared";
+import { getProductionModeErrors } from "@opendex/stack-shared/dist/helpers/production-mode";
+import { InternalApiKeyCreateCrudResponse } from "@opendex/stack-shared/dist/interface/admin-interface";
+import { EmailTemplateCrud } from "@opendex/stack-shared/dist/interface/crud/email-templates";
+import { InternalApiKeysCrud } from "@opendex/stack-shared/dist/interface/crud/internal-api-keys";
+import { ProjectsCrud } from "@opendex/stack-shared/dist/interface/crud/projects";
+import type { AdminTransaction } from "@opendex/stack-shared/dist/interface/crud/transactions";
+import { StackAssertionError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { pick } from "@opendex/stack-shared/dist/utils/objects";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
 import { useMemo } from "react"; // THIS_LINE_PLATFORM react-like
 import { AdminSentEmail, CurrentUser } from "../..";
 import { EmailConfig, stackAppInternalsSymbol } from "../../common";
@@ -19,9 +19,9 @@ import { StackAdminApp, StackAdminAppConstructorOptions } from "../interfaces/ad
 import { clientVersion, createCache, getBaseUrl, getDefaultExtraRequestHeaders, getDefaultProjectId, getDefaultPublishableClientKey, getDefaultSecretServerKey, getDefaultSuperSecretAdminKey } from "./common";
 import { _StackServerAppImplIncomplete } from "./server-app-impl";
 
-import { CompleteConfig, EnvironmentConfigOverrideOverride } from "@stackframe/stack-shared/dist/config/schema";
-import { ChatContent } from "@stackframe/stack-shared/dist/interface/admin-interface";
-import { ConfigCrud } from "@stackframe/stack-shared/dist/interface/crud/config";
+import { CompleteConfig, EnvironmentConfigOverrideOverride } from "@opendex/stack-shared/dist/config/schema";
+import { ChatContent } from "@opendex/stack-shared/dist/interface/admin-interface";
+import { ConfigCrud } from "@opendex/stack-shared/dist/interface/crud/config";
 import { useAsyncCache } from "./common"; // THIS_LINE_PLATFORM react-like
 
 export class _StackAdminAppImplIncomplete<HasTokenStore extends boolean, ProjectId extends string> extends _StackServerAppImplIncomplete<HasTokenStore, ProjectId> implements StackAdminApp<HasTokenStore, ProjectId> {

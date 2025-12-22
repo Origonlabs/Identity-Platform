@@ -1,10 +1,10 @@
 import { getRenderedEnvironmentConfigQuery, overrideEnvironmentConfigOverride, validateEnvironmentConfigOverride } from "@/lib/config";
 import { globalPrismaClient, rawQuery } from "@/prisma-client";
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
-import { configOverrideCrud } from "@stackframe/stack-shared/dist/interface/crud/config";
-import { yupObject } from "@stackframe/stack-shared/dist/schema-fields";
-import { StatusError } from "@stackframe/stack-shared/dist/utils/errors";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
+import { configOverrideCrud } from "@opendex/stack-shared/dist/interface/crud/config";
+import { yupObject } from "@opendex/stack-shared/dist/schema-fields";
+import { StatusError } from "@opendex/stack-shared/dist/utils/errors";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
 
 export const configOverridesCrudHandlers = createLazyProxy(() => createCrudHandlers(configOverrideCrud, {
   paramsSchema: yupObject({}),

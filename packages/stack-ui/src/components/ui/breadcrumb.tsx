@@ -1,6 +1,6 @@
 import React from "react";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
-import { ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
+import { ChevronRightIcon, DotsHorizontalIcon } from "./icons";
 import { Slot } from "@radix-ui/react-slot";
 
 import { cn } from "../../lib/utils";

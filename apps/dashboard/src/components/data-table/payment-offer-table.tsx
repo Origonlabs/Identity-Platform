@@ -1,8 +1,8 @@
 'use client';
 import { useAdminApp } from "@/app/(main)/(protected)/projects/[projectId]/use-admin-app";
 import { OfferDialog } from "@/components/payments/offer-dialog";
-import { branchPaymentsSchema } from "@stackframe/stack-shared/dist/config/schema";
-import { ActionCell, ActionDialog, DataTable, DataTableColumnHeader, TextCell, toast } from "@stackframe/stack-ui";
+import { branchPaymentsSchema } from "@opendex/stack-shared/dist/config/schema";
+import { ActionCell, ActionDialog, DataTable, DataTableColumnHeader, TextCell, toast } from "@opendex/stack-ui";
 import { ColumnDef } from "@tanstack/react-table";
 import { useState } from "react";
 import * as yup from "yup";

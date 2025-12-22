@@ -1,6 +1,6 @@
 'use client';
 
-import { CircleAlert, Info, LucideIcon } from "lucide-react";
+import { CircleAlert, IconComponent, Info } from "./ui/icons";
 import React, { Suspense, useId } from "react";
 import { Alert, Button, Checkbox, Dialog, DialogBody, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, Label, Skeleton } from '..';
 
@@ -9,7 +9,7 @@ export type ActionDialogProps = {
   open?: boolean,
   onClose?: () => void,
   onOpenChange?: (open: boolean) => void,
-  titleIcon?: LucideIcon,
+  titleIcon?: IconComponent,
   title: boolean | React.ReactNode,
   description?: React.ReactNode,
   danger?: boolean,

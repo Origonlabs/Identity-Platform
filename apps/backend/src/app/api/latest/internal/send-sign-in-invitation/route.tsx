@@ -1,8 +1,8 @@
 import { sendEmailFromTemplate } from "@/lib/emails";
 import { validateRedirectUrl } from "@/lib/redirect-urls";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { adaptSchema, emailSchema, serverOrHigherAuthTypeSchema, urlSchema, yupBoolean, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
+import { KnownErrors } from "@opendex/stack-shared";
+import { adaptSchema, emailSchema, serverOrHigherAuthTypeSchema, urlSchema, yupBoolean, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
 
 export const POST = createSmartRouteHandler({
   metadata: {

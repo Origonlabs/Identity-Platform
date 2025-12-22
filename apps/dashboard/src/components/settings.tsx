@@ -1,7 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, DelayedInput, Form, Label, Select, SelectContent, SelectTrigger, SelectValue, Switch, Typography, useToast } from "@stackframe/stack-ui";
+import { runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, DelayedInput, Form, Label, Select, SelectContent, SelectTrigger, SelectValue, Switch, Typography, useToast } from "@opendex/stack-ui";
 import { Settings } from "lucide-react";
 import React, { useEffect, useId, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";

@@ -4,10 +4,10 @@ import { getStripeForAccount } from "@/lib/stripe";
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
 import { SubscriptionStatus } from "@prisma/client";
-import { adaptSchema, adminAuthTypeSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { addInterval } from "@stackframe/stack-shared/dist/utils/dates";
-import { StackAssertionError, StatusError } from "@stackframe/stack-shared/dist/utils/errors";
-import { typedToUppercase } from "@stackframe/stack-shared/dist/utils/strings";
+import { adaptSchema, adminAuthTypeSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { addInterval } from "@opendex/stack-shared/dist/utils/dates";
+import { StackAssertionError, StatusError } from "@opendex/stack-shared/dist/utils/errors";
+import { typedToUppercase } from "@opendex/stack-shared/dist/utils/strings";
 
 export const POST = createSmartRouteHandler({
   metadata: {

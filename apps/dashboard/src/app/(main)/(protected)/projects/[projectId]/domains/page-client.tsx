@@ -2,11 +2,11 @@
 import { FormDialog } from "@/components/form-dialog";
 import { InputField, SwitchField } from "@/components/form-fields";
 import { SettingCard, SettingSwitch } from "@/components/settings";
-import { AdminDomainConfig, AdminProject } from "@stackframe/stack";
-import { yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
-import { isValidHostnameWithWildcards, isValidUrl } from "@stackframe/stack-shared/dist/utils/urls";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, ActionCell, ActionDialog, Alert, Button, Table, TableBody, TableCell, TableHead, TableHeader, TableRow, Typography } from "@stackframe/stack-ui";
+import { AdminDomainConfig, AdminProject } from "@opendex/stack";
+import { yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
+import { isValidHostnameWithWildcards, isValidUrl } from "@opendex/stack-shared/dist/utils/urls";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, ActionCell, ActionDialog, Alert, Button, Table, TableBody, TableCell, TableHead, TableHeader, TableRow, Typography } from "@opendex/stack-ui";
 import React from "react";
 import * as yup from "yup";
 import { PageLayout } from "../page-layout";

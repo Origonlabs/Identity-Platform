@@ -1,8 +1,8 @@
-import { Team, ServerUser } from "@stackframe/stack";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
+import { Team, ServerUser } from "@opendex/stack";
+import { KnownErrors } from "@opendex/stack-shared";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
 import { useState } from "react";
-import { ActionDialog, InlineCode, toast, Typography } from "@stackframe/stack-ui";
+import { ActionDialog, InlineCode, toast, Typography } from "@opendex/stack-ui";
 import { FormDialog } from "../form-dialog";
 import { useAdminApp } from "@/app/(main)/(protected)/projects/[projectId]/use-admin-app";
 import { SelectField } from "../form-fields";

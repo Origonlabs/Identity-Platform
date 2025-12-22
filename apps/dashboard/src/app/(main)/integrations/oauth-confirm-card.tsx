@@ -1,8 +1,8 @@
 "use client";
 
 import { Logo } from "@/components/logo";
-import { AdminProject, useUser } from "@stackframe/stack";
-import { Button, Card, CardContent, CardFooter, CardHeader, Input, Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue, Typography } from "@stackframe/stack-ui";
+import { AdminProject, useUser } from "@opendex/stack";
+import { Button, Card, CardContent, CardFooter, CardHeader, Input, Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue, Typography } from "@opendex/stack-ui";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";

@@ -1,4 +1,4 @@
-import { wait } from "@stackframe/stack-shared/dist/utils/promises";
+import { wait } from "@opendex/stack-shared/dist/utils/promises";
 import { it } from "../../../../helpers";
 import { niceBackendFetch, Project, User } from "../../../backend-helpers";
 

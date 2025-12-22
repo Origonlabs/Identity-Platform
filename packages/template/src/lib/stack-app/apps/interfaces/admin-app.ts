@@ -1,7 +1,7 @@
-import { ChatContent } from "@stackframe/stack-shared/dist/interface/admin-interface";
-import type { AdminTransaction } from "@stackframe/stack-shared/dist/interface/crud/transactions";
-import { InternalSession } from "@stackframe/stack-shared/dist/sessions";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
+import { ChatContent } from "@opendex/stack-shared/dist/interface/admin-interface";
+import type { AdminTransaction } from "@opendex/stack-shared/dist/interface/crud/transactions";
+import { InternalSession } from "@opendex/stack-shared/dist/sessions";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
 import { AsyncStoreProperty, EmailConfig } from "../../common";
 import { AdminSentEmail } from "../../email";
 import { InternalApiKey, InternalApiKeyCreateOptions, InternalApiKeyFirstView } from "../../internal-api-keys";

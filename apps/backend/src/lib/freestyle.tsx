@@ -1,8 +1,8 @@
 import { traceSpan } from '@/utils/telemetry';
-import { getEnvVariable, getNodeEnvironment } from '@stackframe/stack-shared/dist/utils/env';
-import { StackAssertionError } from '@stackframe/stack-shared/dist/utils/errors';
-import { parseJson } from '@stackframe/stack-shared/dist/utils/json';
-import { Result } from '@stackframe/stack-shared/dist/utils/results';
+import { getEnvVariable, getNodeEnvironment } from '@opendex/stack-shared/dist/utils/env';
+import { StackAssertionError } from '@opendex/stack-shared/dist/utils/errors';
+import { parseJson } from '@opendex/stack-shared/dist/utils/json';
+import { Result } from '@opendex/stack-shared/dist/utils/results';
 import { FreestyleSandboxes } from 'freestyle-sandboxes';
 
 export class Freestyle {

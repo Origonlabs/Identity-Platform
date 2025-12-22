@@ -1,5 +1,5 @@
 'use client';
-import { UserButton } from '@stackframe/stack';
+import { UserButton } from '@opendex/stack';
 
 export default function Page() {
   return (

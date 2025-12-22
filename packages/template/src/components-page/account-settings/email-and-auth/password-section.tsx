@@ -1,8 +1,8 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { getPasswordError } from '@stackframe/stack-shared/dist/helpers/password';
-import { passwordSchema as schemaFieldsPasswordSchema, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { runAsynchronously, runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
-import { Button, Input, Label, PasswordInput, Typography } from "@stackframe/stack-ui";
+import { getPasswordError } from '@opendex/stack-shared/dist/helpers/password';
+import { passwordSchema as schemaFieldsPasswordSchema, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { runAsynchronously, runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
+import { Button, Input, Label, PasswordInput, Typography } from "@opendex/stack-ui";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";

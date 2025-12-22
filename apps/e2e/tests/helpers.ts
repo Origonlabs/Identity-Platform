@@ -1,8 +1,8 @@
-import { generateSecureRandomString } from "@stackframe/stack-shared/dist/utils/crypto";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
-import { filterUndefined, omit } from "@stackframe/stack-shared/dist/utils/objects";
-import { wait } from "@stackframe/stack-shared/dist/utils/promises";
-import { Nicifiable } from "@stackframe/stack-shared/dist/utils/strings";
+import { generateSecureRandomString } from "@opendex/stack-shared/dist/utils/crypto";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
+import { filterUndefined, omit } from "@opendex/stack-shared/dist/utils/objects";
+import { wait } from "@opendex/stack-shared/dist/utils/promises";
+import { Nicifiable } from "@opendex/stack-shared/dist/utils/strings";
 import { AsyncLocalStorage } from "node:async_hooks";
 // eslint-disable-next-line no-restricted-imports
 import { afterEach, beforeEach, test as vitestTest } from "vitest";

@@ -1,19 +1,19 @@
 import { usersCrudHandlers } from '@/app/api/latest/users/crud';
 import { globalPrismaClient } from '@/prisma-client';
 import { Prisma } from '@prisma/client';
-import { KnownErrors } from '@stackframe/stack-shared';
-import { yupBoolean, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { generateSecureRandomString } from '@stackframe/stack-shared/dist/utils/crypto';
-import { getEnvVariable } from '@stackframe/stack-shared/dist/utils/env';
-import { StackAssertionError, throwErr } from '@stackframe/stack-shared/dist/utils/errors';
-import { getPrivateJwks, getPublicJwkSet, signJWT, verifyJWT } from '@stackframe/stack-shared/dist/utils/jwt';
-import { Result } from '@stackframe/stack-shared/dist/utils/results';
-import { traceSpan } from '@stackframe/stack-shared/dist/utils/telemetry';
+import { KnownErrors } from '@opendex/stack-shared';
+import { yupBoolean, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { generateSecureRandomString } from '@opendex/stack-shared/dist/utils/crypto';
+import { getEnvVariable } from '@opendex/stack-shared/dist/utils/env';
+import { StackAssertionError, throwErr } from '@opendex/stack-shared/dist/utils/errors';
+import { getPrivateJwks, getPublicJwkSet, signJWT, verifyJWT } from '@opendex/stack-shared/dist/utils/jwt';
+import { Result } from '@opendex/stack-shared/dist/utils/results';
+import { traceSpan } from '@opendex/stack-shared/dist/utils/telemetry';
 import * as jose from 'jose';
 import { JOSEError, JWTExpired } from 'jose/errors';
 import { SystemEventTypes, logEvent } from './events';
 import { Tenancy } from './tenancies';
-import { AccessTokenPayload } from '@stackframe/stack-shared/dist/sessions';
+import { AccessTokenPayload } from '@opendex/stack-shared/dist/sessions';
 
 export const authorizationHeaderSchema = yupString().matches(/^StackSession [^ ]+$/);
 

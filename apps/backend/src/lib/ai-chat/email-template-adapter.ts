@@ -30,14 +30,14 @@ It must use react-email components.
 It must export two things:
 - variablesSchema: An arktype schema for the email template props
 - EmailTemplate: A function that renders the email template. You must set the PreviewVariables property to an object that satisfies the variablesSchema by doing EmailTemplate.PreviewVariables = { ...
-It must not import from any package besides "@react-email/components", "@stackframe/emails", and "arktype".
+It must not import from any package besides "@react-email/components", "@opendex/emails", and "arktype".
 It uses tailwind classes for all styling.
 
 Here is an example of a valid email template:
 \`\`\`tsx
 import { type } from "arktype"
 import { Container } from "@react-email/components";
-import { Subject, NotificationCategory, Props } from "@stackframe/emails";
+import { Subject, NotificationCategory, Props } from "@opendex/emails";
 
 export const variablesSchema = type({
   count: "number"

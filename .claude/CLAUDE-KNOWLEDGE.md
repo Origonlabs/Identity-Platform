@@ -199,6 +199,9 @@ await niceBackendFetch("/api/v1/internal/config/override", {
 ### Q: Where does domain validation logic belong?
 A: Core validation functions (`isValidHostnameWithWildcards`, `matchHostnamePattern`) belong in the shared utils package (`packages/stack-shared/src/utils/urls.tsx`) so they can be used by both frontend and backend.
 
+## Q: Why can Next.js dev fail with "process.on/exit/title is not supported in the Edge Runtime"?
+A: Next compiles middleware and an "edge instrumentation" bundle that must be Edge-safe; any Node-only polyfills (e.g., `process.on`, `process.exit`, `util`, `fs`) imported into those graphs will prevent the server from starting. Fix by keeping middleware imports Edge-safe and splitting instrumentation/polyfills into Node-safe vs Edge-safe modules, selecting at runtime using `process.env.NEXT_RUNTIME` and dynamic imports (or separate edge-safe entry files).
+
 ### Q: How do you simplify validation logic with wildcards?
 A: Replace wildcards with valid placeholders before validation:
 ```typescript
@@ -274,7 +277,7 @@ await ensureUserTeamPermissionExists(prisma, {
 A: Don't use server actions. Instead, implement the endpoint functions on the admin-app and admin-interface. Add methods to the AdminProject class in the SDK packages that call the backend API endpoints.
 
 ### Q: How do I use TeamSwitcher component in the dashboard?
-A: Import `TeamSwitcher` from `@stackframe/stack` and use it like:
+A: Import `TeamSwitcher` from `@opendex/stack` and use it like:
 ```typescript
 <TeamSwitcher
   triggerClassName="w-full"
@@ -321,12 +324,12 @@ const response = await fetch(url, {
 A: `ensureTeamMembershipExists` only checks if a user is a member of a team. `ensureUserTeamPermissionExists` checks if a user has a specific permission (like `team_admin`) within that team. The latter also calls `ensureTeamMembershipExists` internally.
 
 ### Q: How do I handle errors in the backend API?
-A: Use `KnownErrors` from `@stackframe/stack-shared` for standard errors (e.g., `KnownErrors.ProjectNotFound()`). For custom errors, use `StatusError` from `@stackframe/stack-shared/dist/utils/errors` with an HTTP status code and message.
+A: Use `KnownErrors` from `@opendex/stack-shared` for standard errors (e.g., `KnownErrors.ProjectNotFound()`). For custom errors, use `StatusError` from `@opendex/stack-shared/dist/utils/errors` with an HTTP status code and message.
 
 ### Q: What's the pattern for TypeScript schema validation in API routes?
-A: Use yup schemas from `@stackframe/stack-shared/dist/schema-fields`. Don't use regular yup imports. Example:
+A: Use yup schemas from `@opendex/stack-shared/dist/schema-fields`. Don't use regular yup imports. Example:
 ```typescript
-import { yupObject, yupString, yupNumber } from "@stackframe/stack-shared/dist/schema-fields";
+import { yupObject, yupString, yupNumber } from "@opendex/stack-shared/dist/schema-fields";
 ```
 
 ### Q: How are teams and projects related in Stack Auth?
@@ -360,7 +363,7 @@ A: Client access type is for frontend applications and has limited permissions. 
 ### Q: How to avoid TypeScript "unnecessary conditional" errors when checking auth.user?
 A: If the schema defines `auth.user` as `.defined()`, TypeScript knows it can't be null, so checking `if (!auth.user)` causes a lint error. Remove the check or adjust the schema if the field can be undefined.
 
-### Q: What to do when TypeScript can't find module '@stackframe/stack' declarations?
+### Q: What to do when TypeScript can't find module '@opendex/stack' declarations?
 A: This happens when packages haven't been built yet. Run these commands in order:
 ```bash
 pnpm clean && pnpm i && pnpm codegen && pnpm build:packages

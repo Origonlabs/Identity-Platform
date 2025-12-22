@@ -1,4 +1,4 @@
-import { Separator, Typography } from "@stackframe/stack-ui";
+import { Separator, Typography } from "@opendex/stack-ui";
 
 
 function Section(props: { title: string, description?: string, children: React.ReactNode }) {

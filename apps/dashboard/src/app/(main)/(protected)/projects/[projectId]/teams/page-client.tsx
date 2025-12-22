@@ -1,7 +1,7 @@
 "use client";
 import { TeamTable } from "@/components/data-table/team-table";
 import { SmartFormDialog } from "@/components/form-dialog";
-import { Button } from "@stackframe/stack-ui";
+import { Button } from "@opendex/stack-ui";
 import React from "react";
 import * as yup from "yup";
 import { PageLayout } from "../page-layout";

@@ -92,7 +92,7 @@ describe("get email theme", () => {
           "display_name": "Default Light",
           "tsx_source": deindent\`
             import { Html, Head, Tailwind, Body, Container, Link } from '@react-email/components';
-            import { ThemeProps } from "@stackframe/emails"
+            import { ThemeProps } from "@opendex/emails"
             
             export function EmailTheme({ children, unsubscribeLink }: ThemeProps) {
               return (

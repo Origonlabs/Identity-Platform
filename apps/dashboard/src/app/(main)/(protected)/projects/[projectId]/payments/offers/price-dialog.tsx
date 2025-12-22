@@ -1,8 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { CompleteConfig } from "@stackframe/stack-shared/dist/config/schema";
-import { Button, Checkbox, Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SimpleTooltip, Typography } from "@stackframe/stack-ui";
+import { CompleteConfig } from "@opendex/stack-shared/dist/config/schema";
+import { Button, Checkbox, Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SimpleTooltip, Typography } from "@opendex/stack-ui";
 import { useState } from "react";
 
 const SUPPORTED_CURRENCIES = [

@@ -5,12 +5,12 @@ import { createCrudHandlers } from "@/route-handlers/crud-handler";
 import { uploadAndGetUrl } from "@/s3";
 import { runAsynchronouslyAndWaitUntil } from "@/utils/vercel";
 import { Prisma } from "@prisma/client";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { teamsCrud } from "@stackframe/stack-shared/dist/interface/crud/teams";
-import { userIdOrMeSchema, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { validateBase64Image } from "@stackframe/stack-shared/dist/utils/base64";
-import { StatusError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
+import { KnownErrors } from "@opendex/stack-shared";
+import { teamsCrud } from "@opendex/stack-shared/dist/interface/crud/teams";
+import { userIdOrMeSchema, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { validateBase64Image } from "@opendex/stack-shared/dist/utils/base64";
+import { StatusError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
 import { addUserToTeam } from "../team-memberships/crud";
 
 

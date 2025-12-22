@@ -1,12 +1,12 @@
-import { projectPermissionCreatedWebhookEvent, projectPermissionDeletedWebhookEvent } from "@stackframe/stack-shared/dist/interface/crud/project-permissions";
-import { teamMembershipCreatedWebhookEvent, teamMembershipDeletedWebhookEvent } from "@stackframe/stack-shared/dist/interface/crud/team-memberships";
-import { teamPermissionCreatedWebhookEvent, teamPermissionDeletedWebhookEvent } from "@stackframe/stack-shared/dist/interface/crud/team-permissions";
-import { teamCreatedWebhookEvent, teamDeletedWebhookEvent, teamUpdatedWebhookEvent } from "@stackframe/stack-shared/dist/interface/crud/teams";
-import { userCreatedWebhookEvent, userDeletedWebhookEvent, userUpdatedWebhookEvent } from "@stackframe/stack-shared/dist/interface/crud/users";
-import { WebhookEvent } from "@stackframe/stack-shared/dist/interface/webhooks";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { StackAssertionError, captureError } from "@stackframe/stack-shared/dist/utils/errors";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
+import { projectPermissionCreatedWebhookEvent, projectPermissionDeletedWebhookEvent } from "@opendex/stack-shared/dist/interface/crud/project-permissions";
+import { teamMembershipCreatedWebhookEvent, teamMembershipDeletedWebhookEvent } from "@opendex/stack-shared/dist/interface/crud/team-memberships";
+import { teamPermissionCreatedWebhookEvent, teamPermissionDeletedWebhookEvent } from "@opendex/stack-shared/dist/interface/crud/team-permissions";
+import { teamCreatedWebhookEvent, teamDeletedWebhookEvent, teamUpdatedWebhookEvent } from "@opendex/stack-shared/dist/interface/crud/teams";
+import { userCreatedWebhookEvent, userDeletedWebhookEvent, userUpdatedWebhookEvent } from "@opendex/stack-shared/dist/interface/crud/users";
+import { WebhookEvent } from "@opendex/stack-shared/dist/interface/webhooks";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { StackAssertionError, captureError } from "@opendex/stack-shared/dist/utils/errors";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
 import { Svix } from "svix";
 import * as yup from "yup";
 

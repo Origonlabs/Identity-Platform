@@ -2,7 +2,7 @@
 
 import { Logo } from "@/components/logo";
 import { useRouter } from "@/components/router";
-import { Button, Typography } from "@stackframe/stack-ui";
+import { Button, Typography } from "@opendex/stack-ui";
 
 export default function ErrorPage(props: {
   title: React.ReactNode,

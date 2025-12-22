@@ -1,4 +1,4 @@
-import { ContactChannelsCrud } from "@stackframe/stack-shared/dist/interface/crud/contact-channels";
+import { ContactChannelsCrud } from "@opendex/stack-shared/dist/interface/crud/contact-channels";
 
 
 export type ContactChannel = {

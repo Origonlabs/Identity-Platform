@@ -1,5 +1,5 @@
 import { TooltipPortal } from "@radix-ui/react-tooltip";
-import { CircleAlert, Info } from "lucide-react";
+import { CircleAlert, Info } from "./ui/icons";
 import { Tooltip, TooltipContent, TooltipTrigger, cn } from "..";
 
 export function SimpleTooltip(props: {

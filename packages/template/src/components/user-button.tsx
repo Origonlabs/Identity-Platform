@@ -1,7 +1,7 @@
 'use client';
 
-import { runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, Skeleton, Typography } from "@stackframe/stack-ui";
+import { runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, Skeleton, Typography } from "@opendex/stack-ui";
 import { CircleUser, LogIn, LogOut, SunMoon, UserPlus } from "lucide-react";
 import React, { Suspense } from "react";
 import { CurrentUser, useStackApp, useUser } from "..";

@@ -1,6 +1,6 @@
 'use client';
 
-import { runAsynchronously } from "@stackframe/stack-shared/dist/utils/promises";
+import { runAsynchronously } from "@opendex/stack-shared/dist/utils/promises";
 import { useEffect, useState } from "react";
 import { codeToHtml } from "shiki";
 import { useCodeOverlay } from "../../hooks/use-code-overlay";

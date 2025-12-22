@@ -1,6 +1,6 @@
 'use client';
 
-import { Typography } from "@stackframe/stack-ui";
+import { Typography } from "@opendex/stack-ui";
 import { useState } from "react";
 import { stackAppInternalsSymbol, useStackApp } from "..";
 import { MessageCard } from "../components/message-cards/message-card";

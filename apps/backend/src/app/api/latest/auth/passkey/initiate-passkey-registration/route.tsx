@@ -3,9 +3,9 @@ import {
   generateRegistrationOptions,
   GenerateRegistrationOptionsOpts,
 } from '@simplewebauthn/server';
-import { KnownErrors } from "@stackframe/stack-shared";
-import { adaptSchema, clientOrHigherAuthTypeSchema, yupMixed, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
+import { KnownErrors } from "@opendex/stack-shared";
+import { adaptSchema, clientOrHigherAuthTypeSchema, yupMixed, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
 import { registerVerificationCodeHandler } from "../register/verification-code-handler";
 const { isoUint8Array } = require('@simplewebauthn/server/helpers');
 export const POST = createSmartRouteHandler({

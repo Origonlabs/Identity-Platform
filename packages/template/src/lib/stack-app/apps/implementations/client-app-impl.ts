@@ -1,33 +1,33 @@
 import { WebAuthnError, startAuthentication, startRegistration } from "@simplewebauthn/browser";
-import { KnownErrors, StackClientInterface } from "@stackframe/stack-shared";
-import { ContactChannelsCrud } from "@stackframe/stack-shared/dist/interface/crud/contact-channels";
-import { CurrentUserCrud } from "@stackframe/stack-shared/dist/interface/crud/current-user";
-import { ItemCrud } from "@stackframe/stack-shared/dist/interface/crud/items";
-import { NotificationPreferenceCrud } from "@stackframe/stack-shared/dist/interface/crud/notification-preferences";
-import { OAuthProviderCrud } from "@stackframe/stack-shared/dist/interface/crud/oauth-providers";
-import { TeamApiKeysCrud, UserApiKeysCrud, teamApiKeysCreateOutputSchema, userApiKeysCreateOutputSchema } from "@stackframe/stack-shared/dist/interface/crud/project-api-keys";
-import { ProjectPermissionsCrud } from "@stackframe/stack-shared/dist/interface/crud/project-permissions";
-import { ClientProjectsCrud } from "@stackframe/stack-shared/dist/interface/crud/projects";
-import { SessionsCrud } from "@stackframe/stack-shared/dist/interface/crud/sessions";
-import { TeamInvitationCrud } from "@stackframe/stack-shared/dist/interface/crud/team-invitation";
-import { TeamMemberProfilesCrud } from "@stackframe/stack-shared/dist/interface/crud/team-member-profiles";
-import { TeamPermissionsCrud } from "@stackframe/stack-shared/dist/interface/crud/team-permissions";
-import { TeamsCrud } from "@stackframe/stack-shared/dist/interface/crud/teams";
-import { UsersCrud } from "@stackframe/stack-shared/dist/interface/crud/users";
-import { InternalSession } from "@stackframe/stack-shared/dist/sessions";
-import { scrambleDuringCompileTime } from "@stackframe/stack-shared/dist/utils/compile-time";
-import { isBrowserLike } from "@stackframe/stack-shared/dist/utils/env";
-import { StackAssertionError, captureError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { DependenciesMap } from "@stackframe/stack-shared/dist/utils/maps";
-import { ProviderType } from "@stackframe/stack-shared/dist/utils/oauth";
-import { deepPlainEquals, omit } from "@stackframe/stack-shared/dist/utils/objects";
-import { neverResolve, runAsynchronously, wait } from "@stackframe/stack-shared/dist/utils/promises";
-import { suspend, suspendIfSsr } from "@stackframe/stack-shared/dist/utils/react";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
-import { Store, storeLock } from "@stackframe/stack-shared/dist/utils/stores";
-import { deindent, mergeScopeStrings } from "@stackframe/stack-shared/dist/utils/strings";
-import { getRelativePart, isRelative } from "@stackframe/stack-shared/dist/utils/urls";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
+import { KnownErrors, StackClientInterface } from "@opendex/stack-shared";
+import { ContactChannelsCrud } from "@opendex/stack-shared/dist/interface/crud/contact-channels";
+import { CurrentUserCrud } from "@opendex/stack-shared/dist/interface/crud/current-user";
+import { ItemCrud } from "@opendex/stack-shared/dist/interface/crud/items";
+import { NotificationPreferenceCrud } from "@opendex/stack-shared/dist/interface/crud/notification-preferences";
+import { OAuthProviderCrud } from "@opendex/stack-shared/dist/interface/crud/oauth-providers";
+import { TeamApiKeysCrud, UserApiKeysCrud, teamApiKeysCreateOutputSchema, userApiKeysCreateOutputSchema } from "@opendex/stack-shared/dist/interface/crud/project-api-keys";
+import { ProjectPermissionsCrud } from "@opendex/stack-shared/dist/interface/crud/project-permissions";
+import { ClientProjectsCrud } from "@opendex/stack-shared/dist/interface/crud/projects";
+import { SessionsCrud } from "@opendex/stack-shared/dist/interface/crud/sessions";
+import { TeamInvitationCrud } from "@opendex/stack-shared/dist/interface/crud/team-invitation";
+import { TeamMemberProfilesCrud } from "@opendex/stack-shared/dist/interface/crud/team-member-profiles";
+import { TeamPermissionsCrud } from "@opendex/stack-shared/dist/interface/crud/team-permissions";
+import { TeamsCrud } from "@opendex/stack-shared/dist/interface/crud/teams";
+import { UsersCrud } from "@opendex/stack-shared/dist/interface/crud/users";
+import { InternalSession } from "@opendex/stack-shared/dist/sessions";
+import { scrambleDuringCompileTime } from "@opendex/stack-shared/dist/utils/compile-time";
+import { isBrowserLike } from "@opendex/stack-shared/dist/utils/env";
+import { StackAssertionError, captureError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { DependenciesMap } from "@opendex/stack-shared/dist/utils/maps";
+import { ProviderType } from "@opendex/stack-shared/dist/utils/oauth";
+import { deepPlainEquals, omit } from "@opendex/stack-shared/dist/utils/objects";
+import { neverResolve, runAsynchronously, wait } from "@opendex/stack-shared/dist/utils/promises";
+import { suspend, suspendIfSsr } from "@opendex/stack-shared/dist/utils/react";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
+import { Store, storeLock } from "@opendex/stack-shared/dist/utils/stores";
+import { deindent, mergeScopeStrings } from "@opendex/stack-shared/dist/utils/strings";
+import { getRelativePart, isRelative } from "@opendex/stack-shared/dist/utils/urls";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 import * as cookie from "cookie";
 import * as NextNavigationUnscrambled from "next/navigation"; // import the entire module to get around some static compiler warnings emitted by Next.js in some cases | THIS_LINE_PLATFORM next
 import React, { useCallback, useMemo } from "react"; // THIS_LINE_PLATFORM react-like
@@ -55,8 +55,8 @@ import { useAsyncCache } from "./common";
 
 let isReactServer = false;
 // IF_PLATFORM next
-import * as sc from "@stackframe/stack-sc";
-import { cookies } from '@stackframe/stack-sc';
+import * as sc from "@opendex/stack-sc";
+import { cookies } from '@opendex/stack-sc';
 isReactServer = sc.isReactServer;
 
 // NextNavigation.useRouter does not exist in react-server environments and some bundlers try to be helpful and throw a warning. Ignore the warning.

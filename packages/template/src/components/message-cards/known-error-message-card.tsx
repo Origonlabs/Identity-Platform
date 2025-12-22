@@ -1,7 +1,7 @@
 "use client";
 
-import { KnownError } from "@stackframe/stack-shared";
-import { Typography } from "@stackframe/stack-ui";
+import { KnownError } from "@opendex/stack-shared";
+import { Typography } from "@opendex/stack-ui";
 import { useStackApp } from "../..";
 import { MessageCard } from "./message-card";
 

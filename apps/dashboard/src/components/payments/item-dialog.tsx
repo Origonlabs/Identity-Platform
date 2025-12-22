@@ -2,11 +2,11 @@
 
 import { FormDialog } from "@/components/form-dialog";
 import { InputField, SelectField } from "@/components/form-fields";
-import { AdminProject } from "@stackframe/stack";
-import { branchPaymentsSchema } from "@stackframe/stack-shared/dist/config/schema";
-import { userSpecifiedIdSchema } from "@stackframe/stack-shared/dist/schema-fields";
-import { has } from "@stackframe/stack-shared/dist/utils/objects";
-import { toast } from "@stackframe/stack-ui";
+import { AdminProject } from "@opendex/stack";
+import { branchPaymentsSchema } from "@opendex/stack-shared/dist/config/schema";
+import { userSpecifiedIdSchema } from "@opendex/stack-shared/dist/schema-fields";
+import { has } from "@opendex/stack-shared/dist/utils/objects";
+import { toast } from "@opendex/stack-ui";
 import * as yup from "yup";
 
 type Props = {

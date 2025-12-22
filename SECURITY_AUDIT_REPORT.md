@@ -118,7 +118,7 @@ Vulnerabilidad que permite extraer claves privadas ECDSA al firmar inputs malfor
 ### Versiones Afectadas
 ```
 elliptic <= 6.6.0 (45 rutas afectadas)
-Encontrado en: @stackframe/stack-shared, múltiples dependencias
+Encontrado en: @opendex/stack-shared, múltiples dependencias
 ```
 
 ### Corrección Requerida

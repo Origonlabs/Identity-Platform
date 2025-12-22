@@ -1,6 +1,6 @@
 import { createVerificationCodeHandler } from "@/route-handlers/verification-code-handler";
 import { VerificationCodeType } from "@prisma/client";
-import { offerSchema, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
+import { offerSchema, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
 
 export const purchaseUrlVerificationCodeHandler = createVerificationCodeHandler({
   type: VerificationCodeType.PURCHASE_URL,

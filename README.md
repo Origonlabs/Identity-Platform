@@ -9,7 +9,7 @@
 
 # Atlas Identity Platform
 
-Atlas Identity Platform is an authentication and identity platform by Opendex, Inc. It is developer-friendly and fully open-source (licensed under MIT and AGPL).
+Atlas Identity Platform is an authentication and identity platform by Opendex, Inc. It is developer-friendly and available under a proprietary commercial license.
 
 Atlas Identity Platform gets you started in just five minutes, after which you'll be ready to use all of its features as you grow your project. Our managed service is completely optional and you can export your user data and self-host, for free, at any time.
 
@@ -44,7 +44,7 @@ We support Next.js, React, and JavaScript frontends, along with any backend that
 
 Ask yourself about `X`:
 
-- Is `X` open-source?
+- Does `X` have transparent licensing and predictable pricing?
 - Is `X` developer-friendly, well-documented, and lets you get started in minutes?
 - Besides authentication, does `X` also do authorization and user management (see feature list below)?
 
@@ -77,12 +77,12 @@ To install Atlas Identity Platform in your Next.js project:
 
 1. Run Atlas Identity Platform's installation wizard with the following command:
     ```bash
-    npx @stackframe/init-stack@latest
+    npx @opendex/init-stack@latest
     ```
    
    If you prefer not to open a browser during setup (useful for CI/CD environments or restricted environments):
     ```bash
-    npx @stackframe/init-stack@latest --no-browser
+    npx @opendex/init-stack@latest --no-browser
     ```
 
 2. Then, create an account on the dashboard, create a new project with an API key, and copy its environment variables into the .env.local file of your Next.js project:
@@ -151,7 +151,7 @@ pnpm test
 
 You can now open the dev launchpad at [http://localhost:8100](http://localhost:8100). From there, you can navigate to the dashboard at [http://localhost:8101](http://localhost:8101), API on port 8102, demo on port 8103, docs on port 8104, Inbucket (e-mails) on port 8105, and Prisma Studio on port 8106. See the dev launchpad for a list of all running services.
 
-Your IDE may show an error on all `@stackframe/XYZ` imports. To fix this, simply restart the TypeScript language server; for example, in VSCode you can open the command palette (Ctrl+Shift+P) and run `Developer: Reload Window` or `TypeScript: Restart TS server`.
+Your IDE may show an error on all `@opendex/XYZ` imports. To fix this, simply restart the TypeScript language server; for example, in VSCode you can open the command palette (Ctrl+Shift+P) and run `Developer: Reload Window` or `TypeScript: Restart TS server`.
 
 You can also open Prisma Studio to see the database interface and edit data directly:
 

@@ -1,11 +1,11 @@
 import { createOrUpdateProjectWithLegacyConfig } from "@/lib/projects";
 import { Tenancy, getTenancy } from "@/lib/tenancies";
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
-import { createCrud } from "@stackframe/stack-shared/dist/crud";
-import * as schemaFields from "@stackframe/stack-shared/dist/schema-fields";
-import { yupObject } from "@stackframe/stack-shared/dist/schema-fields";
-import { StatusError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
+import { createCrud } from "@opendex/stack-shared/dist/crud";
+import * as schemaFields from "@opendex/stack-shared/dist/schema-fields";
+import { yupObject } from "@opendex/stack-shared/dist/schema-fields";
+import { StatusError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
 
 const oauthProviderReadSchema = yupObject({
   id: schemaFields.oauthIdSchema.defined(),

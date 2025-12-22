@@ -1,6 +1,6 @@
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { isWeekend } from "@stackframe/stack-shared/dist/utils/dates";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@stackframe/stack-ui";
+import { isWeekend } from "@opendex/stack-shared/dist/utils/dates";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@opendex/stack-ui";
 import { Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, XAxis, YAxis } from "recharts";
 
 export type LineChartDisplayConfig = {

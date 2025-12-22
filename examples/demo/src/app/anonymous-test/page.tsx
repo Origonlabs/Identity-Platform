@@ -1,8 +1,8 @@
 'use client';
 
-import { useStackApp, useUser } from '@stackframe/stack';
-import { runAsynchronouslyWithAlert } from '@stackframe/stack-shared/dist/utils/promises';
-import { Button, Card, CardContent, CardHeader, Typography } from '@stackframe/stack-ui';
+import { useStackApp, useUser } from '@opendex/stack';
+import { runAsynchronouslyWithAlert } from '@opendex/stack-shared/dist/utils/promises';
+import { Button, Card, CardContent, CardHeader, Typography } from '@opendex/stack-ui';
 import { useState } from 'react';
 
 export default function AnonymousTestPage() {

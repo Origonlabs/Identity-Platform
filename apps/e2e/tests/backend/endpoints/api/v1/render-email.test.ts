@@ -1,6 +1,6 @@
 import { it } from "../../../../helpers";
 import { niceBackendFetch } from "../../../backend-helpers";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 
 it("should return 400 when theme is not found", async ({ expect }) => {
   const response = await niceBackendFetch("/api/v1/emails/render-email", {

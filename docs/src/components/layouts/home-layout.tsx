@@ -1,6 +1,6 @@
 'use client';
 
-import { UserButton } from '@stackframe/stack';
+import { UserButton } from '@opendex/stack';
 import { Github, Menu, Sparkles, X } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState, type ReactNode } from 'react';

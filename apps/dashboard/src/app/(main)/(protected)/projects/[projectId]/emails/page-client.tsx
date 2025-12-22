@@ -5,19 +5,19 @@ import { FormDialog } from "@/components/form-dialog";
 import { InputField, SelectField, TextAreaField } from "@/components/form-fields";
 import { SettingCard, SettingText } from "@/components/settings";
 import { getPublicEnvVar } from "@/lib/env";
-import { AdminEmailConfig, AdminProject, AdminSentEmail, ServerUser, UserAvatar } from "@stackframe/stack";
-import { strictEmailSchema } from "@stackframe/stack-shared/dist/schema-fields";
-import { throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { deepPlainEquals } from "@stackframe/stack-shared/dist/utils/objects";
-import { runAsynchronously } from "@stackframe/stack-shared/dist/utils/promises";
-import { ActionDialog, Alert, Button, DataTable, SimpleTooltip, Typography, useToast, TooltipProvider, TooltipTrigger, TooltipContent, Tooltip, AlertDescription, AlertTitle } from "@stackframe/stack-ui";
+import { AdminEmailConfig, AdminProject, AdminSentEmail, ServerUser, UserAvatar } from "@opendex/stack";
+import { strictEmailSchema } from "@opendex/stack-shared/dist/schema-fields";
+import { throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { deepPlainEquals } from "@opendex/stack-shared/dist/utils/objects";
+import { runAsynchronously } from "@opendex/stack-shared/dist/utils/promises";
+import { ActionDialog, Alert, Button, DataTable, SimpleTooltip, Typography, useToast, TooltipProvider, TooltipTrigger, TooltipContent, Tooltip, AlertDescription, AlertTitle } from "@opendex/stack-ui";
 import { ColumnDef } from "@tanstack/react-table";
 import { AlertCircle, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import * as yup from "yup";
 import { PageLayout } from "../page-layout";
 import { useAdminApp } from "../use-admin-app";
-import { CompleteConfig } from "@stackframe/stack-shared/dist/config/schema";
+import { CompleteConfig } from "@opendex/stack-shared/dist/config/schema";
 
 export default function PageClient() {
   const stackAdminApp = useAdminApp();
@@ -66,7 +66,7 @@ export default function PageClient() {
             </div>
           </SettingText>
           <SettingText label="Sender Email">
-            {emailConfig.isShared ? 'noreply@stackframe.co' : emailConfig.senderEmail}
+            {emailConfig.isShared ? 'noreply@opendex.co' : emailConfig.senderEmail}
           </SettingText>
         </SettingCard>
       )}
@@ -133,7 +133,7 @@ function EditEmailServerDialog(props: {
 
   async function testEmailAndUpdateConfig(emailConfig: AdminEmailConfig & { type: "standard" | "resend" }) {
     const testResult = await stackAdminApp.sendTestEmail({
-      recipientEmail: 'test-email-recipient@stackframe.co',
+      recipientEmail: 'test-email-recipient@opendex.co',
       emailConfig,
     });
 
@@ -220,7 +220,7 @@ function EditEmailServerDialog(props: {
           name="type"
           control={form.control}
           options={[
-            { label: "Shared (noreply@stackframe.co)", value: 'shared' },
+            { label: "Shared (noreply@opendex.co)", value: 'shared' },
             { label: "Resend (your own email address)", value: 'resend' },
             { label: "Custom SMTP server (your own email address)", value: 'standard' },
           ]}

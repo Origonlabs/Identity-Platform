@@ -1,7 +1,7 @@
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
-import { configCrud } from "@stackframe/stack-shared/dist/interface/crud/config";
-import { yupObject } from "@stackframe/stack-shared/dist/schema-fields";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
+import { configCrud } from "@opendex/stack-shared/dist/interface/crud/config";
+import { yupObject } from "@opendex/stack-shared/dist/schema-fields";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
 
 export const configCrudHandlers = createLazyProxy(() => createCrudHandlers(configCrud, {
   paramsSchema: yupObject({}),

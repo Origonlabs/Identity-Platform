@@ -1,12 +1,12 @@
 'use client';
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { getPasswordError } from "@stackframe/stack-shared/dist/helpers/password";
-import { passwordSchema, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { cacheFunction } from "@stackframe/stack-shared/dist/utils/caches";
-import { runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
-import { Button, Label, PasswordInput, Typography, cn } from "@stackframe/stack-ui";
+import { KnownErrors } from "@opendex/stack-shared";
+import { getPasswordError } from "@opendex/stack-shared/dist/helpers/password";
+import { passwordSchema, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { cacheFunction } from "@opendex/stack-shared/dist/utils/caches";
+import { runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
+import { Button, Label, PasswordInput, Typography, cn } from "@opendex/stack-ui";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";

@@ -2,7 +2,7 @@
 
 import { ProjectAvatar } from "@/components/project-switcher";
 import { useRouter } from "@/components/router";
-import { useUser } from "@stackframe/stack";
+import { useUser } from "@opendex/stack";
 import {
   Button,
   Card,
@@ -15,7 +15,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue
-} from "@stackframe/stack-ui";
+} from "@opendex/stack-ui";
 import { PlusIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 

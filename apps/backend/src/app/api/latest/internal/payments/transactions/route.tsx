@@ -1,10 +1,10 @@
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
 import { Prisma } from "@prisma/client";
-import { AdminTransaction, adminTransaction } from "@stackframe/stack-shared/dist/interface/crud/transactions";
-import { adaptSchema, adminAuthTypeSchema, yupArray, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { getOrUndefined } from "@stackframe/stack-shared/dist/utils/objects";
-import { typedToLowercase, typedToUppercase } from "@stackframe/stack-shared/dist/utils/strings";
+import { AdminTransaction, adminTransaction } from "@opendex/stack-shared/dist/interface/crud/transactions";
+import { adaptSchema, adminAuthTypeSchema, yupArray, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { getOrUndefined } from "@opendex/stack-shared/dist/utils/objects";
+import { typedToLowercase, typedToUppercase } from "@opendex/stack-shared/dist/utils/strings";
 
 
 type SelectedPrice = NonNullable<AdminTransaction['price']>;

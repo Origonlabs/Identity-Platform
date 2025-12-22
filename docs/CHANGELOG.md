@@ -1,4 +1,4 @@
-# @stackframe/stack-docs
+# @opendex/stack-docs
 
 ## 2.8.39
 
@@ -6,8 +6,8 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.39
-  - @stackframe/stack@2.8.39
+  - @opendex/stack-shared@2.8.39
+  - @opendex/stack@2.8.39
 
 ## 2.8.38
 
@@ -15,16 +15,16 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.38
-  - @stackframe/stack@2.8.38
+  - @opendex/stack-shared@2.8.38
+  - @opendex/stack@2.8.38
 
 ## 2.8.37
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.37
-  - @stackframe/stack@2.8.37
+  - @opendex/stack-shared@2.8.37
+  - @opendex/stack@2.8.37
 
 ## 2.8.36
 
@@ -32,16 +32,16 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.36
-  - @stackframe/stack@2.8.36
+  - @opendex/stack-shared@2.8.36
+  - @opendex/stack@2.8.36
 
 ## 2.8.35
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.35
-  - @stackframe/stack@2.8.35
+  - @opendex/stack-shared@2.8.35
+  - @opendex/stack@2.8.35
 
 ## 2.8.34
 
@@ -49,8 +49,8 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.34
-  - @stackframe/stack@2.8.34
+  - @opendex/stack-shared@2.8.34
+  - @opendex/stack@2.8.34
 
 ## 2.8.33
 
@@ -58,16 +58,16 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.33
-  - @stackframe/stack@2.8.33
+  - @opendex/stack-shared@2.8.33
+  - @opendex/stack@2.8.33
 
 ## 2.8.32
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.32
-  - @stackframe/stack@2.8.32
+  - @opendex/stack-shared@2.8.32
+  - @opendex/stack@2.8.32
 
 ## 2.8.31
 
@@ -75,8 +75,8 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack@2.8.31
-  - @stackframe/stack-shared@2.8.31
+  - @opendex/stack@2.8.31
+  - @opendex/stack-shared@2.8.31
 
 ## 2.8.30
 
@@ -84,8 +84,8 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.30
-  - @stackframe/stack@2.8.30
+  - @opendex/stack-shared@2.8.30
+  - @opendex/stack@2.8.30
 
 ## 2.8.29
 
@@ -93,8 +93,8 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.29
-  - @stackframe/stack@2.8.29
+  - @opendex/stack-shared@2.8.29
+  - @opendex/stack@2.8.29
 
 ## 2.8.28
 
@@ -102,8 +102,8 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.28
-  - @stackframe/stack@2.8.28
+  - @opendex/stack-shared@2.8.28
+  - @opendex/stack@2.8.28
 
 ## 2.8.27
 
@@ -111,16 +111,16 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.27
-  - @stackframe/stack@2.8.27
+  - @opendex/stack-shared@2.8.27
+  - @opendex/stack@2.8.27
 
 ## 2.8.26
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.26
-  - @stackframe/stack@2.8.26
+  - @opendex/stack-shared@2.8.26
+  - @opendex/stack@2.8.26
 
 ## 2.8.25
 
@@ -128,8 +128,8 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.25
-  - @stackframe/stack@2.8.25
+  - @opendex/stack-shared@2.8.25
+  - @opendex/stack@2.8.25
 
 ## 2.8.24
 
@@ -137,8 +137,8 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.24
-  - @stackframe/stack@2.8.24
+  - @opendex/stack-shared@2.8.24
+  - @opendex/stack@2.8.24
 
 ## 2.8.23
 
@@ -146,8 +146,8 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.23
-  - @stackframe/stack@2.8.23
+  - @opendex/stack-shared@2.8.23
+  - @opendex/stack@2.8.23
 
 ## 2.8.22
 
@@ -155,47 +155,47 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.8.22
-  - @stackframe/stack@2.8.22
+  - @opendex/stack-shared@2.8.22
+  - @opendex/stack@2.8.22
 
 ## 2.8.21
 
 ### Patch Changes
 
 - Various changes
-  - @stackframe/stack@2.8.21
+  - @opendex/stack@2.8.21
 
 ## 2.8.20
 
 ### Patch Changes
 
-- @stackframe/stack@2.8.20
+- @opendex/stack@2.8.20
 
 ## 2.8.19
 
 ### Patch Changes
 
-- @stackframe/stack@2.8.19
+- @opendex/stack@2.8.19
 
 ## 2.8.18
 
 ### Patch Changes
 
-- @stackframe/stack@2.8.18
+- @opendex/stack@2.8.18
 
 ## 2.8.17
 
 ### Patch Changes
 
 - Various changes
-  - @stackframe/stack@2.8.17
+  - @opendex/stack@2.8.17
 
 ## 2.8.16
 
 ### Patch Changes
 
 - Various changes
-  - @stackframe/stack@2.8.16
+  - @opendex/stack@2.8.16
 
 ## 2.8.15
 
@@ -747,14 +747,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-backend@2.5.3
+  - @opendex/stack-backend@2.5.3
 
 ## 2.5.2
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-backend@2.5.2
+  - @opendex/stack-backend@2.5.2
 
 ## 2.5.1
 
@@ -762,7 +762,7 @@
 
 - New backend endpoints
 - Updated dependencies
-  - @stackframe/stack-backend@2.5.1
+  - @opendex/stack-backend@2.5.1
 
 ## 2.5.0
 
@@ -773,7 +773,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-backend@2.5.0
+  - @opendex/stack-backend@2.5.0
 
 ## 2.4.28
 
@@ -781,13 +781,13 @@
 
 - Bugfixes
 - Updated dependencies
-  - @stackframe/stack-backend@2.4.28
+  - @opendex/stack-backend@2.4.28
 
 ## 2.4.27
 
 ### Patch Changes
 
-- @stackframe/stack-server@2.4.27
+- @opendex/stack-server@2.4.27
 
 ## 2.4.26
 
@@ -795,7 +795,7 @@
 
 - Improve docs
 - Updated dependencies
-  - @stackframe/stack-server@2.4.26
+  - @opendex/stack-server@2.4.26
 
 ## 2.4.25
 

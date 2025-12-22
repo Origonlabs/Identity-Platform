@@ -71,7 +71,7 @@ describe("with valid credentials", () => {
       method: "POST",
       accessType: "admin",
       body: {
-        "recipient_email": "test-email-recipient@stackframe.co",
+        "recipient_email": "test-email-recipient@opendex.co",
         "email_config": {
           "host": "this-is-not-a-valid-host.example.com",
           "port": 123,
@@ -113,7 +113,7 @@ describe("with valid credentials", () => {
             "emails": [
               {
                 "subject": "Test Email from Atlas Identity Platform",
-                "to": ["test-email-recipient@stackframe.co"],
+                "to": ["test-email-recipient@opendex.co"],
               },
             ],
             "project_id": "<stripped UUID>",
@@ -214,7 +214,7 @@ describe("with valid credentials", () => {
       method: "POST",
       accessType: "admin",
       body: {
-        "recipient_email": "test-email-recipient@stackframe.co",
+        "recipient_email": "test-email-recipient@opendex.co",
         "email_config": {
           "host": "this-is-not-a-valid-host.example.com",
           "port": 123,
@@ -248,7 +248,7 @@ describe("with valid credentials", () => {
       method: "POST",
       accessType: "admin",
       body: {
-        "recipient_email": "test-email-recipient@stackframe.co",
+        "recipient_email": "test-email-recipient@opendex.co",
         "email_config": {
           "host": "this-is-not-a-valid-host.example.com",
           "port": 123,
@@ -293,7 +293,7 @@ describe("with valid credentials", () => {
       method: "POST",
       accessType: "admin",
       body: {
-        "recipient_email": "test-email-recipient@stackframe.co",
+        "recipient_email": "test-email-recipient@opendex.co",
         "email_config": {
           "host": "this-is-not-a-valid-host.example.com",
           "port": 123,
@@ -368,7 +368,7 @@ describe("with valid credentials", () => {
       method: "POST",
       accessType: "admin",
       body: {
-        "recipient_email": "test-email-recipient@stackframe.co",
+        "recipient_email": "test-email-recipient@opendex.co",
         "email_config": {
           "host": "this-is-not-a-valid-host.example.com",
           "port": 123,

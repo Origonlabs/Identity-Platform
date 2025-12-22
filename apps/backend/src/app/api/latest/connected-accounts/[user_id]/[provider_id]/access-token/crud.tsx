@@ -3,13 +3,13 @@ import { getProvider } from "@/oauth";
 import { TokenSet } from "@/oauth/providers/base";
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { connectedAccountAccessTokenCrud } from "@stackframe/stack-shared/dist/interface/crud/connected-accounts";
-import { userIdOrMeSchema, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { StackAssertionError, StatusError, captureError } from "@stackframe/stack-shared/dist/utils/errors";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
-import { extractScopes } from "@stackframe/stack-shared/dist/utils/strings";
+import { KnownErrors } from "@opendex/stack-shared";
+import { connectedAccountAccessTokenCrud } from "@opendex/stack-shared/dist/interface/crud/connected-accounts";
+import { userIdOrMeSchema, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { StackAssertionError, StatusError, captureError } from "@opendex/stack-shared/dist/utils/errors";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
+import { extractScopes } from "@opendex/stack-shared/dist/utils/strings";
 
 
 export const connectedAccountAccessTokenCrudHandlers = createLazyProxy(() => createCrudHandlers(connectedAccountAccessTokenCrud, {

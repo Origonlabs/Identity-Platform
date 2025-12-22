@@ -1,4 +1,4 @@
-import { decryptValue, hashKey } from "@stackframe/stack-shared/dist/helpers/vault/client-side";
+import { decryptValue, hashKey } from "@opendex/stack-shared/dist/helpers/vault/client-side";
 import { it } from "../../../../../../../helpers";
 import { Auth, InternalApiKey, InternalProjectKeys, Project, backendContext, niceBackendFetch } from "../../../../../../backend-helpers";
 

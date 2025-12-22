@@ -1,10 +1,10 @@
 'use client';
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { strictEmailSchema, yupObject } from "@stackframe/stack-shared/dist/schema-fields";
-import { runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
-import { Button, Input, InputOTP, InputOTPGroup, InputOTPSlot, Label, Typography } from "@stackframe/stack-ui";
+import { KnownErrors } from "@opendex/stack-shared";
+import { strictEmailSchema, yupObject } from "@opendex/stack-shared/dist/schema-fields";
+import { runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
+import { Button, Input, InputOTP, InputOTPGroup, InputOTPSlot, Label, Typography } from "@opendex/stack-ui";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";

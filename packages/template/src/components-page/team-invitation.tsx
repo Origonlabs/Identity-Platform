@@ -1,9 +1,9 @@
 'use client';
 
-import { KnownErrors } from "@stackframe/stack-shared";
-import { cacheFunction } from "@stackframe/stack-shared/dist/utils/caches";
-import { runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
-import { Typography } from "@stackframe/stack-ui";
+import { KnownErrors } from "@opendex/stack-shared";
+import { cacheFunction } from "@opendex/stack-shared/dist/utils/caches";
+import { runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
+import { Typography } from "@opendex/stack-ui";
 import React from "react";
 import { MessageCard, StackClientApp, useStackApp, useUser } from "..";
 import { PredefinedMessageCard } from "../components/message-cards/predefined-message-card";

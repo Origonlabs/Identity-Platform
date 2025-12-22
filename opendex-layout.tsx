@@ -3,7 +3,7 @@
  * Integra el tema personalizado y la identidad visual de Opendex Identity Employee
  */
 
-import { StackTheme } from '@stackframe/stack';
+import { StackTheme } from '@opendex/stack';
 import React from 'react';
 import { opendexTheme } from './opendex-theme';
 

@@ -1,9 +1,9 @@
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { adaptSchema, clientOrHigherAuthTypeSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
+import { KnownErrors } from "@opendex/stack-shared";
+import { adaptSchema, clientOrHigherAuthTypeSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
 import { ensureCustomerExists, getItemQuantityForCustomer } from "@/lib/payments";
-import { getOrUndefined } from "@stackframe/stack-shared/dist/utils/objects";
+import { getOrUndefined } from "@opendex/stack-shared/dist/utils/objects";
 
 
 export const GET = createSmartRouteHandler({

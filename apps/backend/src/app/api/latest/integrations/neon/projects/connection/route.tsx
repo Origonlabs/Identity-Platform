@@ -2,11 +2,11 @@ import { overrideProjectConfigOverride } from "@/lib/config";
 import { getPrismaClientForSourceOfTruth, globalPrismaClient } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
 import { stackServerApp } from "@/stack";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { neonAuthorizationHeaderSchema, yupArray, yupNumber, yupObject, yupString, yupTuple } from "@stackframe/stack-shared/dist/schema-fields";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { decodeBasicAuthorizationHeader } from "@stackframe/stack-shared/dist/utils/http";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
+import { KnownErrors } from "@opendex/stack-shared";
+import { neonAuthorizationHeaderSchema, yupArray, yupNumber, yupObject, yupString, yupTuple } from "@opendex/stack-shared/dist/schema-fields";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { decodeBasicAuthorizationHeader } from "@opendex/stack-shared/dist/utils/http";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 
 export const POST = createSmartRouteHandler({
   metadata: {

@@ -2,11 +2,11 @@
 
 import { getPublicEnvVar } from '@/lib/env';
 import { cn } from '@/lib/utils';
-import { useUser } from '@stackframe/stack';
-import { StackAssertionError } from '@stackframe/stack-shared/dist/utils/errors';
-import { htmlToText } from '@stackframe/stack-shared/dist/utils/html';
-import { runAsynchronously } from '@stackframe/stack-shared/dist/utils/promises';
-import { Button } from '@stackframe/stack-ui';
+import { useUser } from '@opendex/stack';
+import { StackAssertionError } from '@opendex/stack-shared/dist/utils/errors';
+import { htmlToText } from '@opendex/stack-shared/dist/utils/html';
+import { runAsynchronously } from '@opendex/stack-shared/dist/utils/promises';
+import { Button } from '@opendex/stack-ui';
 import { ChevronUp, Lightbulb, Loader2, Plus, Send, X } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 

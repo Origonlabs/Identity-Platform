@@ -1,9 +1,9 @@
 import { overrideEnvironmentConfigOverride } from "@/lib/config";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { adaptSchema, templateThemeIdSchema, yupArray, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { filterUndefined, typedEntries } from "@stackframe/stack-shared/dist/utils/objects";
-import { deindent } from "@stackframe/stack-shared/dist/utils/strings";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
+import { adaptSchema, templateThemeIdSchema, yupArray, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { filterUndefined, typedEntries } from "@opendex/stack-shared/dist/utils/objects";
+import { deindent } from "@opendex/stack-shared/dist/utils/strings";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 
 export const GET = createSmartRouteHandler({
   metadata: {
@@ -69,7 +69,7 @@ export const POST = createSmartRouteHandler({
     const defaultTemplateSource = deindent`
       import { type } from "arktype"
       import { Container } from "@react-email/components";
-      import { Subject, NotificationCategory, Props } from "@stackframe/emails";
+      import { Subject, NotificationCategory, Props } from "@opendex/emails";
 
       export const variablesSchema = type({
         count: "number"

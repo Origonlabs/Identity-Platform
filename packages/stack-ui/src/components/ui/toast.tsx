@@ -1,8 +1,8 @@
 'use client';
 
 import React from "react";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
-import { Cross2Icon } from "@radix-ui/react-icons";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
+import { Cross2Icon } from "./icons";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva, type VariantProps } from "class-variance-authority";
 

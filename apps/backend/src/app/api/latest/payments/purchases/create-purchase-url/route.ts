@@ -3,10 +3,10 @@ import { getStripeForAccount } from "@/lib/stripe";
 import { globalPrismaClient } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
 import { CustomerType } from "@prisma/client";
-import { KnownErrors } from "@stackframe/stack-shared/dist/known-errors";
-import { adaptSchema, clientOrHigherAuthTypeSchema, inlineOfferSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { throwErr } from "@stackframe/stack-shared/dist/utils/errors";
+import { KnownErrors } from "@opendex/stack-shared/dist/known-errors";
+import { adaptSchema, clientOrHigherAuthTypeSchema, inlineOfferSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { throwErr } from "@opendex/stack-shared/dist/utils/errors";
 import { purchaseUrlVerificationCodeHandler } from "../verification-code-handler";
 
 export const POST = createSmartRouteHandler({

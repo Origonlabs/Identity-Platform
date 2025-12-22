@@ -5,12 +5,12 @@ import { ensureTeamMembershipExists } from "@/lib/request-checks";
 import { DEFAULT_BRANCH_ID, getSoleTenancyFromProjectBranch } from "@/lib/tenancies";
 import { globalPrismaClient, rawQueryAll } from "@/prisma-client";
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { adminUserProjectsCrud } from "@stackframe/stack-shared/dist/interface/crud/projects";
-import { projectIdSchema, yupObject } from "@stackframe/stack-shared/dist/schema-fields";
-import { StackAssertionError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { isNotNull, typedEntries, typedFromEntries } from "@stackframe/stack-shared/dist/utils/objects";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
+import { KnownErrors } from "@opendex/stack-shared";
+import { adminUserProjectsCrud } from "@opendex/stack-shared/dist/interface/crud/projects";
+import { projectIdSchema, yupObject } from "@opendex/stack-shared/dist/schema-fields";
+import { StackAssertionError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { isNotNull, typedEntries, typedFromEntries } from "@opendex/stack-shared/dist/utils/objects";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
 
 export const adminUserProjectsCrudHandlers = createLazyProxy(() => createCrudHandlers(adminUserProjectsCrud, {
   paramsSchema: yupObject({

@@ -1,9 +1,9 @@
-import { KnownError, StackClientInterface } from "@stackframe/stack-shared";
-import { InternalSession } from "@stackframe/stack-shared/dist/sessions";
-import { StackAssertionError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { neverResolve } from "@stackframe/stack-shared/dist/utils/promises";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
-import { deindent } from "@stackframe/stack-shared/dist/utils/strings";
+import { KnownError, StackClientInterface } from "@opendex/stack-shared";
+import { InternalSession } from "@opendex/stack-shared/dist/sessions";
+import { StackAssertionError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { neverResolve } from "@opendex/stack-shared/dist/utils/promises";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
+import { deindent } from "@opendex/stack-shared/dist/utils/strings";
 import { constructRedirectUrl } from "../utils/url";
 import { consumeVerifierAndStateCookie, saveVerifierAndState } from "./cookie";
 

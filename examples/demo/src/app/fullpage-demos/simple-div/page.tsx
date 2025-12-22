@@ -1,4 +1,4 @@
-import { SignIn } from "@stackframe/stack";
+import { SignIn } from "@opendex/stack";
 
 export default function SimpleDivFullPageDemo() {
   return (

@@ -1,4 +1,4 @@
-import { ServerTeam, ServerUser } from "@stackframe/stack";
+import { ServerTeam, ServerUser } from "@opendex/stack";
 import { NextResponse } from "next/server";
 import { stackServerApp } from "src/stack";
 export async function POST(request: Request) {

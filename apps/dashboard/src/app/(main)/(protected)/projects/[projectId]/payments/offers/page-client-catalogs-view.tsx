@@ -3,11 +3,11 @@
 import { CodeBlock } from '@/components/code-block';
 import { EditableInput } from "@/components/editable-input";
 import { cn } from "@/lib/utils";
-import { CompleteConfig } from "@stackframe/stack-shared/dist/config/schema";
-import type { DayInterval } from "@stackframe/stack-shared/dist/utils/dates";
-import { prettyPrintWithMagnitudes } from "@stackframe/stack-shared/dist/utils/numbers";
-import { typedEntries } from "@stackframe/stack-shared/dist/utils/objects";
-import { stringCompare } from "@stackframe/stack-shared/dist/utils/strings";
+import { CompleteConfig } from "@opendex/stack-shared/dist/config/schema";
+import type { DayInterval } from "@opendex/stack-shared/dist/utils/dates";
+import { prettyPrintWithMagnitudes } from "@opendex/stack-shared/dist/utils/numbers";
+import { typedEntries } from "@opendex/stack-shared/dist/utils/objects";
+import { stringCompare } from "@opendex/stack-shared/dist/utils/strings";
 import {
   ActionDialog,
   Button,
@@ -34,7 +34,7 @@ import {
   SimpleTooltip,
   Switch,
   toast
-} from "@stackframe/stack-ui";
+} from "@opendex/stack-ui";
 import { Check, ChevronDown, ChevronsUpDown, Layers, MoreVertical, Pencil, PencilIcon, Plus, Puzzle, Server, Trash2, X } from "lucide-react";
 import { Fragment, useEffect, useId, useMemo, useRef, useState } from "react";
 import { IllustratedInfo } from "../../../../../../../components/illustrated-info";

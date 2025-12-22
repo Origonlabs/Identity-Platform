@@ -2,9 +2,9 @@
 
 import { Logo } from "@/components/logo";
 import { useRouter } from "@/components/router";
-import { useStackApp, useUser } from "@stackframe/stack";
-import { runAsynchronously, wait } from "@stackframe/stack-shared/dist/utils/promises";
-import { Button, Card, CardContent, CardFooter, CardHeader, Input, Typography } from "@stackframe/stack-ui";
+import { useStackApp, useUser } from "@opendex/stack";
+import { runAsynchronously, wait } from "@opendex/stack-shared/dist/utils/promises";
+import { Button, Card, CardContent, CardFooter, CardHeader, Input, Typography } from "@opendex/stack-ui";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";

@@ -6,7 +6,7 @@ import { createOrUpdateProjectWithLegacyConfig, getProject } from '@/lib/project
 import { DEFAULT_BRANCH_ID, getSoleTenancyFromProjectBranch } from '@/lib/tenancies';
 import { getPrismaClientForTenancy, globalPrismaClient } from '@/prisma-client';
 import { PrismaClient } from '@prisma/client';
-import { errorToNiceString, throwErr } from '@stackframe/stack-shared/dist/utils/errors';
+import { errorToNiceString, throwErr } from '@opendex/stack-shared/dist/utils/errors';
 
 const globalPrisma = new PrismaClient();
 

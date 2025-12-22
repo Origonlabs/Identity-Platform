@@ -1,4 +1,4 @@
-import { OAuthButton } from '@stackframe/stack';
+import { OAuthButton } from '@opendex/stack';
 
 export default function Page() {
   return (

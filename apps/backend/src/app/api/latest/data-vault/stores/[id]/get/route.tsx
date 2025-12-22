@@ -1,9 +1,9 @@
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { decryptWithKms } from "@stackframe/stack-shared/dist/helpers/vault/server-side";
-import { adaptSchema, serverOrHigherAuthTypeSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
+import { KnownErrors } from "@opendex/stack-shared";
+import { decryptWithKms } from "@opendex/stack-shared/dist/helpers/vault/server-side";
+import { adaptSchema, serverOrHigherAuthTypeSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
 
 export const POST = createSmartRouteHandler({
   metadata: {

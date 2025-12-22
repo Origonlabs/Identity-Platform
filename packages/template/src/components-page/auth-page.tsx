@@ -1,7 +1,7 @@
 'use client';
 
-import { runAsynchronously } from '@stackframe/stack-shared/dist/utils/promises';
-import { Skeleton, Tabs, TabsContent, TabsList, TabsTrigger, Typography, cn } from '@stackframe/stack-ui';
+import { runAsynchronously } from '@opendex/stack-shared/dist/utils/promises';
+import { Skeleton, Tabs, TabsContent, TabsList, TabsTrigger, Typography, cn } from '@opendex/stack-ui';
 import { Suspense, useEffect } from 'react';
 import { useStackApp, useUser } from '..';
 import { CredentialSignIn } from '../components/credential-sign-in';

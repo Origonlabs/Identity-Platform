@@ -1,11 +1,11 @@
-import { yupValidate } from "@stackframe/stack-shared/dist/schema-fields";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
-import { Json } from "@stackframe/stack-shared/dist/utils/json";
-import { deepPlainEquals } from "@stackframe/stack-shared/dist/utils/objects";
-import { traceSpan } from "@stackframe/stack-shared/dist/utils/telemetry";
+import { yupValidate } from "@opendex/stack-shared/dist/schema-fields";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
+import { Json } from "@opendex/stack-shared/dist/utils/json";
+import { deepPlainEquals } from "@opendex/stack-shared/dist/utils/objects";
+import { traceSpan } from "@opendex/stack-shared/dist/utils/telemetry";
 import { NextRequest } from "next/server";
 import * as yup from "yup";
-import "../polyfills";
+import "../polyfills.node";
 import { SmartRequest } from "./smart-request";
 
 export type SmartResponse = {

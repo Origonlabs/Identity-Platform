@@ -1,6 +1,6 @@
-import { StackAssertionError } from '@stackframe/stack-shared/dist/utils/errors';
-import { writeFileSyncIfChanged } from '@stackframe/stack-shared/dist/utils/fs';
-import { replaceAll } from '@stackframe/stack-shared/dist/utils/strings';
+import { StackAssertionError } from '@opendex/stack-shared/dist/utils/errors';
+import { writeFileSyncIfChanged } from '@opendex/stack-shared/dist/utils/fs';
+import { replaceAll } from '@opendex/stack-shared/dist/utils/strings';
 import autoprefixer from 'autoprefixer';
 import * as fs from 'fs';
 import * as path from 'path';

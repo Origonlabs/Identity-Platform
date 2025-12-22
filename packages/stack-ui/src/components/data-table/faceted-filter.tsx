@@ -1,4 +1,4 @@
-import { CheckIcon } from "@radix-ui/react-icons";
+import { CheckIcon } from "../ui/icons";
 import {
   Badge, Button, Command,
   CommandEmpty,
@@ -9,9 +9,9 @@ import {
   CommandSeparator, Popover,
   PopoverContent,
   PopoverTrigger, Separator
-} from "@stackframe/stack-ui";
+} from "@opendex/stack-ui";
 import { Column } from "@tanstack/react-table";
-import { ListFilter } from "lucide-react";
+import { ListFilter } from "../ui/icons";
 import React from "react";
 import { cn } from "../../lib/utils";
 

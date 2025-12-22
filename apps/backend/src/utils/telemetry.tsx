@@ -1,6 +1,6 @@
 import { Attributes, AttributeValue, Span, trace } from "@opentelemetry/api";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
 
 const tracer = trace.getTracer('stack-backend');
 

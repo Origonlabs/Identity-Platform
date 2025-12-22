@@ -1,7 +1,7 @@
 'use client';
 
 
-// import { SignUp } from "@stackframe/stack";
+// import { SignUp } from "@opendex/stack";
 
 // export default function DefaultSignUp() {
 //   return <SignUp fullPage />;
@@ -10,7 +10,7 @@
 // --------------------------------------------
 
 
-import { useStackApp } from "@stackframe/stack";
+import { useStackApp } from "@opendex/stack";
 import { useState } from "react";
 
 export default function CustomCredentialSignUp() {

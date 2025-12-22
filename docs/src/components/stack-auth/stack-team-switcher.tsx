@@ -1,6 +1,6 @@
 'use client';
 
-import { SelectedTeamSwitcher } from '@stackframe/stack';
+import { SelectedTeamSwitcher } from '@opendex/stack';
 import { useState } from 'react';
 import { StackContainer } from '../mdx';
 import { DynamicCodeblock } from '../mdx/dynamic-code-block';
@@ -127,7 +127,7 @@ export function TeamSwitcherDemo() {
 
     const propsCode = propsArray.length > 0 ? '\n      ' + propsArray.join('\n      ') + '\n    ' : '';
 
-    return `import { SelectedTeamSwitcher } from "@stackframe/stack";
+    return `import { SelectedTeamSwitcher } from "@opendex/stack";
 
 export function MyTeamSwitcher() {
   return (

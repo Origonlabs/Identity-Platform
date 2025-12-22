@@ -1,4 +1,4 @@
-import { Typography } from "@stackframe/stack-ui";
+import { Typography } from "@opendex/stack-ui";
 
 export function PageLayout(props: {
   children?: React.ReactNode,

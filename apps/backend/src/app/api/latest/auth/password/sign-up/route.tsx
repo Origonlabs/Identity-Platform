@@ -3,9 +3,9 @@ import { createAuthTokens } from "@/lib/tokens";
 import { createOrUpgradeAnonymousUser } from "@/lib/users";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
 import { runAsynchronouslyAndWaitUntil } from "@/utils/vercel";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { getPasswordError } from "@stackframe/stack-shared/dist/helpers/password";
-import { adaptSchema, clientOrHigherAuthTypeSchema, emailVerificationCallbackUrlSchema, passwordSchema, signInEmailSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
+import { KnownErrors } from "@opendex/stack-shared";
+import { getPasswordError } from "@opendex/stack-shared/dist/helpers/password";
+import { adaptSchema, clientOrHigherAuthTypeSchema, emailVerificationCallbackUrlSchema, passwordSchema, signInEmailSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
 import { contactChannelVerificationCodeHandler } from "../../../contact-channels/verify/verification-code-handler";
 import { createMfaRequiredError } from "../../mfa/sign-in/verification-code-handler";
 

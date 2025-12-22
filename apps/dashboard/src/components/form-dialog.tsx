@@ -1,8 +1,8 @@
 "use client";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
-import { ActionDialog, ActionDialogProps, Form } from "@stackframe/stack-ui";
+import { runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
+import { ActionDialog, ActionDialogProps, Form } from "@opendex/stack-ui";
 import React, { useEffect, useId, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import * as yup from "yup";

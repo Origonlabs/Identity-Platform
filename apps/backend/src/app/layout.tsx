@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import React from 'react';
-import '../polyfills';
+import '../polyfills.node';
 
 export const metadata: Metadata = {
   title: 'Atlas Identity Platform API',

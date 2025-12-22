@@ -1,4 +1,4 @@
-# @stackframe/mock-oauth-server
+# @opendex/mock-oauth-server
 
 ## 2.8.39
 
@@ -145,14 +145,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.14
+  - @opendex/stack-shared@2.7.14
 
 ## 2.7.13
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.13
+  - @opendex/stack-shared@2.7.13
 
 ## 2.7.12
 
@@ -160,13 +160,13 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.12
+  - @opendex/stack-shared@2.7.12
 
 ## 2.7.11
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.7.11
+- @opendex/stack-shared@2.7.11
 
 ## 2.7.10
 
@@ -174,14 +174,14 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.10
+  - @opendex/stack-shared@2.7.10
 
 ## 2.7.9
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.9
+  - @opendex/stack-shared@2.7.9
 
 ## 2.7.8
 
@@ -189,14 +189,14 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.8
+  - @opendex/stack-shared@2.7.8
 
 ## 2.7.7
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.7
+  - @opendex/stack-shared@2.7.7
 
 ## 2.7.6
 
@@ -204,55 +204,55 @@
 
 - Fixed bugs, updated Neon requirements
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.6
+  - @opendex/stack-shared@2.7.6
 
 ## 2.7.5
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.5
+  - @opendex/stack-shared@2.7.5
 
 ## 2.7.4
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.7.4
+- @opendex/stack-shared@2.7.4
 
 ## 2.7.3
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.3
+  - @opendex/stack-shared@2.7.3
 
 ## 2.7.2
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.2
+  - @opendex/stack-shared@2.7.2
 
 ## 2.7.1
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.1
+  - @opendex/stack-shared@2.7.1
 
 ## 2.7.0
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.7.0
+  - @opendex/stack-shared@2.7.0
 
 ## 2.6.39
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.39
+  - @opendex/stack-shared@2.6.39
 
 ## 2.6.38
 
@@ -260,83 +260,83 @@
 
 - Various changes
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.38
+  - @opendex/stack-shared@2.6.38
 
 ## 2.6.37
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.37
+  - @opendex/stack-shared@2.6.37
 
 ## 2.6.36
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.36
+  - @opendex/stack-shared@2.6.36
 
 ## 2.6.35
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.35
+  - @opendex/stack-shared@2.6.35
 
 ## 2.6.34
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.34
+  - @opendex/stack-shared@2.6.34
 
 ## 2.6.33
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.6.33
+- @opendex/stack-shared@2.6.33
 
 ## 2.6.32
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.32
+  - @opendex/stack-shared@2.6.32
 
 ## 2.6.31
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.31
+  - @opendex/stack-shared@2.6.31
 
 ## 2.6.30
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.30
+  - @opendex/stack-shared@2.6.30
 
 ## 2.6.29
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.29
+  - @opendex/stack-shared@2.6.29
 
 ## 2.6.28
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.28
+  - @opendex/stack-shared@2.6.28
 
 ## 2.6.27
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.27
+  - @opendex/stack-shared@2.6.27
 
 ## 2.6.26
 
@@ -344,28 +344,28 @@
 
 - Various bugfixes
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.26
+  - @opendex/stack-shared@2.6.26
 
 ## 2.6.25
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.25
+  - @opendex/stack-shared@2.6.25
 
 ## 2.6.24
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.24
+  - @opendex/stack-shared@2.6.24
 
 ## 2.6.23
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.23
+  - @opendex/stack-shared@2.6.23
 
 ## 2.6.22
 
@@ -373,7 +373,7 @@
 
 - Bugfixes
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.22
+  - @opendex/stack-shared@2.6.22
 
 ## 2.6.21
 
@@ -381,14 +381,14 @@
 
 - Fixed inviteUser
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.21
+  - @opendex/stack-shared@2.6.21
 
 ## 2.6.20
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.20
+  - @opendex/stack-shared@2.6.20
 
 ## 2.6.19
 
@@ -396,7 +396,7 @@
 
 - Bugfixes
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.19
+  - @opendex/stack-shared@2.6.19
 
 ## 2.6.18
 
@@ -404,7 +404,7 @@
 
 - fixed user update bug
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.18
+  - @opendex/stack-shared@2.6.18
 
 ## 2.6.17
 
@@ -412,34 +412,34 @@
 
 - Loading skeletons
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.17
+  - @opendex/stack-shared@2.6.17
 
 ## 2.6.16
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.16
+  - @opendex/stack-shared@2.6.16
 
 ## 2.6.15
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.15
+  - @opendex/stack-shared@2.6.15
 
 ## 2.6.14
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.6.14
+- @opendex/stack-shared@2.6.14
 
 ## 2.6.13
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.13
+  - @opendex/stack-shared@2.6.13
 
 ## 2.6.12
 
@@ -447,7 +447,7 @@
 
 - Updated account settings page
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.12
+  - @opendex/stack-shared@2.6.12
 
 ## 2.6.11
 
@@ -455,7 +455,7 @@
 
 - fixed account settings bugs
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.11
+  - @opendex/stack-shared@2.6.11
 
 ## 2.6.10
 
@@ -463,7 +463,7 @@
 
 - Various bugfixes
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.10
+  - @opendex/stack-shared@2.6.10
 
 ## 2.6.9
 
@@ -473,26 +473,26 @@
   - Fixed some visual gitches and typos
   - Bug fixes
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.9
+  - @opendex/stack-shared@2.6.9
 
 ## 2.6.8
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.8
+  - @opendex/stack-shared@2.6.8
 
 ## 2.6.7
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.6.7
+- @opendex/stack-shared@2.6.7
 
 ## 2.6.6
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.6.6
+- @opendex/stack-shared@2.6.6
 
 ## 2.6.5
 
@@ -500,7 +500,7 @@
 
 - Minor improvements
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.5
+  - @opendex/stack-shared@2.6.5
 
 ## 2.6.4
 
@@ -508,27 +508,27 @@
 
 - fixed small problems
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.4
+  - @opendex/stack-shared@2.6.4
 
 ## 2.6.3
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.3
+  - @opendex/stack-shared@2.6.3
 
 ## 2.6.2
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.2
+  - @opendex/stack-shared@2.6.2
 
 ## 2.6.1
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.6.1
+- @opendex/stack-shared@2.6.1
 
 ## 2.6.0
 
@@ -539,14 +539,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.6.0
+  - @opendex/stack-shared@2.6.0
 
 ## 2.5.37
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.37
+  - @opendex/stack-shared@2.5.37
 
 ## 2.5.36
 
@@ -554,21 +554,21 @@
 
 - added apple oauth
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.36
+  - @opendex/stack-shared@2.5.36
 
 ## 2.5.35
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.35
+  - @opendex/stack-shared@2.5.35
 
 ## 2.5.34
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.34
+  - @opendex/stack-shared@2.5.34
 
 ## 2.5.33
 
@@ -576,21 +576,21 @@
 
 - Team membership webhooks
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.33
+  - @opendex/stack-shared@2.5.33
 
 ## 2.5.32
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.32
+  - @opendex/stack-shared@2.5.32
 
 ## 2.5.31
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.31
+  - @opendex/stack-shared@2.5.31
 
 ## 2.5.30
 
@@ -598,20 +598,20 @@
 
 - More OAuth providers
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.30
+  - @opendex/stack-shared@2.5.30
 
 ## 2.5.29
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.5.29
+- @opendex/stack-shared@2.5.29
 
 ## 2.5.28
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.28
+  - @opendex/stack-shared@2.5.28
 
 ## 2.5.27
 
@@ -619,7 +619,7 @@
 
 - Bugfixes
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.27
+  - @opendex/stack-shared@2.5.27
 
 ## 2.5.26
 
@@ -627,7 +627,7 @@
 
 - Bugfixes
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.26
+  - @opendex/stack-shared@2.5.26
 
 ## 2.5.25
 
@@ -635,27 +635,27 @@
 
 - GitLab OAuth provider
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.25
+  - @opendex/stack-shared@2.5.25
 
 ## 2.5.24
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.24
+  - @opendex/stack-shared@2.5.24
 
 ## 2.5.23
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.5.23
+- @opendex/stack-shared@2.5.23
 
 ## 2.5.22
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.22
+  - @opendex/stack-shared@2.5.22
 
 ## 2.5.21
 
@@ -663,14 +663,14 @@
 
 - Discord OAuth provider
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.21
+  - @opendex/stack-shared@2.5.21
 
 ## 2.5.20
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.20
+  - @opendex/stack-shared@2.5.20
 
 ## 2.5.19
 
@@ -678,14 +678,14 @@
 
 - Team frontend components
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.19
+  - @opendex/stack-shared@2.5.19
 
 ## 2.5.18
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.18
+  - @opendex/stack-shared@2.5.18
 
 ## 2.5.17
 
@@ -693,13 +693,13 @@
 
 - Bugfixes
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.17
+  - @opendex/stack-shared@2.5.17
 
 ## 2.5.16
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.5.16
+- @opendex/stack-shared@2.5.16
 
 ## 2.5.15
 
@@ -707,60 +707,60 @@
 
 - Webhooks
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.15
+  - @opendex/stack-shared@2.5.15
 
 ## 2.5.14
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.5.14
+- @opendex/stack-shared@2.5.14
 
 ## 2.5.13
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.13
+  - @opendex/stack-shared@2.5.13
 
 ## 2.5.12
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.12
+  - @opendex/stack-shared@2.5.12
 
 ## 2.5.11
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.5.11
+- @opendex/stack-shared@2.5.11
 
 ## 2.5.10
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.10
+  - @opendex/stack-shared@2.5.10
 
 ## 2.5.9
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.9
+  - @opendex/stack-shared@2.5.9
 
 ## 2.5.8
 
 ### Patch Changes
 
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.8
+  - @opendex/stack-shared@2.5.8
 
 ## 2.5.7
 
 ### Patch Changes
 
-- @stackframe/stack-shared@2.5.7
+- @opendex/stack-shared@2.5.7
 
 ## 2.5.6
 
@@ -768,4 +768,4 @@
 
 - Various bugfixes
 - Updated dependencies
-  - @stackframe/stack-shared@2.5.6
+  - @opendex/stack-shared@2.5.6

@@ -1,6 +1,6 @@
 'use client';
 
-import { UserButton } from "@stackframe/stack";
+import { UserButton } from "@opendex/stack";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";

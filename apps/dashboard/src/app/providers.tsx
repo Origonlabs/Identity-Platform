@@ -1,6 +1,6 @@
 'use client';
 import { getPublicEnvVar } from '@/lib/env';
-import { useStackApp, useUser } from '@stackframe/stack';
+import { useStackApp, useUser } from '@opendex/stack';
 import posthog from 'posthog-js';
 import { PostHogProvider } from 'posthog-js/react';
 import { Suspense, useEffect, useState } from 'react';

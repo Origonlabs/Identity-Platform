@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMutation, useQuery } from "convex/react";
-import { UserButton, useUser } from "@stackframe/stack";
+import { UserButton, useUser } from "@opendex/stack";
 import { api } from "../convex/_generated/api";
 
 export default function Home() {

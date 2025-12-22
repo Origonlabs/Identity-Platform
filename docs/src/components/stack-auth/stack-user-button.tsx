@@ -1,4 +1,4 @@
-import { UserButton } from '@stackframe/stack';
+import { UserButton } from '@opendex/stack';
 import { StackContainer } from '../mdx';
 
 const mockUser = {

@@ -3,10 +3,10 @@ import { TeamMemberSearchTable } from '@/components/data-table/team-member-searc
 import { TeamMemberTable } from '@/components/data-table/team-member-table';
 import { InputField } from '@/components/form-fields';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ServerTeam } from '@stackframe/stack';
-import { strictEmailSchema, yupObject } from '@stackframe/stack-shared/dist/schema-fields';
-import { runAsynchronouslyWithAlert } from '@stackframe/stack-shared/dist/utils/promises';
-import { ActionDialog, Button, Form, Separator } from '@stackframe/stack-ui';
+import { ServerTeam } from '@opendex/stack';
+import { strictEmailSchema, yupObject } from '@opendex/stack-shared/dist/schema-fields';
+import { runAsynchronouslyWithAlert } from '@opendex/stack-shared/dist/utils/promises';
+import { ActionDialog, Button, Form, Separator } from '@opendex/stack-ui';
 import { notFound } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';

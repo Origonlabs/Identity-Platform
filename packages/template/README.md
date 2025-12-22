@@ -1,10 +1,10 @@
-# Atlas Identity Platform: Open-source Clerk/Auth0 alternative
+# Atlas Identity Platform: Commercial Auth0 alternative
 
-## [📘 Docs](https://docs.opendex.com) | [☁️ Hosted Version](https://dashboard.opendex.com/) | [✨ Demo](https://demo.opendex.com/) | [✉️ Support](mailto:support@opendex.com) | [GitHub](https://github.com/opendex/atlas-identity-platform)
+## [📘 Docs](https://docs.opendex.com) | [☁️ Hosted Version](https://dashboard.opendex.com/) | [✨ Demo](https://demo.opendex.com/) | [✉️ Support](mailto:support@opendex.com)
 
-Atlas Identity Platform is a managed user authentication solution by Opendex, Inc. It is developer-friendly and fully open-source (licensed under MIT and AGPL).
+Atlas Identity Platform is a managed user authentication solution by Opendex, Inc. It is developer-friendly and available under a proprietary commercial license.
 
-Atlas Identity Platform gets you started in just five minutes, after which you'll be ready to use all of its features as you grow your project. Our managed service is completely optional and you can export your user data and self-host, for free, at any time.
+Atlas Identity Platform gets you started in just five minutes, after which you'll be ready to use all of its features as you grow your project. Our managed service is optional, and self-hosting is available under a commercial license.
 
 We support Next.js frontends, along with any backend that can use our [REST API](https://docs.opendex.com/rest-api/overview). Check out our [setup guide](https://docs.opendex.com/getting-started/setup) to get started.
 
@@ -12,7 +12,7 @@ We support Next.js frontends, along with any backend that can use our [REST API]
 
 1. Run Atlas Identity Platform's installation wizard with the following command:
     ```bash
-    npx @stackframe/init-stack@latest
+    npx @opendex/init-stack@latest
     ```
 2. Then, create an account on the dashboard (https://dashboard.opendex.com/projects), create a new project with an API key, and copy its environment variables into the .env.local file of your Next.js project:
     ```

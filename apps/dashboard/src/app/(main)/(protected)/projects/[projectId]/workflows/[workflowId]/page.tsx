@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "@/components/router";
-import { Button, Card, CardContent, CardHeader, CardTitle, toast } from "@stackframe/stack-ui";
+import { Button, Card, CardContent, CardHeader, CardTitle, toast } from "@opendex/stack-ui";
 import { ArrowLeft, Save } from "lucide-react";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";

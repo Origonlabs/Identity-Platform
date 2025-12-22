@@ -1,9 +1,9 @@
 import { overrideEnvironmentConfigOverride } from "@/lib/config";
 import { getActiveEmailTheme, renderEmailWithTemplate } from "@/lib/email-rendering";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { KnownErrors } from "@stackframe/stack-shared/dist/known-errors";
-import { adaptSchema, templateThemeIdSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { StatusError } from "@stackframe/stack-shared/dist/utils/errors";
+import { KnownErrors } from "@opendex/stack-shared/dist/known-errors";
+import { adaptSchema, templateThemeIdSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { StatusError } from "@opendex/stack-shared/dist/utils/errors";
 
 
 export const PATCH = createSmartRouteHandler({
@@ -47,10 +47,10 @@ export const PATCH = createSmartRouteHandler({
       throw new KnownErrors.EmailRenderingError(result.error);
     }
     if (result.data.subject === undefined) {
-      throw new KnownErrors.EmailRenderingError("Subject is required, import it from @stackframe/emails");
+      throw new KnownErrors.EmailRenderingError("Subject is required, import it from @opendex/emails");
     }
     if (result.data.notificationCategory === undefined) {
-      throw new KnownErrors.EmailRenderingError("NotificationCategory is required, import it from @stackframe/emails");
+      throw new KnownErrors.EmailRenderingError("NotificationCategory is required, import it from @opendex/emails");
     }
 
     await overrideEnvironmentConfigOverride({

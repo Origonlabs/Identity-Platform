@@ -5,8 +5,8 @@ import { APIEnvKeys, NextJsEnvKeys } from '@/components/env-keys';
 import { InlineCode } from '@/components/inline-code';
 import { StyledLink } from '@/components/link';
 import { useThemeWatcher } from '@/lib/theme';
-import { deindent } from '@stackframe/stack-shared/dist/utils/strings';
-import { Button, Tabs, TabsContent, TabsList, TabsTrigger, Typography, cn } from "@stackframe/stack-ui";
+import { deindent } from '@opendex/stack-shared/dist/utils/strings';
+import { Button, Tabs, TabsContent, TabsList, TabsTrigger, Typography, cn } from "@opendex/stack-ui";
 import { Book, X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from 'next/image';
@@ -54,10 +54,10 @@ export default function SetupPage(props: { toMetrics: () => void }) {
         </Typography>
         <CodeBlock
           language="bash"
-          content={`npx @stackframe/init-stack@latest`}
+          content={`npx @opendex/init-stack@latest`}
           customRender={
             <div className="p-4 font-mono text-sm">
-              <span className={commandClasses}>npx</span> <span className={nameClasses}>@stackframe/init-stack@latest</span>
+              <span className={commandClasses}>npx</span> <span className={nameClasses}>@opendex/init-stack@latest</span>
             </div>
           }
           title="Terminal"
@@ -96,10 +96,10 @@ export default function SetupPage(props: { toMetrics: () => void }) {
         </Typography>
         <CodeBlock
           language="bash"
-          content={`npm install @stackframe/react`}
+          content={`npm install @opendex/react`}
           customRender={
             <div className="p-4 font-mono text-sm">
-              <span className={commandClasses}>npm install</span> <span className={nameClasses}>@stackframe/react</span>
+              <span className={commandClasses}>npm install</span> <span className={nameClasses}>@opendex/react</span>
             </div>
           }
           title="Terminal"
@@ -122,7 +122,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
         <CodeBlock
           language="tsx"
           content={deindent`
-            import { StackClientApp } from "@stackframe/react";
+            import { StackClientApp } from "@opendex/react";
             import { useNavigate } from "react-router-dom";
             
             export const stackClientApp = new StackClientApp({
@@ -151,7 +151,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
           language="tsx"
           maxHeight={300}
           content={deindent`
-            import { StackHandler, StackProvider, StackTheme } from "@stackframe/react";
+            import { StackHandler, StackProvider, StackTheme } from "@opendex/react";
             import { Suspense } from "react";
             import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
             import { stackClientApp } from "./stack/client";
@@ -207,10 +207,10 @@ export default function SetupPage(props: { toMetrics: () => void }) {
         </Typography>
         <CodeBlock
           language="bash"
-          content={`npm install @stackframe/js`}
+          content={`npm install @opendex/js`}
           customRender={
             <div className="p-4 font-mono text-sm">
-              <span className={commandClasses}>npm install</span> <span className={nameClasses}>@stackframe/js</span>
+              <span className={commandClasses}>npm install</span> <span className={nameClasses}>@opendex/js</span>
             </div>
           }
           title="Terminal"
@@ -239,7 +239,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
             <CodeBlock
               language="typescript"
               content={deindent`
-                import { StackServerApp } from "@stackframe/js";
+                import { StackServerApp } from "@opendex/js";
 
                 const stackServerApp = new StackServerApp({
                   // You should store these in environment variables based on your project setup
@@ -257,7 +257,7 @@ export default function SetupPage(props: { toMetrics: () => void }) {
             <CodeBlock
               language="typescript"
               content={deindent`
-                import { StackClientApp } from "@stackframe/js";
+                import { StackClientApp } from "@opendex/js";
 
                 const stackClientApp = new StackClientApp({
                   // You should store these in environment variables

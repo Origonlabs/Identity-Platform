@@ -1,6 +1,6 @@
 import { it } from "../../../../../helpers";
 import { Auth, Project, User, niceBackendFetch, Payments } from "../../../../backend-helpers";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 
 it("should not be able to create purchase URL without offer_id or offer_inline", async ({ expect }) => {
   await Project.createAndSwitch();

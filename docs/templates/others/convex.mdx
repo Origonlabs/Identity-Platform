@@ -10,7 +10,7 @@ This guide shows how to integrate Atlas Identity Platform with Convex.
 ```bash title="Terminal"
 npx create-next-app --example convex stack-convex
 cd stack-convex
-npx @stackframe/init-stack@latest
+npx @opendex/init-stack@latest
 ```
 
 Add your Stack environment variables to both `.env.local` and convex env:
@@ -23,7 +23,7 @@ Add your Stack environment variables to both `.env.local` and convex env:
 Use the exported helper to configure Convex auth providers for Stack. If `NEXT_PUBLIC_STACK_PROJECT_ID` is set, the `projectId` option is optional.
 
 ```typescript title="convex/auth.config.ts"
-import { getConvexProvidersConfig } from "@stackframe/stack";
+import { getConvexProvidersConfig } from "@opendex/stack";
 
 export default {
   providers: getConvexProvidersConfig({
@@ -35,7 +35,7 @@ export default {
 ### 3) Create your Stack client
 
 ```typescript title="stack/client.ts"
-import { StackClientApp } from "@stackframe/stack";
+import { StackClientApp } from "@opendex/stack";
 
 export const stackClientApp = new StackClientApp({
   tokenStore: "nextjs-cookie",

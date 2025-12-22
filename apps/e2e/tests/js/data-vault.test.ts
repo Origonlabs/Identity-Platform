@@ -1,4 +1,4 @@
-import { StackServerApp } from '@stackframe/js';
+import { StackServerApp } from '@opendex/js';
 import { beforeAll, describe, expect } from 'vitest';
 import { it } from '../helpers';
 import { createApp } from './js-helpers';

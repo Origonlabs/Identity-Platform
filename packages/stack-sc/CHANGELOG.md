@@ -1,4 +1,4 @@
-# @stackframe/stack-sc
+# @opendex/stack-sc
 
 ## 2.8.39
 

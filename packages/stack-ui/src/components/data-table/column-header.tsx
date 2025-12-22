@@ -1,6 +1,6 @@
-import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@stackframe/stack-ui";
+import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@opendex/stack-ui";
 import { Column } from "@tanstack/react-table";
-import { ArrowDown, ArrowUp, LucideIcon } from "lucide-react";
+import { ArrowDown, ArrowUp, IconComponent } from "../ui/icons";
 import { cn } from "../../lib/utils";
 
 type DataTableColumnHeaderProps<TData, TValue> = {
@@ -8,7 +8,7 @@ type DataTableColumnHeaderProps<TData, TValue> = {
   columnTitle: React.ReactNode,
 } & React.HTMLAttributes<HTMLDivElement>
 
-function Item(props: { icon: LucideIcon, onClick: () => void, children: React.ReactNode }) {
+function Item(props: { icon: IconComponent, onClick: () => void, children: React.ReactNode }) {
   return (
     <DropdownMenuItem onClick={props.onClick}>
       <div className="flex items-center">

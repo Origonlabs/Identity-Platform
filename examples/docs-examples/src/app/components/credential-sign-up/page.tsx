@@ -1,4 +1,4 @@
-import { CredentialSignUp } from '@stackframe/stack';
+import { CredentialSignUp } from '@opendex/stack';
 
 export default function Page() {
   return (

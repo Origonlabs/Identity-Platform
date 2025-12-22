@@ -1,10 +1,10 @@
 'use client';
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { getPasswordError } from "@stackframe/stack-shared/dist/helpers/password";
-import { passwordSchema, strictEmailSchema, yupObject } from "@stackframe/stack-shared/dist/schema-fields";
-import { runAsynchronously, runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
-import { Button, Input, Label, PasswordInput } from "@stackframe/stack-ui";
+import { getPasswordError } from "@opendex/stack-shared/dist/helpers/password";
+import { passwordSchema, strictEmailSchema, yupObject } from "@opendex/stack-shared/dist/schema-fields";
+import { runAsynchronously, runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
+import { Button, Input, Label, PasswordInput } from "@opendex/stack-ui";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";

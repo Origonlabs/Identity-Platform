@@ -18,7 +18,7 @@ it("should create, list, get, and update email drafts", async ({ expect }) => {
   });
 
   const initialSource = `import { Container } from "@react-email/components";
-import { Subject, NotificationCategory, Props } from "@stackframe/emails";
+import { Subject, NotificationCategory, Props } from "@opendex/emails";
 export function EmailTemplate({ user, project }: Props) {
   return (
     <Container>
@@ -63,7 +63,7 @@ export function EmailTemplate({ user, project }: Props) {
             "theme_id": false,
             "tsx_source": deindent\`
               import { Container } from "@react-email/components";
-              import { Subject, NotificationCategory, Props } from "@stackframe/emails";
+              import { Subject, NotificationCategory, Props } from "@opendex/emails";
               export function EmailTemplate({ user, project }: Props) {
                 return (
                   <Container>
@@ -95,7 +95,7 @@ export function EmailTemplate({ user, project }: Props) {
         "theme_id": false,
         "tsx_source": deindent\`
           import { Container } from "@react-email/components";
-          import { Subject, NotificationCategory, Props } from "@stackframe/emails";
+          import { Subject, NotificationCategory, Props } from "@opendex/emails";
           export function EmailTemplate({ user, project }: Props) {
             return (
               <Container>
@@ -112,7 +112,7 @@ export function EmailTemplate({ user, project }: Props) {
   `);
 
   const updatedSource = `import { Container } from "@react-email/components";
-import { Subject, NotificationCategory, Props } from "@stackframe/emails";
+import { Subject, NotificationCategory, Props } from "@opendex/emails";
 export function EmailTemplate({ user, project }: Props) {
   return (
     <Container>
@@ -154,7 +154,7 @@ export function EmailTemplate({ user, project }: Props) {
         "theme_id": false,
         "tsx_source": deindent\`
           import { Container } from "@react-email/components";
-          import { Subject, NotificationCategory, Props } from "@stackframe/emails";
+          import { Subject, NotificationCategory, Props } from "@opendex/emails";
           export function EmailTemplate({ user, project }: Props) {
             return (
               <Container>
@@ -178,7 +178,7 @@ it("should render an email draft via render-email endpoint", async ({ expect }) 
   });
 
   const tsxSource = `import { Container } from "@react-email/components";
-import { Subject, NotificationCategory, Props } from "@stackframe/emails";
+import { Subject, NotificationCategory, Props } from "@opendex/emails";
 export function EmailTemplate({ user, project }: Props) {
   return (
     <Container>

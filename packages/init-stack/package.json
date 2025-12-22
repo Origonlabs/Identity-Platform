@@ -1,5 +1,5 @@
 {
-  "name": "@stackframe/init-stack",
+  "name": "@opendex/init-stack",
   "version": "2.8.39",
   "description": "The setup wizard for Atlas Identity Platform. https://opendex.com",
   "main": "dist/index.js",
@@ -39,9 +39,9 @@
   "homepage": "https://opendex.com",
   "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "dependencies": {
-    "@stackframe/stack-shared": "workspace:*",
+    "@opendex/stack-shared": "workspace:*",
     "commander": "^13.1.0",
     "inquirer": "^9.2.19",
     "open": "^10.1.0",

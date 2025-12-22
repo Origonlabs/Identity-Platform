@@ -1,8 +1,8 @@
 "use client";
 
 import { Stepper, StepperPage } from "@/components/stepper";
-import { CompleteConfig } from "@stackframe/stack-shared/dist/config/schema";
-import { Button, Card, CardDescription, CardHeader, CardTitle, Checkbox, Dialog, DialogContent, DialogFooter, DialogTitle, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Typography } from "@stackframe/stack-ui";
+import { CompleteConfig } from "@opendex/stack-shared/dist/config/schema";
+import { Button, Card, CardDescription, CardHeader, CardTitle, Checkbox, Dialog, DialogContent, DialogFooter, DialogTitle, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Typography } from "@opendex/stack-ui";
 import { ArrowLeft, ArrowRight, CreditCard, Package, Plus, Repeat, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { CreateGroupDialog } from "./create-group-dialog";

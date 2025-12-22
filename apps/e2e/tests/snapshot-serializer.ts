@@ -1,7 +1,7 @@
-import { isApiKey, parseProjectApiKey } from "@stackframe/stack-shared/dist/utils/api-keys";
-import { typedIncludes } from "@stackframe/stack-shared/dist/utils/arrays";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
-import { nicify } from "@stackframe/stack-shared/dist/utils/strings";
+import { isApiKey, parseProjectApiKey } from "@opendex/stack-shared/dist/utils/api-keys";
+import { typedIncludes } from "@opendex/stack-shared/dist/utils/arrays";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
+import { nicify } from "@opendex/stack-shared/dist/utils/strings";
 import { SnapshotSerializer } from "vitest";
 
 const hideHeaders = [

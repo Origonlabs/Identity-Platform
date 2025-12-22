@@ -5,11 +5,11 @@ import { getNotificationCategoryByName, hasNotificationEnabled } from "@/lib/not
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
 import { runAsynchronouslyAndWaitUntil } from "@/utils/vercel";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { adaptSchema, serverOrHigherAuthTypeSchema, templateThemeIdSchema, yupArray, yupBoolean, yupMixed, yupNumber, yupObject, yupRecord, yupString, yupUnion } from "@stackframe/stack-shared/dist/schema-fields";
-import { getChunks } from "@stackframe/stack-shared/dist/utils/arrays";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { StatusError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
+import { KnownErrors } from "@opendex/stack-shared";
+import { adaptSchema, serverOrHigherAuthTypeSchema, templateThemeIdSchema, yupArray, yupBoolean, yupMixed, yupNumber, yupObject, yupRecord, yupString, yupUnion } from "@opendex/stack-shared/dist/schema-fields";
+import { getChunks } from "@opendex/stack-shared/dist/utils/arrays";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { StatusError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
 import { unsubscribeLinkVerificationCodeHandler } from "../unsubscribe-link/verification-handler";
 
 type UserResult = {

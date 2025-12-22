@@ -1,7 +1,7 @@
 import Editor, { Monaco } from '@monaco-editor/react';
-import { runAsynchronously } from '@stackframe/stack-shared/dist/utils/promises';
-import { deindent } from '@stackframe/stack-shared/dist/utils/strings';
-import { Typography } from "@stackframe/stack-ui";
+import { runAsynchronously } from '@opendex/stack-shared/dist/utils/promises';
+import { deindent } from '@opendex/stack-shared/dist/utils/strings';
+import { Typography } from "@opendex/stack-ui";
 import { useTheme } from 'next-themes';
 import { dtsBundles } from './dts';
 
@@ -78,7 +78,7 @@ export default function CodeEditor({
     );
     monaco.languages.typescript.typescriptDefaults.addExtraLib(
       deindent`
-        declare module "@stackframe/emails" {
+        declare module "@opendex/emails" {
           const Subject: React.FC<{value: string}>;
           const NotificationCategory: React.FC<{value: "Transactional" | "Marketing"}>;
           type Props<T = never> = {

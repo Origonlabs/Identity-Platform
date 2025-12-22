@@ -4,10 +4,10 @@ import { FormDialog } from "@/components/form-dialog";
 import { CheckboxField, InputField, SelectField } from "@/components/form-fields";
 import { IncludedItemEditorField } from "@/components/payments/included-item-editor";
 import { PriceEditorField } from "@/components/payments/price-editor";
-import { AdminProject } from "@stackframe/stack";
-import { offerSchema, priceOrIncludeByDefaultSchema, userSpecifiedIdSchema, yupRecord } from "@stackframe/stack-shared/dist/schema-fields";
-import { has } from "@stackframe/stack-shared/dist/utils/objects";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, FormLabel, FormItem, FormMessage, toast, FormField, Checkbox, FormControl, SimpleTooltip } from "@stackframe/stack-ui";
+import { AdminProject } from "@opendex/stack";
+import { offerSchema, priceOrIncludeByDefaultSchema, userSpecifiedIdSchema, yupRecord } from "@opendex/stack-shared/dist/schema-fields";
+import { has } from "@opendex/stack-shared/dist/utils/objects";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, FormLabel, FormItem, FormMessage, toast, FormField, Checkbox, FormControl, SimpleTooltip } from "@opendex/stack-ui";
 import * as yup from "yup";
 
 type Props = {

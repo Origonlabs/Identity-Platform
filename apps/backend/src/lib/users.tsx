@@ -1,6 +1,6 @@
 import { usersCrudHandlers } from "@/app/api/latest/users/crud";
-import { UsersCrud } from "@stackframe/stack-shared/dist/interface/crud/users";
-import { KeyIntersect } from "@stackframe/stack-shared/dist/utils/types";
+import { UsersCrud } from "@opendex/stack-shared/dist/interface/crud/users";
+import { KeyIntersect } from "@opendex/stack-shared/dist/utils/types";
 import { Tenancy } from "./tenancies";
 
 export async function createOrUpgradeAnonymousUser(

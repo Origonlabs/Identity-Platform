@@ -1,4 +1,4 @@
-import { wait } from "@stackframe/stack-shared/dist/utils/promises";
+import { wait } from "@opendex/stack-shared/dist/utils/promises";
 import { Mailbox, test } from "../helpers";
 import { Auth, InternalApiKey, Project, bumpEmailAddress, createMailbox, niceBackendFetch } from "./backend-helpers";
 

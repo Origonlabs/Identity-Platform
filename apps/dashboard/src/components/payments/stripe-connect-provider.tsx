@@ -8,7 +8,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useMemo } from "react";
 import { useAdminApp } from "@/app/(main)/(protected)/projects/[projectId]/use-admin-app";
 import { getPublicEnvVar } from "@/lib/env";
-import { throwErr } from "@stackframe/stack-shared/dist/utils/errors";
+import { throwErr } from "@opendex/stack-shared/dist/utils/errors";
 import { appearanceVariablesForTheme } from "./stripe-theme-variables";
 
 type StripeConnectProviderProps = {

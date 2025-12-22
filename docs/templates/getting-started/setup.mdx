@@ -28,7 +28,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       Run Stack's installation wizard with the following command:
 
       ```sh title="Terminal"
-      npx @stackframe/init-stack@latest
+      npx @opendex/init-stack@latest
       ```
 
       <Step>
@@ -68,7 +68,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       First, install Stack with npm, yarn, or pnpm:
 
       ```bash title="Terminal"
-      npm install @stackframe/stack
+      npm install @opendex/stack
       ```
 
       <Step>
@@ -89,7 +89,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       
       ```tsx title="stack/server.ts"
       import "server-only";
-      import { StackServerApp } from "@stackframe/stack";
+      import { StackServerApp } from "@opendex/stack";
 
       export const stackServerApp = new StackServerApp({
         tokenStore: "nextjs-cookie", // storing auth tokens in cookies
@@ -106,7 +106,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       Create a new file in `app/handler/[...stack]/page.tsx` and paste the following code: 
 
       ```tsx title="app/handler/[...stack]/page.tsx"
-      import { StackHandler } from "@stackframe/stack";
+      import { StackHandler } from "@opendex/stack";
       import { stackServerApp } from "@/stack/server";
 
       export default function Handler(props: unknown) {
@@ -123,7 +123,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
 
       ```tsx title="app/layout.tsx"
       import React from "react";
-      import { StackProvider, StackTheme } from "@stackframe/stack";
+      import { StackProvider, StackTheme } from "@opendex/stack";
       import { stackServerApp } from "@/stack/server";
 
       export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -203,7 +203,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       Run Stack's installation wizard with the following command:
 
       ```sh title="Terminal"
-      npx @stackframe/init-stack@latest
+      npx @opendex/init-stack@latest
       ```
 
       <Step>
@@ -217,7 +217,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       This example uses react-router, but all React apps should wrap the app with `StackProvider` and `StackTheme`.
 
       ```tsx title="App.tsx"
-      import { StackHandler, StackProvider, StackTheme } from "@stackframe/react";
+      import { StackHandler, StackProvider, StackTheme } from "@opendex/react";
       import { Suspense } from "react";
       import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
       import { stackClientApp } from "./stack/client";
@@ -267,7 +267,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       </Step>
 
       ```bash title="Terminal"
-      npm install @stackframe/react
+      npm install @opendex/react
       ```
 
       <Step>
@@ -281,7 +281,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       Create a new file `stack/client.ts` in your root directory and fill it with the following Stack app initialization code:
 
       ```tsx title="stack/client.ts"
-      import { StackClientApp } from "@stackframe/react";
+      import { StackClientApp } from "@opendex/react";
       // If you use React Router, uncomment the next line and the redirectMethod below
       // import { useNavigate } from "react-router-dom";
 
@@ -300,7 +300,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       If you're using React Router, update your `App.tsx` file to wrap the entire app with a `StackProvider` and `StackTheme` and add a `StackHandler` route to handle the authentication flow.
 
       ```tsx title="App.tsx"
-      import { StackHandler, StackProvider, StackTheme } from "@stackframe/react";
+      import { StackHandler, StackProvider, StackTheme } from "@opendex/react";
       import { Suspense } from "react";
       import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
       import { stackClientApp } from "./stack/client";
@@ -369,7 +369,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       Run Stack's installation wizard with the following command:
 
       ```sh title="Terminal"
-      npx @stackframe/init-stack@latest
+      npx @opendex/init-stack@latest
       ```
 
       <Step>
@@ -385,7 +385,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
         
         <TabsContent value="server">
           ```tsx title="stack/server.ts"
-          import { StackServerApp } from "@stackframe/js";
+          import { StackServerApp } from "@opendex/js";
 
           export const stackServerApp = new StackServerApp({
             // You should store these in environment variables based on your project setup
@@ -399,7 +399,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
         
         <TabsContent value="client">
           ```tsx title="stack/client.ts"
-          import { StackClientApp } from "@stackframe/js";
+          import { StackClientApp } from "@opendex/js";
 
           export const stackClientApp = new StackClientApp({
             // You should store these in environment variables based on your project setup
@@ -420,7 +420,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
       </Step>
 
       ```bash title="Terminal"
-      npm install @stackframe/js
+      npm install @opendex/js
       ```
 
       <Step>
@@ -439,7 +439,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
         
         <TabsContent value="server">
           ```typescript title="stack/server.ts"
-          import { StackServerApp } from "@stackframe/js";
+          import { StackServerApp } from "@opendex/js";
 
           const stackServerApp = new StackServerApp({
             // You should store these in environment variables based on your project setup
@@ -453,7 +453,7 @@ We recommend using our **setup wizard** for a seamless installation experience. 
         
         <TabsContent value="client">
           ```tsx title="stack/client.ts"
-          import { StackClientApp } from "@stackframe/js";
+          import { StackClientApp } from "@opendex/js";
 
           const stackClientApp = new StackClientApp({
             // You should store these in environment variables based on your project setup

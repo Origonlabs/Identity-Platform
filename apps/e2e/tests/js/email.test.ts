@@ -1,5 +1,5 @@
-import { KnownErrors } from "@stackframe/stack-shared";
-import { DEFAULT_EMAIL_THEME_ID, DEFAULT_TEMPLATE_IDS } from "@stackframe/stack-shared/dist/helpers/emails";
+import { KnownErrors } from "@opendex/stack-shared";
+import { DEFAULT_EMAIL_THEME_ID, DEFAULT_TEMPLATE_IDS } from "@opendex/stack-shared/dist/helpers/emails";
 import { it } from "../helpers";
 import { createApp } from "./js-helpers";
 

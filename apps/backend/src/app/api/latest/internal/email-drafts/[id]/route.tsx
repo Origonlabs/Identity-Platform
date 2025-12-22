@@ -1,6 +1,6 @@
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { templateThemeIdSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
+import { templateThemeIdSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
 import { templateThemeIdToThemeMode, themeModeToTemplateThemeId } from "@/lib/email-drafts";
 
 export const GET = createSmartRouteHandler({

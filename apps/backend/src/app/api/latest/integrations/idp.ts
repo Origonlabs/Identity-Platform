@@ -1,12 +1,12 @@
 import { globalPrismaClient, retryTransaction } from '@/prisma-client';
 import { Prisma } from '@prisma/client';
-import { decodeBase64OrBase64Url, toHexString } from '@stackframe/stack-shared/dist/utils/bytes';
-import { getEnvVariable } from '@stackframe/stack-shared/dist/utils/env';
-import { StackAssertionError, captureError, throwErr } from '@stackframe/stack-shared/dist/utils/errors';
-import { sha512 } from '@stackframe/stack-shared/dist/utils/hashes';
-import { getPrivateJwks, getPublicJwkSet } from '@stackframe/stack-shared/dist/utils/jwt';
-import { deindent } from '@stackframe/stack-shared/dist/utils/strings';
-import { generateUuid } from '@stackframe/stack-shared/dist/utils/uuids';
+import { decodeBase64OrBase64Url, toHexString } from '@opendex/stack-shared/dist/utils/bytes';
+import { getEnvVariable } from '@opendex/stack-shared/dist/utils/env';
+import { StackAssertionError, captureError, throwErr } from '@opendex/stack-shared/dist/utils/errors';
+import { sha512 } from '@opendex/stack-shared/dist/utils/hashes';
+import { getPrivateJwks, getPublicJwkSet } from '@opendex/stack-shared/dist/utils/jwt';
+import { deindent } from '@opendex/stack-shared/dist/utils/strings';
+import { generateUuid } from '@opendex/stack-shared/dist/utils/uuids';
 import Provider, { Adapter, AdapterConstructor, AdapterPayload } from 'oidc-provider';
 
 type AdapterData = {

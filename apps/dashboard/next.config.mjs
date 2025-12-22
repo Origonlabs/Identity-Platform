@@ -57,7 +57,7 @@ const nextConfig = {
 
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 
-  // we're open-source, so we can provide source maps
+  // Provide source maps to improve debugging and observability.
   productionBrowserSourceMaps: true,
 
   poweredByHeader: false,

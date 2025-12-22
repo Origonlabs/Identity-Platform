@@ -1,10 +1,10 @@
 "use client";
 
-import { DayInterval } from "@stackframe/stack-shared/dist/utils/dates";
+import { DayInterval } from "@opendex/stack-shared/dist/utils/dates";
 import { InputField } from "@/components/form-fields";
 import { Control, FieldValues, Path } from "react-hook-form";
 import { KeyedRecordEditorField } from "../form-fields/keyed-record-editor-field";
-import { dayIntervalSchema, userSpecifiedIdSchema } from "@stackframe/stack-shared/dist/schema-fields";
+import { dayIntervalSchema, userSpecifiedIdSchema } from "@opendex/stack-shared/dist/schema-fields";
 import * as yup from "yup";
 import { readableInterval } from "@/lib/dates";
 import { DayIntervalSelectorField } from "../form-fields/day-interval-selector-field";

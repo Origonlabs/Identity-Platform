@@ -8,9 +8,9 @@ import {
   createHistoryAdapter,
   ToolCallContent
 } from "@/components/vibe-coding/chat-adapters";
-import { previewTemplateSource } from "@stackframe/stack-shared/dist/helpers/emails";
-import { KnownErrors } from "@stackframe/stack-shared/dist/known-errors";
-import { Button, toast } from "@stackframe/stack-ui";
+import { previewTemplateSource } from "@opendex/stack-shared/dist/helpers/emails";
+import { KnownErrors } from "@opendex/stack-shared/dist/known-errors";
+import { Button, toast } from "@opendex/stack-ui";
 import { useEffect, useState } from "react";
 import { useAdminApp } from "../../use-admin-app";
 

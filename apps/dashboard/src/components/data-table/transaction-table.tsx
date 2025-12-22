@@ -1,9 +1,9 @@
 'use client';
 
 import { useAdminApp } from '@/app/(main)/(protected)/projects/[projectId]/use-admin-app';
-import type { AdminTransaction } from '@stackframe/stack-shared/dist/interface/crud/transactions';
-import { deepPlainEquals } from '@stackframe/stack-shared/dist/utils/objects';
-import { DataTableColumnHeader, DataTableManualPagination, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, TextCell } from '@stackframe/stack-ui';
+import type { AdminTransaction } from '@opendex/stack-shared/dist/interface/crud/transactions';
+import { deepPlainEquals } from '@opendex/stack-shared/dist/utils/objects';
+import { DataTableColumnHeader, DataTableManualPagination, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, TextCell } from '@opendex/stack-ui';
 import type { ColumnDef, ColumnFiltersState, SortingState } from '@tanstack/react-table';
 import React from 'react';
 

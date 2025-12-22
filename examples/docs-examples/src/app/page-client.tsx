@@ -1,7 +1,7 @@
 'use client';
 
-import { useStackApp, useUser } from '@stackframe/stack';
-import { Button } from '@stackframe/stack-ui';
+import { useStackApp, useUser } from '@opendex/stack';
+import { Button } from '@opendex/stack-ui';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 

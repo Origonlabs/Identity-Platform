@@ -2,8 +2,8 @@ import { getChatAdapter } from "@/lib/ai-chat/adapter-registry";
 import { globalPrismaClient } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
 import { createOpenAI } from "@ai-sdk/openai";
-import { adaptSchema, yupArray, yupMixed, yupNumber, yupObject, yupString, yupUnion } from "@stackframe/stack-shared/dist/schema-fields";
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
+import { adaptSchema, yupArray, yupMixed, yupNumber, yupObject, yupString, yupUnion } from "@opendex/stack-shared/dist/schema-fields";
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
 import { generateText } from "ai";
 import { InferType } from "yup";
 

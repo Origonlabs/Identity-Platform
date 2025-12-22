@@ -1,4 +1,4 @@
-import { Button } from "@stackframe/stack-ui";
+import { Button } from "@opendex/stack-ui";
 import {
   PaymentElement,
   useElements,

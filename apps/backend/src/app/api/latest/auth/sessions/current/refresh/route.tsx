@@ -1,8 +1,8 @@
 import { generateAccessToken } from "@/lib/tokens";
 import { getPrismaClientForTenancy, globalPrismaClient } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { adaptSchema, clientOrHigherAuthTypeSchema, yupNumber, yupObject, yupString, yupTuple } from "@stackframe/stack-shared/dist/schema-fields";
+import { KnownErrors } from "@opendex/stack-shared";
+import { adaptSchema, clientOrHigherAuthTypeSchema, yupNumber, yupObject, yupString, yupTuple } from "@opendex/stack-shared/dist/schema-fields";
 
 export const POST = createSmartRouteHandler({
   metadata: {

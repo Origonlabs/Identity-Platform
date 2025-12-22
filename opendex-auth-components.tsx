@@ -11,7 +11,7 @@ import {
     OAuthButton,
     PasskeyButton,
     useStackApp
-} from '@stackframe/stack';
+} from '@opendex/stack';
 import React from 'react';
 
 // Componente principal de página de autenticación corporativa

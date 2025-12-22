@@ -87,7 +87,7 @@ Vulnerabilidad en la librería `elliptic` (usada para criptografía ECDSA) que p
 
 ### ¿Estamos afectados?
 **SÍ** - Afecta a **45 rutas de dependencias** en:
-- `@stackframe/stack-shared`
+- `@opendex/stack-shared`
 - Múltiples paquetes que usan criptografía
 
 ### ¿Qué puede hacer un atacante?

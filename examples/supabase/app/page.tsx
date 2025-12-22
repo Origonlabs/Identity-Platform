@@ -1,7 +1,7 @@
 'use client';
 
 import { createSupabaseClient } from "@/utils/supabase-client";
-import { useStackApp, useUser } from "@stackframe/stack";
+import { useStackApp, useUser } from "@opendex/stack";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 

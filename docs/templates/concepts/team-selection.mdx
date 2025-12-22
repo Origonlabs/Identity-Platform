@@ -22,7 +22,7 @@ To facilitate team selection, Stack provides a component that looks like this:
 You can import and use the `SelectedTeamSwitcher` component for the "current team" method. It updates the `selectedTeam` when a user selects a team:
 
 ```jsx 
-import { SelectedTeamSwitcher } from "@stackframe/stack";
+import { SelectedTeamSwitcher } from "@opendex/stack";
 
 export function MyPage() {
   return (
@@ -59,7 +59,7 @@ First, create a page at `/app/team/[teamId]/page.tsx` to display information abo
 ```jsx title="/app/team/[teamId]/page.tsx" 
 "use client";
 
-import { useUser, SelectedTeamSwitcher } from "@stackframe/stack";
+import { useUser, SelectedTeamSwitcher } from "@opendex/stack";
 
 export default function TeamPage({ params }: { params: { teamId: string } }) {
   const user = useUser({ or: 'redirect' });
@@ -89,7 +89,7 @@ Next, create a page to display all teams at `/app/team/page.tsx`:
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useUser } from "@stackframe/stack";
+import { useUser } from "@opendex/stack";
 
 export default function TeamsPage() {
   const user = useUser({ or: 'redirect' });

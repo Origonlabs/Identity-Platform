@@ -1,7 +1,7 @@
-import type { StackClientAppConstructorOptions, StackServerAppConstructorOptions } from '@stackframe/js';
-import { AdminProjectCreateOptions, StackAdminApp, StackClientApp, StackServerApp } from '@stackframe/js';
-import { throwErr } from '@stackframe/stack-shared/dist/utils/errors';
-import { Result } from '@stackframe/stack-shared/dist/utils/results';
+import type { StackClientAppConstructorOptions, StackServerAppConstructorOptions } from '@opendex/js';
+import { AdminProjectCreateOptions, StackAdminApp, StackClientApp, StackServerApp } from '@opendex/js';
+import { throwErr } from '@opendex/stack-shared/dist/utils/errors';
+import { Result } from '@opendex/stack-shared/dist/utils/results';
 import { STACK_BACKEND_BASE_URL, STACK_INTERNAL_PROJECT_ADMIN_KEY, STACK_INTERNAL_PROJECT_CLIENT_KEY, STACK_INTERNAL_PROJECT_SERVER_KEY } from '../helpers';
 
 export async function scaffoldProject(body?: Omit<AdminProjectCreateOptions, 'displayName' | 'teamId'> & { displayName?: string }) {

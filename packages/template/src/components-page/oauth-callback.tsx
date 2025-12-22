@@ -1,8 +1,8 @@
 'use client';
 
-import { captureError } from "@stackframe/stack-shared/dist/utils/errors";
-import { runAsynchronously } from "@stackframe/stack-shared/dist/utils/promises";
-import { Spinner, cn } from "@stackframe/stack-ui";
+import { captureError } from "@opendex/stack-shared/dist/utils/errors";
+import { runAsynchronously } from "@opendex/stack-shared/dist/utils/promises";
+import { Spinner, cn } from "@opendex/stack-ui";
 import { useEffect, useRef, useState } from "react";
 import { useStackApp } from "..";
 import { MaybeFullPage } from "../components/elements/maybe-full-page";

@@ -1,5 +1,5 @@
-import { StackAssertionError, captureError } from "@stackframe/stack-shared/dist/utils/errors";
-import { createUrlIfValid, isLocalhost, matchHostnamePattern } from "@stackframe/stack-shared/dist/utils/urls";
+import { StackAssertionError, captureError } from "@opendex/stack-shared/dist/utils/errors";
+import { createUrlIfValid, isLocalhost, matchHostnamePattern } from "@opendex/stack-shared/dist/utils/urls";
 import { Tenancy } from "./tenancies";
 
 /**

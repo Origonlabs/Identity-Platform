@@ -1,4 +1,4 @@
-import { wait } from "@stackframe/stack-shared/dist/utils/promises";
+import { wait } from "@opendex/stack-shared/dist/utils/promises";
 import { randomUUID } from "crypto";
 import { describe } from "vitest";
 import { it } from "../../../../helpers";
@@ -378,7 +378,7 @@ it("should send email using a draft_id and mark draft as sent", async ({ expect 
   const user = await User.create();
 
   const tsxSource = `import { Container } from "@react-email/components";
-import { Subject, NotificationCategory, Props } from "@stackframe/emails";
+import { Subject, NotificationCategory, Props } from "@opendex/emails";
 export function EmailTemplate({ user, project }: Props) {
   return (
     <Container>

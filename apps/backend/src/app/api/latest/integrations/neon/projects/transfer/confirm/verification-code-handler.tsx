@@ -2,9 +2,9 @@ import { teamsCrudHandlers } from "@/app/api/latest/teams/crud";
 import { globalPrismaClient } from "@/prisma-client";
 import { createVerificationCodeHandler } from "@/route-handlers/verification-code-handler";
 import { VerificationCodeType } from "@prisma/client";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { StackAssertionError, StatusError } from "@stackframe/stack-shared/dist/utils/errors";
+import { KnownErrors } from "@opendex/stack-shared";
+import { yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { StackAssertionError, StatusError } from "@opendex/stack-shared/dist/utils/errors";
 
 export const neonIntegrationProjectTransferCodeHandler = createVerificationCodeHandler({
   metadata: {

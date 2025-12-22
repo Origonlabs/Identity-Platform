@@ -1,7 +1,7 @@
 import { getSoleTenancyFromProjectBranch } from "@/lib/tenancies";
 import { getPrismaClientForTenancy, globalPrismaClient } from "@/prisma-client";
 import { VerificationCodeType } from "@prisma/client";
-import { KnownErrors } from "@stackframe/stack-shared/dist/known-errors";
+import { KnownErrors } from "@opendex/stack-shared/dist/known-errors";
 import { NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {

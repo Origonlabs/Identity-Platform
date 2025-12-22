@@ -1,5 +1,5 @@
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
-import { Button } from "@stackframe/stack-ui";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
+import { Button } from "@opendex/stack-ui";
 import { useState } from "react";
 import { CreateApiKeyDialog, ShowApiKeyDialog } from "../../../components/api-key-dialogs";
 import { ApiKeyTable } from "../../../components/api-key-table";

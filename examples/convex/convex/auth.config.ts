@@ -1,4 +1,4 @@
-import { getConvexProvidersConfig } from "@stackframe/stack";
+import { getConvexProvidersConfig } from "@opendex/stack";
 
 export default {
   providers: getConvexProvidersConfig({

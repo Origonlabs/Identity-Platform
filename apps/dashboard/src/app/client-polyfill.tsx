@@ -1,11 +1,11 @@
 "use client";
 
 import * as Sentry from "@sentry/nextjs";
-import { useUser } from "@stackframe/stack";
+import { useUser } from "@opendex/stack";
 import { Suspense, useEffect } from "react";
 
 // ensure that the polyfills are loaded even on the client
-import "../polyfills";
+import "../polyfills.edge";
 
 export function ClientPolyfill() {
   return <Suspense fallback={null}><InnerClientPolyfill /></Suspense>;

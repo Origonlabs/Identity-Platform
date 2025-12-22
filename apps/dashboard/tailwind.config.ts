@@ -4,7 +4,7 @@ const config = {
   darkMode: ["class"],
   content: [
     './src/**/*.{ts,tsx}',
-    "./node_modules/@stackframe/stack-ui/src/**/*.{ts,tsx}",
+    "./node_modules/@opendex/stack-ui/src/**/*.{ts,tsx}",
 	],
   prefix: "",
   theme: {

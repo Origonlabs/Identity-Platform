@@ -1,12 +1,8 @@
 "use client";
 
 import React from "react";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
-import {
-  CheckIcon,
-  ChevronRightIcon,
-  DotFilledIcon,
-} from "@radix-ui/react-icons";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
+import { CheckIcon, ChevronRightIcon, DotFilledIcon } from "./icons";
 import * as MenubarPrimitive from "@radix-ui/react-menubar";
 
 import { cn } from "../../lib/utils";

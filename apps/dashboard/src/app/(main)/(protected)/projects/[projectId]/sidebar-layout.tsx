@@ -7,7 +7,7 @@ import { StackCompanion } from "@/components/stack-companion";
 import ThemeToggle from "@/components/theme-toggle";
 import { getPublicEnvVar } from '@/lib/env';
 import { cn, devFeaturesEnabledForProject } from "@/lib/utils";
-import { AdminProject, UserButton, useUser } from "@stackframe/stack";
+import { AdminProject, UserButton, useUser } from "@opendex/stack";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -21,7 +21,7 @@ import {
   SheetTrigger,
   Typography,
   buttonVariants
-} from "@stackframe/stack-ui";
+} from "@opendex/stack-ui";
 import {
   Book,
   CreditCard,

@@ -2,7 +2,7 @@ import { headers } from "next/headers";
 import React from "react";
 
 export async function ServerDynamic(props: React.PropsWithChildren<{ ms?: number }>) {
-  headers();
+  await headers();
 
   await new Promise((resolve) => setTimeout(resolve, props.ms ?? 3_000));
 

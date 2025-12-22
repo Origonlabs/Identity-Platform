@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { checkVersion, VersionCheckResult } from '@/lib/version-check';
-import { Button } from '@stackframe/stack-ui';
+import { Button } from '@opendex/stack-ui';
 import { BookOpen, HelpCircle, Lightbulb, TimerReset, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import packageJson from '../../package.json';

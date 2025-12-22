@@ -1,13 +1,12 @@
-import { getEnvVariable, getNodeEnvironment } from '@stackframe/stack-shared/dist/utils/env';
-import { StackAssertionError } from '@stackframe/stack-shared/dist/utils/errors';
-import { wait } from '@stackframe/stack-shared/dist/utils/promises';
+import { getEnvVariable, getNodeEnvironment } from '@opendex/stack-shared/dist/utils/env';
+import { StackAssertionError } from '@opendex/stack-shared/dist/utils/errors';
+import { wait } from '@opendex/stack-shared/dist/utils/promises';
 import apiVersions from './generated/api-versions.json';
 import routes from './generated/routes.json';
-import './polyfills';
 
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { SmartRouter } from './smart-router';
+import { SmartRouterEdge } from './smart-router-edge';
 
 const corsAllowedRequestHeaders = [
   // General
@@ -102,7 +101,7 @@ export async function middleware(request: NextRequest) {
       // okay, we're in an API version of the current version. let's check if at least one route matches this URL (doesn't matter which)
       for (const route of routes) {
         if (nextVersion.migrationFolder && (route.normalizedPath + "/").startsWith(nextVersion.migrationFolder + "/")) {
-          if (SmartRouter.matchNormalizedPath(migrationPathname, route.normalizedPath)) {
+          if (SmartRouterEdge.matchNormalizedPath(migrationPathname, route.normalizedPath)) {
             // success! we found a route that matches the request
             // rewrite request to the migration folder
             pathname = migrationPathname;

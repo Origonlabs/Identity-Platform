@@ -1,6 +1,6 @@
-import { nicify } from "@stackframe/stack-shared/dist/utils/strings";
+import { nicify } from "@opendex/stack-shared/dist/utils/strings";
 import { NextRequest, NextResponse } from "next/server";
-import '../../../polyfills';
+import "../../../polyfills.node";
 
 const handler = async (req: NextRequest) => {
   const msg = "You attempted to access /api on the Atlas Identity Platform dashboard URL, instead of the API URL.\n\nFor more guidance, please contact support: support@opendex.com";

@@ -1,6 +1,6 @@
-import "../polyfills";
+import "../polyfills.node";
 
-import { yupArray, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
+import { yupArray, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
 import { NextRequest } from "next/server";
 import { createSmartRouteHandler } from "./smart-route-handler";
 

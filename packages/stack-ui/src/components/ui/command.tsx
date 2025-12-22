@@ -1,8 +1,8 @@
 "use client";
 
 import { type DialogProps } from "@radix-ui/react-dialog";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
+import { MagnifyingGlassIcon } from "./icons";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
 import { Command as CommandPrimitive } from "cmdk";
 import React from "react";
 
@@ -156,4 +156,3 @@ export {
   CommandSeparator,
   CommandShortcut,
 };
-

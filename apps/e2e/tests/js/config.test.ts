@@ -1,4 +1,4 @@
-import { pick } from "@stackframe/stack-shared/dist/utils/objects";
+import { pick } from "@opendex/stack-shared/dist/utils/objects";
 import { it } from "../helpers";
 import { createApp } from "./js-helpers";
 

@@ -11,7 +11,7 @@ By default, `StackHandler` creates all authentication pages you need, however, y
 For example, if you want to create a custom sign-in page with a customized title on the top, you can create a file at `app/signin/page.tsx`:
 
 ```tsx title="app/signin/page.tsx"
-import { SignIn } from "@stackframe/stack";
+import { SignIn } from "@opendex/stack";
 
 export default function CustomSignInPage() {
   return (
@@ -48,7 +48,7 @@ We also provide the low-level functions powering our components, so that you can
 
 ```tsx title="app/signin/page.tsx"
 'use client';
-import { useStackApp } from "@stackframe/stack";
+import { useStackApp } from "@opendex/stack";
 
 export default function CustomOAuthSignIn() {
   const app = useStackApp();

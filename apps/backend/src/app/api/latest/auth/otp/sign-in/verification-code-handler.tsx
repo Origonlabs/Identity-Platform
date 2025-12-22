@@ -6,9 +6,9 @@ import { createOrUpgradeAnonymousUser } from "@/lib/users";
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createVerificationCodeHandler } from "@/route-handlers/verification-code-handler";
 import { VerificationCodeType } from "@prisma/client";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { UsersCrud } from "@stackframe/stack-shared/dist/interface/crud/users";
-import { emailSchema, signInResponseSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
+import { KnownErrors } from "@opendex/stack-shared";
+import { UsersCrud } from "@opendex/stack-shared/dist/interface/crud/users";
+import { emailSchema, signInResponseSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
 import { usersCrudHandlers } from "../../../users/crud";
 import { createMfaRequiredError } from "../../mfa/sign-in/verification-code-handler";
 

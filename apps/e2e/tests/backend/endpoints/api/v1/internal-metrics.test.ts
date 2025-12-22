@@ -1,8 +1,8 @@
-import { wait } from "@stackframe/stack-shared/dist/utils/promises";
+import { wait } from "@opendex/stack-shared/dist/utils/promises";
 import { expect } from "vitest";
 import { NiceResponse, it } from "../../../../helpers";
 import { Auth, InternalApiKey, Project, backendContext, createMailbox, niceBackendFetch } from "../../../backend-helpers";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
 
 async function ensureAnonymousUsersAreStillExcluded(metricsResponse: NiceResponse) {
   for (let i = 0; i < 2; i++) {

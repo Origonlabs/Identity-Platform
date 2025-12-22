@@ -1,4 +1,4 @@
-import { MessageCard } from "@stackframe/stack";
+import { MessageCard } from "@opendex/stack";
 
 export default function NotFound() {
   return (

@@ -1,7 +1,7 @@
 'use client';
 
-import { UserAvatar, useStackApp, useUser } from '@stackframe/stack';
-import { Button, buttonVariants, Card, CardContent, CardFooter, CardHeader, Typography } from '@stackframe/stack-ui';
+import { UserAvatar, useStackApp, useUser } from '@opendex/stack';
+import { Button, buttonVariants, Card, CardContent, CardFooter, CardHeader, Typography } from '@opendex/stack-ui';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';

@@ -61,7 +61,7 @@ Next, we can create a hook/function to check if the user has completed onboardin
     ```jsx title="app/onboarding-hooks.ts"
     'use client';
     import { useEffect } from 'react';
-    import { useUser } from '@stackframe/stack';
+    import { useUser } from '@opendex/stack';
     import { useRouter } from 'next/navigation';
 
     export function useOnboarded() {
@@ -101,7 +101,7 @@ You can then use these functions wherever onboarding is required:
   <TabsContent value="client">
     ```jsx title="app/page.tsx"
     import { useOnboarding } from '@/app/onboarding-hooks';
-    import { useUser } from '@stackframe/stack';
+    import { useUser } from '@opendex/stack';
 
     export default function HomePage() {
       useOnboarding();

@@ -1,7 +1,7 @@
 'use client';
 
 import { useChat } from '@ai-sdk/react';
-import { runAsynchronously } from '@stackframe/stack-shared/dist/utils/promises';
+import { runAsynchronously } from '@opendex/stack-shared/dist/utils/promises';
 import { ExternalLink, FileText, Maximize2, Minimize2, Send, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useSidebar } from '../layouts/sidebar-context';

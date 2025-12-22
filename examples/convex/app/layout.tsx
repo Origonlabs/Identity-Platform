@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { StackProvider, StackTheme } from "@stackframe/stack";
+import { StackProvider, StackTheme } from "@opendex/stack";
 import ConvexClientProvider from "@/components/ConvexClientProvider";
 import { stackServerApp } from "../stack/server";
 import "./globals.css";

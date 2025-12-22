@@ -1,7 +1,7 @@
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { adaptSchema, clientOrHigherAuthTypeSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { generateSecureRandomString } from "@stackframe/stack-shared/dist/utils/crypto";
+import { adaptSchema, clientOrHigherAuthTypeSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { generateSecureRandomString } from "@opendex/stack-shared/dist/utils/crypto";
 
 export const POST = createSmartRouteHandler({
   metadata: {

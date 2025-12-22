@@ -2,11 +2,11 @@ import { getStackStripe, getStripeForAccount, syncStripeSubscriptions } from "@/
 import { getTenancy } from "@/lib/tenancies";
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { yupMixed, yupNumber, yupObject, yupString, yupTuple } from "@stackframe/stack-shared/dist/schema-fields";
-import { typedIncludes } from '@stackframe/stack-shared/dist/utils/arrays';
-import { getEnvVariable } from "@stackframe/stack-shared/dist/utils/env";
-import { StackAssertionError, StatusError, captureError } from "@stackframe/stack-shared/dist/utils/errors";
-import { typedToUppercase } from "@stackframe/stack-shared/dist/utils/strings";
+import { yupMixed, yupNumber, yupObject, yupString, yupTuple } from "@opendex/stack-shared/dist/schema-fields";
+import { typedIncludes } from '@opendex/stack-shared/dist/utils/arrays';
+import { getEnvVariable } from "@opendex/stack-shared/dist/utils/env";
+import { StackAssertionError, StatusError, captureError } from "@opendex/stack-shared/dist/utils/errors";
+import { typedToUppercase } from "@opendex/stack-shared/dist/utils/strings";
 import Stripe from "stripe";
 
 const subscriptionChangedEvents = [

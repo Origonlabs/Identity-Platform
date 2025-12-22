@@ -1,7 +1,7 @@
 "use client";
 
-import { throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { Button } from "@stackframe/stack-ui";
+import { throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { Button } from "@opendex/stack-ui";
 
 export default function Page() {
   return <div>

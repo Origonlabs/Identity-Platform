@@ -1,6 +1,6 @@
 {
   "//": "THIS FILE IS AUTO-GENERATED FROM TEMPLATE. DO NOT EDIT IT DIRECTLY",
-  "name": "@stackframe/stack",
+  "name": "@opendex/stack",
   "version": "2.8.39",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -17,6 +17,7 @@
     }
   },
   "homepage": "https://opendex.com",
+  "license": "UNLICENSED",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "clean": "rimraf dist && rimraf node_modules",
@@ -41,9 +42,9 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
     "@simplewebauthn/browser": "^11.0.0",
-    "@stackframe/stack-sc": "workspace:*",
-    "@stackframe/stack-shared": "workspace:*",
-    "@stackframe/stack-ui": "workspace:*",
+    "@opendex/stack-sc": "workspace:*",
+    "@opendex/stack-shared": "workspace:*",
+    "@opendex/stack-ui": "workspace:*",
     "@tanstack/react-table": "^8.20.5",
     "browser-image-compression": "^2.0.2",
     "color": "^4.2.3",

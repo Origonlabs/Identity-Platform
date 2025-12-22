@@ -2,11 +2,11 @@
 import { useAdminApp } from "@/app/(main)/(protected)/projects/[projectId]/use-admin-app";
 import { SmartFormDialog } from "@/components/form-dialog";
 import { ItemDialog } from "@/components/payments/item-dialog";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { branchPaymentsSchema } from "@stackframe/stack-shared/dist/config/schema";
-import { has } from "@stackframe/stack-shared/dist/utils/objects";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
-import { ActionCell, ActionDialog, DataTable, DataTableColumnHeader, TextCell, toast } from "@stackframe/stack-ui";
+import { KnownErrors } from "@opendex/stack-shared";
+import { branchPaymentsSchema } from "@opendex/stack-shared/dist/config/schema";
+import { has } from "@opendex/stack-shared/dist/utils/objects";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
+import { ActionCell, ActionDialog, DataTable, DataTableColumnHeader, TextCell, toast } from "@opendex/stack-ui";
 import { ColumnDef } from "@tanstack/react-table";
 import { useState } from "react";
 import * as yup from "yup";

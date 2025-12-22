@@ -1,4 +1,4 @@
-import { StackProvider, StackTheme } from "@stackframe/stack";
+import { StackProvider, StackTheme } from "@opendex/stack";
 import { stackServerApp } from "../stack";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

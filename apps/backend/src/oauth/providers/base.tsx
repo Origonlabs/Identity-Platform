@@ -1,6 +1,6 @@
-import { KnownErrors } from "@stackframe/stack-shared";
-import { StackAssertionError, StatusError, captureError } from "@stackframe/stack-shared/dist/utils/errors";
-import { mergeScopeStrings } from "@stackframe/stack-shared/dist/utils/strings";
+import { KnownErrors } from "@opendex/stack-shared";
+import { StackAssertionError, StatusError, captureError } from "@opendex/stack-shared/dist/utils/errors";
+import { mergeScopeStrings } from "@opendex/stack-shared/dist/utils/strings";
 import { CallbackParamsType, Client, Issuer, TokenSet as OIDCTokenSet, generators } from "openid-client";
 import { OAuthUserInfo } from "../utils";
 

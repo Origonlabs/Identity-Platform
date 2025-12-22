@@ -1,5 +1,5 @@
-import { StackServerApp } from '@stackframe/stack';
-import { getEnvVariable } from '@stackframe/stack-shared/dist/utils/env';
+import { StackServerApp } from '@opendex/stack';
+import { getEnvVariable } from '@opendex/stack-shared/dist/utils/env';
 
 export const stackServerApp = new StackServerApp({
   projectId: 'internal',

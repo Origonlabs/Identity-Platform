@@ -4,7 +4,7 @@ import { stackAppInternalsSymbol } from "@/app/(main)/integrations/transfer-conf
 import { UserTable } from "@/components/data-table/user-table";
 import { StyledLink } from "@/components/link";
 import { UserDialog } from "@/components/user-dialog";
-import { Alert, Button } from "@stackframe/stack-ui";
+import { Alert, Button } from "@opendex/stack-ui";
 import { PageLayout } from "../page-layout";
 import { useAdminApp } from "../use-admin-app";
 

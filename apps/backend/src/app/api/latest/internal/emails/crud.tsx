@@ -1,9 +1,9 @@
 import { getPrismaClientForTenancy } from "@/prisma-client";
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
 import { SentEmail } from "@prisma/client";
-import { InternalEmailsCrud, internalEmailsCrud } from "@stackframe/stack-shared/dist/interface/crud/emails";
-import { yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
+import { InternalEmailsCrud, internalEmailsCrud } from "@opendex/stack-shared/dist/interface/crud/emails";
+import { yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
 
 function prismaModelToCrud(prismaModel: SentEmail): InternalEmailsCrud["Admin"]["Read"] {
   const senderConfig = prismaModel.senderConfig as any;

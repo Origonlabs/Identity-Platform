@@ -1,5 +1,5 @@
 {
-  "name": "@stackframe/stack-shared",
+  "name": "@opendex/stack-shared",
   "version": "2.8.39",
   "scripts": {
     "build": "rimraf dist && tsup-node",
@@ -73,6 +73,7 @@
     "@simplewebauthn/types": "^11.0.0",
     "@types/bcryptjs": "^3.0.0",
     "@types/elliptic": "^6.4.18",
+    "@types/node": "20.17.6",
     "@types/semver": "^7.5.8",
     "@types/uuid": "^9.0.8",
     "react": "^18.2",

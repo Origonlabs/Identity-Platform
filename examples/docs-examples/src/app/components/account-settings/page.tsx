@@ -1,4 +1,4 @@
-import { AccountSettings } from '@stackframe/stack';
+import { AccountSettings } from '@opendex/stack';
 
 export default function MyAccountPage() {
   return (

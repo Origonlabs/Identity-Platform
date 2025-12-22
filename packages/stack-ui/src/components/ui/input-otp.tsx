@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
-import { DashIcon } from "@radix-ui/react-icons";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
+import { DashIcon } from "./icons";
 import { OTPInput, OTPInputContext } from "input-otp";
 
 import { cn } from "../../lib/utils";

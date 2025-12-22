@@ -1,6 +1,6 @@
 'use client';
 
-import { UserButton, useUser } from '@stackframe/stack';
+import { UserButton, useUser } from '@opendex/stack';
 import { Wrench } from "lucide-react";
 import { useState } from "react";
 import { DynamicCodeblock } from "../mdx/dynamic-code-block";
@@ -48,7 +48,7 @@ export function UserButtonDemo() {
 
     const propsCode = propsArray.join('\n      ');
 
-    return `import { UserButton } from "@stackframe/stack";
+    return `import { UserButton } from "@opendex/stack";
 
 export function MyComponent() {
   return (

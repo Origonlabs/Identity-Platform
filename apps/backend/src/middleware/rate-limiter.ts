@@ -6,7 +6,7 @@
 import { Redis } from '@upstash/redis';
 import { Ratelimit } from '@upstash/ratelimit';
 import { NextRequest, NextResponse } from 'next/server';
-import { getEnvVariable, getNodeEnvironment } from '@stackframe/stack-shared/dist/utils/env';
+import { getEnvVariable, getNodeEnvironment } from '@opendex/stack-shared/dist/utils/env';
 
 // Rate limit tiers
 export enum RateLimitTier {

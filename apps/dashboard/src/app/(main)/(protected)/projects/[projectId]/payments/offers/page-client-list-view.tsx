@@ -1,12 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { CompleteConfig } from "@stackframe/stack-shared/dist/config/schema";
-import { useHover } from "@stackframe/stack-shared/dist/hooks/use-hover";
-import { DayInterval } from "@stackframe/stack-shared/dist/utils/dates";
-import { prettyPrintWithMagnitudes } from "@stackframe/stack-shared/dist/utils/numbers";
-import { stringCompare } from "@stackframe/stack-shared/dist/utils/strings";
-import { Button, Card, CardContent, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger, Switch, Label, toast } from "@stackframe/stack-ui";
+import { CompleteConfig } from "@opendex/stack-shared/dist/config/schema";
+import { useHover } from "@opendex/stack-shared/dist/hooks/use-hover";
+import { DayInterval } from "@opendex/stack-shared/dist/utils/dates";
+import { prettyPrintWithMagnitudes } from "@opendex/stack-shared/dist/utils/numbers";
+import { stringCompare } from "@opendex/stack-shared/dist/utils/strings";
+import { Button, Card, CardContent, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger, Switch, Label, toast } from "@opendex/stack-ui";
 import { MoreVertical, Plus } from "lucide-react";
 import React, { ReactNode, useEffect, useId, useMemo, useRef, useState } from "react";
 import { IllustratedInfo } from "../../../../../../../components/illustrated-info";

@@ -1,6 +1,6 @@
 'use client';
 
-import { SignIn } from '@stackframe/stack';
+import { SignIn } from '@opendex/stack';
 import { useState } from 'react';
 import { StackContainer } from '../mdx';
 import { DynamicCodeblock } from '../mdx/dynamic-code-block';
@@ -56,7 +56,7 @@ export function SignInDemo() {
 
     const propsCode = propsArray.length > 0 ? '\n      ' + propsArray.join('\n      ') + '\n    ' : '';
 
-    return `import { SignIn } from "@stackframe/stack";
+    return `import { SignIn } from "@opendex/stack";
 
 export function MySignInPage() {
   return (

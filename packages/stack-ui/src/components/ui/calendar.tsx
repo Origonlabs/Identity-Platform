@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
+import { ChevronLeftIcon, ChevronRightIcon } from "./icons";
 import React from "react";
 import { DayPicker } from "react-day-picker";
 

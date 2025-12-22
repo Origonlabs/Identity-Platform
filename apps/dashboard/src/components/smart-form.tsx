@@ -1,9 +1,9 @@
 "use client";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { StackAssertionError } from "@stackframe/stack-shared/dist/utils/errors";
-import { runAsynchronously } from "@stackframe/stack-shared/dist/utils/promises";
-import { Form } from "@stackframe/stack-ui";
+import { StackAssertionError } from "@opendex/stack-shared/dist/utils/errors";
+import { runAsynchronously } from "@opendex/stack-shared/dist/utils/promises";
+import { Form } from "@opendex/stack-ui";
 import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";

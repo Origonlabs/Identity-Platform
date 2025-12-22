@@ -2,8 +2,8 @@
 
 import { StyledLink } from "@/components/link";
 import { getPublicEnvVar } from "@/lib/env";
-import { runAsynchronously } from "@stackframe/stack-shared/dist/utils/promises";
-import { Typography } from "@stackframe/stack-ui";
+import { runAsynchronously } from "@opendex/stack-shared/dist/utils/promises";
+import { Typography } from "@opendex/stack-ui";
 import { loadStripe } from "@stripe/stripe-js";
 import { useCallback, useEffect, useState } from "react";
 

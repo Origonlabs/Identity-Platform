@@ -500,9 +500,9 @@ const Steps = {
 
   async getStackPackageName(type: "js" | "next" | "react", install = false): Promise<string> {
     const mapping = {
-      js: (install && process.env.STACK_JS_INSTALL_PACKAGE_NAME_OVERRIDE) || "@stackframe/js",
-      next: (install && process.env.STACK_NEXT_INSTALL_PACKAGE_NAME_OVERRIDE) || "@stackframe/stack",
-      react: (install && process.env.STACK_REACT_INSTALL_PACKAGE_NAME_OVERRIDE) || "@stackframe/react",
+      js: (install && process.env.STACK_JS_INSTALL_PACKAGE_NAME_OVERRIDE) || "@opendex/js",
+      next: (install && process.env.STACK_NEXT_INSTALL_PACKAGE_NAME_OVERRIDE) || "@opendex/stack",
+      react: (install && process.env.STACK_REACT_INSTALL_PACKAGE_NAME_OVERRIDE) || "@opendex/react",
     } as const;
     return mapping[type];
   },
@@ -655,7 +655,7 @@ const Steps = {
       stackAppPathWithoutExtension + "." + stackAppFileExtension;
     const stackAppContent = await readFile(stackAppPath);
     if (stackAppContent) {
-      if (!stackAppContent.includes("@stackframe/")) {
+      if (!stackAppContent.includes("@opendex/")) {
         throw new UserError(
           `A file at the path ${stackAppPath} already exists. Stack uses the stack/${clientOrServer}.ts file to initialize the Stack SDK. Please remove the existing file and try again.`
         );
@@ -710,7 +710,7 @@ ${indentation}tokenStore: ${tokenStore},${jsOptions}${nextClientOptions}
     const stackAppPath = stackAppPathWithoutExtension + "." + stackAppFileExtension;
     const stackAppContent = await readFile(stackAppPath);
     if (stackAppContent) {
-      if (!stackAppContent.includes("@stackframe/")) {
+      if (!stackAppContent.includes("@opendex/")) {
         throw new UserError(`A file at the path ${stackAppPath} already exists. Stack uses the stack/client.ts file to initialize the Stack SDK. Please remove the existing file and try again.`);
       }
       throw new UserError(`It seems that you already installed Stack in this project.`);
@@ -743,14 +743,14 @@ ${indentation}tokenStore: ${tokenStore},${jsOptions}${nextClientOptions}
       (await findJsExtension(handlerPathWithoutExtension)) ?? projectInfo.defaultExtension;
     const handlerPath = handlerPathWithoutExtension + "." + handlerFileExtension;
     const handlerContent = await readFile(handlerPath);
-    if (handlerContent && !handlerContent.includes("@stackframe/")) {
+    if (handlerContent && !handlerContent.includes("@opendex/")) {
       throw new UserError(
         `A file at the path ${handlerPath} already exists.Stack uses the / handler path to handle incoming requests.Please remove the existing file and try again.`
       );
     }
     laterWriteFileIfNotExists(
       handlerPath,
-      `import { StackHandler } from "@stackframe/stack"; \nimport { stackServerApp } from "../../../stack/server"; \n\nexport default function Handler(props${handlerFileExtension.includes("ts") ? ": unknown" : ""
+      `import { StackHandler } from "@opendex/stack"; \nimport { stackServerApp } from "../../../stack/server"; \n\nexport default function Handler(props${handlerFileExtension.includes("ts") ? ": unknown" : ""
       }) { \n${projectInfo.indentation} return <StackHandler fullPage app = { stackServerApp } routeProps = { props } />; \n } \n`
     );
   },
@@ -869,7 +869,7 @@ async function getUpdatedLayout(originalLayout: string): Promise<LayoutResult | 
   const importInsertLocationM1 =
     firstImportLocationM1 ?? (hasStringAsFirstLine ? layout.indexOf("\n") : -1);
   const importInsertLocation = importInsertLocationM1 + 1;
-  const importStatement = `import { StackProvider, StackTheme } from "@stackframe/stack";\nimport { stackClientApp } from "../stack/client";\n`;
+  const importStatement = `import { StackProvider, StackTheme } from "@opendex/stack";\nimport { stackClientApp } from "../stack/client";\n`;
   layout =
     layout.slice(0, importInsertLocation) +
     importStatement +

@@ -1,13 +1,8 @@
 "use client";
 
-import {
-  CaretSortIcon,
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@radix-ui/react-icons";
+import { CaretSortIcon, CheckIcon, ChevronDownIcon, ChevronUpIcon } from "./icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
 import React from "react";
 
 import { cn } from "../../lib/utils";
@@ -159,4 +154,3 @@ SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 export {
   Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger, SelectValue
 };
-

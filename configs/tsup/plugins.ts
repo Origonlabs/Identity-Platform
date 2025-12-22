@@ -1,4 +1,4 @@
-import type { Plugin } from "esbuild";
+import type { Plugin, PluginBuild, BuildResult, OnLoadArgs } from "esbuild";
 import fs from 'fs';
 import path from "path";
 
@@ -6,9 +6,9 @@ export const createBasePlugin = (options: {}): Plugin => {
   const packageJson = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
   return {
     name: 'stackframe tsup plugin (private)',
-    setup(build) {
-      build.onEnd(result => {
-        const sourceFiles = result.outputFiles?.filter(file => !file.path.endsWith('.map')) ?? [];
+    setup(build: PluginBuild) {
+      build.onEnd((result: BuildResult) => {
+        const sourceFiles = result.outputFiles?.filter((file: any) => !file.path.endsWith('.map')) ?? [];
         for (const file of sourceFiles) {
           let newText = file.text;
 
@@ -22,7 +22,7 @@ export const createBasePlugin = (options: {}): Plugin => {
         }
       });
 
-      build.onLoad({ filter: /\.(jsx?|tsx?)$/ }, async (args) => {
+      build.onLoad({ filter: /\.(jsx?|tsx?)$/ }, async (args: OnLoadArgs) => {
         let contents = await fs.promises.readFile(args.path, 'utf8');
         contents = contents.replace(/STACK_COMPILE_TIME_CLIENT_PACKAGE_VERSION_SENTINEL/g, `js ${packageJson.name}@${packageJson.version}`);
         contents = contents.replace(/import\.meta\.vitest/g, 'undefined');

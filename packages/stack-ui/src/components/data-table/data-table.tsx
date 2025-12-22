@@ -1,6 +1,6 @@
 "use client";
 
-import { runAsynchronouslyWithAlert } from "@stackframe/stack-shared/dist/utils/promises";
+import { runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
 import {
   Table,
   TableBody,
@@ -8,7 +8,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@stackframe/stack-ui";
+} from "@opendex/stack-ui";
 import {
   ColumnDef,
   ColumnFiltersState,

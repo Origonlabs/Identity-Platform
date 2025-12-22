@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from "@/components/router";
-import { Button } from "@stackframe/stack-ui";
+import { Button } from "@opendex/stack-ui";
 
 
 export default function Actions() {

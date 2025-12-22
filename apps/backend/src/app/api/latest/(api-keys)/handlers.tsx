@@ -5,13 +5,13 @@ import { createCrudHandlers } from "@/route-handlers/crud-handler";
 import { SmartRequestAuth } from "@/route-handlers/smart-request";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
 import { ProjectApiKey } from "@prisma/client";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { TeamApiKeysCrud, UserApiKeysCrud, teamApiKeysCreateInputSchema, teamApiKeysCreateOutputSchema, teamApiKeysCrud, userApiKeysCreateInputSchema, userApiKeysCreateOutputSchema, userApiKeysCrud } from "@stackframe/stack-shared/dist/interface/crud/project-api-keys";
-import { adaptSchema, clientOrHigherAuthTypeSchema, serverOrHigherAuthTypeSchema, userIdOrMeSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { createProjectApiKey } from "@stackframe/stack-shared/dist/utils/api-keys";
-import { StackAssertionError, StatusError } from "@stackframe/stack-shared/dist/utils/errors";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
+import { KnownErrors } from "@opendex/stack-shared";
+import { TeamApiKeysCrud, UserApiKeysCrud, teamApiKeysCreateInputSchema, teamApiKeysCreateOutputSchema, teamApiKeysCrud, userApiKeysCreateInputSchema, userApiKeysCreateOutputSchema, userApiKeysCrud } from "@opendex/stack-shared/dist/interface/crud/project-api-keys";
+import { adaptSchema, clientOrHigherAuthTypeSchema, serverOrHigherAuthTypeSchema, userIdOrMeSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { createProjectApiKey } from "@opendex/stack-shared/dist/utils/api-keys";
+import { StackAssertionError, StatusError } from "@opendex/stack-shared/dist/utils/errors";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 
 import * as yup from "yup";
 

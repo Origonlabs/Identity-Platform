@@ -1,4 +1,4 @@
-import { urlString } from "@stackframe/stack-shared/dist/utils/urls";
+import { urlString } from "@opendex/stack-shared/dist/utils/urls";
 import { getDefaultProjectId } from "../lib/stack-app/apps/implementations/common";
 
 export function getConvexProvidersConfig(options: {

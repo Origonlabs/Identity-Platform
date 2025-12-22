@@ -4,9 +4,9 @@
 
 import { getPublicEnvVar } from "@/lib/env";
 import * as Sentry from "@sentry/nextjs";
-import { getBrowserCompatibilityReport } from "@stackframe/stack-shared/dist/utils/browser-compat";
-import { sentryBaseConfig } from "@stackframe/stack-shared/dist/utils/sentry";
-import { nicify } from "@stackframe/stack-shared/dist/utils/strings";
+import { getBrowserCompatibilityReport } from "@opendex/stack-shared/dist/utils/browser-compat";
+import { sentryBaseConfig } from "@opendex/stack-shared/dist/utils/sentry";
+import { nicify } from "@opendex/stack-shared/dist/utils/strings";
 import posthog from "posthog-js";
 
 Sentry.init({

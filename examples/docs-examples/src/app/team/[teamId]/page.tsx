@@ -1,6 +1,6 @@
 "use client";
 
-import { SelectedTeamSwitcher, useUser } from "@stackframe/stack";
+import { SelectedTeamSwitcher, useUser } from "@opendex/stack";
 
 export default function TeamPage({ params }: { params: { teamId: string } }) {
   const user = useUser({ or: 'redirect' });

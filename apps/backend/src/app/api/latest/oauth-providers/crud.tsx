@@ -2,11 +2,11 @@ import { ensureUserExists } from "@/lib/request-checks";
 import { Tenancy } from "@/lib/tenancies";
 import { getPrismaClientForTenancy, retryTransaction } from "@/prisma-client";
 import { createCrudHandlers } from "@/route-handlers/crud-handler";
-import { KnownErrors } from "@stackframe/stack-shared";
-import { oauthProviderCrud } from "@stackframe/stack-shared/dist/interface/crud/oauth-providers";
-import { userIdOrMeSchema, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { StatusError, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { createLazyProxy } from "@stackframe/stack-shared/dist/utils/proxies";
+import { KnownErrors } from "@opendex/stack-shared";
+import { oauthProviderCrud } from "@opendex/stack-shared/dist/interface/crud/oauth-providers";
+import { userIdOrMeSchema, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { StatusError, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { createLazyProxy } from "@opendex/stack-shared/dist/utils/proxies";
 
 // Helper function to check if a provider type is already used for signing in
 async function checkInputValidity(options: {

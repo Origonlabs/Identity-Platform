@@ -1,12 +1,12 @@
-import { InternalSession } from "@stackframe/stack-shared/dist/sessions";
-import { AsyncCache } from "@stackframe/stack-shared/dist/utils/caches";
-import { isBrowserLike } from "@stackframe/stack-shared/dist/utils/env";
-import { StackAssertionError, concatStacktraces, throwErr } from "@stackframe/stack-shared/dist/utils/errors";
-import { filterUndefined } from "@stackframe/stack-shared/dist/utils/objects";
-import { ReactPromise } from "@stackframe/stack-shared/dist/utils/promises";
-import { suspendIfSsr } from "@stackframe/stack-shared/dist/utils/react";
-import { Result } from "@stackframe/stack-shared/dist/utils/results";
-import { Store } from "@stackframe/stack-shared/dist/utils/stores";
+import { InternalSession } from "@opendex/stack-shared/dist/sessions";
+import { AsyncCache } from "@opendex/stack-shared/dist/utils/caches";
+import { isBrowserLike } from "@opendex/stack-shared/dist/utils/env";
+import { StackAssertionError, concatStacktraces, throwErr } from "@opendex/stack-shared/dist/utils/errors";
+import { filterUndefined } from "@opendex/stack-shared/dist/utils/objects";
+import { ReactPromise } from "@opendex/stack-shared/dist/utils/promises";
+import { suspendIfSsr } from "@opendex/stack-shared/dist/utils/react";
+import { Result } from "@opendex/stack-shared/dist/utils/results";
+import { Store } from "@opendex/stack-shared/dist/utils/stores";
 import React, { useCallback } from "react"; // THIS_LINE_PLATFORM react-like
 import { HandlerUrls } from "../../common";
 

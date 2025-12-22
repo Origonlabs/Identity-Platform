@@ -1,10 +1,10 @@
 'use client';
 import { useAdminApp } from '@/app/(main)/(protected)/projects/[projectId]/use-admin-app';
 import { useRouter } from "@/components/router";
-import { ServerUser } from '@stackframe/stack';
-import { deepPlainEquals } from '@stackframe/stack-shared/dist/utils/objects';
-import { deindent } from '@stackframe/stack-shared/dist/utils/strings';
-import { ActionCell, AvatarCell, BadgeCell, DataTableColumnHeader, DataTableManualPagination, DateCell, SearchToolbarItem, SimpleTooltip, TextCell } from "@stackframe/stack-ui";
+import { ServerUser } from '@opendex/stack';
+import { deepPlainEquals } from '@opendex/stack-shared/dist/utils/objects';
+import { deindent } from '@opendex/stack-shared/dist/utils/strings';
+import { ActionCell, AvatarCell, BadgeCell, DataTableColumnHeader, DataTableManualPagination, DateCell, SearchToolbarItem, SimpleTooltip, TextCell } from "@opendex/stack-ui";
 import { ColumnDef, ColumnFiltersState, Row, SortingState, Table } from "@tanstack/react-table";
 import React, { useState } from "react";
 import { Link } from '../link';

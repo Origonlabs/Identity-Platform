@@ -10,7 +10,7 @@ This page provides examples of how to create custom sign-in pages for your appli
 
 ```tsx
 'use client';
-import { SignIn } from "@stackframe/stack";
+import { SignIn } from "@opendex/stack";
 
 export default function DefaultSignIn() {
   // optionally redirect to some other page if the user is already signed in
@@ -36,7 +36,7 @@ You can also use `useUser` at the beginning of the sign-in page to check whether
 
 ```tsx
 'use client';
-import { useStackApp } from "@stackframe/stack";
+import { useStackApp } from "@opendex/stack";
 
 export default function CustomOAuthSignIn() {
   const app = useStackApp();
@@ -59,7 +59,7 @@ export default function CustomOAuthSignIn() {
 
 ```tsx
 'use client';
-import { useStackApp } from "@stackframe/stack";
+import { useStackApp } from "@opendex/stack";
 import { useState } from "react";
 
 export default function CustomCredentialSignIn() {
@@ -99,7 +99,7 @@ export default function CustomCredentialSignIn() {
 ```tsx
 'use client';
 
-import { useStackApp } from "@stackframe/stack";
+import { useStackApp } from "@opendex/stack";
 import { useState } from "react";
 
 export default function CustomMagicLinkSignIn() {

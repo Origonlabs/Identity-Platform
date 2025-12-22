@@ -1,8 +1,8 @@
 "use client";
 
-import { CheckIcon } from "@radix-ui/react-icons";
+import { CheckIcon } from "./icons";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
-import { forwardRefIfNeeded } from "@stackframe/stack-shared/dist/utils/react";
+import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
 import React from "react";
 
 import { cn } from "../../lib/utils";

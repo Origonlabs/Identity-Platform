@@ -64,17 +64,17 @@
       ],
       "outputLogs": "new-only"
     },
-    "@stackframe/stack-backend#build": {
+    "@opendex/stack-backend#build": {
       "dependsOn": [
         "codegen"
       ]
     },
-    "@stackframe/stack-backend#codegen": {
+    "@opendex/stack-backend#codegen": {
       "dependsOn": [
         "^build"
       ]
     },
-    "@stackframe/stack-backend#generate-openapi-fumadocs": {
+    "@opendex/stack-backend#generate-openapi-fumadocs": {
       "cache": false
     },
     "clean": {

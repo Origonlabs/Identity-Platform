@@ -1,9 +1,9 @@
 import { globalPrismaClient } from "@/prisma-client";
 import { createSmartRouteHandler } from "@/route-handlers/smart-route-handler";
-import { internalApiKeysCreateInputSchema, internalApiKeysCreateOutputSchema } from "@stackframe/stack-shared/dist/interface/crud/internal-api-keys";
-import { adaptSchema, adminAuthTypeSchema, yupNumber, yupObject, yupString } from "@stackframe/stack-shared/dist/schema-fields";
-import { generateSecureRandomString } from "@stackframe/stack-shared/dist/utils/crypto";
-import { generateUuid } from "@stackframe/stack-shared/dist/utils/uuids";
+import { internalApiKeysCreateInputSchema, internalApiKeysCreateOutputSchema } from "@opendex/stack-shared/dist/interface/crud/internal-api-keys";
+import { adaptSchema, adminAuthTypeSchema, yupNumber, yupObject, yupString } from "@opendex/stack-shared/dist/schema-fields";
+import { generateSecureRandomString } from "@opendex/stack-shared/dist/utils/crypto";
+import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 import { internalApiKeyCrudHandlers } from "./crud";
 
 export const GET = internalApiKeyCrudHandlers.listHandler;
