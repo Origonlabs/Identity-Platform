@@ -3,7 +3,7 @@
 import { SettingCard } from "@/components/settings";
 import { getPublicEnvVar } from '@/lib/env';
 import { Alert, Badge, Button, CopyButton, Label, Table, TableBody, TableCell, TableHead, TableHeader, TableRow, Typography } from "@opendex/stack-ui";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "@opendex/stack-ui";
 import { useMemo, useState } from "react";
 import { SvixProvider, useEndpoint, useEndpointMessageAttempts, useEndpointSecret } from "svix-react";
 import { PageLayout } from "../../page-layout";

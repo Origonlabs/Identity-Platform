@@ -2,7 +2,7 @@
 
 import { runAsynchronously } from '@opendex/stack-shared/dist/utils/promises';
 import { Button } from '@opendex/stack-ui';
-import { Calendar, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calendar, ChevronDown, ChevronUp } from '@opendex/stack-ui';
 import Image from 'next/image';
 import Script from 'next/script';
 import { useEffect, useState } from 'react';

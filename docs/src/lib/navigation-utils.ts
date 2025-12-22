@@ -1,11 +1,11 @@
-import { Book, Code, Layers, Zap, type LucideIcon } from 'lucide-react';
+import { Book, Code, Layers, Zap, type IconComponent } from '@opendex/stack-ui';
 import { getSmartPlatformRedirect } from './platform-navigation';
 import type { Platform } from './platform-utils';
 
 export type NavLink = {
   href: string,
   label: string,
-  icon: LucideIcon,
+  icon: IconComponent,
 }
 
 /**

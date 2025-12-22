@@ -15,7 +15,7 @@ import {
   Typography,
   cn,
 } from "@opendex/stack-ui";
-import { PlusCircle, Settings } from "lucide-react";
+import { PlusCircle, Settings } from "@opendex/stack-ui";
 import { Suspense, useMemo } from "react";
 import { Team, useStackApp, useUser } from "..";
 import { useTranslation } from "../lib/translations";

@@ -1,5 +1,5 @@
 import { Avatar, AvatarImage, Typography } from "@opendex/stack-ui";
-import { User2 } from "lucide-react";
+import { User2 } from "@opendex/stack-ui";
 import { Team } from "..";
 
 export function TeamIcon(props: { team: Team | 'personal' }) {

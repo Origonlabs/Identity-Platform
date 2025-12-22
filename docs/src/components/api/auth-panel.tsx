@@ -1,6 +1,6 @@
 'use client';
 
-import { AlertTriangle, Key, X } from 'lucide-react';
+import { AlertTriangle, Key, X } from '@opendex/stack-ui';
 import { useEffect, useState } from 'react';
 import { useSidebar } from '../layouts/sidebar-context';
 import { useAPIPageContext } from './api-page-wrapper';

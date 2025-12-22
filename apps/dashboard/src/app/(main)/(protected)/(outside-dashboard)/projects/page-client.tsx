@@ -11,7 +11,7 @@ import { groupBy } from "@opendex/stack-shared/dist/utils/arrays";
 import { wait } from "@opendex/stack-shared/dist/utils/promises";
 import { stringCompare } from "@opendex/stack-shared/dist/utils/strings";
 import { Button, Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue, Typography, toast } from "@opendex/stack-ui";
-import { UserPlus } from "lucide-react";
+import { UserPlus } from "@opendex/stack-ui";
 import { Suspense, useEffect, useMemo, useState } from "react";
 import * as yup from "yup";
 

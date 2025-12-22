@@ -23,6 +23,7 @@ export * from "./components/ui/dropdown-menu";
 export * from "./components/ui/form";
 export * from "./components/ui/hover-card";
 export * from "./components/ui/inline-code";
+export * from "./components/ui/icons";
 export * from "./components/ui/input";
 export * from "./components/ui/input-otp";
 export * from "./components/ui/label";
@@ -51,4 +52,3 @@ export * from "./components/ui/typography";
 export * from "./components/ui/use-toast";
 export * from "./components/ui/resizable";
 export { cn } from "./lib/utils";
-

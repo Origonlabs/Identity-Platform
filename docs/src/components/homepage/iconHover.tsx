@@ -1,6 +1,6 @@
 "use client";
 
-import { Book, ChevronDown, Code, Command, Layers, Search, Zap } from "lucide-react";
+import { Book, ChevronDown, Code, Command, Layers, Search, Zap } from "@opendex/stack-ui";
 import React, { useEffect, useRef, useState } from "react";
 import { usePlatformPreference } from "../../hooks/use-platform-preference";
 import { platformSupportsComponents, platformSupportsSDK } from "../../lib/navigation-utils";
@@ -27,7 +27,7 @@ const createPlatformSections = (platform: Platform): DocsSection[] => {
       id: "guides",
       title: "Guides",
       description: "Complete guides and tutorials",
-      icon: <Book size={24} />,
+      icon: <Book className="h-6 w-6" />,
       url: `/docs/${platform}/overview`,
       color: "rgb(59, 130, 246)",
     },
@@ -39,7 +39,7 @@ const createPlatformSections = (platform: Platform): DocsSection[] => {
       id: "sdks",
       title: "SDKs",
       description: "Software development kits",
-      icon: <Code size={24} />,
+      icon: <Code className="h-6 w-6" />,
       url: `/docs/${platform}/sdk`,
       color: "rgb(16, 185, 129)",
     });
@@ -51,7 +51,7 @@ const createPlatformSections = (platform: Platform): DocsSection[] => {
       id: "components",
       title: "Components",
       description: "Reusable UI components",
-      icon: <Layers size={24} />,
+      icon: <Layers className="h-6 w-6" />,
       url: `/docs/${platform}/components`,
       color: "rgb(245, 101, 101)",
     });
@@ -62,7 +62,7 @@ const createPlatformSections = (platform: Platform): DocsSection[] => {
     id: "api",
     title: "API Reference",
     description: "Complete API documentation",
-    icon: <Zap size={24} />,
+    icon: <Zap className="h-6 w-6" />,
     url: "/api/overview",
     color: "rgb(168, 85, 247)",
   });
@@ -133,8 +133,7 @@ const PlatformSelector: React.FC<{
             {platformNames[selectedPlatform]}
           </span>
           <ChevronDown
-            size={20}
-            className={`transform ${isOpen ? "rotate-180" : ""}`}
+            className={`h-5 w-5 transform ${isOpen ? "rotate-180" : ""}`}
             style={{ color: platformColors[selectedPlatform] }}
           />
         </button>

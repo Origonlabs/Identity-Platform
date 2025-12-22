@@ -1,5 +1,5 @@
 import { Button } from "@opendex/stack-ui";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { MoonIcon, SunIcon } from "@opendex/stack-ui";
 import { useTheme } from "next-themes";
 
 export default function ThemeToggle() {

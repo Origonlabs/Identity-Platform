@@ -2,7 +2,7 @@
 
 import { useRouter } from "@/components/router";
 import { Button, Card, CardContent, CardHeader, CardTitle, toast } from "@opendex/stack-ui";
-import { ArrowLeft, Save } from "lucide-react";
+import { ArrowLeft, Save } from "@opendex/stack-ui";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { PageLayout } from "../../page-layout";

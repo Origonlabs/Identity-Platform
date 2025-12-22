@@ -1,6 +1,6 @@
 import { makeAssistantToolUI } from "@assistant-ui/react";
 import { Button, Card } from "@opendex/stack-ui";
-import { Undo2 } from "lucide-react";
+import { Undo2 } from "@opendex/stack-ui";
 
 type EmailDraftUIProps = {
   setCurrentCode: (code: string) => void,

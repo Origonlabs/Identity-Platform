@@ -1,7 +1,7 @@
 'use client';
 
 import { UserButton } from '@opendex/stack';
-import { Github, Menu, Sparkles, X } from 'lucide-react';
+import { Github, Menu, Sparkles, X } from '@opendex/stack-ui';
 import Link from 'next/link';
 import { useEffect, useState, type ReactNode } from 'react';
 import { AIChatDrawer } from '../chat/ai-chat';

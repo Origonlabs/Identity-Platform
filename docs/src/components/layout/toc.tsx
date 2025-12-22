@@ -3,7 +3,7 @@ import type { TOCItemType } from 'fumadocs-core/server';
 import * as Primitive from 'fumadocs-core/toc';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
 import { usePageStyles } from 'fumadocs-ui/contexts/layout';
-import { X } from 'lucide-react';
+import { X } from '@opendex/stack-ui';
 import {
   type ComponentProps,
   type HTMLAttributes,

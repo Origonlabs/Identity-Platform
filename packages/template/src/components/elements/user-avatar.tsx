@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@opendex/stack-ui";
-import { UserRound } from "lucide-react";
+import { UserRound } from "@opendex/stack-ui";
 
 const defaultSize = 34;
 

@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronRight } from '@opendex/stack-ui';
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 import { cn } from '../../lib/cn';

@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronUp } from 'lucide-react';
+import { ChevronUp } from '@opendex/stack-ui';
 import { useEffect, useState } from 'react';
 import { cn } from '../../lib/cn';
 import { buttonVariants } from './button';

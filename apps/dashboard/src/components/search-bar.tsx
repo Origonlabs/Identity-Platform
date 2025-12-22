@@ -2,7 +2,7 @@ import React from "react";
 
 import { forwardRefIfNeeded } from "@opendex/stack-shared/dist/utils/react";
 import { Input } from "@opendex/stack-ui";
-import { Search } from "lucide-react";
+import { Search } from "@opendex/stack-ui";
 
 export const SearchBar = forwardRefIfNeeded<
   HTMLInputElement,

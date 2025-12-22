@@ -1,6 +1,6 @@
 import { makeAssistantToolUI } from "@assistant-ui/react";
 import { Button, Card } from "@opendex/stack-ui";
-import { CheckCircle, Undo2 } from "lucide-react";
+import { CheckCircle, Undo2 } from "@opendex/stack-ui";
 
 type EmailTemplateUIProps = {
   setCurrentCode: (code: string) => void,

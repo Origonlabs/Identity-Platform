@@ -4,7 +4,7 @@ import { SettingCard, SettingSelect, SettingSwitch } from "@/components/settings
 import { AdminOAuthProviderConfig, AuthPage, OAuthProviderConfig } from "@opendex/stack";
 import { allProviders } from "@opendex/stack-shared/dist/utils/oauth";
 import { ActionDialog, Badge, BrandIcons, BrowserFrame, Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, Input, SelectItem, SimpleTooltip, Typography } from "@opendex/stack-ui";
-import { AsteriskSquare, CirclePlus, Key, Link2, MoreHorizontal } from "lucide-react";
+import { AsteriskSquare, CirclePlus, Key, Link2, MoreHorizontal } from "@opendex/stack-ui";
 import { useState } from "react";
 import { CardSubtitle } from "../../../../../../../../../packages/stack-ui/dist/components/ui/card";
 import { PageLayout } from "../page-layout";

@@ -42,7 +42,7 @@
 
 import { useNav } from 'fumadocs-ui/contexts/layout';
 import { useSidebar } from 'fumadocs-ui/contexts/sidebar';
-import { Menu, Sidebar as SidebarIcon } from 'lucide-react';
+import { Menu, Sidebar as SidebarIcon } from '@opendex/stack-ui';
 import { type ComponentProps } from 'react';
 import { cn } from '../../lib/cn';
 import { CompactSearchToggle } from '../layout/custom-search-toggle';

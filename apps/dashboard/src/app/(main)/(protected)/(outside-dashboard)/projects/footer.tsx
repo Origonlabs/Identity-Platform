@@ -1,6 +1,5 @@
 import { Link } from "@/components/link";
-import { Separator, Typography } from "@opendex/stack-ui";
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Github, Link2, Mail, Separator, Typography } from "@opendex/stack-ui";
 
 export default function Footer () {
   return (
@@ -11,13 +10,13 @@ export default function Footer () {
         <div className="flex flex-col gap-4 md:flex-1">
           <ul className="flex gap-4 flex-grow">
             {[
-              { href: "mailto:support@opendex.com", icon: FaEnvelope },
-              { href: "https://www.linkedin.com/company/opendex-inc", icon: FaLinkedin },
-              { href: "https://github.com/opendex/atlas-identity-platform", icon: FaGithub },
+              { href: "mailto:support@opendex.com", icon: Mail },
+              { href: "https://www.linkedin.com/company/opendex-inc", icon: Link2 },
+              { href: "https://github.com/opendex/atlas-identity-platform", icon: Github },
             ].map(({ href, icon: Icon }) => (
               <li key={href}>
                 <Link href={href}>
-                  <Icon size={20} className="text-gray-700 dark:text-gray-300" />
+                  <Icon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </Link>
               </li>
             ))}

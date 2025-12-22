@@ -1,7 +1,7 @@
 'use client';
 import { usePathname } from 'fumadocs-core/framework';
 import Link from 'fumadocs-core/link';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from '@opendex/stack-ui';
 import { type ComponentProps, type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { usePlatformPreference } from '../../hooks/use-platform-preference';
 import { cn } from '../../lib/cn';

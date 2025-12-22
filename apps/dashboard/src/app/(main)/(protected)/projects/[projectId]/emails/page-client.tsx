@@ -12,7 +12,7 @@ import { deepPlainEquals } from "@opendex/stack-shared/dist/utils/objects";
 import { runAsynchronously } from "@opendex/stack-shared/dist/utils/promises";
 import { ActionDialog, Alert, Button, DataTable, SimpleTooltip, Typography, useToast, TooltipProvider, TooltipTrigger, TooltipContent, Tooltip, AlertDescription, AlertTitle } from "@opendex/stack-ui";
 import { ColumnDef } from "@tanstack/react-table";
-import { AlertCircle, X } from "lucide-react";
+import { AlertCircle, X } from "@opendex/stack-ui";
 import { useEffect, useMemo, useState } from "react";
 import * as yup from "yup";
 import { PageLayout } from "../page-layout";

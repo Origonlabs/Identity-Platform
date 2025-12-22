@@ -1,6 +1,6 @@
 'use client';
 
-import { Command, Search } from 'lucide-react';
+import { Command, Search } from '@opendex/stack-ui';
 import { useEffect, useState } from 'react';
 import { cn } from '../../lib/cn';
 

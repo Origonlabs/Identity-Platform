@@ -1,7 +1,7 @@
 import { useRouter } from "@/components/router";
 import { cn } from "@/lib/utils";
 import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@opendex/stack-ui";
-import { MoreVertical } from "lucide-react";
+import { MoreVertical } from "@opendex/stack-ui";
 import { useState } from "react";
 import { ListSection } from "../payments/offers/list-section";
 

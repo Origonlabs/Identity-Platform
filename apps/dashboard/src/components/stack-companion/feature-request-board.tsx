@@ -7,7 +7,7 @@ import { StackAssertionError } from '@opendex/stack-shared/dist/utils/errors';
 import { htmlToText } from '@opendex/stack-shared/dist/utils/html';
 import { runAsynchronously } from '@opendex/stack-shared/dist/utils/promises';
 import { Button } from '@opendex/stack-ui';
-import { ChevronUp, Lightbulb, Loader2, Plus, Send, X } from 'lucide-react';
+import { ChevronUp, Lightbulb, Loader2, Plus, Send, X } from '@opendex/stack-ui';
 import { useCallback, useEffect, useState } from 'react';
 
 type FeatureRequestBoardProps = {

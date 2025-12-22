@@ -2,7 +2,7 @@
 
 import { useChat } from '@ai-sdk/react';
 import { runAsynchronously } from '@opendex/stack-shared/dist/utils/promises';
-import { ExternalLink, FileText, Maximize2, Minimize2, Send, X } from 'lucide-react';
+import { ExternalLink, FileText, Maximize2, Minimize2, Send, X } from '@opendex/stack-ui';
 import { useEffect, useRef, useState } from 'react';
 import { useSidebar } from '../layouts/sidebar-context';
 import { MessageFormatter } from './message-formatter';

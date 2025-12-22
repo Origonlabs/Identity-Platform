@@ -9,7 +9,7 @@ import { SettingCard } from "@/components/settings";
 import { previewTemplateSource } from "@opendex/stack-shared/dist/helpers/emails";
 import { throwErr } from "@opendex/stack-shared/dist/utils/errors";
 import { ActionDialog, Button, Typography } from "@opendex/stack-ui";
-import { Check, Pencil } from "lucide-react";
+import { Check, Pencil } from "@opendex/stack-ui";
 import { useState } from "react";
 import * as yup from "yup";
 import { PageLayout } from "../page-layout";

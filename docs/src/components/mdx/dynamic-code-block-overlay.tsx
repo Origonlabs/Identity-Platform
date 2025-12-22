@@ -1,7 +1,7 @@
 'use client';
 
 import { runAsynchronously } from "@opendex/stack-shared/dist/utils/promises";
-import { Check, ChevronDown, ChevronUp, Code, Copy, X } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, Code, Copy, X } from "@opendex/stack-ui";
 import { useEffect, useMemo, useState } from "react";
 import { codeToHtml } from "shiki";
 import { cn } from "../../lib/cn";

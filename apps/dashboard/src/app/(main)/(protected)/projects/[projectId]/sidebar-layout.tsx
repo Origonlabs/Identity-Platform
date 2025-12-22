@@ -31,7 +31,7 @@ import {
   LayoutTemplate,
   Link as LinkIcon,
   LockKeyhole,
-  LucideIcon,
+  IconComponent,
   Mail,
   Menu,
   Palette,
@@ -42,7 +42,7 @@ import {
   User,
   Users,
   Webhook,
-} from "lucide-react";
+} from "@opendex/stack-ui";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { Fragment, useMemo, useState } from "react";
@@ -59,7 +59,7 @@ type Label = {
 type Item = {
   name: React.ReactNode,
   href: string,
-  icon: LucideIcon,
+  icon: IconComponent,
   regex: RegExp,
   type: 'item',
   requiresDevFeatureFlag?: boolean,

@@ -1,6 +1,6 @@
 'use client';
 import { cva } from 'class-variance-authority';
-import { Airplay, Moon, Sun } from 'lucide-react';
+import { Airplay, Moon, Sun } from '@opendex/stack-ui';
 import { useTheme } from 'next-themes';
 import { type HTMLAttributes, useLayoutEffect, useState } from 'react';
 import { cn } from '../../lib/cn';

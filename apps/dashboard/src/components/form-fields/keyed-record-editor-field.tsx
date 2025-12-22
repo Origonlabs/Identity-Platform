@@ -2,7 +2,7 @@
 
 import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 import { Button, Card, CardHeader, CardTitle, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@opendex/stack-ui";
-import { Edit2, Plus, Trash2 } from "lucide-react";
+import { Edit2, Plus, Trash2 } from "@opendex/stack-ui";
 import { useEffect, useMemo, useState } from "react";
 import { Control, FieldValues, Path, UseFormReturn, useWatch } from "react-hook-form";
 import { FormDialog } from "../form-dialog";

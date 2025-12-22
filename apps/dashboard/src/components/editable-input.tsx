@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { useAsyncCallback } from "@opendex/stack-shared/dist/hooks/use-async-callback";
 import { throwErr } from "@opendex/stack-shared/dist/utils/errors";
 import { Button, Input } from "@opendex/stack-ui";
-import { Check, X } from "lucide-react";
+import { Check, X } from "@opendex/stack-ui";
 import { useRef, useState } from "react";
 
 

@@ -4,7 +4,7 @@ import { SearchInputToggle } from '@/components/layout/custom-search-toggle';
 import Waves from '@/components/layouts/api/waves';
 import { type NavLink } from '@/lib/navigation-utils';
 import { UserButton } from '@opendex/stack';
-import { Key, Menu, Sparkles, TableOfContents, X } from 'lucide-react';
+import { Key, Menu, Sparkles, TableOfContents, X } from '@opendex/stack-ui';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { ReactNode } from 'react';

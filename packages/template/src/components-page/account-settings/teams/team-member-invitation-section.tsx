@@ -1,8 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { strictEmailSchema, yupObject } from "@opendex/stack-shared/dist/schema-fields";
 import { runAsynchronouslyWithAlert } from "@opendex/stack-shared/dist/utils/promises";
-import { Button, Input, Table, TableBody, TableCell, TableHead, TableHeader, TableRow, Typography } from "@opendex/stack-ui";
-import { Trash } from "lucide-react";
+import { Button, Input, Table, TableBody, TableCell, TableHead, TableHeader, TableRow, Trash, Typography } from "@opendex/stack-ui";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";

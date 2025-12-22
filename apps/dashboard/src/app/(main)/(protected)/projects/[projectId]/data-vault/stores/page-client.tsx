@@ -2,7 +2,7 @@
 
 import { typedEntries } from "@opendex/stack-shared/dist/utils/objects";
 import { Button, Card, CardContent, CardHeader, Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Input, Label, toast } from "@opendex/stack-ui";
-import { Database, Plus } from "lucide-react";
+import { Database, Plus } from "@opendex/stack-ui";
 import { useState } from "react";
 import { useRouter } from "../../../../../../../components/router";
 import { PageLayout } from "../../page-layout";

@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/cn';
-import { Check, Copy, Maximize2 } from 'lucide-react';
+import { Check, Copy, Maximize2 } from '@opendex/stack-ui';
 import { useEffect, useState } from "react";
 import { codeToHtml } from "shiki";
 

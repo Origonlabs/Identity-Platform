@@ -3,7 +3,7 @@
 import { deindent } from "@opendex/stack-shared/dist/utils/strings";
 import { generateUuid } from "@opendex/stack-shared/dist/utils/uuids";
 import { Button, Card, CardContent, Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, Input, Label, Textarea, toast } from "@opendex/stack-ui";
-import { Plus } from "lucide-react";
+import { Plus } from "@opendex/stack-ui";
 import { useState } from "react";
 import { IllustratedInfo } from "../../../../../../components/illustrated-info";
 import { PageLayout } from "../page-layout";

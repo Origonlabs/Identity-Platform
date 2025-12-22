@@ -1,7 +1,6 @@
 'use client';
 
-import { Skeleton, Typography } from '@opendex/stack-ui';
-import { Contact, ShieldCheck, Bell, Monitor, Key, Settings, CirclePlus } from 'lucide-react';
+import { Bell, CirclePlus, Contact, Key, Monitor, Settings, ShieldCheck, Skeleton, Typography, type IconComponent } from '@opendex/stack-ui';
 import React, { Suspense } from "react";
 import { useStackApp, useUser } from '..';
 import { MaybeFullPage } from "../components/elements/maybe-full-page";
@@ -17,19 +16,22 @@ import { SettingsPage } from './account-settings/settings/settings-page';
 import { TeamCreationPage } from './account-settings/teams/team-creation-page';
 import { TeamPage } from './account-settings/teams/team-page';
 
-const iconMap = {
-  Contact,
-  ShieldCheck,
-  Bell,
-  Monitor,
-  Key,
-  Settings,
-  CirclePlus
-} as const;
+type IconName = 'Contact' | 'ShieldCheck' | 'Bell' | 'Monitor' | 'Key' | 'Settings' | 'CirclePlus';
 
-const Icon = ({ name }: { name: keyof typeof iconMap }) => {
-  const LucideIcon = iconMap[name];
-  return <LucideIcon className="mr-2 h-4 w-4"/>;
+const iconMap = new Map<IconName, IconComponent>([
+  ['Contact', Contact],
+  ['ShieldCheck', ShieldCheck],
+  ['Bell', Bell],
+  ['Monitor', Monitor],
+  ['Key', Key],
+  ['Settings', Settings],
+  ['CirclePlus', CirclePlus],
+]);
+
+const Icon = ({ name }: { name: IconName }) => {
+  const IconComponent = iconMap.get(name);
+  if (!IconComponent) return null;
+  return <IconComponent className="mr-2 h-4 w-4"/>;
 };
 
 export function AccountSettings(props: {
@@ -41,7 +43,7 @@ export function AccountSettings(props: {
   } & ({
     icon?: React.ReactNode,
   } | {
-    iconName?: keyof typeof iconMap,
+    iconName?: IconName,
   }))[],
   mockUser?: {
     displayName?: string,

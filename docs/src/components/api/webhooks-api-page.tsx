@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Check, Code, Copy, Sparkles, Webhook } from 'lucide-react';
+import { ArrowRight, Check, Code, Copy, Sparkles, Webhook } from '@opendex/stack-ui';
 import { useCallback, useEffect, useState } from 'react';
 import { codeToHtml } from 'shiki';
 import { Button } from './button';

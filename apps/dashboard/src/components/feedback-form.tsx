@@ -2,9 +2,8 @@ import { useUser } from "@opendex/stack";
 import { emailSchema } from "@opendex/stack-shared/dist/schema-fields";
 import { captureError } from "@opendex/stack-shared/dist/utils/errors";
 import { Button } from "@opendex/stack-ui";
-import { AlertCircle, CheckCircle2, Github, Mail } from "lucide-react";
+import { AlertCircle, CheckCircle2, Chat, Github, Mail } from "@opendex/stack-ui";
 import { useState } from "react";
-import { FaDiscord } from "react-icons/fa";
 import * as yup from "yup";
 import { SmartForm } from "./smart-form";
 
@@ -152,7 +151,7 @@ export function FeedbackForm() {
             className="flex items-center justify-center w-8 h-8 rounded-md hover:bg-muted transition-colors group"
             title="Contact support"
           >
-            <FaDiscord className="h-4 w-4 text-muted-foreground group-hover:text-foreground" />
+            <Chat className="h-4 w-4 text-muted-foreground group-hover:text-foreground" />
           </a>
           <a
             href="mailto:support@opendex.com"

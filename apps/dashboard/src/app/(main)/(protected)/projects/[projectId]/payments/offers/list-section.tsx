@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Button, Input, SimpleTooltip } from "@opendex/stack-ui";
-import { Plus, Search } from "lucide-react";
+import { Plus, Search } from "@opendex/stack-ui";
 import React, { ReactNode, useState } from "react";
 
 export type ListSectionProps = {

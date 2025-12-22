@@ -1,6 +1,6 @@
 'use client';
 
-import { Code, FileText, Link as LinkIcon, Play, Puzzle, Settings, Shield, User, UserCheck } from 'lucide-react';
+import { Code, FileText, Link as LinkIcon, Play, Puzzle, Settings, Shield, User, UserCheck } from '@opendex/stack-ui';
 import Link from 'next/link';
 import { type ReactNode } from 'react';
 import { cn } from '../../lib/cn';

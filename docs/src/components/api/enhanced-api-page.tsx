@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Check, Code, Copy, Play, Send, Settings, Zap } from 'lucide-react';
+import { ArrowRight, Check, Code, Copy, Play, Send, Settings, Zap } from '@opendex/stack-ui';
 import { useCallback, useEffect, useState } from 'react';
 import type { OpenAPIOperation, OpenAPIParameter, OpenAPISchema, OpenAPISpec } from '../../lib/openapi-types';
 import { resolveSchema } from '../../lib/openapi-utils';

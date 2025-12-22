@@ -1,6 +1,6 @@
 'use client';
 
-import { Palette } from 'lucide-react';
+import { Palette } from '@opendex/stack-ui';
 import React, { useEffect, useRef, useState } from 'react';
 import { codeToHtml } from "shiki";
 import './clickable-code-styles.css';

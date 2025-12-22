@@ -1,7 +1,7 @@
 'use client';
 
 import { UserButton, useUser } from '@opendex/stack';
-import { Wrench } from "lucide-react";
+import { Wrench } from "@opendex/stack-ui";
 import { useState } from "react";
 import { DynamicCodeblock } from "../mdx/dynamic-code-block";
 

@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Button, Calendar, Checkbox, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, Popover, PopoverContent, PopoverTrigger, Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue, Switch, Textarea } from "@opendex/stack-ui";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon } from "@opendex/stack-ui";
 import { Control, FieldValues, Path } from "react-hook-form";
 
 

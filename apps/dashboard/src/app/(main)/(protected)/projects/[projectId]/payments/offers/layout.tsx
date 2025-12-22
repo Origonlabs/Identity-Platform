@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { runAsynchronouslyWithAlert, wait } from "@opendex/stack-shared/dist/utils/promises";
 import { ActionDialog, Alert, AlertDescription, AlertTitle, Button, Card, CardContent, Typography } from "@opendex/stack-ui";
 import { ConnectNotificationBanner } from "@stripe/react-connect-js";
-import { ArrowRight, BarChart3, Repeat, Shield, Wallet, Webhook } from "lucide-react";
+import { ArrowRight, BarChart3, Repeat, Shield, Wallet, Webhook } from "@opendex/stack-ui";
 import { useState } from "react";
 import * as yup from "yup";
 import { useAdminApp } from "../../use-admin-app";

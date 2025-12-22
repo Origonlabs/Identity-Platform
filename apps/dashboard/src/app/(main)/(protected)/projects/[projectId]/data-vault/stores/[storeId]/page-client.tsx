@@ -3,7 +3,7 @@
 import { CodeBlock } from "@/components/code-block";
 import { deindent } from "@opendex/stack-shared/dist/utils/strings";
 import { Button, Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Input, Label, toast } from "@opendex/stack-ui";
-import { ArrowLeft, Check, Copy, Edit2, Trash2, X } from "lucide-react";
+import { ArrowLeft, Check, Copy, Edit2, Trash2, X } from "@opendex/stack-ui";
 import { useState } from "react";
 import { useRouter } from "../../../../../../../../components/router";
 import { PageLayout } from "../../../page-layout";

@@ -13,10 +13,9 @@ import { RefState, mapRefState, useRefState } from '@opendex/stack-shared/dist/u
 import { AsyncResult, Result } from '@opendex/stack-shared/dist/utils/results';
 import { deindent } from '@opendex/stack-shared/dist/utils/strings';
 import { generateUuid } from '@opendex/stack-shared/dist/utils/uuids';
-import { Button, ButtonProps, Dialog, DialogBody, DialogContent, DialogFooter, DialogHeader, DialogTitle, Input, SimpleTooltip, cn } from '@opendex/stack-ui';
+import { BorderNone, Button, ButtonProps, Dialog, DialogBody, DialogContent, DialogFooter, DialogHeader, DialogTitle, Input, Pencil, Plus, SimpleTooltip, Trash, cn } from '@opendex/stack-ui';
 import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { FaBorderNone, FaPen, FaPlus, FaTrash } from 'react-icons/fa';
 import * as jsxRuntime from 'react/jsx-runtime';
 import { PageLayout } from "../page-layout";
 
@@ -1413,7 +1412,7 @@ function ElementSlot(props: { isSingleColumnMode: boolean, isOver: boolean, chil
             opacity: 0,
           }}
         >
-          <BigIconButton icon={<FaPlus size={24} opacity={0.7} />} onClick={() => {
+          <BigIconButton icon={<Plus className="h-6 w-6 opacity-70" />} onClick={() => {
             props.onAddWidget();
           }} />
         </div>
@@ -1702,19 +1701,19 @@ function Draggable(props: {
                   }}
                 />
                 {props.widgetInstance.widget.hasSubGrid && <BigIconButton
-                  icon={<FaBorderNone size={24} />}
+                  icon={<BorderNone className="h-6 w-6" />}
                   loadingStyle="disabled"
                   onClick={async () => {
                     setIsEditingSubGrid(true);
                   }}
                 />}
                 <SimpleTooltip tooltip={!props.widgetInstance.widget.SettingsComponent ? "This widget doesn't have any settings." : undefined}>
-                  <BigIconButton disabled={!props.widgetInstance.widget.SettingsComponent} icon={<FaPen size={24} />} onClick={async () => {
+                  <BigIconButton disabled={!props.widgetInstance.widget.SettingsComponent} icon={<Pencil className="h-6 w-6" />} onClick={async () => {
                     setIsSettingsOpen(true);
                   }} />
                 </SimpleTooltip>
                 <BigIconButton
-                  icon={<FaTrash size={24} />}
+                  icon={<Trash className="h-6 w-6" />}
                   loadingStyle="disabled"
                   onClick={async () => {
                     setIsDeleting(true);

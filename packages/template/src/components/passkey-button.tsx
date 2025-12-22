@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@opendex/stack-ui';
-import { KeyRound } from 'lucide-react';
+import { KeyRound } from '@opendex/stack-ui';
 import { useId } from 'react';
 import { useStackApp } from '..';
 import { useTranslation } from '../lib/translations';

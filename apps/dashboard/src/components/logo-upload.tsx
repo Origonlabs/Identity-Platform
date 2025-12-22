@@ -4,7 +4,7 @@ import { fileToBase64 } from '@opendex/stack-shared/dist/utils/base64';
 import { runAsynchronouslyWithAlert } from '@opendex/stack-shared/dist/utils/promises';
 import { Button, cn, Typography } from '@opendex/stack-ui';
 import imageCompression from 'browser-image-compression';
-import { Upload, X } from 'lucide-react';
+import { Upload, X } from '@opendex/stack-ui';
 import { useState } from 'react';
 
 export async function checkImageUrl(url: string) {

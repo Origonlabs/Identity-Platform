@@ -16,7 +16,7 @@ import {
   PencilIcon,
   RefreshCwIcon,
   SendHorizontalIcon,
-} from "lucide-react";
+} from "@opendex/stack-ui";
 import { cn } from "@/lib/utils";
 
 import { Button } from "@opendex/stack-ui";

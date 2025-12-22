@@ -7,7 +7,7 @@ import { DayInterval } from "@opendex/stack-shared/dist/utils/dates";
 import { prettyPrintWithMagnitudes } from "@opendex/stack-shared/dist/utils/numbers";
 import { stringCompare } from "@opendex/stack-shared/dist/utils/strings";
 import { Button, Card, CardContent, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger, Switch, Label, toast } from "@opendex/stack-ui";
-import { MoreVertical, Plus } from "lucide-react";
+import { MoreVertical, Plus } from "@opendex/stack-ui";
 import React, { ReactNode, useEffect, useId, useMemo, useRef, useState } from "react";
 import { IllustratedInfo } from "../../../../../../../components/illustrated-info";
 import { PageLayout } from "../../page-layout";

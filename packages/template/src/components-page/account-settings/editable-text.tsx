@@ -1,5 +1,4 @@
-import { Button, Input, Typography } from "@opendex/stack-ui";
-import { Edit } from "lucide-react";
+import { Button, Edit, Input, Typography } from "@opendex/stack-ui";
 import { useState } from "react";
 import { useTranslation } from "../../lib/translations";
 

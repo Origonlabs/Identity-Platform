@@ -1,8 +1,15 @@
 import { api, docs } from '@/.source';
 import { loader } from 'fumadocs-core/source';
 import { attachFile } from 'fumadocs-openapi/server';
-import { icons } from 'lucide-react';
+import { Box, Code, Puzzle, Users, type IconComponent } from '@opendex/stack-ui';
 import { createElement } from 'react';
+
+const iconMap = new Map<string, IconComponent>([
+  ['object', Box],
+  ['type', Code],
+  ['hook', Puzzle],
+  ['users', Users],
+]);
 
 // Helper function to create icon resolver
 function createIconResolver() {
@@ -11,8 +18,9 @@ function createIconResolver() {
       return;
     }
 
-    if (iconName in icons) {
-      return createElement(icons[iconName as keyof typeof icons]);
+    const Icon = iconMap.get(iconName);
+    if (Icon) {
+      return createElement(Icon);
     }
 
     return;

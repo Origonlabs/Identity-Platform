@@ -2,7 +2,7 @@ import { fileToBase64 } from '@opendex/stack-shared/dist/utils/base64';
 import { runAsynchronouslyWithAlert } from '@opendex/stack-shared/dist/utils/promises';
 import { Button, Slider, Typography } from '@opendex/stack-ui';
 import imageCompression from 'browser-image-compression';
-import { Upload } from 'lucide-react';
+import { Upload } from '@opendex/stack-ui';
 import { ComponentProps, useCallback, useState } from 'react';
 import Cropper, { Area } from 'react-easy-crop';
 import { useTranslation } from '../lib/translations';

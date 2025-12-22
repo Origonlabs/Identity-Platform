@@ -2,7 +2,7 @@
 
 import { useThemeWatcher } from '@/lib/theme';
 import { CopyButton } from "@opendex/stack-ui";
-import { Code, Terminal } from "lucide-react";
+import { Code, Terminal } from "@opendex/stack-ui";
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import bash from 'react-syntax-highlighter/dist/esm/languages/prism/bash';
 import python from 'react-syntax-highlighter/dist/esm/languages/prism/python';

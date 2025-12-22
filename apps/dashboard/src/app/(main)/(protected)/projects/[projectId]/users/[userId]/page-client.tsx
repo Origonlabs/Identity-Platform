@@ -40,7 +40,7 @@ import {
   cn,
   useToast
 } from "@opendex/stack-ui";
-import { AtSign, Calendar, Check, Hash, Mail, MoreHorizontal, Shield, SquareAsterisk, X } from "lucide-react";
+import { AtSign, Calendar, Check, Hash, Mail, MoreHorizontal, Shield, SquareAsterisk, X } from "@opendex/stack-ui";
 import { useEffect, useMemo, useState } from "react";
 import * as yup from "yup";
 import { PageLayout } from "../../page-layout";

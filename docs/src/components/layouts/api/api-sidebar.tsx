@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowLeft, ChevronDown, ChevronRight, FileText, Sidebar as SidebarIcon } from 'lucide-react';
+import { ArrowLeft, ChevronDown, ChevronRight, FileText, Sidebar as SidebarIcon } from '@opendex/stack-ui';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import type { ReactNode } from 'react';

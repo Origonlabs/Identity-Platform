@@ -3,6 +3,7 @@
 import { KnownErrors } from "@opendex/stack-shared";
 import {
   Button,
+  CheckIcon,
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
@@ -10,7 +11,6 @@ import {
   Typography,
   cn,
 } from "@opendex/stack-ui";
-import { CheckIcon } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useStackApp } from "..";
 import { FormWarningText } from "../components/elements/form-warning";

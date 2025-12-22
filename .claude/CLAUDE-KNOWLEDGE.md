@@ -199,6 +199,9 @@ await niceBackendFetch("/api/v1/internal/config/override", {
 ### Q: Where does domain validation logic belong?
 A: Core validation functions (`isValidHostnameWithWildcards`, `matchHostnamePattern`) belong in the shared utils package (`packages/stack-shared/src/utils/urls.tsx`) so they can be used by both frontend and backend.
 
+## Q: Do Fluent UI icon components accept a `size` prop?
+A: No. `@fluentui/react-icons` components accept standard SVG props like `width`/`height` or `className` for sizing, plus Fluent-specific props like `primaryFill`.
+
 ## Q: Why can Next.js dev fail with "process.on/exit/title is not supported in the Edge Runtime"?
 A: Next compiles middleware and an "edge instrumentation" bundle that must be Edge-safe; any Node-only polyfills (e.g., `process.on`, `process.exit`, `util`, `fs`) imported into those graphs will prevent the server from starting. Fix by keeping middleware imports Edge-safe and splitting instrumentation/polyfills into Node-safe vs Edge-safe modules, selecting at runtime using `process.env.NEXT_RUNTIME` and dynamic imports (or separate edge-safe entry files).
 

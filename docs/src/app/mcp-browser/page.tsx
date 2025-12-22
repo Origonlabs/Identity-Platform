@@ -1,7 +1,7 @@
 'use client';
 
 import { SharedContentLayout } from '@/components/layouts/shared-content-layout';
-import { ArrowLeft, Book, FileText } from 'lucide-react';
+import { ArrowLeft, Book, FileText } from '@opendex/stack-ui';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 

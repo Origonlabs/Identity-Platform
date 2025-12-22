@@ -1,6 +1,6 @@
 'use client';
 import type { PageTree } from 'fumadocs-core/server';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronRight } from '@opendex/stack-ui';
 import { usePathname } from 'next/navigation';
 import React, { useMemo, useState } from 'react';
 import { getCurrentPlatform } from '../../lib/platform-utils';

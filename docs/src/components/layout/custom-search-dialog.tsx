@@ -1,6 +1,6 @@
 'use client';
 
-import { AlignLeft, ChevronDown, ExternalLink, FileText, Hash, Search, X } from 'lucide-react';
+import { AlignLeft, ChevronDown, ExternalLink, FileText, Hash, Search, X } from '@opendex/stack-ui';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { cn } from '../../lib/cn';

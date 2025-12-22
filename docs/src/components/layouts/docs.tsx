@@ -41,7 +41,7 @@ import {
   type PageStyles,
 } from 'fumadocs-ui/contexts/layout';
 import { TreeContextProvider } from 'fumadocs-ui/contexts/tree';
-import { ArrowLeft, ChevronDown, ChevronRight, Languages, Sidebar as SidebarIcon } from 'lucide-react';
+import { ArrowLeft, ChevronDown, ChevronRight, Languages, Sidebar as SidebarIcon } from '@opendex/stack-ui';
 import { usePathname, useRouter } from 'next/navigation';
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type HTMLAttributes, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
@@ -1373,4 +1373,3 @@ function CodeOverlayRenderer() {
 
 export { getSidebarTabsFromOptions } from './docs/shared';
 export { CollapsibleControl, Navbar, NavbarSidebarTrigger, type LinkItemType };
-

@@ -3,7 +3,7 @@
 import type { TableOfContents } from 'fumadocs-core/server';
 import { AnchorProvider, type AnchorProviderProps } from 'fumadocs-core/toc';
 import { I18nLabel } from 'fumadocs-ui/contexts/i18n';
-import { Edit, Text } from 'lucide-react';
+import { Edit, Text } from '@opendex/stack-ui';
 import { type ComponentProps, forwardRef, lazy, type ReactNode, useEffect } from 'react';
 import { cn } from '../../lib/cn';
 import {

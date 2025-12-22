@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue
 } from "@opendex/stack-ui";
-import { PlusIcon } from "lucide-react";
+import { PlusIcon } from "@opendex/stack-ui";
 import { useEffect, useState } from "react";
 
 export function ProjectSelectorPageClient(props: { deepPath: string }) {

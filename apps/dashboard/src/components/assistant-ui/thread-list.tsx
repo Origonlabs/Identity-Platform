@@ -3,7 +3,7 @@ import {
   ThreadListItemPrimitive,
   ThreadListPrimitive,
 } from "@assistant-ui/react";
-import { ArchiveIcon, PlusIcon } from "lucide-react";
+import { ArchiveIcon, PlusIcon } from "@opendex/stack-ui";
 
 import { Button } from "@opendex/stack-ui";
 import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";

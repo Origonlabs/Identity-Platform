@@ -2,7 +2,7 @@
 import { useRouter } from "@/components/router";
 import { useUser } from "@opendex/stack";
 import { Button, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@opendex/stack-ui";
-import { PlusIcon } from "lucide-react";
+import { PlusIcon } from "@opendex/stack-ui";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 export function ProjectAvatar(props: { displayName: string }) {
