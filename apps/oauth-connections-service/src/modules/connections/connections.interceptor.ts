@@ -19,39 +19,21 @@ export class ConnectionsInterceptor implements NestInterceptor {
     const routePath = route?.path || request.url;
     const startTime = Date.now();
 
-    return startSpan(`http.${method.toLowerCase()}`, async (span) => {
-      span.setAttributes({
-        'http.method': method,
-        'http.route': routePath,
-        'http.url': request.url,
-      });
+    return next.handle().pipe(
+      tap((response) => {
+        const duration = (Date.now() - startTime) / 1000;
+        const status = context.switchToHttp().getResponse().statusCode || 200;
 
-      return next.handle().pipe(
-        tap((response) => {
-          const duration = (Date.now() - startTime) / 1000;
-          const status = context.switchToHttp().getResponse().statusCode || 200;
-          
-          this.metrics.recordHttpRequest(method, routePath, status, duration);
-          span.setAttributes({
-            'http.status_code': status,
-            'http.response_time': duration,
-          });
-        }),
-        catchError((error) => {
-          const duration = (Date.now() - startTime) / 1000;
-          const status = error.status || 500;
-          
-          this.metrics.recordHttpRequest(method, routePath, status, duration);
-          span.setAttributes({
-            'http.status_code': status,
-            'http.response_time': duration,
-            'error': true,
-            'error.message': error.message,
-          });
-          
-          throw error;
-        })
-      );
-    });
+        this.metrics.recordHttpRequest(method, routePath, status, duration);
+      }),
+      catchError((error) => {
+        const duration = (Date.now() - startTime) / 1000;
+        const status = error.status || 500;
+
+        this.metrics.recordHttpRequest(method, routePath, status, duration);
+
+        throw error;
+      })
+    );
   }
 }

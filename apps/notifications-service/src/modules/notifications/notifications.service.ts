@@ -9,7 +9,7 @@ import {
 import {
   NotificationChannel as PrismaChannel,
   NotificationStatus as PrismaStatus,
-} from '@prisma/client';
+} from '../../../node_modules/.prisma/notifications-client';
 import { randomUUID } from 'crypto';
 import { PrismaService } from '../../prisma/prisma.service';
 import { MetricsService } from '../metrics/metrics.service';

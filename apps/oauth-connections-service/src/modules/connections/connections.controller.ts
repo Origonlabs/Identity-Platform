@@ -16,7 +16,7 @@ export class ConnectionsController {
   @ApiOperation({ summary: 'Link a new OAuth connection' })
   @ApiResponse({ status: 201, description: 'Connection created successfully' })
   @ApiResponse({ status: 400, description: 'Invalid request' })
-  async link(@Body() dto: CreateConnectionDto): Promise<OAuthConnection & { tokenSet: TokenSet }> {
+  async link(@Body() dto: CreateConnectionDto): Promise<OAuthConnection & { tokenSet?: TokenSet }> {
     return this.connections.link(dto);
   }
 
@@ -46,7 +46,7 @@ export class ConnectionsController {
   async updateTokens(
     @Param('id') id: string,
     @Body() dto: UpdateTokensDto
-  ): Promise<OAuthConnection & { tokenSet: TokenSet }> {
+  ): Promise<OAuthConnection & { tokenSet?: TokenSet }> {
     return this.connections.updateTokens(id, dto);
   }
 

@@ -69,7 +69,7 @@ export class TokenSetDto implements TokenSet {
   idToken?: string;
 }
 
-export class CreateConnectionDto implements Omit<OAuthConnection, 'status' | 'createdAt' | 'updatedAt'> {
+export class CreateConnectionDto {
   @IsOptional()
   @IsString()
   id?: string;

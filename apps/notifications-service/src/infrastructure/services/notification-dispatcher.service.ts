@@ -28,7 +28,7 @@ export class NotificationDispatcherService {
     }
 
     for (const provider of enabledProviders) {
-      if (!provider.validatePayload(notification.payload)) {
+      if (!provider.validatePayload(notification.payload as any)) {
         this.logger.warn(
           `Provider '${provider.name}' rejected invalid payload for notification ${notification.id}`,
         );

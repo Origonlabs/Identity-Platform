@@ -95,7 +95,7 @@ class WebhookDto extends BaseDto implements Omit<WebhookNotificationRequest, key
   url!: string;
 
   @IsString()
-  signatureVersion!: string;
+  signatureVersion!: `${number}.${number}.${number}`;
 
   @IsObject()
   body!: unknown;

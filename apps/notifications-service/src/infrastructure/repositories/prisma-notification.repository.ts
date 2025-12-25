@@ -6,7 +6,7 @@ import { PrismaService } from '../../prisma/prisma.service';
 import {
   NotificationChannel as PrismaChannel,
   NotificationStatus as PrismaStatus,
-} from '@prisma/client';
+} from '../../../node_modules/.prisma/notifications-client';
 
 @Injectable()
 export class PrismaNotificationRepository extends NotificationRepository {

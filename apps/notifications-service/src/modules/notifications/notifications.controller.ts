@@ -8,6 +8,7 @@ import { SendNotificationDto } from './dto/send-notification.dto';
 import { ListNotificationsDto } from './dto/list-notifications.dto';
 import { NotificationResponseDto } from './dto/notification-response.dto';
 import { InternalServiceGuard } from '../auth/internal-service.guard';
+import { Notification } from '../../domain/entities/notification.entity';
 
 @Controller('notifications')
 @UseGuards(InternalServiceGuard)
@@ -59,7 +60,7 @@ export class NotificationsController {
     );
 
     const notifications = await this.queryBus.execute(query);
-    return notifications.map((n) => NotificationResponseDto.fromDomain(n));
+    return notifications.map((n: Notification) => NotificationResponseDto.fromDomain(n));
   }
 
   @Delete(':id')

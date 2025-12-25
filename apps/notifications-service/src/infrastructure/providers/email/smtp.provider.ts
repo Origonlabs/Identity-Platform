@@ -51,7 +51,7 @@ export class SmtpProvider extends NotificationProvider {
     try {
       const nodemailer = await import('nodemailer');
 
-      const transporter = nodemailer.createTransporter({
+      const transporter = nodemailer.createTransport({
         host: this.host,
         port: this.port,
         secure: this.secure,
@@ -119,7 +119,7 @@ export class SmtpProvider extends NotificationProvider {
 
     try {
       const nodemailer = await import('nodemailer');
-      const transporter = nodemailer.createTransporter({
+      const transporter = nodemailer.createTransport({
         host: this.host,
         port: this.port,
         secure: this.secure,

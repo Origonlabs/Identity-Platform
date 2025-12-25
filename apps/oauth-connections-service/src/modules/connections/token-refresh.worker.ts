@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { PrismaService } from '../../prisma/prisma.service';
-import { ConnectionStatus } from '@prisma/client';
+import { ConnectionStatus } from '../../../node_modules/.prisma/oauth-connections-client';
 import { startSpan } from '@opendex/observability';
 
 @Injectable()

@@ -5,7 +5,7 @@ import {
   TokenSet,
   oauthConnectionEvents,
 } from '@opendex/contracts';
-import { ConnectionStatus } from '@prisma/client';
+import { ConnectionStatus } from '../../../node_modules/.prisma/oauth-connections-client';
 import { randomUUID } from 'crypto';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateConnectionDto } from './dto/create-connection.dto';
@@ -168,8 +168,8 @@ export class ConnectionsService {
 
       const event: EventEnvelope<{ connection: StoredConnection }> = {
         id: `evt_${randomUUID()}`,
-        type: oauthConnectionEvents.refreshed.type,
-        version: oauthConnectionEvents.refreshed.version,
+        type: oauthConnectionEvents.tokenRefreshed.type,
+        version: oauthConnectionEvents.tokenRefreshed.version,
         occurredAt: new Date().toISOString(),
         payload: { connection: record },
         meta: { source: 'oauth-connections-service' },
@@ -177,7 +177,7 @@ export class ConnectionsService {
 
       await this.prisma.outboxEvent.create({
         data: {
-          eventType: oauthConnectionEvents.refreshed.type,
+          eventType: oauthConnectionEvents.tokenRefreshed.type,
           payload: event as unknown as object,
         },
       });

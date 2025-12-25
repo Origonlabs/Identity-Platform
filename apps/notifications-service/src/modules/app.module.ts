@@ -17,9 +17,10 @@ import { MetricsModule } from './metrics/metrics.module';
       validationSchema: Joi.object({
         DATABASE_URL: Joi.string().uri().required(),
         PORT: Joi.number().default(8201),
-        INTERNAL_SERVICE_TOKEN: Joi.string().min(16).required(),
+        INTERNAL_SERVICE_TOKEN: Joi.string().min(16),
+        INTERNAL_SERVICE_JWT_SECRET: Joi.string().min(16),
         NATS_URL: Joi.string().optional(),
-      }),
+      }).or('INTERNAL_SERVICE_TOKEN', 'INTERNAL_SERVICE_JWT_SECRET'),
     }),
     ScheduleModule.forRoot(),
     EventEmitterModule.forRoot(),

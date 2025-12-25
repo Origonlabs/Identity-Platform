@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ConnectionsService } from './connections.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { MetricsService } from '../metrics/metrics.service';
-import { ConnectionStatus } from '@prisma/client';
+import { ConnectionStatus } from '../../../node_modules/.prisma/oauth-connections-client';
 
 describe('ConnectionsService', () => {
   let service: ConnectionsService;
