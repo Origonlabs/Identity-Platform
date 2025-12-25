@@ -1,0 +1,162 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notifications-service
+  labels:
+    app: notifications-service
+    tier: backend
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: notifications-service
+  template:
+    metadata:
+      labels:
+        app: notifications-service
+        tier: backend
+    spec:
+      serviceAccountName: notifications-service
+      containers:
+        - name: notifications-service
+          image: notifications-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8201
+              protocol: TCP
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: PORT
+              value: "8201"
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: notifications-service-secrets
+                  key: database-url
+            - name: SENDGRID_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: notifications-service-secrets
+                  key: sendgrid-api-key
+                  optional: true
+            - name: AWS_REGION
+              valueFrom:
+                configMapKeyRef:
+                  name: notifications-service-config
+                  key: aws-region
+                  optional: true
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: notifications-service-secrets
+                  key: aws-access-key-id
+                  optional: true
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: notifications-service-secrets
+                  key: aws-secret-access-key
+                  optional: true
+            - name: SMTP_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: notifications-service-config
+                  key: smtp-host
+                  optional: true
+            - name: SMTP_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: notifications-service-config
+                  key: smtp-port
+                  optional: true
+            - name: SMTP_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: notifications-service-secrets
+                  key: smtp-username
+                  optional: true
+            - name: SMTP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: notifications-service-secrets
+                  key: smtp-password
+                  optional: true
+            - name: TWILIO_ACCOUNT_SID
+              valueFrom:
+                secretKeyRef:
+                  name: notifications-service-secrets
+                  key: twilio-account-sid
+                  optional: true
+            - name: TWILIO_AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: notifications-service-secrets
+                  key: twilio-auth-token
+                  optional: true
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /v1/health
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /v1/health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1001
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notifications-service
+  labels:
+    app: notifications-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: notifications-service
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: notifications-service
+  labels:
+    app: notifications-service
