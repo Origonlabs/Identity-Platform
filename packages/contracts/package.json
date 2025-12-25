@@ -1,0 +1,43 @@
+{
+  "name": "@opendex/contracts",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "rimraf dist && tsup-node",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint --ext .ts .",
+    "clean": "rimraf dist && rimraf node_modules"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": {
+        "default": "./dist/index.js"
+      },
+      "default": "./dist/esm/index.js"
+    },
+    "./dist/*": {
+      "types": "./dist/*.d.ts",
+      "require": {
+        "default": "./dist/*.js"
+      },
+      "default": "./dist/esm/*.js"
+    }
+  },
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {
+    "rimraf": "^6.1.2",
+    "tsup": "^8.5.1",
+    "typescript": "5.3.3",
+    "vitest": "^4.0.16"
+  }
+}
