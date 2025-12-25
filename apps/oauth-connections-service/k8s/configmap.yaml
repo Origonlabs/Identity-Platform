@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oauth-connections-config
+  labels:
+    app: oauth-connections-service
+data:
+  # Event Bus
+  nats-url: "nats://nats:4222"
+
+  # Observability
+  enable-tracing: "true"
+  enable-metrics: "true"
+  otel-traces-endpoint: "http://otel-collector:4318/v1/traces"
+  otel-metrics-endpoint: "http://otel-collector:4318/v1/metrics"

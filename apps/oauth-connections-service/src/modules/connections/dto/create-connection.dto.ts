@@ -70,8 +70,9 @@ export class TokenSetDto implements TokenSet {
 }
 
 export class CreateConnectionDto implements Omit<OAuthConnection, 'status' | 'createdAt' | 'updatedAt'> {
+  @IsOptional()
   @IsString()
-  id!: string;
+  id?: string;
 
   @IsString()
   providerId!: string;
@@ -94,11 +95,13 @@ export class CreateConnectionDto implements Omit<OAuthConnection, 'status' | 'cr
   @IsString()
   expiresAt?: string;
 
+  @IsOptional()
   @IsISO8601()
-  createdAt!: string;
+  createdAt?: string;
 
+  @IsOptional()
   @IsISO8601()
-  updatedAt!: string;
+  updatedAt?: string;
 
   @ValidateNested()
   @Type(() => TokenSetDto)

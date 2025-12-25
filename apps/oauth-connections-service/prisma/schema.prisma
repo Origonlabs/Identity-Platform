@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ConnectionStatus {
+  active
+  refreshing
+  revoked
+  expired
+}
+
+model OAuthConnection {
+  id          String            @id @default(cuid())
+  providerId  String
+  projectId   String
+  tenantId    String?
+  userId      String
+  scope       String[]
+  status      ConnectionStatus  @default(active)
+  expiresAt   DateTime?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  tokenSet    TokenSet?
+}
+
+model TokenSet {
+  id             String   @id @default(cuid())
+  accessToken    String
+  refreshToken   String?
+  expiresIn      Int?
+  tokenType      String?
+  issuedAt       DateTime
+  expiresAt      DateTime?
+  idToken        String?
+  connection     OAuthConnection @relation(fields: [connectionId], references: [id])
+  connectionId   String  @unique
+}
+
+model OutboxEvent {
+  id          String   @id @default(cuid())
+  eventType   String
+  payload     Json
+  occurredAt  DateTime @default(now())
+  processedAt DateTime?
+}
