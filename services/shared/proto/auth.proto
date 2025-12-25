@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package stack.auth.v1;
+
+import "google/protobuf/timestamp.proto";
+
+// Auth Service - Core authentication operations
+service AuthService {
+  // Standard authentication methods
+  rpc AuthenticateWithPassword(PasswordAuthRequest) returns (AuthenticationResponse);
+  rpc AuthenticateWithOTP(OTPAuthRequest) returns (AuthenticationResponse);
+  rpc AuthenticateWithPasskey(PasskeyAuthRequest) returns (AuthenticationResponse);
+  
+  // Risk assessment
+  rpc AssessRisk(RiskAssessmentRequest) returns (RiskAssessmentResponse);
+  
+  // Session management
+  rpc ValidateSession(ValidateSessionRequest) returns (SessionValidationResponse);
+  rpc RevokeSession(RevokeSessionRequest) returns (RevokeSessionResponse);
+  
+  // Health check
+  rpc Health(HealthRequest) returns (HealthResponse);
+}
+
+// Request/Response Messages
+message PasswordAuthRequest {
+  string email = 1;
+  string password = 2;
+  string user_agent = 3;
+  string ip_address = 4;
+  map<string, string> metadata = 5;
+}
+
+message OTPAuthRequest {
+  string user_id = 1;
+  string otp_code = 2;
+  string delivery_method = 3; // "email" | "sms" | "totp"
+}
+
+message PasskeyAuthRequest {
+  string credential_id = 1;
+  bytes attestation_object = 2;
+  bytes client_data_json = 3;
+}
+
+message AuthenticationResponse {
+  bool success = 1;
+  string user_id = 2;
+  string session_id = 3;
+  string access_token = 4;
+  string refresh_token = 5;
+  int32 expires_in = 6;
+  AuthenticationError error = 7;
+}
+
+message AuthenticationError {
+  string code = 1; // "INVALID_CREDENTIALS" | "MFA_REQUIRED" | "RISK_DETECTED"
+  string message = 2;
+  RiskLevel risk_level = 3;
+  repeated ChallengeMethod required_challenges = 4;
+}
+
+enum RiskLevel {
+  RISK_LEVEL_UNSPECIFIED = 0;
+  LOW = 1;
+  MEDIUM = 2;
+  HIGH = 3;
+  CRITICAL = 4;
+}
+
+enum ChallengeMethod {
+  CHALLENGE_METHOD_UNSPECIFIED = 0;
+  MFA = 1;
+  EMAIL_VERIFICATION = 2;
+  DEVICE_VERIFICATION = 3;
+  BIOMETRIC = 4;
+}
+
+// Risk Assessment (ML-based)
+message RiskAssessmentRequest {
+  string user_id = 1;
+  string ip_address = 2;
+  string user_agent = 3;
+  string country = 4;
+  string city = 5;
+  float latitude = 6;
+  float longitude = 7;
+  google.protobuf.Timestamp timestamp = 8;
+  bool is_new_device = 9;
+  int32 failed_attempts_last_10min = 10;
+  bool is_known_device = 11;
+}
+
+message RiskAssessmentResponse {
+  float risk_score = 1; // 0.0 - 1.0
+  RiskLevel level = 2;
+  repeated RiskSignal signals = 3;
+  bool requires_challenge = 4;
+}
+
+message RiskSignal {
+  string name = 1; // "impossible_travel" | "new_device" | "velocity_check"
+  float weight = 2;
+  string description = 3;
+}
+
+// Session Management
+message ValidateSessionRequest {
+  string session_id = 1;
+  string access_token = 2;
+}
+
+message SessionValidationResponse {
+  bool valid = 1;
+  string user_id = 2;
+  google.protobuf.Timestamp expires_at = 3;
+  repeated string permissions = 4;
+}
+
+message RevokeSessionRequest {
+  string session_id = 1;
+  string reason = 2;
+}
+
+message RevokeSessionResponse {
+  bool success = 1;
+}
+
+message HealthRequest {}
+message HealthResponse {
+  string status = 1; // "SERVING" | "NOT_SERVING"
+}

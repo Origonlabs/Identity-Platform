@@ -1,0 +1,37 @@
+{
+  "name": "@opendex/api-gateway",
+  "version": "0.1.0",
+  "description": "Advanced API Gateway for Atlas Identity Platform",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --ext .ts ."
+  },
+  "dependencies": {
+    "@opendex/rate-limiting": "workspace:*",
+    "@opendex/cache": "workspace:*",
+    "@opendex/security": "workspace:*",
+    "@opendex/service-client": "workspace:*",
+    "@opendex/zero-trust": "workspace:*",
+    "@opendex/threat-intelligence": "workspace:*",
+    "@opendex/ddos-protection": "workspace:*",
+    "express": "^4.21.1",
+    "cors": "^2.8.5",
+    "helmet": "^8.0.0",
+    "compression": "^1.7.4",
+    "express-rate-limit": "^7.4.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/compression": "^1.7.5",
+    "@types/node": "20.17.6",
+    "tsup": "^8.5.1",
+    "tsx": "^4.19.3",
+    "typescript": "5.3.3"
+  }
+}

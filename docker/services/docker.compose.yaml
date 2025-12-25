@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  notifications-db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: notifications
+      POSTGRES_PASSWORD: notifications-password
+      POSTGRES_DB: notifications
+    ports:
+      - "5434:5432"
+    volumes:
+      - notifications-db-data:/var/lib/postgresql/data
+
+  oauth-db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: oauth
+      POSTGRES_PASSWORD: oauth-password
+      POSTGRES_DB: oauth
+    ports:
+      - "5435:5432"
+    volumes:
+      - oauth-db-data:/var/lib/postgresql/data
+
+  notifications-service:
+    build:
+      context: ../..
+      dockerfile: apps/notifications-service/Dockerfile
+    image: opendex/notifications-service:dev
+    environment:
+      DATABASE_URL: postgres://notifications:notifications-password@notifications-db:5432/notifications
+      PORT: 8201
+      INTERNAL_SERVICE_TOKEN: local-dev-internal-token-please-change
+      INTERNAL_SERVICE_JWT_SECRET: local-dev-internal-jwt-secret-please-change
+      INTERNAL_SERVICE_JWT_SECRETS: k1:local-dev-internal-jwt-secret-please-change
+      INTERNAL_MTLS_REJECT_UNAUTHORIZED: "false"
+    depends_on:
+      - notifications-db
+    ports:
+      - "8201:8201"
+
+  oauth-connections-service:
+    build:
+      context: ../..
+      dockerfile: apps/oauth-connections-service/Dockerfile
+    image: opendex/oauth-connections-service:dev
+    environment:
+      DATABASE_URL: postgres://oauth:oauth-password@oauth-db:5432/oauth
+      PORT: 8202
+      INTERNAL_SERVICE_TOKEN: local-dev-internal-token-please-change
+      INTERNAL_SERVICE_JWT_SECRET: local-dev-internal-jwt-secret-please-change
+      INTERNAL_SERVICE_JWT_SECRETS: k1:local-dev-internal-jwt-secret-please-change
+      INTERNAL_MTLS_REJECT_UNAUTHORIZED: "false"
+    depends_on:
+      - oauth-db
+    ports:
+      - "8202:8202"
+
+volumes:
+  notifications-db-data:
+  oauth-db-data:

@@ -1,0 +1,28 @@
+{
+  "name": "@opendex/monitoring-dashboard",
+  "version": "0.1.0",
+  "description": "Real-time monitoring dashboard for Atlas Identity Platform",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 8200",
+    "build": "next build",
+    "start": "next start --port 8200",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --ext .ts,.tsx ."
+  },
+  "dependencies": {
+    "@opendex/analytics": "workspace:*",
+    "@opendex/observability": "workspace:*",
+    "next": "16.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "20.17.6",
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4",
+    "typescript": "5.3.3"
+  }
+}

@@ -1,0 +1,11 @@
+groups:
+  - name: basic
+    rules:
+      - alert: MicroserviceDown
+        expr: up{group="services"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service {{ $labels.instance }} is down"
+          description: "No scrape data for {{ $labels.instance }}"

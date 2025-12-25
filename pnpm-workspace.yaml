@@ -1,6 +1,30 @@
 packages:
-  - packages/*
+  # Core packages
+  - packages/core/*
+  # Security packages
+  - packages/security/*
+  # Identity packages
+  - packages/identity/*
+  # Infrastructure packages
+  - packages/infrastructure/*
+  # Observability packages
+  - packages/observability/*
+  # Compliance packages
+  - packages/compliance/*
+  # Advanced packages
+  - packages/advanced/*
+  # Performance packages
+  - packages/performance/*
+  # Legacy packages (mantener compatibilidad)
+  - packages/stack*
+  - packages/react
+  - packages/js
+  - packages/template
+  - packages/init-stack
+  - packages/stack-ui
+  - packages/stack-sc
+  # Applications
   - apps/*
+  # Examples and docs
   - examples/*
   - docs
-  - services/*

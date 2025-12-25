@@ -1,0 +1,59 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: auth-service
+    url: http://auth-service:3000
+    routes:
+      - name: auth-route
+        paths:
+          - /api/v1/auth
+        strip_path: false
+
+  - name: identity-service
+    url: http://identity-service:3000
+    routes:
+      - name: identity-route
+        paths:
+          - /api/v1/users
+        strip_path: false
+
+  - name: authorization-service
+    url: http://authorization-service:3000
+    routes:
+      - name: authz-route
+        paths:
+          - /api/v1/authz
+        strip_path: false
+
+  - name: audit-service
+    url: http://audit-service:3000
+    routes:
+      - name: audit-route
+        paths:
+          - /api/v1/audit
+        strip_path: false
+
+  - name: webhook-service
+    url: http://webhook-service:3000
+    routes:
+      - name: webhook-route
+        paths:
+          - /api/v1/webhooks
+        strip_path: false
+
+  - name: token-service
+    url: http://token-service:3000
+    routes:
+      - name: token-route
+        paths:
+          - /api/v1/tokens
+        strip_path: false
+
+  - name: admin-service
+    url: http://admin-service:3000
+    routes:
+      - name: admin-route
+        paths:
+          - /api/v1/admin
+        strip_path: false

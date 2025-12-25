@@ -1,0 +1,196 @@
+syntax = "proto3";
+
+package stack.audit.v1;
+
+import "google/protobuf/timestamp.proto";
+
+// Audit Service - Event logging, compliance, analytics
+service AuditService {
+  // Event logging
+  rpc LogEvent(LogEventRequest) returns (LogEventResponse);
+  rpc LogBatchEvents(LogBatchEventsRequest) returns (LogEventResponse);
+  
+  // Event querying
+  rpc GetAuditLog(GetAuditLogRequest) returns (GetAuditLogResponse);
+  rpc SearchEvents(SearchEventsRequest) returns (SearchEventsResponse);
+  
+  // Compliance
+  rpc GetComplianceReport(ComplianceReportRequest) returns (ComplianceReportResponse);
+  rpc ExportAuditTrail(ExportAuditTrailRequest) returns (ExportAuditTrailResponse);
+  
+  // Analytics
+  rpc GetAuditMetrics(AuditMetricsRequest) returns (AuditMetricsResponse);
+  
+  // Health check
+  rpc Health(HealthRequest) returns (HealthResponse);
+}
+
+// Event Logging
+message LogEventRequest {
+  string event_type = 1; // "AUTH_SUCCESS" | "AUTH_FAILURE" | "PERMISSION_CHECK" | etc
+  string user_id = 2;
+  string actor_id = 3; // who performed the action
+  string resource_id = 4;
+  string action = 5; // "CREATE" | "READ" | "UPDATE" | "DELETE"
+  string status = 6; // "SUCCESS" | "FAILURE" | "PARTIAL"
+  map<string, string> metadata = 7;
+  string ip_address = 8;
+  string user_agent = 9;
+  string organization_id = 10;
+  EventSeverity severity = 11;
+}
+
+enum EventSeverity {
+  SEVERITY_UNSPECIFIED = 0;
+  INFO = 1;
+  WARNING = 2;
+  ERROR = 3;
+  CRITICAL = 4;
+}
+
+message LogEventResponse {
+  bool success = 1;
+  string event_id = 2;
+  google.protobuf.Timestamp timestamp = 3;
+}
+
+message LogBatchEventsRequest {
+  repeated LogEventRequest events = 1;
+}
+
+// Get Audit Log
+message GetAuditLogRequest {
+  string user_id = 1;
+  google.protobuf.Timestamp from = 2;
+  google.protobuf.Timestamp to = 3;
+  int32 limit = 4;
+  int32 offset = 5;
+  repeated string event_types = 6;
+}
+
+message GetAuditLogResponse {
+  repeated AuditEvent events = 1;
+  int64 total_count = 2;
+  bool has_more = 3;
+}
+
+message AuditEvent {
+  string event_id = 1;
+  string event_type = 2;
+  string user_id = 3;
+  string actor_id = 4;
+  string resource_id = 5;
+  string action = 6;
+  string status = 7;
+  google.protobuf.Timestamp timestamp = 8;
+  string ip_address = 9;
+  string user_agent = 10;
+  map<string, string> metadata = 11;
+  EventSeverity severity = 12;
+  string organization_id = 13;
+}
+
+// Search Events
+message SearchEventsRequest {
+  string query = 1;
+  google.protobuf.Timestamp from = 2;
+  google.protobuf.Timestamp to = 3;
+  int32 limit = 4;
+  int32 offset = 5;
+  repeated EventSeverity severity_filter = 6;
+  repeated string status_filter = 7;
+}
+
+message SearchEventsResponse {
+  repeated AuditEvent events = 1;
+  int64 total_count = 2;
+  bool has_more = 3;
+}
+
+// Compliance Reporting
+message ComplianceReportRequest {
+  string organization_id = 1;
+  string report_type = 2; // "SOC2" | "GDPR" | "HIPAA" | "PCI-DSS"
+  google.protobuf.Timestamp from = 3;
+  google.protobuf.Timestamp to = 4;
+}
+
+message ComplianceReportResponse {
+  string report_id = 1;
+  string report_type = 2;
+  google.protobuf.Timestamp generated_at = 3;
+  ComplianceStatus soc2_status = 4;
+  ComplianceStatus gdpr_status = 5;
+  ComplianceStatus hipaa_status = 6;
+  ComplianceStatus pci_status = 7;
+  repeated ComplianceFinding findings = 8;
+  string summary = 9;
+}
+
+message ComplianceStatus {
+  string status = 1; // "COMPLIANT" | "NON_COMPLIANT" | "PARTIAL"
+  repeated string issues = 2;
+  int32 critical_findings = 3;
+  int32 warnings = 4;
+}
+
+message ComplianceFinding {
+  string id = 1;
+  string category = 2; // "AUTHENTICATION" | "AUTHORIZATION" | "ENCRYPTION" | "AUDIT"
+  string severity = 3; // "CRITICAL" | "HIGH" | "MEDIUM" | "LOW"
+  string description = 4;
+  string remediation = 5;
+}
+
+// Export Audit Trail
+message ExportAuditTrailRequest {
+  string organization_id = 1;
+  google.protobuf.Timestamp from = 2;
+  google.protobuf.Timestamp to = 3;
+  string format = 4; // "JSON" | "CSV" | "PDF"
+  repeated string event_types = 5;
+}
+
+message ExportAuditTrailResponse {
+  string export_id = 1;
+  string download_url = 2;
+  string format = 3;
+  int64 event_count = 4;
+  google.protobuf.Timestamp expires_at = 5;
+}
+
+// Metrics
+message AuditMetricsRequest {
+  string organization_id = 1;
+  google.protobuf.Timestamp from = 2;
+  google.protobuf.Timestamp to = 3;
+}
+
+message AuditMetricsResponse {
+  int64 total_events = 1;
+  int64 successful_auth = 2;
+  int64 failed_auth = 3;
+  int64 permission_denied = 4;
+  int64 permission_allowed = 5;
+  float auth_success_rate = 6;
+  float avg_auth_latency_ms = 7;
+  map<string, int64> events_by_type = 8;
+  map<string, int64> events_by_severity = 9;
+  repeated TopUser top_users = 10;
+  repeated TopResource top_resources = 11;
+}
+
+message TopUser {
+  string user_id = 1;
+  int64 event_count = 2;
+}
+
+message TopResource {
+  string resource_id = 1;
+  int64 access_count = 2;
+}
+
+message HealthRequest {}
+message HealthResponse {
+  string status = 1;
+}

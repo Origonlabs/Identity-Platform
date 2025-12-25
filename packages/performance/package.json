@@ -1,0 +1,38 @@
+{
+  "name": "@opendex/performance",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsup-node",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint --ext .ts .",
+    "clean": "rimraf dist && rimraf node_modules"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": {
+        "default": "./dist/index.js"
+      },
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "dependencies": {
+    "p-limit": "^5.0.0",
+    "p-queue": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.17.6",
+    "rimraf": "^6.1.2",
+    "tsup": "^8.5.1",
+    "typescript": "5.3.3",
+    "vitest": "^4.0.16"
+  }
+}

@@ -66,6 +66,7 @@
     "@simplewebauthn/server": "^11.0.0",
     "@opendex/stack": "workspace:*",
     "@opendex/stack-shared": "workspace:*",
+    "@opendex/contracts": "workspace:*",
     "@upstash/qstash": "^2.8.2",
     "@upstash/ratelimit": "^2.0.7",
     "@upstash/redis": "^1.35.8",
