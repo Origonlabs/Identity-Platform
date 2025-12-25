@@ -1,0 +1,355 @@
+// Auth Service - Independent Database Schema
+// This is a microservice-specific schema for OAuth/OIDC authentication
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+  previewFeatures = ["tracing"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_DATABASE_URL")
+}
+
+// ============================================================================
+// CORE ENTITIES
+// ============================================================================
+
+/// OAuth/OIDC Client Application
+model Client {
+  id                String   @id @default(cuid())
+  clientId          String   @unique
+  clientSecret      String?  // Nullable for public clients
+  clientName        String
+  clientType        ClientType @default(CONFIDENTIAL)
+
+  // OAuth Configuration
+  grantTypes        String[]  // authorization_code, refresh_token, client_credentials
+  responseTypes     String[]  // code, token, id_token
+  redirectUris      String[]
+  allowedScopes     String[]
+
+  // PKCE
+  pkceRequired      Boolean   @default(false)
+
+  // Token Configuration
+  accessTokenTTL    Int       @default(3600)      // seconds
+  refreshTokenTTL   Int       @default(2592000)   // 30 days
+
+  // OIDC Configuration
+  idTokenTTL        Int       @default(3600)
+  idTokenSignedResponseAlg String @default("RS256")
+  userinfoSignedResponseAlg String?
+
+  // Security
+  trustedDomains    String[]
+  allowedOrigins    String[]
+
+  // Metadata
+  logoUri           String?
+  termsOfServiceUri String?
+  policyUri         String?
+  contacts          String[]
+
+  // Timestamps
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  // Relations
+  authorizationCodes AuthorizationCode[]
+  accessTokens      AccessToken[]
+  refreshTokens     RefreshToken[]
+
+  @@index([clientId])
+  @@map("clients")
+}
+
+enum ClientType {
+  CONFIDENTIAL  // Can keep secrets (server-side apps)
+  PUBLIC        // Cannot keep secrets (SPAs, mobile apps)
+}
+
+/// End User
+model User {
+  id                String   @id @default(cuid())
+
+  // Basic Info
+  email             String   @unique
+  emailVerified     Boolean  @default(false)
+  username          String?  @unique
+  phoneNumber       String?  @unique
+  phoneVerified     Boolean  @default(false)
+
+  // Password (nullable for social-only users)
+  passwordHash      String?
+
+  // Profile
+  firstName         String?
+  lastName          String?
+  displayName       String?
+  avatarUrl         String?
+  locale            String?  @default("en")
+  timezone          String?
+
+  // Security
+  mfaEnabled        Boolean  @default(false)
+  totpSecret        String?
+  backupCodes       String[]
+
+  // Status
+  status            UserStatus @default(ACTIVE)
+  emailVerifiedAt   DateTime?
+  phoneVerifiedAt   DateTime?
+  lastLoginAt       DateTime?
+  lastLoginIp       String?
+
+  // Timestamps
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  // Relations
+  oauthAccounts     OAuthAccount[]
+  authorizationCodes AuthorizationCode[]
+  accessTokens      AccessToken[]
+  refreshTokens     RefreshToken[]
+  sessions          Session[]
+
+  @@index([email])
+  @@index([username])
+  @@map("users")
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  DELETED
+}
+
+/// OAuth Provider Account (for social login)
+model OAuthAccount {
+  id                String   @id @default(cuid())
+
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  provider          String   // github, google, microsoft, etc.
+  providerAccountId String   // Provider's user ID
+
+  // OAuth Tokens from provider
+  accessToken       String?  @db.Text
+  refreshToken      String?  @db.Text
+  expiresAt         DateTime?
+  tokenType         String?
+  scope             String?
+
+  // Provider data
+  providerData      Json?    // Raw profile data from provider
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+  @@map("oauth_accounts")
+}
+
+// ============================================================================
+// OAUTH2 / OIDC TOKENS
+// ============================================================================
+
+/// Authorization Code (OAuth 2.0)
+model AuthorizationCode {
+  id                String   @id @default(cuid())
+
+  code              String   @unique
+  clientId          String
+  client            Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // OAuth Parameters
+  redirectUri       String
+  scope             String[]
+
+  // PKCE
+  codeChallenge     String?
+  codeChallengeMethod String? // plain, S256
+
+  // OIDC
+  nonce             String?
+
+  // Metadata
+  state             String?
+
+  // Expiration
+  expiresAt         DateTime
+  isUsed            Boolean  @default(false)
+  usedAt            DateTime?
+
+  createdAt         DateTime @default(now())
+
+  @@index([code])
+  @@index([clientId])
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("authorization_codes")
+}
+
+/// Access Token (OAuth 2.0)
+model AccessToken {
+  id                String   @id @default(cuid())
+
+  token             String   @unique @db.Text
+  tokenHash         String   @unique // For faster lookups
+
+  clientId          String
+  client            Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  scope             String[]
+
+  // Relations
+  refreshTokenId    String?
+  refreshToken      RefreshToken? @relation(fields: [refreshTokenId], references: [id], onDelete: Cascade)
+
+  // Expiration
+  expiresAt         DateTime
+  isRevoked         Boolean  @default(false)
+  revokedAt         DateTime?
+
+  // Metadata
+  createdAt         DateTime @default(now())
+  lastUsedAt        DateTime?
+
+  @@index([tokenHash])
+  @@index([clientId])
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("access_tokens")
+}
+
+/// Refresh Token (OAuth 2.0)
+model RefreshToken {
+  id                String   @id @default(cuid())
+
+  token             String   @unique @db.Text
+  tokenHash         String   @unique
+
+  clientId          String
+  client            Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  scope             String[]
+
+  // Relations
+  accessTokens      AccessToken[]
+
+  // Rotation
+  rotationId        String?  // For token rotation chains
+
+  // Expiration
+  expiresAt         DateTime?  // Nullable for non-expiring tokens
+  isRevoked         Boolean  @default(false)
+  revokedAt         DateTime?
+
+  createdAt         DateTime @default(now())
+  lastUsedAt        DateTime?
+
+  @@index([tokenHash])
+  @@index([clientId])
+  @@index([userId])
+  @@map("refresh_tokens")
+}
+
+// ============================================================================
+// SESSION MANAGEMENT
+// ============================================================================
+
+/// User Session
+model Session {
+  id                String   @id @default(cuid())
+
+  sessionToken      String   @unique
+
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Session data
+  ipAddress         String?
+  userAgent         String?
+  device            String?
+  location          String?
+
+  // Security
+  fingerprint       String?
+
+  expiresAt         DateTime
+  createdAt         DateTime @default(now())
+  lastActivityAt    DateTime @default(now())
+
+  @@index([sessionToken])
+  @@index([userId])
+  @@map("sessions")
+}
+
+// ============================================================================
+// AUDIT & SECURITY
+// ============================================================================
+
+/// Audit Log for security events
+model AuditLog {
+  id                String   @id @default(cuid())
+
+  userId            String?
+  action            String   // login, logout, token_issued, token_revoked, etc.
+  resource          String?  // user, client, token
+  resourceId        String?
+
+  // Request Context
+  ipAddress         String?
+  userAgent         String?
+
+  // Details
+  metadata          Json?
+  status            AuditStatus @default(SUCCESS)
+  errorMessage      String?
+
+  createdAt         DateTime @default(now())
+
+  @@index([userId])
+  @@index([action])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+enum AuditStatus {
+  SUCCESS
+  FAILURE
+  WARNING
+}
+
+/// Rate Limiting (can also use Redis for this)
+model RateLimit {
+  id                String   @id @default(cuid())
+
+  identifier        String   // user_id, client_id, or ip_address
+  endpoint          String
+
+  count             Int      @default(1)
+  resetAt           DateTime
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([identifier, endpoint])
+  @@index([resetAt])
+  @@map("rate_limits")
+}
