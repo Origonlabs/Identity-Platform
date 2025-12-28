@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Estructura del Proyecto - Atlas Identity Platform](#estructura-del-proyecto---atlas-identity-platform)
+  - [📁 Organización de Directorios](#-organizaci%C3%B3n-de-directorios)
+    - [Estructura Principal](#estructura-principal)
+  - [🎯 Principios de Organización](#-principios-de-organizaci%C3%B3n)
+    - [1. Separación por Dominio](#1-separaci%C3%B3n-por-dominio)
+    - [2. Reglas de Dependencias](#2-reglas-de-dependencias)
+    - [3. Convenciones de Nomenclatura](#3-convenciones-de-nomenclatura)
+  - [📦 Estructura de Paquetes](#-estructura-de-paquetes)
+  - [🏗️ Estructura de Servicios](#-estructura-de-servicios)
+  - [🔄 Reorganización](#-reorganizaci%C3%B3n)
+  - [📚 Documentación Adicional](#-documentaci%C3%B3n-adicional)
+  - [✅ Checklist para Nuevos Paquetes](#-checklist-para-nuevos-paquetes)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Estructura del Proyecto - Atlas Identity Platform
 
 ## 📁 Organización de Directorios
