@@ -8,6 +8,7 @@ export interface Threat {
   severity: 'low' | 'medium' | 'high' | 'critical';
   type: string;
   description: string;
+  metadata: any;
 }
 
 export interface ThreatIntelligenceConfig {

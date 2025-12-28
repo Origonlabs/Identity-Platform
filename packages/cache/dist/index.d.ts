@@ -6,7 +6,7 @@ export interface CacheConfig {
 export class Cache {
   constructor(config?: CacheConfig);
   get<T>(key: string): Promise<T | null>;
-  set<T>(key: string, value: T, ttl?: number): Promise<void>;
+  set<T>(key: string, value: T, options?: { ttl?: number } | number): Promise<void>;
   delete(key: string): Promise<void>;
   clear(): Promise<void>;
 }

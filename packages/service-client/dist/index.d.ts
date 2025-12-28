@@ -16,7 +16,7 @@ export class ServiceClient {
   post<T>(path: string, data: any): Promise<T>;
   put<T>(path: string, data: any): Promise<T>;
   delete<T>(path: string): Promise<T>;
-  call<T>(method: string, path: string, data?: any): Promise<T>;
+  call<T>(url: string, options?: { method?: any; body?: any; headers?: any }): Promise<T>;
 }
 
 export function createServiceClient(config: ServiceClientConfig): ServiceClient;

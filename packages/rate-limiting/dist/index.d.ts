@@ -1,7 +1,8 @@
 export interface RateLimitResult {
   allowed: boolean;
   retryAfter?: number;
-  remaining?: number;
+  remaining: number;
+  resetAt: Date;
 }
 
 export interface RateLimitOptions {
